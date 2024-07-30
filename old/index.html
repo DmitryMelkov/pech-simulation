@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mnemo</title>
+  <link rel="stylesheet" href="http://Techsite4/kaskad/css/sim_pechVr-mnemo.css">
+</head>
+
+
+<body>
+
+  <div class="content">
+
+    <div class="mnemo__title-content">
+      <h2 class="mnemo__title title-reset">
+        <div class="siren">
+          <!-- <audio class="siren__media-vr1-mnemo" controls loop>
+              <source src="http://Techsite6/kaskad/audio/siren.mp3" type="audio/mp3">
+            </audio> -->
+        </div>
+        <span class="current-param__title-span">Симулятор</span>
+        Печь карбонизации
+      </h2>
+      <h2 class="current-param__subtitle title-reset">Режим работы печи:
+        <span class="current-param__subtitle-span"></span>
+      </h2>
+    </div>
+
+    <table class="table">
+      <thead class="table__thead">
+        <tr class="table__tr">
+          <th class="table__th table__left">Наименование параметра</th>
+          <th class="table__th ">Значения</th>
+        </tr>
+      </thead>
+      <tbody class="table__tbody">
+
+      </tbody>
+    </table>
+
+    <button onclick="addscript()" class="check">Проверка</button>
+
+    <!-- <div class="mnemo__background"></div> -->
+    <div class="mnemo">
+      <div class="light-alarm">
+        <div class="light-alarm__content">
+          Сирена
+        </div>
+      </div>
+
+      <!-- <div class="mnemo__gif mnemo__gif-1">
+          <#PasspValue PasspType=9 PasspID=5 Type="Pictures" [true]="pic\images\fire-gif.gif"
+                          [false]="pic\images\none.gif">
+        </div> -->
+
+      <!-- <div class="mnemo__gif mnemo__gif-2">
+          <img src="../../../pic/images/ventilator.png" alt="img">
+        </div> -->
+
+      <!-- <div class="mnemo__gif mnemo__gif-3">
+        </div> -->
+
+      <div class="mnemo__kran-vert kran-1">
+        <div class="mnemo__kran-box">
+          <div class="mnemo__triangle1 mnemo__kran-img mnemo__kran1-left">
+
+          </div>
+          <div class="mnemo__triangle2 mnemo__kran1-right"></div>
+        </div>
+      </div>
+
+      <div class="mnemo__kran-vert kran-2">
+        <div class="mnemo__kran-box">
+          <div class="mnemo__triangle1-small mnemo__kran2-img mnemo__kran2-left">
+
+          </div>
+          <div class="mnemo__triangle2-small mnemo__kran2-right"></div>
+        </div>
+      </div>
+
+      <div class="mnemo__kran-vert kran-3">
+        <div class="mnemo__kran-box">
+          <div class="mnemo__triangle1 mnemo__kran3-img mnemo__kran3-left">
+
+          </div>
+          <div class="mnemo__triangle2 mnemo__kran3-right"></div>
+        </div>
+      </div>
+
+      <div class="mnemo__kran-vert kran-4">
+        <div class="mnemo__kran-box">
+          <div class="mnemo__triangle1 mnemo__kran4-img mnemo__kran4-left">
+
+          </div>
+          <div class="mnemo__triangle2 mnemo__kran4-right"></div>
+        </div>
+      </div>
+
+      <div class="mnemo__kran-vert kran-5">
+        <div class="mnemo__kran-box">
+          <div class="mnemo__triangle1 mnemo__kran5-left">
+          </div>
+          <div class="mnemo__triangle2 mnemo__kran5-right"></div>
+        </div>
+      </div>
+
+      <img class="mnemo__img" src="http://Techsite4/kaskad/pic/Backgrounds/pech-vr.jpg">
+      <div class="mnemo__param-descr ot-hvo-text">От ХВО</div>
+      <div class="mnemo__param-descr avarini-sbros-text">Аварийный сброс</div>
+      <div class="mnemo__param-descr par-v-otdelenii-activatsi-text">Пар в отделении активации</div>
+      <div class="mnemo__param-descr borov-soedinitelni-text">Боров соединительный</div>
+      <div class="mnemo__param-descr pech-doziga-gazov-text">Печь дожига газов</div>
+      <div class="mnemo__param-descr dymosos-text">Дымосос</div>
+      <div class="mnemo__param-descr kotel-utilizator-text">Котел утилизатор</div>
+      <div class="mnemo__param-descr vyhod-dymovyh-gazov-text">Выход дымовых газов</div>
+      <div class="mnemo__param-descr mokriy-skruber-text">Мокрый скруббер</div>
+      <div class="mnemo__param-descr topka-text">Топка</div>
+      <div class="mnemo__param-descr vanna-skrubbera-text">Ванна скруббера</div>
+      <div class="mnemo__param-descr goriz-vibrotransporter-text">Вертикальный вибротранспортер</div>
+      <div class="mnemo__param-descr vr-pech-carboniz-text">Вращающаяся печь карбонизации</div>
+      <div class="mnemo__param-descr hvo-text">ХВО</div>
+      <div class="mnemo__param-descr holodilnik-text">Холодильник</div>
+      <div class="mnemo__param-descr grohot-text">Грохот</div>
+      <div class="mnemo__param-descr elevator-text">Элеватор</div>
+      <div class="mnemo__param-descr zagruzka-granul-text">Загрузка гранул</div>
+      <div class="mnemo__param-descr niz-zagr-kam-text">Низ загрузочной камеры</div>
+      <div class="mnemo__param-descr vigruzka-kam-text">Камера выгрузки</div>
+      <div class="mnemo__param-descr vniz-kamery-zagruzki-text">Внизу камеры загрузки </div>
+      <div class="mnemo__param-descr vverh-kamery-zagruzki-text">Вверху камеры загрузки </div>
+      <div class="mnemo__param-descr vhod-pechi-doziganiy-text">Вход печи дожигания </div>
+      <div class="mnemo__param-descr vyhod-pechi-doziganiy-text">Выход печи дожигания </div>
+      <div class="mnemo__param-descr zadanie-temper-na-gorelky-text">Задание</div>
+      <div class="mnemo__param-descr first-skolz-text">1-СК</div>
+      <div class="mnemo__param-descr second-skolz-text">2-СК</div>
+      <div class="mnemo__param-descr third-skolz-text">3-СК</div>
+
+
+
+
+
+
+      <div class="column column-hvo">
+        <div class="column__box">
+          <span class="column-hvo__span-1"></span>
+          <span class="column-hvo__span-2">%</span>
+        </div>
+        <div class="column-hvo__percent">
+        </div>
+      </div>
+
+      <div class="column column-skrubber">
+        <div class="column__box">
+          <span class="column-skrubber__span-1"></span>
+          <span class="column-skrubber__span-2">%</span>
+        </div>
+        <div class="column-skrubber__percent">
+        </div>
+      </div>
+
+      <div class="column column-kotel">
+        <div class="column__box">
+          <span class="column-kotel__span-1"></span>
+          <span class="column-kotel__span-2">%</span>
+        </div>
+        <div class="column-kotel__percent">
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+      <div class="mnemo__param v-techke">
+        <span class="mnemo__param-text razr-niz-zagr-kam">
+          -1,5
+        </span>
+        <span class="mnemo__param-naimenov razr-niz-zagr-kam-span">кгс/м2</span>
+      </div>
+
+
+      <div class="mnemo__param vniz-kamery-zagruzki">
+        <span class="mnemo__param-text temper-vniz-kamer-zagruz">
+          1050
+        </span>
+        <span class="mnemo__param-naimenov temper-vniz-kamer-zagruz-span">&#176C</span>
+      </div>
+
+      <div class="mnemo__param vverh-kamery-zagruzki">
+        <span class="mnemo__param-text temper-verh-kamer-zagruz">
+          950
+        </span>
+        <span class="mnemo__param-naimenov temper-verh-kamer-zagruz-span">&#176C</span>
+
+      </div>
+      <div class="mnemo__param vhod-pechi-doziganiy">
+        <span class="mnemo__param-text temper-vhod-pech-dozhig">
+          1100
+        </span>
+        <span class="mnemo__param-naimenov temper-vhod-pech-dozhig-span">&#176C</span>
+      </div>
+
+      <div class="mnemo__param mnemo__tooltip third-skolz">
+        <div class="third-skolz-js">
+          <span class="mnemo__param-text temper-3-skolz">
+            350
+          </span>
+          <span class="mnemo__param-naimenov temper-3-skolz-span">&#176C</span>
+        </div>
+
+        <div class="mnemo__param-clue third-skolz-clue">
+          <div class="mnemo__param-clue-content">
+            <div class="mnemo__param-clue-title">
+              <h2 class="mnemo__param-clue-title-text title-reset">Третья скользящая</h2>
+              <button class="mnemo__tooltip-close third-skolz-clue-close btn-reset">
+                <div class="krest">
+                  <span class="line-1"></span>
+                  <span class="line-2"></span>
+                </div>
+              </button>
+            </div>
+            <div class="mnemo__param-clue-div">Рекомендуемый диапазон в установившимся режиме:
+              <span class="mnemo__param-clue-span">
+                Не более 400&#176C
+              </span>
+            </div>
+            <div class="mnemo__param-clue-div">Рекомендуемый диапазон при выходе на режим:
+              <span class="mnemo__param-clue-span">
+                Не более 750&#176C
+              </span>
+            </div>
+            <form class="mnemo__param-clue-form">
+              <div class="mnemo__param-clue-form-div">
+                <input class="mnemo__param-clue-input" type="number" placeholder="Введите значение" id="2skolzInput">
+                <label class="mnemo__param-clue-label" for="2skolzInput"></label>
+                <button class="mnemo__param-clue-form-btn--ok btn-reset" type="submit">Принять</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="mnemo__param mnemo__tooltip second-skolz">
+        <div class="second-skolz-js">
+          <span class="mnemo__param-text temper-2-skolz">
+            650
+          </span>
+          <span class="mnemo__param-naimenov temper-2-skolz-span">&#176C</span>
+        </div>
+
+        <div class="mnemo__param-clue second-skolz-clue">
+          <div class="mnemo__param-clue-content">
+            <div class="mnemo__param-clue-title">
+              <h2 class="mnemo__param-clue-title-text title-reset">Вторая скользящая</h2>
+              <button class="mnemo__tooltip-close second-skolz-clue-close btn-reset">
+                <div class="krest">
+                  <span class="line-1"></span>
+                  <span class="line-2"></span>
+                </div>
+              </button>
+            </div>
+            <div class="mnemo__param-clue-div">Рекомендуемый диапазон в установившимся режиме :
+              <span class="mnemo__param-clue-span">
+                Не более 700&#176C
+              </span>
+            </div>
+            <form class="mnemo__param-clue-form">
+              <div class="mnemo__param-clue-form-div">
+                <input class="mnemo__param-clue-input" type="number" placeholder="Введите значение" id="2skolzInput">
+                <label class="mnemo__param-clue-label" for="2skolzInput"></label>
+                <button class="mnemo__param-clue-form-btn--ok btn-reset" type="submit">Принять</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="mnemo__param mnemo__tooltip first-skolz">
+        <div class="first-skolz-js">
+          <span id="1SkolzSpan" class="mnemo__param-text temper-1-skolz">
+            1000
+          </span>
+          <span class="mnemo__param-naimenov temper-1-skolz-span">&#176C</span>
+        </div>
+
+        <div class="mnemo__param-clue first-skolz-clue">
+          <div class="mnemo__param-clue-content">
+            <div class="mnemo__param-clue-title">
+              <h2 class="mnemo__param-clue-title-text title-reset">Первая скользящая</h2>
+              <button class="mnemo__tooltip-close first-skolz-clue-close btn-reset">
+                <div class="krest">
+                  <span class="line-1"></span>
+                  <span class="line-2"></span>
+                </div>
+              </button>
+            </div>
+            <div class="mnemo__param-clue-div">Рекомендуемый диапазон в установившимся режиме :
+              <span class="mnemo__param-clue-span">
+                550-800&#176C
+              </span>
+            </div>
+            <form class="mnemo__param-clue-form" id="firstskolzform" action="#">
+              <div class="mnemo__param-clue-form-div">
+                <input class="mnemo__param-clue-input" name="firstskolzlinput" type="number"
+                  placeholder="Введите значение" id="1SkolzInput">
+                <label class="mnemo__param-clue-label" for="1skolzInput"></label>
+                <button class="mnemo__param-clue-form-btn--ok first-skolz-btn btn-reset" type="submit">
+                  Принять
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="mnemo__param granul-posle-holodil">
+        <span class="mnemo__param-text temper-granul-holod">
+          50
+        </span>
+        <span class="mnemo__param-naimenov temper-granul-holod-span">&#176C</span>
+      </div>
+
+      <div class="mnemo__param uroven-vody-hvo">
+        <span class="mnemo__param-text uroven-vody-hvo-value">
+          2000
+        </span>
+        <span class="mnemo__param-naimenov uroven-vody-hvo-value-span">мм</span>
+      </div>
+
+      <div class="mnemo__param uroven-vanne-skrubber">
+        <span class="mnemo__param-text uroven-vanne-skrubber-value">
+          600
+        </span>
+        <span class="mnemo__param-naimenov uroven-vanne-skrubber-value-span">мм</span>
+      </div>
+
+      <div class="mnemo__param  temper-vody-v-vanne-skrubber">
+        <span class="mnemo__param-text temper-vody-vanna-skruber">
+          70
+        </span>
+        <span class="mnemo__param-naimenov temper-vody-vanna-skruber-span">&#176C</span>
+      </div>
+
+      <div class="mnemo__param  p-gazov-posle-skrubber">
+        <span class="mnemo__param-text davl-gaz-posle-skruber">
+          15,4
+        </span>
+        <span class="mnemo__param-naimenov davl-gaz-posle-skruber-span">кгс/м2</span>
+      </div>
+
+      <div class="mnemo__param temper-v-topke">
+        <span class="mnemo__param-text temper-topka">
+          950
+        </span>
+        <span class="mnemo__param-naimenov temper-topka-span">&#176C</span>
+      </div>
+
+      <div class="mnemo__param p-v-topke">
+        <span class="mnemo__param-text davl-topka">
+          -2,1
+        </span>
+        <span class="mnemo__param-naimenov davl-topka-span">кгс/м2</span>
+      </div>
+
+      <div class="mnemo__param zadanie-temper-na-gorelky">
+        <span class="mnemo__param-text ">
+          600
+        </span>
+        <span class="mnemo__param-naimenov">&#176C</span>
+      </div>
+
+      <div class="mnemo__param mosh-gorelky">
+        <span class="mnemo__param-text ">
+          600
+        </span>
+        <span class="mnemo__param-naimenov">%</span>
+      </div>
+
+      <div class="mnemo__param temper-gazov-do-skrubber">
+        <span class="mnemo__param-text temper-do-skruber">
+          300
+        </span>
+        <span class="mnemo__param-naimenov temper-do-skruber-span">&#176C</span>
+      </div>
+
+      <div class="mnemo__param temper-gazov-posle-skrubber">
+        <span class="mnemo__param-text temper-posle-skruber">
+          75
+        </span>
+        <span class="mnemo__param-naimenov temper-posle-skruber-span">&#176C</span>
+      </div>
+
+      <div class="mnemo__param temper-kamer-vygruz-div">
+        <span class="mnemo__param-text temper-kamer-vygruz">
+          650
+        </span>
+        <span class="mnemo__param-naimenov temper-kamer-vygruz-span">&#176C</span>
+      </div>
+
+      <div class="mnemo__param vyhod-pechi-doziganiy">
+        <span class="mnemo__param-text temper-vihod-pech-dozhig">
+          1100
+        </span>
+        <span class="mnemo__param-naimenov temper-vihod-pech-dozhig-span">&#176C</span>
+
+      </div>
+      <div class="mnemo__param gazy-kotla-utilizazi">
+        <span class="mnemo__param-text temper-gazov-kotel-utiliz">
+          1050
+        </span>
+        <span class="mnemo__param-naimenov temper-gazov-kotel-utiliz-span">&#176C</span>
+
+      </div>
+      <div class="mnemo__param p-v-prostranstve-kotla">
+        <span class="mnemo__param-text razr-kotel-utiliz">
+          -4,1
+        </span>
+        <span class="mnemo__param-naimenov razr-kotel-utiliz-span">кгс/м2</span>
+      </div>
+
+      <div class="mnemo__param p-v-barabane-kotla">
+        <span class="mnemo__param-text">
+          3,1
+        </span>
+        <span class="mnemo__param-naimenov">кгс/см2</span>
+      </div>
+
+      <div class="mnemo__param uroven-v-barabane-kotla">
+        <span class="mnemo__param-text uroven-v-barabane-kotla-value">
+          5
+        </span>
+        <span class="mnemo__param-naimenov">мм</span>
+      </div>
+
+      <div class="mnemo__param uroven-v-barabane-kotla-mnemo">
+
+        <span class="mnemo__param-text
+                      uroven-v-barabane-kotla-mnemo-val">
+          5
+        </span>
+        <span class="mnemo__param-naimenov uroven-v-barabane-kotla-mnemo-val-span">мм</span>
+      </div>
+      <!-- <div class="mnemo__param im2-percent">
+                      <span class="mnemo__param-text ">
+                          <#PasspValue PasspType=1 PasspID=52 Precision=0>
+                      </span>
+                      <span class="mnemo__param-naimenov">%</span>
+                  </div> -->
+
+      <div class="mnemo__param im5-percent">
+
+        <span class="mnemo__param-text im5-pech1-value">
+          24
+        </span>
+        <span class="mnemo__param-naimenov">%</span>
+      </div>
+      <!-- <img src="../pic/images/ventilator.JFIF" alt="img"> -->
+
+      <!-- <div class="mnemo__param krutilka-1">
+          <img src="../../../pic/images/ventilator.png" alt="img">
+        </div>
+        <div class="mnemo__param krutilka-2">
+          <img src="../../../pic/images/ventilator.png" alt="img">
+        </div> -->
+    </div>
+
+
+  </div>
+
+  <script src="http://Techsite4/kaskad/simulation/simJS/simLevels.js"></script>
+  <script src="http://Techsite4/kaskad/simulation/simJS/simPechVr-mnemo.js"></script>
+
+</body>
+
+</html>
