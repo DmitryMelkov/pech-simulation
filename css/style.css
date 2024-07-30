@@ -1077,6 +1077,7 @@ body::-webkit-scrollbar-thumb {
   left: 50%;
   transform: translate(-50%, -50%);
   animation: ring 3s infinite;
+
   pointer-events: none;
 }
 
@@ -1203,6 +1204,10 @@ body::-webkit-scrollbar-thumb {
   transition: opacity 0.5s ease-in-out;
 }
 
+.mnemo__tooltip {
+  z-index: 1;
+}
+
 .mnemo__tooltip:hover {
   box-shadow: 0 0 0 3px white, 0 0 0 6px green;
   transition: box-shadow 0.3s ease-in-out;
@@ -1217,6 +1222,10 @@ body::-webkit-scrollbar-thumb {
 
 .mnemo__tooltip:focus {
   outline: none;
+}
+
+.mnemo__tooltip.active {
+  box-shadow: 0 0 0 3px white, 0 0 0 6px green;
 }
 
 .mnemo__background {
@@ -1235,6 +1244,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .mnemo__param-clue-title {
+  padding-bottom: 3px;
   margin-bottom: 5px;
   display: flex;
   justify-content: center;
@@ -1250,11 +1260,11 @@ body::-webkit-scrollbar-thumb {
 
 .mnemo__tooltip-close {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 2px;
+  right: 5px;
   z-index: 5;
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
   transition: opacity .3s ease-in-out;
   cursor: pointer;
 }
@@ -1293,7 +1303,7 @@ body::-webkit-scrollbar-thumb {
 .mnemo__param-clue-input {
   display: block;
   width: 100%;
-  padding: 4px;
+  padding: 5px 10px;
   font-size: 14px;
   font-weight: 400;
   color: #212529;
@@ -1314,16 +1324,14 @@ body::-webkit-scrollbar-thumb {
 
 .mnemo__param-clue-input::placeholder {
   font-family: 'Bitter', sans-serif;
-  color: #212529;
-  opacity: 0.4;
+  color: grey;
 }
+
 
 .mnemo__param-clue-input:focus {
   color: #212529;
-  background-color: #fff;
-  border-color: green;
-  outline: 0;
-  box-shadow: 0 0 0 5px rgba (158, 158, 158, 0.25);
+  background-color: white;
+  outline: none;
 }
 
 .mnemo__param-clue-input:disabled {
@@ -1353,21 +1361,27 @@ body::-webkit-scrollbar-thumb {
 
 .krest {
   position: relative;
-  top: -10px;
   transform: rotate(45deg);
 }
 
 .line-1 {
   position: absolute;
-  width: 15px;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+  width: 100%;
   height: 2px;
   background-color: green;
 }
 
 .line-2 {
-  transform: rotate(90deg);
+  transform: translate(-50%, -50%) rotate(90deg);
   position: absolute;
-  width: 15px;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  width: 100%;
   height: 2px;
   background-color: green;
 }
@@ -1451,21 +1465,21 @@ body::-webkit-scrollbar-thumb {
 }
 
 .third-skolz-clue {
-  width: 225px;
-  top: -102px;
-  left: -85px;
+  width: 250px;
+  top: -204px;
+  left: -94px;
 }
 
 .second-skolz-clue {
-  width: 225px;
-  top: -102px;
-  left: -85px;
+  width: 250px;
+  top: -144px;
+  left: -94px;
 }
 
 .first-skolz-clue {
-  width: 225px;
-  top: -140px;
-  left: -88px;
+  width: 250px;
+  top: -144px;
+  left: -94px;
 }
 
 .granul-posle-holodil-clue {
