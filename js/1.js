@@ -38,39 +38,28 @@ const tooltipVisible = (paramClick, paramClue, close, paramInput, param, form, c
   };
 
   const handleClose = () => {
-    console.log('Closing tooltip for', paramClue);
     paramClue.classList.remove('enabled');
     paramClue.parentElement.classList.remove('active');
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log('Form submitted for', param);
     const value = parseFloat(paramInput.value);
-    console.log('Input value:', value);
 
     if (!isNaN(value) && value >= min && value <= max) {
-      if (param) {
-        param.textContent = value;
-      } else {
-        console.error('param is null');
-      }
+      param.textContent = value;
     } else {
-      if (param) {
-        param.textContent = "Некорректное значение";
-      } else {
-        console.error('param is null');
-      }
+      param.textContent = "Некорректное значение";
     }
 
-    if (checkValue && resultSpan) {
+    if (checkValue) {
       resultSpan.textContent = determineMode(value);
-    } else if (resultSpan) {
+    } else {
       resultSpan.textContent = value;
     }
 
     const firstSkolzValue = parseFloat(document.querySelector('.temper-1-skolz').textContent);
-    const paramSpan = param ? param.nextElementSibling : null;
+    const paramSpan = param.nextElementSibling;
     applyAnimation(value, param, paramSpan, conditionMin, conditionMax, firstSkolzValue);
 
     handleClose();
@@ -92,27 +81,18 @@ const tooltipVisible = (paramClick, paramClue, close, paramInput, param, form, c
 };
 
 const updateParameter = (paramSelector, conditionMin, conditionMax, firstSkolzValue) => {
-  const paramElement = document.querySelector(paramSelector);
-  if (!paramElement) {
-    console.error(`Element not found: ${paramSelector}`);
-    return;
-  }
-  const paramValue = parseFloat(paramElement.textContent);
-  const paramSpan = paramElement.nextElementSibling;
-  applyAnimation(paramValue, paramElement, paramSpan, conditionMin, conditionMax, firstSkolzValue);
+  const paramValue = parseFloat(document.querySelector(paramSelector).textContent);
+  const param = document.querySelector(paramSelector);
+  const paramSpan = param.nextElementSibling;
+  applyAnimation(paramValue, param, paramSpan, conditionMin, conditionMax, firstSkolzValue);
 };
 
 const updateMode = () => {
-  const firstSkolzElement = document.querySelector('.temper-1-skolz');
-  if (!firstSkolzElement) {
-    console.error('Element not found: .temper-1-skolz');
-    return;
-  }
-  const firstSkolzValue = parseFloat(firstSkolzElement.textContent);
+  const firstSkolzValue = parseFloat(document.querySelector('.temper-1-skolz').textContent);
   const mode = determineMode(firstSkolzValue);
   const currentModeSpan = document.querySelector('.current-param__subtitle-span');
 
-  if (currentModeSpan && currentModeSpan.textContent !== mode) {
+  if (currentModeSpan.textContent !== mode) {
     currentModeSpan.textContent = mode;
   }
 
