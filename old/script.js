@@ -47,33 +47,33 @@ const addRowIfRunning = (param, description) => {
   }
 };
 
-// //mode
-// if (temper1Skolz.innerHTML < 550 && temper1Skolz.innerHTML > 50) {
-//   modeTitle.innerHTML = 'Выход на режим';
+//mode
+if (temper1Skolz.innerHTML < 550 && temper1Skolz.innerHTML > 50) {
+  modeTitle.innerHTML = 'Выход на режим';
 
-//   if (temper3Skolz.innerHTML > 750) {
-//     temper3Skolz.style.animationPlayState = 'running';
-//     temper3SkolzSpan.style.animationPlayState = 'running';
-//   } else {
-//     temper3Skolz.style.animationPlayState = 'paused';
-//     temper3SkolzSpan.style.animationPlayState = 'paused';
-//   }
+  if (temper3Skolz.innerHTML > 750) {
+    temper3Skolz.style.animationPlayState = 'running';
+    temper3SkolzSpan.style.animationPlayState = 'running';
+  } else {
+    temper3Skolz.style.animationPlayState = 'paused';
+    temper3SkolzSpan.style.animationPlayState = 'paused';
+  }
 
-//   addRowIfRunning(temper3Skolz, 'На 3-ей скользящей, °C');
-// } else if (temper1Skolz.innerHTML > 550) {
-//   modeTitle.innerHTML = 'Установившийся режим';
-//   if (temper3Skolz.innerHTML > 400) {
-//     animationRun(temper3Skolz);
-//     animationRun(temper3SkolzSpan);
-//   } else {
-//     animationPaused(temper3Skolz);
-//     animationPaused(temper3SkolzSpan);
-//   }
-//   addRowIfRunning(temper3Skolz, 'На 3-ей скользящей, °C');
-// } else {
-//   modeTitle.innerHTML = 'Печь не работает';
-// }
-// //------------------------------------------------------------------
+  addRowIfRunning(temper3Skolz, 'На 3-ей скользящей, °C');
+} else if (temper1Skolz.innerHTML > 550) {
+  modeTitle.innerHTML = 'Установившийся режим';
+  if (temper3Skolz.innerHTML > 400) {
+    animationRun(temper3Skolz);
+    animationRun(temper3SkolzSpan);
+  } else {
+    animationPaused(temper3Skolz);
+    animationPaused(temper3SkolzSpan);
+  }
+  addRowIfRunning(temper3Skolz, 'На 3-ей скользящей, °C');
+} else {
+  modeTitle.innerHTML = 'Печь не работает';
+}
+//------------------------------------------------------------------
 
 // if (temper1Skolz.innerHTML > 50) {
 //   const temper1SkolzSpan = document.querySelector('.temper-1-skolz-span');

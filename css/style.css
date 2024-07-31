@@ -1017,13 +1017,25 @@ body::-webkit-scrollbar-thumb {
 
 @keyframes colorRed {
   0% {
-    color: green;
+    color: red;
   }
-
+  50% {
+    color: transparent;
+  }
   100% {
     color: red;
   }
 }
+
+@keyframes colorGreen {
+  0% {
+    color: green;
+  }
+  100% {
+    color: green;
+  }
+}
+
 
 /* light-alarm */
 .light-alarm {

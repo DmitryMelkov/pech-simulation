@@ -25,7 +25,7 @@
         Печь карбонизации
       </h2>
       <h2 class="current-param__subtitle title-reset">Режим работы печи:
-        <span class="current-param__subtitle-span"></span>
+        <span class="current-param__subtitle-span">Печь не работает</span>
       </h2>
     </div>
 
@@ -40,8 +40,6 @@
 
       </tbody>
     </table>
-
-    <button onclick="addscript()" class="check">Проверка</button>
 
     <!-- <div class="mnemo__background"></div> -->
     <div class="mnemo">
@@ -274,7 +272,7 @@
             <form class="mnemo__param-clue-form mnemo__param-clue-form--second-skolz-clue">
               <div class="mnemo__param-clue-form-div">
                 <input class="mnemo__param-clue-input" type="number" placeholder="Введите значение"
-                  id="secondSkolzInput">
+                  id="secondSkolzInput"  min="0" max="1500" step="1">
                 <label class="mnemo__param-clue-label" for="secondSkolzInput"></label>
                 <button class="mnemo__param-clue-form-btn--ok btn-reset" type="submit">Принять</button>
               </div>
@@ -287,7 +285,7 @@
       <div class="mnemo__param mnemo__tooltip first-skolz">
         <div class="first-skolz-js">
           <span id="1SkolzSpan" class="mnemo__param-text temper-1-skolz">
-            1000
+            30
           </span>
           <span class="mnemo__param-naimenov temper-1-skolz-span">&#176C</span>
         </div>
@@ -311,7 +309,7 @@
             <form class="mnemo__param-clue-form mnemo__param-clue-form--first-skolz-clue">
               <div class="mnemo__param-clue-form-div">
                 <input class="mnemo__param-clue-input" type="number" placeholder="Введите значение"
-                  id="firstSkolzInput">
+                  id="firstSkolzInput"  min="0" max="1500" step="1">
                 <label class="mnemo__param-clue-label" for="1skolzInput"></label>
                 <button class="mnemo__param-clue-form-btn--ok first-skolz-btn btn-reset" type="submit">
                   Принять
