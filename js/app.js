@@ -3,7 +3,22 @@ const tooltipVisible = (paramClick, paramClue, close, paramInput, param, form, c
   paramInput.max = max;
 
   const applyAnimation = (value, param, paramSpan) => {
-    if (value > conditionMax || value < conditionMin) {
+    const firstSkolzValue = parseFloat(document.querySelector('.temper-1-skolz').textContent);
+    if (firstSkolzValue < 50) {
+      param.style.animation = 'colorGreen 1s forwards';
+      if (paramSpan) {
+        paramSpan.style.animation = 'colorGreen 1s forwards';
+      }
+      return true; // Всегда возвращаем true, если значение firstSkolz меньше 50
+    }
+
+    if (value < 50) {
+      param.style.animation = 'colorGreen 1s forwards';
+      if (paramSpan) {
+        paramSpan.style.animation = 'colorGreen 1s forwards';
+      }
+      return true; // Всегда возвращаем true, если значение меньше 50
+    } else if (value > conditionMax || value < conditionMin) {
       param.style.animation = 'colorRed 0.5s infinite ease-in-out';
       if (paramSpan) {
         paramSpan.style.animation = 'colorRed 0.5s infinite ease-in-out';
@@ -46,19 +61,19 @@ const tooltipVisible = (paramClick, paramClue, close, paramInput, param, form, c
     if (!isNaN(value) && value >= min && value <= max) {
       param.textContent = value;
     } else {
-      param.textContent = "некорректное значение";
+      param.textContent = "Некорректное значение";
     }
 
     let resultText;
     if (checkValue) {
       if (value >= 50 && value < 550) {
-        resultText = "выход на режим";
+        resultText = "Выход на режим";
       } else if (value >= 550) {
-        resultText = "установившийся режим";
+        resultText = "Установившийся режим";
       } else if (value >= 0 && value < 50) {
-        resultText = "печь не работает";
+        resultText = "Печь не работает";
       } else {
-        resultText = "некорректное значение";
+        resultText = "Некорректное значение";
       }
     } else {
       resultText = value;
@@ -88,15 +103,22 @@ const tooltipVisible = (paramClick, paramClue, close, paramInput, param, form, c
 
 // Функция для проверки состояния сирены
 const checkSirenStatus = (sirenElement, ...params) => {
+  const firstSkolzValue = parseFloat(document.querySelector('.temper-1-skolz').textContent);
+
   const allInRange = params.every(([param, min, max]) => {
     const value = parseFloat(param.textContent);
-    return value >= min && value <= max;
+    return value < 50 || (value >= min && value <= max);
   });
 
-  if (allInRange) {
-    sirenElement.classList.add('siren-off');
-  } else {
+  if (firstSkolzValue < 50 || !allInRange) {
     sirenElement.classList.remove('siren-off');
+  } else {
+    sirenElement.classList.add('siren-off');
+  }
+
+  // Добавляем проверку для firstSkolz
+  if (firstSkolzValue < 50) {
+    sirenAnimation.classList.add('siren-off');
   }
 };
 
