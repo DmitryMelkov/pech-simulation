@@ -1,3 +1,4 @@
+// Функция для определения режима
 const determineMode = (value) => {
   if (value >= 50 && value < 550) {
     return "Выход на режим";
@@ -10,6 +11,7 @@ const determineMode = (value) => {
   }
 };
 
+// Функция для применения анимации и добавления/удаления строки в таблице
 const applyAnimation = (value, param, paramSpan, conditionMin, conditionMax, firstSkolzValue) => {
   if (firstSkolzValue < 50 || value < 50 || (value >= conditionMin && value <= conditionMax)) {
     param.style.animation = 'colorGreen 1s forwards';
@@ -24,6 +26,7 @@ const applyAnimation = (value, param, paramSpan, conditionMin, conditionMax, fir
   }
 };
 
+// Функция отображения подсказок и обновления значений
 const tooltipVisible = (paramClick, paramClue, close, paramInput, param, form, checkValue = false, resultSpan = null, min = 0, max = 1500, conditionMin, conditionMax) => {
   paramInput.min = min;
   paramInput.max = max;
@@ -104,8 +107,7 @@ const tooltipVisible = (paramClick, paramClue, close, paramInput, param, form, c
   }
 };
 
-// Функция для добавления строки в таблицу, если параметр не соответствует требованиям
-
+// Инициализация таблицы и шаблонной строки
 const tableTbody = document.querySelector('.table__tbody');
 const template = `
   <tr class="table__tr template-row">
@@ -114,8 +116,8 @@ const template = `
   </tr>
 `;
 
+// Функция добавления строки, если параметр активен
 const addRowIfRunning = (param, description) => {
-  // Проверка на наличие строки с этим параметром в таблице
   const existingRows = Array.from(document.querySelectorAll('.table__tr'));
   const paramExists = existingRows.some(row => row.children[0].textContent === description);
 
@@ -131,6 +133,7 @@ const addRowIfRunning = (param, description) => {
   checkAndInsertTemplate();
 };
 
+// Функция удаления строки, если параметр нормализовался
 const removeRowIfExists = (description) => {
   const existingRows = Array.from(document.querySelectorAll('.table__tr'));
   const rowToRemove = existingRows.find(row => row.children[0].textContent === description);
@@ -141,10 +144,13 @@ const removeRowIfExists = (description) => {
   checkAndInsertTemplate();
 };
 
+// Функция проверки и вставки шаблонной строки
 const checkAndInsertTemplate = () => {
-  const existingRows = Array.from(tableTbody.querySelectorAll('.table__tr'));
+  const existingRows = Array.from(tableTbody.querySelectorAll('.table__tr:not(.template-row)'));
   if (existingRows.length === 0) {
-    tableTbody.innerHTML = template;
+    if (!tableTbody.querySelector('.template-row')) {
+      tableTbody.innerHTML = template;
+    }
   } else {
     const templateRow = tableTbody.querySelector('.template-row');
     if (templateRow) {
@@ -153,6 +159,7 @@ const checkAndInsertTemplate = () => {
   }
 };
 
+// Функция обновления параметров
 const updateParameter = (paramSelector, conditionMin, conditionMax, firstSkolzValue) => {
   const paramElement = document.querySelector(paramSelector);
   if (!paramElement) {
@@ -164,6 +171,7 @@ const updateParameter = (paramSelector, conditionMin, conditionMax, firstSkolzVa
   applyAnimation(paramValue, paramElement, paramSpan, conditionMin, conditionMax, firstSkolzValue);
 };
 
+// Функция обновления режима
 const updateMode = () => {
   const firstSkolzElement = document.querySelector('.temper-1-skolz');
   if (!firstSkolzElement) {
@@ -178,8 +186,13 @@ const updateMode = () => {
     currentModeSpan.textContent = mode;
   }
 
-  updateParameter('.temper-2-skolz', 0, 700, firstSkolzValue); // Обновляем secondSkolz
-  updateParameter('.temper-3-skolz', 0, 500, firstSkolzValue); // Обновляем thirdSkolz
+  updateParameter('.temper-2-skolz', 0, 700, firstSkolzValue);
+  updateParameter('.temper-3-skolz', 0, 500, firstSkolzValue);
+
+  addRowIfRunning(document.querySelector('.temper-2-skolz'), "Температура на 2 скользящей");
+  addRowIfRunning(document.querySelector('.temper-3-skolz'), "Температура на 3 скользящей");
+
+  checkAndInsertTemplate();
 };
 
 // Инициализация параметров с описанием
