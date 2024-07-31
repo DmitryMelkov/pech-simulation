@@ -1005,6 +1005,7 @@ body::-webkit-scrollbar-thumb {
 
 .table__td--descr {
   animation-play-state: paused;
+  color: blue !important;
   text-align: center;
   font-size: 14px;
   line-height: 19px;

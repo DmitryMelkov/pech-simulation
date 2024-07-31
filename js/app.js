@@ -14,10 +14,12 @@ const applyAnimation = (value, param, paramSpan, conditionMin, conditionMax, fir
   if (firstSkolzValue < 50 || value < 50 || (value >= conditionMin && value <= conditionMax)) {
     param.style.animation = 'colorGreen 1s forwards';
     if (paramSpan) paramSpan.style.animation = 'colorGreen 1s forwards';
+    removeRowIfExists(param.dataset.description);
     return true;
   } else {
     param.style.animation = 'colorRed 0.5s infinite ease-in-out';
     if (paramSpan) paramSpan.style.animation = 'colorRed 0.5s infinite ease-in-out';
+    addRowIfRunning(param, param.dataset.description);
     return false;
   }
 };
@@ -38,16 +40,13 @@ const tooltipVisible = (paramClick, paramClue, close, paramInput, param, form, c
   };
 
   const handleClose = () => {
-    console.log('Closing tooltip for', paramClue);
     paramClue.classList.remove('enabled');
     paramClue.parentElement.classList.remove('active');
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log('Form submitted for', param);
     const value = parseFloat(paramInput.value);
-    console.log('Input value:', value);
 
     if (!isNaN(value) && value >= min && value <= max) {
       if (param) {
@@ -69,7 +68,12 @@ const tooltipVisible = (paramClick, paramClue, close, paramInput, param, form, c
       resultSpan.textContent = value;
     }
 
-    const firstSkolzValue = parseFloat(document.querySelector('.temper-1-skolz').textContent);
+    const firstSkolzElement = document.querySelector('.temper-1-skolz');
+    if (!firstSkolzElement) {
+      console.error('Element not found: .temper-1-skolz');
+      return;
+    }
+    const firstSkolzValue = parseFloat(firstSkolzElement.textContent);
     const paramSpan = param ? param.nextElementSibling : null;
     applyAnimation(value, param, paramSpan, conditionMin, conditionMax, firstSkolzValue);
 
@@ -81,13 +85,71 @@ const tooltipVisible = (paramClick, paramClue, close, paramInput, param, form, c
   close.addEventListener('click', handleClose);
   form.addEventListener('submit', handleSubmit);
 
-  const initialValue = parseFloat(param.textContent);
-  const paramSpan = param.nextElementSibling;
-  const firstSkolzValue = parseFloat(document.querySelector('.temper-1-skolz').textContent);
-  applyAnimation(initialValue, param, paramSpan, conditionMin, conditionMax, firstSkolzValue);
+  if (param) {
+    const initialValue = parseFloat(param.textContent);
+    const paramSpan = param.nextElementSibling;
+    const firstSkolzElement = document.querySelector('.temper-1-skolz');
+    if (!firstSkolzElement) {
+      console.error('Element not found: .temper-1-skolz');
+      return;
+    }
+    const firstSkolzValue = parseFloat(firstSkolzElement.textContent);
+    applyAnimation(initialValue, param, paramSpan, conditionMin, conditionMax, firstSkolzValue);
 
-  if (resultSpan) {
-    resultSpan.textContent = determineMode(initialValue);
+    if (resultSpan) {
+      resultSpan.textContent = determineMode(initialValue);
+    }
+  } else {
+    console.error('param is null');
+  }
+};
+
+// Функция для добавления строки в таблицу, если параметр не соответствует требованиям
+
+const tableTbody = document.querySelector('.table__tbody');
+const template = `
+  <tr class="table__tr template-row">
+    <td class="table__td table__left table__td--descr" colspan="2">Тут будут отображаться параметры
+        которые превышают допустимые значения</td>
+  </tr>
+`;
+
+const addRowIfRunning = (param, description) => {
+  // Проверка на наличие строки с этим параметром в таблице
+  const existingRows = Array.from(document.querySelectorAll('.table__tr'));
+  const paramExists = existingRows.some(row => row.children[0].textContent === description);
+
+  if (param.style.animation.includes('colorRed') && !paramExists) {
+    const row = `
+      <tr class="table__tr">
+        <td class="table__td table__left">${description}</td>
+        <td class="table__td table__right">${param.innerHTML}</td>
+      </tr>
+    `;
+    tableTbody.innerHTML += row;
+  }
+  checkAndInsertTemplate();
+};
+
+const removeRowIfExists = (description) => {
+  const existingRows = Array.from(document.querySelectorAll('.table__tr'));
+  const rowToRemove = existingRows.find(row => row.children[0].textContent === description);
+
+  if (rowToRemove) {
+    rowToRemove.remove();
+  }
+  checkAndInsertTemplate();
+};
+
+const checkAndInsertTemplate = () => {
+  const existingRows = Array.from(tableTbody.querySelectorAll('.table__tr'));
+  if (existingRows.length === 0) {
+    tableTbody.innerHTML = template;
+  } else {
+    const templateRow = tableTbody.querySelector('.template-row');
+    if (templateRow) {
+      templateRow.remove();
+    }
   }
 };
 
@@ -120,11 +182,18 @@ const updateMode = () => {
   updateParameter('.temper-3-skolz', 0, 500, firstSkolzValue); // Обновляем thirdSkolz
 };
 
+// Инициализация параметров с описанием
+const firstSkolz = document.querySelector('.temper-1-skolz');
+firstSkolz.dataset.description = "Температура на 1 скользящей";
+const secondSkolz = document.querySelector('.temper-2-skolz');
+secondSkolz.dataset.description = "Температура на 2 скользящей";
+const thirdSkolz = document.querySelector('.temper-3-skolz');
+thirdSkolz.dataset.description = "Температура на 3 скользящей";
+
 const firstSkolzClue = document.querySelector('.first-skolz-clue');
 const firstSkolzClick = document.querySelector('.first-skolz-js');
 const firstSkolzClose = document.querySelector('.first-skolz-clue-close');
 const firstSkolzInput = document.querySelector('#firstSkolzInput');
-const firstSkolz = document.querySelector('.temper-1-skolz');
 const firstSkolzForm = document.querySelector('.mnemo__param-clue-form--first-skolz-clue');
 const resultSpan = document.querySelector('.current-param__subtitle-span');
 
@@ -132,14 +201,12 @@ const secondSkolzClick = document.querySelector('.second-skolz-js');
 const secondSkolzClue = document.querySelector('.second-skolz-clue');
 const secondSkolzClose = document.querySelector('.second-skolz-clue-close');
 const secondSkolzInput = document.querySelector('#secondSkolzInput');
-const secondSkolz = document.querySelector('.temper-2-skolz');
 const secondSkolzForm = document.querySelector('.mnemo__param-clue-form--second-skolz-clue');
 
 const thirdSkolzClick = document.querySelector('.third-skolz-js');
 const thirdSkolzClue = document.querySelector('.third-skolz-clue');
 const thirdSkolzClose = document.querySelector('.third-skolz-clue-close');
 const thirdSkolzInput = document.querySelector('#thirdSkolzInput');
-const thirdSkolz = document.querySelector('.temper-3-skolz');
 const thirdSkolzForm = document.querySelector('.mnemo__param-clue-form--third-skolz-clue');
 
 tooltipVisible(firstSkolzClick, firstSkolzClue, firstSkolzClose, firstSkolzInput, firstSkolz, firstSkolzForm, true, resultSpan, 0, 1500, 550, 800);
