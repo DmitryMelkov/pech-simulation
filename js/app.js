@@ -203,8 +203,8 @@ secondSkolz.dataset.description = "Температура на 2 скользя�
 const thirdSkolz = document.querySelector('.temper-3-skolz');
 thirdSkolz.dataset.description = "Температура на 3 скользящей";
 
-const firstSkolzClue = document.querySelector('.first-skolz-clue');
 const firstSkolzClick = document.querySelector('.first-skolz-js');
+const firstSkolzClue = document.querySelector('.first-skolz-clue');
 const firstSkolzClose = document.querySelector('.first-skolz-clue-close');
 const firstSkolzInput = document.querySelector('#firstSkolzInput');
 const firstSkolzForm = document.querySelector('.mnemo__param-clue-form--first-skolz-clue');
