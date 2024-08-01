@@ -27,7 +27,7 @@ const applyAnimation = (value, param, paramSpan, conditionMin, conditionMax, fir
 };
 
 // Функция отображения подсказок и обновления значений
-const tooltipVisible = (paramClick, paramClue, close, paramInput, param, form, checkValue = false, resultSpan = null, min = 0, max = 1500, conditionMin, conditionMax) => {
+const tooltipVisible = (paramClick = null, paramClue = null, close = null, paramInput, param, form, checkValue = false, resultSpan = null, min = 0, max = 1500, conditionMin, conditionMax) => {
   paramInput.min = min;
   paramInput.max = max;
 
@@ -222,8 +222,26 @@ const thirdSkolzClose = document.querySelector('.third-skolz-clue-close');
 const thirdSkolzInput = document.querySelector('#thirdSkolzInput');
 const thirdSkolzForm = document.querySelector('.mnemo__param-clue-form--third-skolz-clue');
 
+
+
+// Фунеции для инпутов в мнемосхеме
 tooltipVisible(firstSkolzClick, firstSkolzClue, firstSkolzClose, firstSkolzInput, firstSkolz, firstSkolzForm, true, resultSpan, 0, 1500, 550, 800);
 tooltipVisible(secondSkolzClick, secondSkolzClue, secondSkolzClose, secondSkolzInput, secondSkolz, secondSkolzForm, false, null, 0, 1500, 0, 700);
 tooltipVisible(thirdSkolzClick, thirdSkolzClue, thirdSkolzClose, thirdSkolzInput, thirdSkolz, thirdSkolzForm, false, null, 0, 1500, 0, 500);
+
+
+
+// Функции для инпутов в модалке
+
+const modalForm = document.querySelector('.all__param-form');
+const modalInputFirstSkolz = document.querySelector('#firstSkolzInputModal');
+const modalInputSecondSkolz = document.querySelector('#secondSkolzInputModal');
+const modalInputThirdSkolz = document.querySelector('#thirdSkolzInputModal');
+
+tooltipVisible(firstSkolzClick, firstSkolzClue, firstSkolzClose, modalInputFirstSkolz, firstSkolz, modalForm, true, resultSpan, 0, 1500, 550, 800);
+tooltipVisible(secondSkolzClick, secondSkolzClue, secondSkolzClose, modalInputSecondSkolz, secondSkolz, modalForm, false, null, 0, 1500, 0, 700);
+tooltipVisible(thirdSkolzClick, thirdSkolzClue, thirdSkolzClose, modalInputThirdSkolz, thirdSkolz, modalForm, false, null, 0, 1500, 0, 500);
+
+
 
 updateMode(); // Инициализируем начальное значение режима

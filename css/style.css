@@ -1467,7 +1467,7 @@ body::-webkit-scrollbar-thumb {
 .mnemo__modal-start {
   padding: 20px;
   position: absolute;
-  max-width: 750px;
+  max-width: 690px;
   width: 100%;
   top: 50%;
   left: 50%;
@@ -1502,6 +1502,25 @@ body::-webkit-scrollbar-thumb {
   text-decoration: none;
 }
 
+.mnemo__modal-close {
+  position: absolute;
+  top: 2px;
+  right: 5px;
+  z-index: 5;
+  width: 20px;
+  height: 20px;
+  transition: opacity .3s ease-in-out;
+  cursor: pointer;
+}
+
+.mnemo__modal-close:hover {
+  opacity: 0.5;
+}
+
+.mnemo__modal-close:active {
+  opacity: 0.5;
+}
+
 .modal__accordion-content {
   padding-top: 20px;
   overflow-y: auto;
@@ -1533,7 +1552,7 @@ body::-webkit-scrollbar-thumb {
   color: black;
 }
 
-.modal-content__form {
+.modal-content__form-inputs {
   display: flex;
   flex-wrap: wrap;
 }
@@ -1585,15 +1604,14 @@ body::-webkit-scrollbar-thumb {
   top: -50px;
   position: relative;
   z-index: 1;
-  font-size: 16px;
-  line-height: 24px;
+  font-size: 14px;
+  line-height: 22px;
   font-weight: 500;
 }
 
 .modal-content__form-btn-box {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: center
 }
 
 .modal-content__form-btn--ok {
