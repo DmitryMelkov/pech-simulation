@@ -123,7 +123,7 @@ const addRowIfRunning = (param, description) => {
 
   if (param.style.animation.includes('colorRed') && !paramExists) {
     const row = `
-      <tr class="table__tr">
+      <tr class="table__tr table__tr--incorrect-param">
         <td class="table__td table__left">${description}</td>
         <td class="table__td table__right">${param.innerHTML}</td>
       </tr>

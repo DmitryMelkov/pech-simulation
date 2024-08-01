@@ -989,7 +989,6 @@ body::-webkit-scrollbar-thumb {
   font-weight: 500;
   color: black;
   animation: colorRed 0.9s infinite ease-in-out;
-
 }
 
 .table__left {
@@ -1014,6 +1013,20 @@ body::-webkit-scrollbar-thumb {
 .table__th:not(:last-child),
 .table__td:not(:last-child) {
   border-right: 1px solid black;
+}
+
+.table__tr--incorrect-param {
+  background-color: transparent;
+  transition: background-color .3s ease-in-out;
+  cursor: pointer;
+}
+
+.table__tr--incorrect-param:hover {
+  background-color: white;
+}
+
+.table__tr--incorrect-param:active {
+  background-color: white;
 }
 
 @keyframes colorRed {
