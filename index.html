@@ -29,15 +29,6 @@
       </h2>
     </div>
 
-
-
-
-
-
-
-
-
-
     <table class="table">
       <thead class="table__thead">
         <tr class="table__tr">
@@ -46,9 +37,163 @@
         </tr>
       </thead>
       <tbody class="table__tbody">
-
       </tbody>
     </table>
+
+    <div class="mnemo__modal-background modal-js">
+
+      <div class="mnemo__modal-start">
+        <div class="mnemo__modal-title">
+          <h2 class="mnemo__modal-title-text title-reset">Начальные условия</h2>
+        </div>
+        <div class="modal__accordion-title">
+          Температуры (&#176C)
+        </div>
+            <div class="modal-content__form-box">
+              <form class="modal-content__form" id="modalTemperForm" action="#">
+                <div class="modal-content__input-box">
+                  <input class="modal-content__input" min="0" max="1500" step="1" name="modalInputFirstSkolz" type="number"
+                    placeholder="Введите значение" id="1SkolzInputModal">
+                  <label class="modal-content__label" for="1SkolzInputModal">Первая скользящая</label>
+                </div>
+                <div class="modal-content__input-box" >
+                  <input class="modal-content__input " min="0" max="1500" step="1" name="modalInputSecondSkolz" type="number"
+                  placeholder="Введите значение" id="2SkolzInputModal">
+                  <label class="modal-content__label" for="2SkolzInputModal">Вторая скользящая</label>
+                </div>
+                <div class="modal-content__input-box">
+                    <input class="modal-content__input" min="0" max="1500" step="1" name="modalInputThirdSkolz" type="number"
+                    placeholder="Введите значение" id="3SkolzInputModal">
+                  <label class="modal-content__label" for="3SkolzInputModal">Третья скользящая</label>
+                </div>
+                <div class="modal-content__input-box">
+                  <input class="modal-content__input" min="0" max="1500" step="1" name="modalInputTopka" type="number"
+                  placeholder="Введите значение" id="topkaInputModal">
+                  <label class="modal-content__label" for="topkaInputModal">В топке</label>
+                </div>
+                <div class="modal-content__input-box">
+                  <input class="modal-content__input" min="0" max="1500" step="1" name="modalInputVerhKameri" type="number"
+                  placeholder="Введите значение" id="verhKameriInputModal">
+                  <label class="modal-content__label" for="verhKameriInputModal">Вверху камеры загрузки</label>
+                </div>
+                <div class="modal-content__input-box">
+                  <input class="modal-content__input" min="0" max="1500" step="1" name="modalInputNizKameri" type="number"
+                  placeholder="Введите значение" id="nizKameriInputModal">
+                  <label class="modal-content__label" for="nizKameriInputModal">Внизу камеры загрузки</label>
+                </div>
+                <div class="modal-content__input-box">
+                  <input class="modal-content__input" min="0" max="1500" step="1" name="modalInputVhodDozhig" type="number"
+                  placeholder="Введите значение" id="vhodDozhigInputModal">
+                  <label class="modal-content__label" for="vhodDozhigInputModal">Вход печи дожигания</label>
+                </div>
+                <div class="modal-content__input-box">
+                  <input class="modal-content__input" min="0" max="1500" step="1" name="modalInputVihodDozhig" type="number"
+                  placeholder="Введите значение" id="vihodDozhigInputModal">
+                  <label class="modal-content__label" for="vihodDozhigInputModal">Выход печи дожигания</label>
+                </div>
+                <div class="modal-content__input-box">
+                  <input class="modal-content__input" min="0" max="1500" step="1" name="thirdskolzlinput" type="number"
+                  placeholder="Введите значение" id="3SkolzInput">
+                  <label class="modal-content__label" for="3SkolzInput">В котле утилизаторе</label>
+                </div>
+                <div class="modal-content__input-box">
+                  <input class="modal-content__input" min="0" max="1500" step="1" name="thirdskolzlinput" type="number"
+                  placeholder="Введите значение" id="3SkolzInput">
+                  <label class="modal-content__label" for="3SkolzInput">Дымосос</label>
+                </div>
+                <div class="modal-content__input-box">
+                  <input class="modal-content__input" min="0" max="1500" step="1" name="modalInputKameraVigruzki" type="number"
+                  placeholder="Введите значение" id="kameraVigruzkiInputModal">
+                  <label class="modal-content__label" for="kameraVigruzkiInputModal">Камера выгрузки</label>
+                </div>
+                <div class="modal-content__input-box">
+                  <input class="modal-content__input" min="0" max="1500" step="1" name="modalInputVihodGazov" type="number"
+                  placeholder="Введите значение" id="vihodGazovInputModal">
+                  <label class="modal-content__label" for="vihodGazovInputModal">Выход дымовых газов</label>
+                </div>
+                <div class="modal-content__input-box">
+                  <input class="modal-content__input" min="0" max="1500" step="1" name="modalInputVannaScrubber" type="number"
+                  placeholder="Введите значение" id="vannaScrubberInputModal">
+                  <label class="modal-content__label" for="vannaScrubberInputModal">Ванна скруббера</label>
+                </div>
+                <div class="modal-content__input-box">
+                  <input class="modal-content__input" min="0" max="1500" step="1" name="modalInputHolod" type="number"
+                  placeholder="Введите значение" id="holodInputModal">
+                  <label class="modal-content__label" for="holodInputModal">Холодильник</label>
+                </div>
+              </form>
+            </div>
+            <div class="modal__accordion-title">
+              Давлениe/разрежение
+            </div>
+            <div class="modal-content__form-box">
+              <form class="modal-content__form" id="modalTemperForm" action="#">
+                <div class="modal-content__input-box">
+                  <input class="modal-content__input" max="2000" min="0" name="modalInputFirstSkolz" type="number"
+                    placeholder="Введите значение" id="1SkolzInputModal">
+                  <label class="modal-content__label" for="1SkolzInputModal">В топке печи</label>
+                </div>
+                <div class="modal-content__input-box">
+                  <input class="modal-content__input" max="2000" min="0" name="modalInputFirstSkolz" type="number"
+                    placeholder="Введите значение" id="1SkolzInputModal">
+                  <label class="modal-content__label" for="1SkolzInputModal">Низ загрузочной камеры</label>
+                </div>
+                <div class="modal-content__input-box">
+                  <input class="modal-content__input" min="0" max="1500" step="1" name="modalInputFirstSkolz" type="number"
+                    placeholder="Введите значение" id="1SkolzInputModal">
+                  <label class="modal-content__label" for="1SkolzInputModal">-P в пространстве котла</label>
+                </div>
+                <div class="modal-content__input-box">
+                  <input class="modal-content__input" min="0" max="1500" step="1" name="modalInputFirstSkolz" type="number"
+                    placeholder="Введите значение" id="1SkolzInputModal">
+                  <label class="modal-content__label" for="1SkolzInputModal">P пара в барабане котла</label>
+                </div>
+                <div class="modal-content__input-box">
+                  <input class="modal-content__input" max="2000" min="0" name="modalInputFirstSkolz" type="number"
+                    placeholder="Введите значение" id="1SkolzInputModal">
+                  <label class="modal-content__label" for="1SkolzInputModal">P газов после скруббера</label>
+                </div>
+              </form>
+            </div>
+
+            <!-- <div class="modal__accordion-title">
+              Уровни (мм)
+            </div>
+
+            <div class="modal-content__form-box">
+              <form class="modal-content__form" id="modalTemperForm" action="#">
+                <div class="modal-content__input-box">
+                  <input class="modal-content__input" max="2000" min="0" name="modalInputFirstSkolz" type="number"
+                    placeholder="Введите значение" id="1SkolzInputModal">
+                  <label class="modal-content__label" for="1SkolzInputModal">В барабане котла</label>
+                </div>
+                <div class="modal-content__input-box">
+                  <input class="modal-content__input" max="2000" min="0" name="modalInputFirstSkolz" type="number"
+                    placeholder="Введите значение" id="1SkolzInputModal">
+                  <label class="modal-content__label" for="1SkolzInputModal">В ванне скруббера</label>
+                </div>
+                <div class="modal-content__input-box">
+                  <input class="modal-content__input" max="2000" min="0" name="modalInputFirstSkolz" type="number"
+                    placeholder="Введите значение" id="1SkolzInputModal">
+                  <label class="modal-content__label" for="1SkolzInputModal">В емкости ХВО</label>
+                </div>
+              </form>
+            </div> -->
+         
+        <div class="modal-content__form-btn-box">
+          <button type="submit" class="modal-content__form-btn--ok modal-btn-js">
+            Принять
+          </button>
+        </div>
+      </div>
+
+    </div>
+    
+    <div class="mnemo__modal-box--btns">
+      <button class="mnemo__modal-box--btn btn-modal">
+        Начальные условия
+      </button>
+    </div>
 
     <!-- <div class="mnemo__background"></div> -->
     <div class="mnemo">
@@ -486,6 +631,7 @@
 
   <script src="/js/level.js"></script>
   <script src="/js/app.js"></script>
+  <script src="/js/start_modal.js"></script>
 
 </body>
 

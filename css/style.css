@@ -475,7 +475,7 @@ body::-webkit-scrollbar-thumb {
 .vanna-skrubbera-text {
   top: 84%;
   right: 19%;
-  z-index: 11;
+  z-index: 2;
 }
 
 .goriz-vibrotransporter-text {
@@ -639,7 +639,7 @@ body::-webkit-scrollbar-thumb {
 .uroven-vanne-skrubber {
   bottom: 11%;
   right: 21%;
-  z-index: 111;
+  z-index: 2;
 }
 
 .column {
@@ -756,7 +756,7 @@ body::-webkit-scrollbar-thumb {
 .temper-vody-v-vanne-skrubber {
   bottom: 11%;
   right: 13%;
-  z-index: 111;
+  z-index: 2;
 }
 
 .p-gazov-posle-skrubber {
@@ -1397,6 +1397,213 @@ body::-webkit-scrollbar-thumb {
   width: 100%;
   height: 2px;
   background-color: green;
+}
+
+/* Окно начальных условий */
+
+.mnemo__modal-box-btns {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+}
+
+.mnemo__modal-box--btn {
+  padding: 5px;
+  font-size: 16px;
+  line-height: 23px;
+  font-weight: 600;
+  background-color: white;
+  color: green;
+  border: 1px solid green;
+  transition: color .3s ease-in-out, background-color .3s ease-in-out
+}
+
+.mnemo__modal-box--btn:hover {
+  color: white;
+  background-color: green;
+  cursor: pointer;
+}
+
+.mnemo__modal-box--btn:active {
+  color: white;
+  background-color: green;
+  cursor: pointer;
+}
+
+.mnemo__modal-background {
+  position: fixed;
+  top: 0%;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  z-index: -3;
+  cursor: default;
+}
+
+.mnemo__modal-background.enabled {
+  cursor: pointer;
+  opacity: 1;
+  z-index: 3;
+  transition: opacity .5s ease-in-out;
+}
+
+.mnemo__modal-start {
+  padding: 20px;
+  position: absolute;
+  max-width: 750px;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgba(0, 0, 0, 0.6) 0px 3px 6px, rgba(0, 0, 0, 0.7) 0px 3px 6px;
+  cursor: default;
+}
+
+.mnemo__modal-start.enabled {
+  height: 100%;
+  max-height: 800px;
+  transition: height .4s ease-in-out;
+}
+
+.mnemo__modal-title {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid gray;
+}
+
+.mnemo__modal-title-text {
+  position: relative;
+  font-size: 28px;
+  line-height: 24px;
+  color: black;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.modal__accordion-content {
+  padding-top: 20px;
+  overflow-y: auto;
+  height: 80%;
+}
+
+.modal__accordion-title {
+  padding-bottom: 20px;
+  padding-top: 10px;
+  display: flex;
+  justify-content: start;
+  font-size: 20px;
+  font-weight: 600;
+
+}
+
+.modal__content__form-box {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content__text {
+  position: relative;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  color: black;
+}
+
+.modal-content__form {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.modal-content__input-box {
+  margin-top: 15px;
+  margin-right: 15px;
+}
+
+.modal-content__input {
+  display: block;
+  width: 200px;
+  padding: 4px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #212529;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid green;
+  border-radius: 4px;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.modal-content__input[type="number"]::-webkit-outer-spin-button,
+.modal-content__input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.modal-content__input::placeholder {
+  font-family: 'Bitter', sans-serif;
+  color: #212529;
+  opacity: 0.4;
+}
+
+.modal-content__input:focus {
+  color: #212529;
+  background-color: #fff;
+  border-color: green;
+  outline: 0;
+  box-shadow: 0 0 0 5px rgba (158, 158, 158, 0.25);
+}
+
+.modal-content__input:disabled {
+  background-color: #f5f5f5;
+  opacity: 1;
+}
+
+.modal-content__label {
+  top: -50px;
+  position: relative;
+  z-index: 1;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+}
+
+.modal-content__form-btn-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content__form-btn--ok {
+  padding: 5px;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 600;
+  background-color: white;
+  color: green;
+  border: 1px solid green;
+  transition: color .3s ease-in-out, background-color .3s ease-in-out
+}
+
+.modal-content__form-btn--ok:hover {
+  color: white;
+  background-color: green;
+  cursor: pointer;
+}
+
+.modal-content__form-btn--ok:active {
+  color: white;
+  background-color: green;
+  cursor: pointer;
 }
 
 /* .mnemo__tooltip:hover .mnemo__param-clue {
