@@ -11,11 +11,38 @@ const determineMode = (value) => {
   }
 };
 
+// Функция добавления или обновления строки, если параметр активен
+const addOrUpdateRow = (param, description) => {
+  const existingRows = Array.from(document.querySelectorAll('.table__tr'));
+  const paramValue = param.textContent.trim();
+  let rowUpdated = false;
+
+  existingRows.forEach((row) => {
+    if (row.children[0].textContent === description) {
+      row.children[1].textContent = paramValue;
+      rowUpdated = true;
+    }
+  });
+
+  if (!rowUpdated && param.style.animation.includes('colorRed')) {
+    const row = `
+      <tr class="table__tr table__tr--incorrect-param">
+        <td class="table__td table__left">${description}</td>
+        <td class="table__td table__right">${paramValue}</td>
+      </tr>
+    `;
+    tableTbody.innerHTML += row;
+  }
+  checkAndInsertTemplate();
+};
+
 // Функция для обновления значений и применения анимации
 const updateValueAndAnimate = (value, param) => {
   const paramSpan = param.nextElementSibling;
-  const firstSkolzValue = parseFloat(document.querySelector('.temper-1-skolz').textContent);
-  applyAnimation(value, param, paramSpan, param.dataset.conditionMin, param.dataset.conditionMax, firstSkolzValue);
+  const firstSkolzValue = parseFloat(document.querySelector('.temper-1-skolz').textContent.trim());
+  value = parseFloat(value);
+  console.log(`Обновленное значение: ${value}, первое скользящее: ${firstSkolzValue}`);
+  applyAnimation(value, param, paramSpan, parseFloat(param.dataset.conditionMin), parseFloat(param.dataset.conditionMax), firstSkolzValue);
   updateMode();
 };
 
@@ -26,7 +53,7 @@ const parameters = [
     clueInputSelector: '#firstSkolzInput',
     conditionMin: 550,
     conditionMax: 800,
-    description: "Температура на 1 скользящей"
+    description: 'Температура на 1 скользящей',
   },
   {
     spanSelector: '.temper-2-skolz',
@@ -34,7 +61,7 @@ const parameters = [
     clueInputSelector: '#secondSkolzInput',
     conditionMin: 0,
     conditionMax: 700,
-    description: "Температура на 2 скользящей"
+    description: 'Температура на 2 скользящей',
   },
   {
     spanSelector: '.temper-3-skolz',
@@ -42,19 +69,20 @@ const parameters = [
     clueInputSelector: '#thirdSkolzInput',
     conditionMin: 0,
     conditionMax: 500,
-    description: "Температура на 3 скользящей"
-  }
+    description: 'Температура на 3 скользящей',
+  },
 ];
 
 const syncInputsAndSpan = () => {
   const updateInputs = (value, modalInput, clueInput, spanElement) => {
+    value = parseFloat(value);
     modalInput.value = value;
     clueInput.value = value;
     spanElement.textContent = value;
     updateValueAndAnimate(value, spanElement);
   };
 
-  parameters.forEach(param => {
+  parameters.forEach((param) => {
     const spanElement = document.querySelector(param.spanSelector);
     const modalInput = document.querySelector(param.modalInputSelector);
     const clueInput = document.querySelector(param.clueInputSelector);
@@ -87,56 +115,9 @@ const syncInputsAndSpan = () => {
   });
 };
 
-const initializeTooltips = () => {
-  parameters.forEach(param => {
-    const clickElement = document.querySelector(`.${param.spanSelector.replace('.', '')}-js`);
-    const clueElement = document.querySelector(`.${param.spanSelector.replace('.', '')}-clue`);
-    const closeElement = document.querySelector(`.${param.spanSelector.replace('.', '')}-clue-close`);
-    const clueInput = document.querySelector(param.clueInputSelector);
-    const modalInput = document.querySelector(param.modalInputSelector);
-    const form = document.querySelector(`.mnemo__param-clue-form--${param.spanSelector.replace('.', '')}-clue`);
-    const spanElement = document.querySelector(param.spanSelector);
-    const resultSpan = document.querySelector('.current-param__subtitle-span');
-
-    if (!clickElement || !clueElement || !closeElement || !clueInput || !modalInput || !form || !spanElement) {
-      console.error('Element not found for tooltip:', param);
-      return;
-    }
-
-    tooltipVisible(
-      clickElement,
-      clueElement,
-      closeElement,
-      clueInput,
-      spanElement,
-      form,
-      param.description === "Температура на 1 скользящей",  // Only check value for the first parameter
-      param.description === "Температура на 1 скользящей" ? resultSpan : null,
-      0,
-      1500,
-      param.conditionMin,
-      param.conditionMax
-    );
-
-    tooltipVisible(
-      clickElement,
-      clueElement,
-      closeElement,
-      modalInput,
-      spanElement,
-      form,
-      param.description === "Температура на 1 скользящей",  // Only check value for the first parameter
-      param.description === "Температура на 1 скользящей" ? resultSpan : null,
-      0,
-      1500,
-      param.conditionMin,
-      param.conditionMax
-    );
-  });
-};
-
 // Функция для применения анимации и добавления/удаления строки в таблице
 const applyAnimation = (value, param, paramSpan, conditionMin, conditionMax, firstSkolzValue) => {
+  value = parseFloat(value);
   if (firstSkolzValue < 50 || value < 50 || (value >= conditionMin && value <= conditionMax)) {
     param.style.animation = 'colorGreen 1s forwards';
     if (paramSpan) paramSpan.style.animation = 'colorGreen 1s forwards';
@@ -145,7 +126,7 @@ const applyAnimation = (value, param, paramSpan, conditionMin, conditionMax, fir
   } else {
     param.style.animation = 'colorRed 0.5s infinite ease-in-out';
     if (paramSpan) paramSpan.style.animation = 'colorRed 0.5s infinite ease-in-out';
-    addRowIfRunning(param, param.dataset.description);
+    addOrUpdateRow(param, param.dataset.description);
     return false;
   }
 };
@@ -459,5 +440,3 @@ tooltipVisible(
 
 // Инициализация синхронизации инпутов и span
 syncInputsAndSpan();
-
-initializeTooltips();
