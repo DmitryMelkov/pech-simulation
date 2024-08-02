@@ -26,11 +26,23 @@ export const tooltipVisible = (
     });
     paramClue.classList.add('enabled');
     paramClue.parentElement.classList.add('active');
+
+    // Добавляем обработчик для клика на пустое поле
+    document.addEventListener('click', handleClickOutside, true);
   };
 
   const handleClose = () => {
     paramClue.classList.remove('enabled');
     paramClue.parentElement.classList.remove('active');
+
+    // Удаляем обработчик для клика на пустое поле
+    document.removeEventListener('click', handleClickOutside, true);
+  };
+
+  const handleClickOutside = (event) => {
+    if (!paramClue.contains(event.target) && !paramClick.contains(event.target)) {
+      handleClose();
+    }
   };
 
   const handleSubmit = (event) => {

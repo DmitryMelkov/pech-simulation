@@ -7,6 +7,7 @@
   <title>Document</title>
   <link rel="stylesheet" href="/css/style.css">
 </head>
+
 <body class="body">
   <div class="content">
     <div class="content">
@@ -37,7 +38,6 @@
       </table>
 
       <div class="mnemo__modal-background modal-js">
-
         <div class="mnemo__modal-start">
           <div class="mnemo__modal-title">
             <h2 class="mnemo__modal-title-text title-reset">Начальные условия</h2>
@@ -55,20 +55,20 @@
               </div>
               <div class="modal-content__form-inputs">
                 <div class="modal-content__input-box">
-                  <label class="modal-content__label" for="firstSkolzInputModal">Первая скользящая</label>
+                  <label class="modal-content__label" for="firstSkolzInputModal">1-СК</label>
                   <input class="modal-content__input" min="0" max="1500" step="1" name="modalInputFirstSkolz"
                     type="number" placeholder="Введите значение &#176C" id="firstSkolzInputModal">
                   <span class="modal-content__error">Введите значение</span>
                 </div>
                 <div class="modal-content__input-box">
-                  <label class="modal-content__label" for="secondSkolzInputModal">Вторая скользящая</label>
+                  <label class="modal-content__label" for="secondSkolzInputModal">2-СК</label>
                   <input class="modal-content__input " min="0" max="1500" step="1" name="modalInputSecondSkolz"
                     type="number" placeholder="Введите значение &#176C" id="secondSkolzInputModal">
                   <span class="modal-content__error">Введите значение</span>
 
                 </div>
                 <div class="modal-content__input-box">
-                  <label class="modal-content__label" for="thirdSkolzInputModal">Третья скользящая</label>
+                  <label class="modal-content__label" for="thirdSkolzInputModal">3-СК</label>
                   <input class="modal-content__input" min="0" max="1500" step="1" name="modalInputThirdSkolz"
                     type="number" placeholder="Введите значение &#176C" id="thirdSkolzInputModal">
                   <span class="modal-content__error">Введите значение</span>
@@ -145,6 +145,60 @@
         <button class="mnemo__modal-box--btn btn-modal">
           Задать начальные условия
         </button>
+      </div>
+
+
+      <!-- модалки для неправильных параметров -->
+      <div class="mnemo__modal-background modal-param-bg-js">
+        <div class="mnemo__modal-start modal-param-js modal-param-js--temper-1-skolz">
+          <div class="mnemo__modal-title">
+            <h2 class="mnemo__modal-title-text title-reset">Информация 1 скользящая</h2>
+            <button class="mnemo__modal-close modal-param-close-js btn-reset">
+              <div class="krest">
+                <span class="line-1"></span>
+                <span class="line-2"></span>
+              </div>
+            </button>
+          </div>
+          <div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores eius, officiis, est voluptatum, quod qui
+            commodi libero at quas vel iste quisquam. Corrupti nisi fuga eveniet rem autem laboriosam omnis.
+          </div>
+        </div>
+      </div>
+      <div class="mnemo__modal-background modal-param-bg-js">
+        <div class="mnemo__modal-start modal-param-js modal-param-js--temper-2-skolz">
+          <div class="mnemo__modal-title">
+            <h2 class="mnemo__modal-title-text title-reset">Информация 2 скользящая</h2>
+            <button class="mnemo__modal-close modal-param-close-js btn-reset">
+              <div class="krest">
+                <span class="line-1"></span>
+                <span class="line-2"></span>
+              </div>
+            </button>
+          </div>
+          <div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores eius, officiis, est voluptatum, quod qui
+            commodi libero at quas vel iste quisquam. Corrupti nisi fuga eveniet rem autem laboriosam omnis.
+          </div>
+        </div>
+      </div>
+      <div class="mnemo__modal-background modal-param-bg-js">
+        <div class="mnemo__modal-start modal-param-js modal-param-js--temper-3-skolz">
+          <div class="mnemo__modal-title">
+            <h2 class="mnemo__modal-title-text title-reset">Информация 3 скользящая</h2>
+            <button class="mnemo__modal-close modal-param-close-js btn-reset">
+              <div class="krest">
+                <span class="line-1"></span>
+                <span class="line-2"></span>
+              </div>
+            </button>
+          </div>
+          <div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores eius, officiis, est voluptatum, quod qui
+            commodi libero at quas vel iste quisquam. Corrupti nisi fuga eveniet rem autem laboriosam omnis.
+          </div>
+        </div>
       </div>
 
       <!-- <div class="mnemo__background"></div> -->
@@ -312,7 +366,7 @@
         <div class="mnemo__param mnemo__tooltip third-skolz">
           <div class="third-skolz-js">
             <span class="mnemo__param-text temper-3-skolz">
-
+              300
             </span>
             <span class="mnemo__param-naimenov temper-3-skolz-span">&#176C</span>
           </div>
@@ -354,7 +408,7 @@
         <div class="mnemo__param mnemo__tooltip second-skolz">
           <div class="second-skolz-js">
             <span class="mnemo__param-text temper-2-skolz">
-
+              500
             </span>
             <span class="mnemo__param-naimenov temper-2-skolz-span">&#176C</span>
           </div>
@@ -391,7 +445,7 @@
         <div class="mnemo__param mnemo__tooltip first-skolz">
           <div class="first-skolz-js">
             <span id="1SkolzSpan" class="mnemo__param-text temper-1-skolz">
-
+              10
             </span>
             <span class="mnemo__param-naimenov temper-1-skolz-span">&#176C</span>
           </div>

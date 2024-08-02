@@ -1,7 +1,7 @@
 import { tooltipVisible } from './tooltipUtils.js';
 import { syncInputsAndSpan } from './parameterUtils.js';
 import { setupModalEvents } from './modalUtils.js';
-
+import { modalParamIncorrect } from './modalParamIncorrect.js';
 
 // Инициализация параметров с описанием
 const firstSkolz = document.querySelector('.temper-1-skolz');
@@ -126,6 +126,7 @@ tooltipVisible(
 // Инициализация синхронизации инпутов и span
 syncInputsAndSpan();
 
-
 // Настройка модального окна
 setupModalEvents(btnModal, modalBackground, modalActive, btnAccept, btnClose);
+
+modalParamIncorrect();

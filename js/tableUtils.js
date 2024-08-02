@@ -1,5 +1,3 @@
-// Функция добавления или обновления строки, если параметр активен
-
 // Инициализация таблицы и шаблонной строки
 const tableTbody = document.querySelector('.table__tbody');
 const template = `
@@ -8,6 +6,15 @@ const template = `
         которые превышают допустимые значения</td>
   </tr>
 `;
+
+const getDataModalAttribute = (description) => {
+  const modalMap = {
+    'Температура на 1 скользящей': 'modal-param-js--temper-1-skolz',
+    'Температура на 2 скользящей': 'modal-param-js--temper-2-skolz',
+    'Температура на 3 скользящей': 'modal-param-js--temper-3-skolz'
+  };
+  return modalMap[description] || '';
+};
 
 export const addOrUpdateRow = (param, description) => {
   const existingRows = Array.from(document.querySelectorAll('.table__tr'));
@@ -22,17 +29,19 @@ export const addOrUpdateRow = (param, description) => {
   });
 
   if (!rowUpdated && param.style.animation.includes('colorRed')) {
-    const row = `
-      <tr class="table__tr table__tr--incorrect-param">
-        <td class="table__td table__left">${description}</td>
-        <td class="table__td table__right">${paramValue}</td>
-      </tr>
-    `;
-    tableTbody.innerHTML += row;
+    const dataModal = getDataModalAttribute(description);
+    if (dataModal) {
+      const row = `
+        <tr class="table__tr table__tr--incorrect-param table__tr--incorrect-param-js" data-modal="${dataModal}">
+          <td class="table__td table__left">${description}</td>
+          <td class="table__td table__right">${paramValue}</td>
+        </tr>
+      `;
+      tableTbody.innerHTML += row;
+    }
   }
   checkAndInsertTemplate();
 };
-
 
 // Функция добавления строки, если параметр активен
 export const addRowIfRunning = (param, description) => {
@@ -40,13 +49,17 @@ export const addRowIfRunning = (param, description) => {
   const paramExists = existingRows.some((row) => row.children[0].textContent === description);
 
   if (param.style.animation.includes('colorRed') && !paramExists) {
-    const row = `
-      <tr class="table__tr table__tr--incorrect-param">
-        <td class="table__td table__left">${description}</td>
-        <td class="table__td table__right">${param.innerHTML}</td>
-      </tr>
-    `;
-    tableTbody.innerHTML += row;
+    const dataModal = getDataModalAttribute(description);
+    if (dataModal) {
+      console.log(`Adding new row with description: ${description}, data-modal: ${dataModal}`);
+      const row = `
+        <tr class="table__tr table__tr--incorrect-param table__tr--incorrect-param-js" data-modal="${dataModal}">
+          <td class="table__td table__left">${description}</td>
+          <td class="table__td table__right">${param.innerHTML}</td>
+        </tr>
+      `;
+      tableTbody.innerHTML += row;
+    }
   }
   checkAndInsertTemplate();
 };
@@ -76,4 +89,3 @@ export const checkAndInsertTemplate = () => {
     }
   }
 };
-
