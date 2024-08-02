@@ -4,16 +4,29 @@ export const validateInputs = (inputs) => {
 
   inputs.forEach((input) => {
     const errorElement = input.nextElementSibling;
-    if (input.value.trim() === '') {
+    const value = input.value.trim();
+
+    // Проверка на пустое значение
+    if (value === '') {
       input.classList.add('error');
       if (errorElement) {
         errorElement.classList.add('active');
+        errorElement.textContent = 'Введите значение'; // Сообщение об ошибке для пустого значения
+      }
+      allValid = false;
+    } else if (isNaN(value) || value < 0 || value > 1500) {
+      // Проверка на диапазон значений
+      input.classList.add('error');
+      if (errorElement) {
+        errorElement.classList.add('active');
+        errorElement.textContent = 'Диапазон от 0 до 1500'; // Сообщение об ошибке для значения вне диапазона
       }
       allValid = false;
     } else {
       input.classList.remove('error');
       if (errorElement) {
         errorElement.classList.remove('active');
+        errorElement.textContent = ''; // Очистка сообщения об ошибке
       }
     }
   });

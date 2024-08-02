@@ -29,9 +29,14 @@ export const parameters = [
   },
 ];
 
-//синхронизация инпутов и спанов
+// Синхронизация инпутов и спанов
 export const syncInputsAndSpan = () => {
   const updateInputs = (value, modalInput, clueInput, spanElement) => {
+    if (isNaN(value) || value < 0 || value > 1500) {
+      console.error('Value must be between 0 and 1500');
+      return;
+    }
+
     value = parseFloat(value);
     modalInput.value = value;
     clueInput.value = value;
@@ -50,23 +55,17 @@ export const syncInputsAndSpan = () => {
 
     modalInput.addEventListener('input', () => {
       const value = parseFloat(modalInput.value);
-      if (!isNaN(value)) {
-        updateInputs(value, modalInput, clueInput, spanElement);
-      }
+      updateInputs(value, modalInput, clueInput, spanElement);
     });
 
     clueInput.addEventListener('input', () => {
       const value = parseFloat(clueInput.value);
-      if (!isNaN(value)) {
-        updateInputs(value, modalInput, clueInput, spanElement);
-      }
+      updateInputs(value, modalInput, clueInput, spanElement);
     });
 
     spanElement.addEventListener('input', () => {
       const value = parseFloat(spanElement.textContent);
-      if (!isNaN(value)) {
-        updateInputs(value, modalInput, clueInput, spanElement);
-      }
+      updateInputs(value, modalInput, clueInput, spanElement);
     });
   });
 };
