@@ -106,6 +106,15 @@ body::-webkit-scrollbar-thumb {
   /* закругления плашки */
 }
 
+.body {
+  margin: 0;
+  padding: 5px;
+}
+
+.title-reset {
+  margin: 0;
+}
+
 .btn-reset {
   background-color: transparent;
   cursor: pointer;
@@ -892,7 +901,7 @@ body::-webkit-scrollbar-thumb {
   }
 }
 
-.temper-topka,
+/* .temper-topka,
 .temper-vniz-kamer-zagruz,
 .temper-verh-kamer-zagruz,
 .temper-topka,
@@ -938,7 +947,7 @@ body::-webkit-scrollbar-thumb {
 .uroven-vody-hvo-value-span {
   animation: colorRed 0.5s infinite ease-in-out;
   animation-play-state: paused;
-}
+} */
 
 
 .siren {
@@ -1448,7 +1457,10 @@ body::-webkit-scrollbar-thumb {
 
 .mnemo__modal-background {
   position: fixed;
-  top: 0%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.4);
@@ -1490,6 +1502,8 @@ body::-webkit-scrollbar-thumb {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-bottom: 15px;
+  margin-bottom: 10px;
   border-bottom: 1px solid gray;
 }
 
@@ -1553,16 +1567,19 @@ body::-webkit-scrollbar-thumb {
 }
 
 .modal-content__form-inputs {
+  margin-bottom: 30px;
   display: flex;
   flex-wrap: wrap;
 }
 
 .modal-content__input-box {
+  position: relative;
   margin-top: 15px;
   margin-right: 15px;
 }
 
 .modal-content__input {
+  margin-top: 10px;
   display: block;
   width: 200px;
   padding: 4px;
@@ -1574,6 +1591,28 @@ body::-webkit-scrollbar-thumb {
   border: 1px solid green;
   border-radius: 4px;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.modal-content__error {
+  display: none;
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  z-index: 1;
+  font-size: 12px;
+  line-height: 12px;
+  font-weight: 600;
+  color: red;
+  font-style: italic;
+}
+
+.modal-content__input.error {
+  border: 1px solid red;
+}
+
+
+.modal-content__error.active {
+  display: block;
 }
 
 .modal-content__input[type="number"]::-webkit-outer-spin-button,
@@ -1601,10 +1640,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .modal-content__label {
-  top: -50px;
-  position: relative;
-  z-index: 1;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 22px;
   font-weight: 500;
 }
