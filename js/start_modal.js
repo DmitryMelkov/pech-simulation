@@ -25,6 +25,3 @@ btnAccept.addEventListener('click', () => {
   modalBackground.classList.remove('enabled');
   modalActive.classList.remove('enabled');
 });
-
-// Функция для обработки параметров в модальном окне начальных условий
-
