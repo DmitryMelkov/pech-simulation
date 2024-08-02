@@ -41,7 +41,6 @@ const updateValueAndAnimate = (value, param) => {
   const paramSpan = param.nextElementSibling;
   const firstSkolzValue = parseFloat(document.querySelector('.temper-1-skolz').textContent.trim());
   value = parseFloat(value);
-  console.log(`Обновленное значение: ${value}, первое скользящее: ${firstSkolzValue}`);
   applyAnimation(value, param, paramSpan, parseFloat(param.dataset.conditionMin), parseFloat(param.dataset.conditionMax), firstSkolzValue);
   updateMode();
 };
@@ -88,7 +87,6 @@ const syncInputsAndSpan = () => {
     const clueInput = document.querySelector(param.clueInputSelector);
 
     if (!spanElement || !modalInput || !clueInput) {
-      console.error('Element not found:', param);
       return;
     }
 
@@ -175,7 +173,7 @@ const tooltipVisible = (
       }
     } else {
       if (param) {
-        param.textContent = 'Некорректное значение';
+        param.textContent = '';
       } else {
         console.error('param is null');
       }
@@ -367,14 +365,45 @@ tooltipVisible(
 );
 
 // Функции для инпутов в модалке
-
 const btnModal = document.querySelector('.btn-modal');
 const modalBackground = document.querySelector('.modal-js');
 const modalActive = document.querySelector('.mnemo__modal-start');
 const btnAccept = document.querySelector('.modal-content__form-btn--ok');
 const btnClose = document.querySelector('.mnemo__modal-close');
 
+// Функция для проверки значений инпутов и применения стилей ошибок
+const validateInputs = (inputs) => {
+  let allValid = true;
+
+  inputs.forEach(input => {
+    const errorElement = input.nextElementSibling;
+    if (input.value.trim() === '') {
+      input.classList.add('error');
+      if (errorElement) {
+        errorElement.classList.add('active');
+      }
+      allValid = false;
+    } else {
+      input.classList.remove('error');
+      if (errorElement) {
+        errorElement.classList.remove('active');
+      }
+    }
+  });
+
+  return allValid;
+};
+
+const closeTooltips = () => {
+  const tooltips = document.querySelectorAll('.mnemo__param-clue');
+  tooltips.forEach(tooltip => {
+    tooltip.classList.remove('enabled');
+    tooltip.parentElement.classList.remove('active');
+  });
+};
+
 btnModal.addEventListener('click', () => {
+  closeTooltips(); // Закрыть тултипы перед открытием модального окна
   modalBackground.classList.add('enabled');
   modalActive.classList.add('enabled');
 });
@@ -391,9 +420,17 @@ btnClose.addEventListener('click', () => {
   modalActive.classList.remove('enabled');
 });
 
-btnAccept.addEventListener('click', () => {
-  modalBackground.classList.remove('enabled');
-  modalActive.classList.remove('enabled');
+btnAccept.addEventListener('click', (event) => {
+  const inputs = [
+    document.querySelector('#firstSkolzInputModal'),
+    document.querySelector('#secondSkolzInputModal'),
+    document.querySelector('#thirdSkolzInputModal')
+  ];
+
+  if (validateInputs(inputs)) {
+    modalBackground.classList.remove('enabled');
+    modalActive.classList.remove('enabled');
+  }
 });
 
 const modalForm = document.querySelector('.all__param-form');
