@@ -24,7 +24,7 @@ export const parameters = [
     modalInputSelector: '#thirdSkolzInputModal',
     clueInputSelector: '#thirdSkolzInput',
     conditionMin: 0,
-    conditionMax: 500,
+    conditionMax: 750, // Updated for "выход на режим"
     description: 'Температура на 3 скользящей',
   },
 ];
@@ -97,8 +97,18 @@ export const updateMode = () => {
     currentModeSpan.textContent = mode;
   }
 
+  // Обновление параметров с учетом первого значения
   updateParameter('.temper-2-skolz', 0, 700, firstSkolzValue);
-  updateParameter('.temper-3-skolz', 0, 500, firstSkolzValue);
+
+  // Изменение диапазонов для 3 скользящей в зависимости от первого значения
+  if (mode === 'Установившийся режим') {
+    updateParameter('.temper-3-skolz', 0, 400, firstSkolzValue);
+  } else if (mode === 'Выход на режим') {
+    updateParameter('.temper-3-skolz', 0, 750, firstSkolzValue);
+  } else {
+    // Добавлен новый блок, чтобы остановить моргание параметра, если первый скользящий ниже 50
+    updateParameter('.temper-3-skolz', 0, 750, firstSkolzValue);
+  }
 
   addRowIfRunning(document.querySelector('.temper-2-skolz'), 'Температура на 2 скользящей');
   addRowIfRunning(document.querySelector('.temper-3-skolz'), 'Температура на 3 скользящей');

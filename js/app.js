@@ -14,8 +14,8 @@ secondSkolz.dataset.conditionMin = 0;
 secondSkolz.dataset.conditionMax = 700;
 const thirdSkolz = document.querySelector('.temper-3-skolz');
 thirdSkolz.dataset.description = 'Температура на 3 скользящей';
-thirdSkolz.dataset.conditionMin = 0;
-thirdSkolz.dataset.conditionMax = 500;
+thirdSkolz.dataset.conditionMin = 400; // Новое значение для установившегося режима
+thirdSkolz.dataset.conditionMax = 750; // Новое значение для выхода на режим
 
 const firstSkolzClick = document.querySelector('.first-skolz-js');
 const firstSkolzClue = document.querySelector('.first-skolz-clue');
@@ -120,7 +120,7 @@ tooltipVisible(
   false,
   null,
   0,
-  1500
+  1500 // Обновленный диапазон для выхода на режим
 );
 
 // Инициализация синхронизации инпутов и span
