@@ -4,12 +4,12 @@ const modalContent = document.querySelector('.mnemo__modal-start');
 const closeButton = document.querySelector('.mnemo__modal-close');
 const smileImage = document.getElementById('smileImage');
 
-const  checkAllQuestionsAnswered = (formData) => {
-  const answeredQuestions = [...formData.keys()].map(key => key.split('question')[1]);
+const checkAllQuestionsAnswered = (formData) => {
+  const answeredQuestions = [...formData.keys()].map((key) => key.split('question')[1]);
   const allQuestions = ['1', '2', '3', '4', '5', '6', '7'];
 
-  return allQuestions.every(question => answeredQuestions.includes(question));
-}
+  return allQuestions.every((question) => answeredQuestions.includes(question));
+};
 
 testBtn.addEventListener('click', () => {
   const form = document.getElementById('testForm');
@@ -47,27 +47,36 @@ testBtn.addEventListener('click', () => {
       incorrectAnswerNumbers.push(key.split('question')[1]);
     }
   }
-  
 
   // Вставляем номера неправильных вопросов внутрь тега <span>
   const span = document.querySelector('.mnemo__modal-quiz-incorrect-span');
   span.textContent = incorrectAnswerNumbers.join(', ');
 
-
+  if (incorrectAnswerNumbers.length === 0) {
+    const incorrectAnswersBlock = document.querySelector('.mnemo__modal-quiz-incorrect');
+    incorrectAnswersBlock.style.display = 'none';
+  }
 
   result.textContent = `${score}/${totalQuestions}`;
 
   const message = document.querySelector('.mnemo__modal-quiz');
-  if (score >= thresholds.excellent) {
-    message.innerHTML = 'Вы справились <span class="excellent">отлично</span>, правильных ответов:';
+  if (score === totalQuestions) {
+    // Если все ответы правильные
+    message.innerHTML = 'Вы справились отлично, правильных ответов:';
+    result.innerHTML = `<span class="otlichno">${score}</span> из ${totalQuestions}`;
+    smileImage.src = 'img/excellent.svg';
+    const span = document.querySelector('.mnemo__modal-quiz-incorrect-span');
+    span.textContent = ''; // Очищаем содержимое span с неправильными ответами
+  } else if (score >= thresholds.excellent) {
+    message.innerHTML = 'Вы справились отлично, правильных ответов:';
     result.innerHTML = `<span class="otlichno">${score}</span> из ${totalQuestions}`;
     smileImage.src = 'img/excellent.svg';
   } else if (score >= thresholds.good) {
-    message.innerHTML = 'Вы справились <span class="good">хорошо</span>, правильных ответов:';
+    message.innerHTML = 'Вы справились хорошо, правильных ответов:';
     result.innerHTML = `<span class="horosho">${score}</span> из ${totalQuestions}`;
     smileImage.src = 'img/good.svg';
   } else if (score >= thresholds.satisfactory) {
-    message.innerHTML = 'Вы справились <span class="satisfactorily">удовлетворительно</span>, правильных ответов:';
+    message.innerHTML = 'Вы справились удовлетворительно, правильных ответов:';
     result.innerHTML = `<span class="udovletvoritelno">${score}</span> из ${totalQuestions}`;
     smileImage.src = 'img/satisfactorily.svg';
   } else {
@@ -80,14 +89,21 @@ testBtn.addEventListener('click', () => {
   modalContent.classList.add('enabled');
 });
 
+// Закрытие модального окна по нажатию на крестик
 closeButton.addEventListener('click', () => {
-  modalBackground.classList.remove('enabled');
-  modalContent.classList.remove('enabled');
+  closeModal();
+  location.reload(); // Обновление страницы
 });
 
+// Закрытие модального окна по клику вне окна
 modalBackground.addEventListener('click', (event) => {
   if (event.target === modalBackground) {
-    modalBackground.classList.remove('enabled');
-    modalContent.classList.remove('enabled');
+    closeModal();
+    location.reload(); // Обновление страницы
   }
 });
+
+const closeModal = () => {
+  modalBackground.classList.remove('enabled');
+  modalContent.classList.remove('enabled');
+}

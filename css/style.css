@@ -1597,6 +1597,7 @@ body::-webkit-scrollbar-thumb {
   font-weight: 400;
   color: black;
   text-align: center;
+  font-family: 'Gilroy', sans-serif;
 }
 
 .mnemo__modal-quiz--bold {
@@ -2020,7 +2021,7 @@ body::-webkit-scrollbar-thumb {
   font-size: 24px;
   line-height: 32px;
   font-weight: 600;
-  font-family: '', sans-serif;
+  font-family: 'Gilroy', sans-serif;
   color: black;
 }
 
@@ -2121,6 +2122,20 @@ body::-webkit-scrollbar-thumb {
   color: blue;
   font-weight: 600;
 
+}
+
+.mnemo__modal-quiz-incorrect {
+  font-size: 28px;
+  line-height: 41px;
+  font-weight: 400;
+  font-family: 'Gilroy', sans-serif;
+  color: black;
+  text-align: center;
+}
+
+.mnemo__modal-quiz-incorrect-span {
+  color: green;
+  font-weight: 600;
 }
 
 
