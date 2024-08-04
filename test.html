@@ -33,7 +33,8 @@
               </label>
             </div>
             <div class="options__item">
-              <input class="options__input" type="radio" id="q1b" name="question1" value="Извиниться и приступить к работе">
+              <input class="options__input" type="radio" id="q1b" name="question1"
+                value="Извиниться и приступить к работе">
               <label class="options__label test__question-label" for="q1b">
                 <span class="test__question-span">Извиниться и приступить к работе</span>
               </label>
@@ -45,7 +46,8 @@
               </label>
             </div>
             <div class="options__item">
-              <input class="options__input" type="radio" id="q1d" name="question1" value="Оскорбиться и опоздать еще раз">
+              <input class="options__input" type="radio" id="q1d" name="question1"
+                value="Оскорбиться и опоздать еще раз">
               <label class="options__label test__question-label" for="q1d">
                 <span class="test__question-span"> Оскорбиться и опоздать еще раз</span>
               </label>
@@ -229,7 +231,29 @@
 
         <button type="button" class="mnemo__modal-box--btn test__form-btn">Завершить тестирование</button>
       </form>
-      <p id="result"></p>
+
+
+      <div class="mnemo__modal-background modal-param-bg-js">
+        <div class="mnemo__modal-start modal-param-js--result-test modal-param-js">
+          <div class="mnemo__modal-title">
+            <h2 class="mnemo__modal-title-text title-reset">Результаты тестирования</h2>
+            <button class="mnemo__modal-close modal-param-close-js btn-reset">
+              <div class="krest">
+                <span class="line-1"></span>
+                <span class="line-2"></span>
+              </div>
+            </button>
+          </div>
+          <div class="mnemo__modal-quiz-result">
+            <p class="mnemo__modal-quiz descr-reset"></p>
+            <span class="mnemo__modal-quiz mnemo__modal-quiz--bold" id="result"></span>
+            <div class="mnemo__modal-quiz-emoji">
+              <img class="mnemo__modal-quiz-emoji-img" id="smileImage" src="img/good.svg" alt="smile">
+            </div>
+            <p class="mnemo__modal-quiz-incorrect">Вы неправильно ответили на слежующие вопросы: <span class="mnemo__modal-quiz-incorrect-span">1,2,3</span></p>
+          </div>
+        </div>
+      </div>
 
     </div>
   </div>
