@@ -1,14 +1,26 @@
 const testBtn = document.querySelector('.test__form-btn');
 const modalBackground = document.querySelector('.mnemo__modal-background');
 const modalContent = document.querySelector('.mnemo__modal-start');
-const closeButton = document.querySelector('.mnemo__modal-close');
+const modalBackgroundUnanswered = document.querySelector('.mnemo__modal-background-unanswered');
+const modalContentUnanswered = document.querySelector('.mnemo__modal-start-unanswered');
+const closeButton = document.querySelector('.modal-results-close-js');
+const closeButtonUnanswered = document.querySelector('.modal-unanswered-close-js')
 const smileImage = document.getElementById('smileImage');
+const badResultBtn = document.querySelector('.bad-result-btn')
+const goodResultBtn = document.querySelector('.good-result-btn')
 
 const checkAllQuestionsAnswered = (formData) => {
   const answeredQuestions = [...formData.keys()].map((key) => key.split('question')[1]);
   const allQuestions = ['1', '2', '3', '4', '5', '6', '7'];
 
   return allQuestions.every((question) => answeredQuestions.includes(question));
+};
+
+const getUnansweredQuestions = (formData) => {
+  const answeredQuestions = [...formData.keys()].map((key) => key.split('question')[1]);
+  const allQuestions = ['1', '2', '3', '4', '5', '6', '7'];
+  
+  return allQuestions.filter((question) => !answeredQuestions.includes(question));
 };
 
 testBtn.addEventListener('click', () => {
@@ -36,7 +48,11 @@ testBtn.addEventListener('click', () => {
   let incorrectAnswerNumbers = [];
 
   if (!checkAllQuestionsAnswered(formData)) {
-    alert('Пожалуйста, ответьте на все вопросы!');
+    const unansweredQuestions = getUnansweredQuestions(formData);
+    const unansweredSpan = document.querySelector('.mnemo__modal-quiz-unanswered-span');
+    unansweredSpan.textContent = unansweredQuestions.join(', ');
+    modalBackgroundUnanswered.classList.add('enabled');
+    modalContentUnanswered.classList.add('enabled');
     return;
   }
 
@@ -75,14 +91,17 @@ testBtn.addEventListener('click', () => {
     message.innerHTML = 'Вы справились хорошо, правильных ответов:';
     result.innerHTML = `<span class="horosho">${score}</span> из ${totalQuestions}`;
     smileImage.src = 'img/good.svg';
+    goodResultBtn.classList.add('enabled')
   } else if (score >= thresholds.satisfactory) {
     message.innerHTML = 'Вы справились удовлетворительно, правильных ответов:';
     result.innerHTML = `<span class="udovletvoritelno">${score}</span> из ${totalQuestions}`;
     smileImage.src = 'img/satisfactorily.svg';
+    goodResultBtn.classList.add('enabled')
   } else {
     message.innerHTML = 'Попробуйте еще раз, правильных ответов:';
     result.textContent = `${score} из ${totalQuestions}`;
     smileImage.src = 'img/not-satisfactoriry.svg';
+    badResultBtn.classList.add('enabled');
   }
 
   modalBackground.classList.add('enabled');
@@ -95,6 +114,10 @@ closeButton.addEventListener('click', () => {
   location.reload(); // Обновление страницы
 });
 
+closeButtonUnanswered.addEventListener('click', () => {
+  closeModalUnanswered();
+})
+
 // Закрытие модального окна по клику вне окна
 modalBackground.addEventListener('click', (event) => {
   if (event.target === modalBackground) {
@@ -103,7 +126,18 @@ modalBackground.addEventListener('click', (event) => {
   }
 });
 
+modalBackgroundUnanswered.addEventListener('click', (event) => {
+  if (event.target === modalBackgroundUnanswered) {
+    closeModalUnanswered();
+  }
+})
+
 const closeModal = () => {
   modalBackground.classList.remove('enabled');
   modalContent.classList.remove('enabled');
+}
+
+const closeModalUnanswered = () => {
+  modalBackgroundUnanswered.classList.remove('enabled');
+  modalContentUnanswered.classList.remove('enabled');
 }
