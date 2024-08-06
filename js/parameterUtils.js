@@ -99,6 +99,7 @@ export const updateMode = () => {
 
   // Обновление параметров с учетом первого значения
   updateParameter('.temper-2-skolz', 0, 700, firstSkolzValue);
+  updateParameter('.davl-v-barabane', 0, 4.5, firstSkolzValue);
 
   // Изменение диапазонов для 3 скользящей в зависимости от первого значения
   if (mode === 'Установившийся режим') {
@@ -112,6 +113,7 @@ export const updateMode = () => {
 
   addRowIfRunning(document.querySelector('.temper-2-skolz'), 'Температура на 2 скользящей');
   addRowIfRunning(document.querySelector('.temper-3-skolz'), 'Температура на 3 скользящей');
+  addRowIfRunning(document.querySelector('.davl-v-barabane'), 'Давление в барабане котла');
 
   checkAndInsertTemplate();
 };

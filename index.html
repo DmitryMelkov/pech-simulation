@@ -73,12 +73,12 @@
                     type="number" placeholder="Введите значение &#176C" id="thirdSkolzInputModal">
                   <span class="modal-content__error">Введите значение</span>
                 </div>
-                <!-- <div class="modal-content__input-box">
-                  <input class="modal-content__input" min="0" max="1500" step="1" name="modalInputTopka" type="number"
-                    placeholder="Введите значение &#176C" id="topkaInputModal">
-                  <label class="modal-content__label" for="topkaInputModal">В топке</label>
+                 <div class="modal-content__input-box">
+                  <input class="modal-content__input" min="0" max="20" step="1" name="modalPvBarabane" type="number"
+                    placeholder="Введите значение кгс/см2" id="pVbarabaneInputModal">
+                  <label class="modal-content__label" for="pVbarabaneInputModal">P в барабане котла</label>
                 </div>
-                <div class="modal-content__input-box">
+            <!--    <div class="modal-content__input-box">
                   <input class="modal-content__input" min="0" max="1500" step="1" name="modalInputVerhKameri"
                     type="number" placeholder="Введите значение &#176C" id="verhKameriInputModal">
                   <label class="modal-content__label" for="verhKameriInputModal">Вверху камеры загрузки</label>
@@ -590,16 +590,49 @@
             -4,1
           </span>
           <span class="mnemo__param-naimenov razr-kotel-utiliz-span">кгс/м2</span>
+        </div> -->
+
+
+        <div class="mnemo__param mnemo__tooltip p-v-barabane-kotla">
+          <div class="davl-v-barabane-js">
+            <span  class="mnemo__param-text davl-v-barabane">
+              3,1
+            </span>
+            <span class="mnemo__param-naimenov davl-v-barabane-span">кгс/см2</span>
+          </div>
+
+          <div class="mnemo__param-clue p-v-barabane-clue">
+            <div class="mnemo__param-clue-content">
+              <div class="mnemo__param-clue-title">
+                <h2 class="mnemo__param-clue-title-text title-reset">Давление пара в барабане котла</h2>
+                <button class="mnemo__tooltip-close p-v-barabane-clue-close btn-reset">
+                  <div class="krest">
+                    <span class="line-1"></span>
+                    <span class="line-2"></span>
+                  </div>
+                </button>
+              </div>
+              <div class="mnemo__param-clue-div">Рекомендуемый диапазон:
+                <span class="mnemo__param-clue-span">
+                  ###
+                </span>
+              </div>
+              <form class="mnemo__param-clue-form mnemo__param-clue-form--p-v-barabane-clue">
+                <div class="mnemo__param-clue-form-div">
+                  <input class="mnemo__param-clue-input" type="number" placeholder="Введите значение"
+                    id="pVbarabaneInput" min="0" max="20" step="any">
+                  <label class="mnemo__param-clue-label" for="pVbarabaneInput"></label>
+                  <button class="mnemo__param-clue-form-btn--ok p-v-barabane-btn btn-reset" type="submit">
+                    Принять
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+
         </div>
 
-        <div class="mnemo__param p-v-barabane-kotla">
-          <span class="mnemo__param-text">
-            3,1
-          </span>
-          <span class="mnemo__param-naimenov">кгс/см2</span>
-        </div>
-
-        <div class="mnemo__param uroven-v-barabane-kotla">
+       <!-- <div class="mnemo__param uroven-v-barabane-kotla"> 
           <span class="mnemo__param-text uroven-v-barabane-kotla-value">
             5
           </span>
@@ -613,7 +646,7 @@
             5
           </span>
           <span class="mnemo__param-naimenov uroven-v-barabane-kotla-mnemo-val-span">мм</span>
-        </div> -->
+        </div>  -->
         <!-- <div class="mnemo__param im2-percent">
                       <span class="mnemo__param-text ">
                           <#PasspValue PasspType=1 PasspID=52 Precision=0>
