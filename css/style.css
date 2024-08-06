@@ -130,12 +130,14 @@ body::-webkit-scrollbar-thumb {
 }
 
 .container {
+  position: relative;
   max-width: 1170px;
   width: 100%;
   height: 100%;
   margin: 0 auto;
   padding-left: 15px;
   padding-right: 15px;
+  z-index: 1;
 }
 
 .content {
@@ -1784,7 +1786,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .bad-result-btn.enabled {
-  display: block;
+  display: flex;
   border-left: 1px solid green;
 }
 
@@ -1793,7 +1795,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .good-result-btn.enabled {
-  display: block;
+  display: flex;
   border-left: 1px solid green;
 }
 
@@ -1848,6 +1850,207 @@ body::-webkit-scrollbar-thumb {
 .unanswered-quiz {
   font-size: 20px;
   margin-bottom: 5px;
+}
+
+.test__background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0%;
+  left: 0%;
+  z-index: -1;
+}
+
+.test {
+  position: relative;
+  background-color: #ffffff; 
+  overflow: hidden; 
+  padding: 20px;
+}
+
+.rhombus-pattern-left {
+  position: absolute; 
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none; 
+  z-index: 0;
+}
+
+.rhombus-pattern-right {
+  position: absolute; 
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none; 
+  z-index: 0;
+}
+
+.rhombus {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  transform: skew(160deg);
+}
+
+.rhombus.left:nth-child(1) {
+  top: 0%;
+  left: 0;
+  background: linear-gradient(135deg, #ff7e5f, #feb47b);
+}
+
+.rhombus.left:nth-child(2) {
+  top: 5%;
+  left: 23px;
+  background: linear-gradient(135deg, #6a11cb, #2575fc); 
+}
+
+.rhombus.left:nth-child(3) {
+  top: 9%;
+  left: -38px;
+  background: linear-gradient(135deg, #43cea2, #185a9d);
+}
+
+.rhombus.left:nth-child(4) {
+  top: 18%;
+  left: 16px;
+  background: linear-gradient(135deg, #ff9a8b, #ff6a88); /* Градиентный фон */
+}
+
+.rhombus.left:nth-child(5) {
+  top: 22%;
+  left: -70px;
+  background: linear-gradient(135deg, #f6d365, #fda085); /* Градиентный фон */
+}
+
+.rhombus.left:nth-child(6) {
+  top: 26%;
+  left: -38px;
+  background: linear-gradient(135deg, #84fab0, #8fd3f4); /* Градиентный фон */
+}
+
+.rhombus.left:nth-child(7) {
+  top: 26%;
+  left: -38px;
+  background: linear-gradient(135deg, #84fab0, #8fd3f4); /* Градиентный фон */
+}
+
+.rhombus.left:nth-child(8) {
+  top: 46%;
+  left: -20px;
+  background: linear-gradient(135deg, #84fab0, #8fd3f4); /* Градиентный фон */
+}
+
+.rhombus.left:nth-child(9) {
+  top: 42%;
+  left: 51px;
+  background: linear-gradient(135deg, #a8ff78, #78ffd6); /* Градиентный фон */
+}
+
+.rhombus.left:nth-child(10) {
+  top: 50%;
+  left: 0px;
+  background: linear-gradient(135deg, #f093fb, #f5576c); /* Градиентный фон */
+}
+
+.rhombus.left:nth-child(11) {
+  top: 76%;
+  left: 71px;
+  background: linear-gradient(135deg, #f093fb, #f5576c); /* Градиентный фон */
+}
+
+.rhombus.left:nth-child(12) {
+  top: 80%;
+  left: -44px;
+  background: linear-gradient(135deg, #f6d365, #fda085); /* Градиентный фон */
+}
+
+.rhombus.left:nth-child(13) {
+  top: 84%;
+  left: 20px;
+  background: linear-gradient(135deg, #6a11cb, #2575fc); /* Градиентный фон */
+}
+
+/* Правый ряд */
+
+.rhombus.right:nth-child(1) {
+  top: 0%;
+  right: 45px;
+  background: linear-gradient(135deg, #ff7e5f, #feb47b);
+}
+
+.rhombus.right:nth-child(2) {
+  top: 4%;
+  right: 25px;
+  background: linear-gradient(135deg, #6a11cb, #2575fc); 
+}
+
+.rhombus.right:nth-child(3) {
+  top: 8%;
+  right: 78px;
+  background: linear-gradient(135deg, #43cea2, #185a9d);
+}
+
+.rhombus.right:nth-child(4) {
+  top: 18%;
+  right: -15px;
+  background: linear-gradient(135deg, #ff9a8b, #ff6a88); /* Градиентный фон */
+}
+
+.rhombus.right:nth-child(5) {
+  top: 22%;
+  right: 35px;
+  background: linear-gradient(135deg, #f6d365, #fda085); /* Градиентный фон */
+}
+
+.rhombus.right:nth-child(6) {
+  top: 26%;
+  right: -10px;
+  background: linear-gradient(135deg, #84fab0, #8fd3f4); /* Градиентный фон */
+}
+
+.rhombus.right:nth-child(7) {
+  top: 26%;
+  right: -38px;
+  background: linear-gradient(135deg, #84fab0, #8fd3f4); /* Градиентный фон */
+}
+
+.rhombus.right:nth-child(8) {
+  top: 46%;
+  right: 1px;
+  background: linear-gradient(135deg, #84fab0, #8fd3f4); /* Градиентный фон */
+}
+
+.rhombus.right:nth-child(9) {
+  top: 42%;
+  right: 51px;
+  background: linear-gradient(135deg, #a8ff78, #78ffd6); /* Градиентный фон */
+}
+
+.rhombus.right:nth-child(10) {
+  top: 50%;
+  right: 55px;
+  background: linear-gradient(135deg, #f093fb, #f5576c); /* Градиентный фон */
+}
+
+.rhombus.right:nth-child(11) {
+  top: 77%;
+  right: 5px;
+  background: linear-gradient(135deg, #f093fb, #f5576c); /* Градиентный фон */
+}
+
+.rhombus.right:nth-child(12) {
+  top: 81%;
+  right: -50px;
+  background: linear-gradient(135deg, #f6d365, #fda085); /* Градиентный фон */
+}
+
+.rhombus.right:nth-child(13) {
+  top: 84%;
+  right: 19px;
+  background: linear-gradient(135deg, #6a11cb, #2575fc); /* Градиентный фон */
 }
 
 
@@ -2179,6 +2382,11 @@ body::-webkit-scrollbar-thumb {
   animation: bounce 1s infinite;
 }
 
+.mnemo__modal-quiz-emoji-unanswered-img {
+  width: 50px;
+  animation: bounce 1s infinite;
+}
+
 .satisfactorily {
   color: orange;
   font-weight: 600;
@@ -2209,8 +2417,6 @@ body::-webkit-scrollbar-thumb {
   color: green;
   font-weight: 600;
 }
-
-
 
 
 @media (max-width: 1280px) {
@@ -2543,7 +2749,7 @@ body::-webkit-scrollbar-thumb {
 
   .mnemo__modal-box--btns {
     top: 430px;
-    left: 300px;
+    left: 260px;
     z-index: 1;
   }
 }
