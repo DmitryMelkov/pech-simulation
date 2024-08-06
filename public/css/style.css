@@ -2254,10 +2254,11 @@ body::-webkit-scrollbar-thumb {
   left: -75px;
 }
 
-.p-v-barabane-kotla-clue {
-  width: 225px;
-  top: -102px;
-  left: -75px;
+.p-v-barabane-clue {
+  text-align: center;
+  width: 280px;
+  top: -156px;
+  left: -114px;
 }
 
 .uroven-v-barabane-kotla-mnemo-clue {
