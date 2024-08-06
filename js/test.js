@@ -4,10 +4,10 @@ const modalContent = document.querySelector('.mnemo__modal-start');
 const modalBackgroundUnanswered = document.querySelector('.mnemo__modal-background-unanswered');
 const modalContentUnanswered = document.querySelector('.mnemo__modal-start-unanswered');
 const closeButton = document.querySelector('.modal-results-close-js');
-const closeButtonUnanswered = document.querySelector('.modal-unanswered-close-js')
+const closeButtonUnanswered = document.querySelector('.modal-unanswered-close-js');
 const smileImage = document.getElementById('smileImage');
-const badResultBtn = document.querySelector('.bad-result-btn')
-const goodResultBtn = document.querySelector('.good-result-btn')
+const badResultBtn = document.querySelector('.bad-result-btn');
+const goodResultBtn = document.querySelector('.good-result-btn');
 
 const checkAllQuestionsAnswered = (formData) => {
   const answeredQuestions = [...formData.keys()].map((key) => key.split('question')[1]);
@@ -19,7 +19,7 @@ const checkAllQuestionsAnswered = (formData) => {
 const getUnansweredQuestions = (formData) => {
   const answeredQuestions = [...formData.keys()].map((key) => key.split('question')[1]);
   const allQuestions = ['1', '2', '3', '4', '5', '6', '7'];
-  
+
   return allQuestions.filter((question) => !answeredQuestions.includes(question));
 };
 
@@ -78,25 +78,25 @@ testBtn.addEventListener('click', () => {
   const message = document.querySelector('.mnemo__modal-quiz');
   if (score === totalQuestions) {
     // Если все ответы правильные
-    message.innerHTML = 'Вы справились отлично, правильных ответов:';
+    message.innerHTML = 'Вы справились <span class="excellent">Отлично</span>, правильных ответов:';
     result.innerHTML = `<span class="otlichno">${score}</span> из ${totalQuestions}`;
     smileImage.src = 'img/excellent.svg';
     const span = document.querySelector('.mnemo__modal-quiz-incorrect-span');
     span.textContent = ''; // Очищаем содержимое span с неправильными ответами
   } else if (score >= thresholds.excellent) {
-    message.innerHTML = 'Вы справились отлично, правильных ответов:';
+    message.innerHTML = 'Вы справились <span class="excellent">Отлично</span>, правильных ответов:';
     result.innerHTML = `<span class="otlichno">${score}</span> из ${totalQuestions}`;
     smileImage.src = 'img/excellent.svg';
   } else if (score >= thresholds.good) {
-    message.innerHTML = 'Вы справились хорошо, правильных ответов:';
+    message.innerHTML = 'Вы справились <span class="good">Хорошо</span>, правильных ответов:';
     result.innerHTML = `<span class="horosho">${score}</span> из ${totalQuestions}`;
     smileImage.src = 'img/good.svg';
-    goodResultBtn.classList.add('enabled')
+    goodResultBtn.classList.add('enabled');
   } else if (score >= thresholds.satisfactory) {
-    message.innerHTML = 'Вы справились удовлетворительно, правильных ответов:';
+    message.innerHTML = 'Вы справились <span class="satisfactorily">Удовлетворительно</span>, правильных ответов:';
     result.innerHTML = `<span class="udovletvoritelno">${score}</span> из ${totalQuestions}`;
     smileImage.src = 'img/satisfactorily.svg';
-    goodResultBtn.classList.add('enabled')
+    goodResultBtn.classList.add('enabled');
   } else {
     message.innerHTML = 'Попробуйте еще раз, правильных ответов:';
     result.textContent = `${score} из ${totalQuestions}`;
@@ -116,7 +116,7 @@ closeButton.addEventListener('click', () => {
 
 closeButtonUnanswered.addEventListener('click', () => {
   closeModalUnanswered();
-})
+});
 
 // Закрытие модального окна по клику вне окна
 modalBackground.addEventListener('click', (event) => {
@@ -130,14 +130,14 @@ modalBackgroundUnanswered.addEventListener('click', (event) => {
   if (event.target === modalBackgroundUnanswered) {
     closeModalUnanswered();
   }
-})
+});
 
 const closeModal = () => {
   modalBackground.classList.remove('enabled');
   modalContent.classList.remove('enabled');
-}
+};
 
 const closeModalUnanswered = () => {
   modalBackgroundUnanswered.classList.remove('enabled');
   modalContentUnanswered.classList.remove('enabled');
-}
+};
