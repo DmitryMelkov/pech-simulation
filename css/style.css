@@ -1584,6 +1584,25 @@ body::-webkit-scrollbar-thumb {
   opacity: 0.5;
 }
 
+.mnemo__modal-close-unanswered {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 5;
+  width: 20px;
+  height: 20px;
+  transition: opacity .3s ease-in-out;
+  cursor: pointer;
+}
+
+.mnemo__modal-close-unanswered:hover {
+  opacity: 0.5;
+}
+
+.mnemo__modal-close-unanswered:active {
+  opacity: 0.5;
+}
+
 .mnemo__modal-descr {
   text-align: center;
   font-size: 18px;
