@@ -1821,9 +1821,9 @@ body::-webkit-scrollbar-thumb {
 }
 
 .mnemo__modal-start-unanswered {
-  padding: 5px;
+  padding: 20px;
   position: absolute;
-  max-width: 525px;
+  max-width: 690px;
   width: 100%;
   top: 50%;
   left: 50%;
@@ -1842,14 +1842,21 @@ body::-webkit-scrollbar-thumb {
 }
 
 .mnemo__modal-quiz-unanswered-span {
-  font-size: 18px;
+  margin: 0 0 28px 0;
+  font-size: 32px;
+  line-height: 41px;
   font-weight: 600;
   color: green;
 }
 
 .unanswered-quiz {
-  font-size: 20px;
-  margin-bottom: 5px;
+  margin-bottom: 30px;
+  font-size: 28px;
+  line-height: 41px;
+  font-weight: 400;
+  color: black;
+  text-align: center;
+  font-family: 'Gilroy', sans-serif;
 }
 
 .test__background {
@@ -1916,61 +1923,61 @@ body::-webkit-scrollbar-thumb {
 .rhombus.left:nth-child(4) {
   top: 18%;
   left: 16px;
-  background: linear-gradient(135deg, #ff9a8b, #ff6a88); /* Градиентный фон */
+  background: linear-gradient(135deg, #ff9a8b, #ff6a88);
 }
 
 .rhombus.left:nth-child(5) {
   top: 22%;
   left: -70px;
-  background: linear-gradient(135deg, #f6d365, #fda085); /* Градиентный фон */
+  background: linear-gradient(135deg, #f6d365, #fda085);
 }
 
 .rhombus.left:nth-child(6) {
   top: 26%;
   left: -38px;
-  background: linear-gradient(135deg, #84fab0, #8fd3f4); /* Градиентный фон */
+  background: linear-gradient(135deg, #84fab0, #8fd3f4);
 }
 
 .rhombus.left:nth-child(7) {
   top: 26%;
   left: -38px;
-  background: linear-gradient(135deg, #84fab0, #8fd3f4); /* Градиентный фон */
-}
+  background: linear-gradient(135deg, #84fab0, #8fd3f4);
+} 
 
 .rhombus.left:nth-child(8) {
   top: 46%;
   left: -20px;
-  background: linear-gradient(135deg, #84fab0, #8fd3f4); /* Градиентный фон */
+  background: linear-gradient(135deg, #84fab0, #8fd3f4); 
 }
 
 .rhombus.left:nth-child(9) {
   top: 42%;
   left: 51px;
-  background: linear-gradient(135deg, #a8ff78, #78ffd6); /* Градиентный фон */
+  background: linear-gradient(135deg, #a8ff78, #78ffd6);
 }
 
 .rhombus.left:nth-child(10) {
   top: 50%;
   left: 0px;
-  background: linear-gradient(135deg, #f093fb, #f5576c); /* Градиентный фон */
-}
+  background: linear-gradient(135deg, #f093fb, #f5576c);
+} 
 
 .rhombus.left:nth-child(11) {
   top: 76%;
   left: 71px;
-  background: linear-gradient(135deg, #f093fb, #f5576c); /* Градиентный фон */
+  background: linear-gradient(135deg, #f093fb, #f5576c); 
 }
 
 .rhombus.left:nth-child(12) {
   top: 80%;
   left: -44px;
-  background: linear-gradient(135deg, #f6d365, #fda085); /* Градиентный фон */
+  background: linear-gradient(135deg, #f6d365, #fda085); 
 }
 
 .rhombus.left:nth-child(13) {
   top: 84%;
   left: 20px;
-  background: linear-gradient(135deg, #6a11cb, #2575fc); /* Градиентный фон */
+  background: linear-gradient(135deg, #6a11cb, #2575fc); 
 }
 
 /* Правый ряд */
@@ -1996,61 +2003,61 @@ body::-webkit-scrollbar-thumb {
 .rhombus.right:nth-child(4) {
   top: 18%;
   right: -15px;
-  background: linear-gradient(135deg, #ff9a8b, #ff6a88); /* Градиентный фон */
+  background: linear-gradient(135deg, #ff9a8b, #ff6a88); 
 }
 
 .rhombus.right:nth-child(5) {
   top: 22%;
   right: 35px;
-  background: linear-gradient(135deg, #f6d365, #fda085); /* Градиентный фон */
+  background: linear-gradient(135deg, #f6d365, #fda085); 
 }
 
 .rhombus.right:nth-child(6) {
   top: 26%;
   right: -10px;
-  background: linear-gradient(135deg, #84fab0, #8fd3f4); /* Градиентный фон */
+  background: linear-gradient(135deg, #84fab0, #8fd3f4); 
 }
 
 .rhombus.right:nth-child(7) {
   top: 26%;
   right: -38px;
-  background: linear-gradient(135deg, #84fab0, #8fd3f4); /* Градиентный фон */
+  background: linear-gradient(135deg, #84fab0, #8fd3f4); 
 }
 
 .rhombus.right:nth-child(8) {
   top: 46%;
   right: 1px;
-  background: linear-gradient(135deg, #84fab0, #8fd3f4); /* Градиентный фон */
+  background: linear-gradient(135deg, #84fab0, #8fd3f4);
 }
 
 .rhombus.right:nth-child(9) {
   top: 42%;
   right: 51px;
-  background: linear-gradient(135deg, #a8ff78, #78ffd6); /* Градиентный фон */
+  background: linear-gradient(135deg, #a8ff78, #78ffd6); 
 }
 
 .rhombus.right:nth-child(10) {
   top: 50%;
   right: 55px;
-  background: linear-gradient(135deg, #f093fb, #f5576c); /* Градиентный фон */
+  background: linear-gradient(135deg, #f093fb, #f5576c); 
 }
 
 .rhombus.right:nth-child(11) {
   top: 77%;
   right: 5px;
-  background: linear-gradient(135deg, #f093fb, #f5576c); /* Градиентный фон */
+  background: linear-gradient(135deg, #f093fb, #f5576c); 
 }
 
 .rhombus.right:nth-child(12) {
   top: 81%;
   right: -50px;
-  background: linear-gradient(135deg, #f6d365, #fda085); /* Градиентный фон */
+  background: linear-gradient(135deg, #f6d365, #fda085); 
 }
 
 .rhombus.right:nth-child(13) {
   top: 84%;
   right: 19px;
-  background: linear-gradient(135deg, #6a11cb, #2575fc); /* Градиентный фон */
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
 }
 
 
@@ -2379,11 +2386,6 @@ body::-webkit-scrollbar-thumb {
 
 .mnemo__modal-quiz-emoji-img {
   width: 150px;
-  animation: bounce 1s infinite;
-}
-
-.mnemo__modal-quiz-emoji-unanswered-img {
-  width: 50px;
   animation: bounce 1s infinite;
 }
 
