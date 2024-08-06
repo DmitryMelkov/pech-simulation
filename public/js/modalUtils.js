@@ -66,8 +66,7 @@ export const setupModalEvents = (btnModal, modalBackground, modalActive, btnAcce
     const inputs = [
       document.querySelector('#firstSkolzInputModal'),
       document.querySelector('#secondSkolzInputModal'),
-      document.querySelector('#thirdSkolzInputModal'),
-      document.querySelector('#pVbarabaneInputModal')
+      document.querySelector('#thirdSkolzInputModal')
     ];
 
     if (validateInputs(inputs)) {

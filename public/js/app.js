@@ -16,10 +16,6 @@ const thirdSkolz = document.querySelector('.temper-3-skolz');
 thirdSkolz.dataset.description = 'Температура на 3 скользящей';
 thirdSkolz.dataset.conditionMin = 400; // Новое значение для установившегося режима
 thirdSkolz.dataset.conditionMax = 750; // Новое значение для выхода на режим
-const davlVbarabane = document.querySelector('.davl-v-barabane');
-secondSkolz.dataset.description = 'Давление в барабане котла';
-secondSkolz.dataset.conditionMin = 0;
-secondSkolz.dataset.conditionMax = 5.5;
 
 
 
@@ -41,12 +37,6 @@ const thirdSkolzClue = document.querySelector('.third-skolz-clue');
 const thirdSkolzClose = document.querySelector('.third-skolz-clue-close');
 const thirdSkolzInput = document.querySelector('#thirdSkolzInput');
 const thirdSkolzForm = document.querySelector('.mnemo__param-clue-form--third-skolz-clue');
-
-const pVbarabaneClick = document.querySelector('.davl-v-barabane-js');
-const pVbarabaneClue = document.querySelector('.p-v-barabane-clue');
-const pVbarabaneClose = document.querySelector('.p-v-barabane-clue-close');
-const pVbarabaneInput = document.querySelector('#pVbarabaneInput');
-const pVbarabaneForm = document.querySelector('.mnemo__param-clue-form--p-v-barabane-clue');
 
 // Фунеции для инпутов в мнемосхеме
 tooltipVisible(
@@ -85,18 +75,7 @@ tooltipVisible(
   0,
   1500
 );
-tooltipVisible(
-  pVbarabaneClick,
-  pVbarabaneClue,
-  pVbarabaneClose,
-  pVbarabaneInput,
-  davlVbarabane,
-  pVbarabaneForm,
-  false,
-  null,
-  0,
-  20
-);
+
 
 // Функции для инпутов в модалке
 const btnModal = document.querySelector('.btn-modal');
