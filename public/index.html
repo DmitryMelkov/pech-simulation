@@ -74,9 +74,15 @@
                   <span class="modal-content__error">Введите значение</span>
                 </div>
                  <div class="modal-content__input-box" >
-                  <label class="modal-content__label" for="pVbarabaneInputModal">P в барабане котла</label>
+                  <label class="modal-content__label" for="pVbarabaneInputModal">Давление в барабане котла</label>
                   <input class="modal-content__input" data-type="pressure"  min="0" max="20" step="0.1" name="modalPvBarabane"  type="number" 
                     placeholder="Введите значение кгс/см2" id="pVbarabaneInputModal">
+                  <span class="modal-content__error">Введите значение</span>
+                </div>
+                <div class="modal-content__input-box" >
+                  <label class="modal-content__label" for="razrezhVtopkeInputModal">Разрежение в топке печи</label>
+                  <input class="modal-content__input" data-type="razrezh"  min="-10" max="0" step="0.1" name="modalPvBarabane"  type="number" 
+                    placeholder="Введите значение кгс/см2" id="razrezhVtopkeInputModal">
                   <span class="modal-content__error">Введите значение</span>
                 </div>
             <!--    <div class="modal-content__input-box">
@@ -211,6 +217,24 @@
         <div class="mnemo__modal-start modal-param-js modal-param-js--davl-v-barabane">
           <div class="mnemo__modal-title">
             <h2 class="mnemo__modal-title-text title-reset">Давление в барабане</h2>
+            <button class="mnemo__modal-close modal-param-close-js btn-reset">
+              <div class="krest">
+                <span class="line-1"></span>
+                <span class="line-2"></span>
+              </div>
+            </button>
+          </div>
+          <div>
+            <p class="mnemo__modal-descr descr-reset">
+              Тут будет описание с выполнением каких то действий по нормализации параметра
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="mnemo__modal-background modal-param-bg-js">
+        <div class="mnemo__modal-start modal-param-js modal-param-js--razrezh-v-topke">
+          <div class="mnemo__modal-title">
+            <h2 class="mnemo__modal-title-text title-reset">Разрежение в топке печи</h2>
             <button class="mnemo__modal-close modal-param-close-js btn-reset">
               <div class="krest">
                 <span class="line-1"></span>
@@ -547,16 +571,48 @@
             950
           </span>
           <span class="mnemo__param-naimenov temper-topka-span">&#176C</span>
-        </div>
+        </div> -->
 
-        <div class="mnemo__param p-v-topke">
-          <span class="mnemo__param-text davl-topka">
-            -2,1
-          </span>
-          <span class="mnemo__param-naimenov davl-topka-span">кгс/м2</span>
-        </div>
+        <div class="mnemo__param mnemo__tooltip p-v-topke">
+          <div class="razrezh-v-topke-js">
+            <span class="mnemo__param-text razrezh-topka">
+              -2,1
+            </span>
+            <span class="mnemo__param-naimenov davl-topka-span">кгс/м2</span>
+          </div>
+          <div class="mnemo__param-clue razrezh-v-topke-clue">
+            <div class="mnemo__param-clue-content">
+              <div class="mnemo__param-clue-title">
+                <h2 class="mnemo__param-clue-title-text title-reset">Разрежение в топке печи</h2>
+                <button class="mnemo__tooltip-close razrezh-v-topke-clue-close btn-reset">
+                  <div class="krest">
+                    <span class="line-1"></span>
+                    <span class="line-2"></span>
+                  </div>
+                </button>
+              </div>
+              <div class="mnemo__param-clue-div">Рекомендуемый диапазон в установившимся режиме:
+                <span class="mnemo__param-clue-span">
+                  от -1.0 до -4.0
+                </span>
+              </div>
+              <form class="mnemo__param-clue-form mnemo__param-clue-form--razrezh-v-topke-clue">
+                <div class="mnemo__param-clue-form-div">
+                  <input class="mnemo__param-clue-input" type="number" placeholder="Введите значение"
+                    id="razrezhVtopkeInput" min="-10" max="0" step="0.1">
+                  <label class="mnemo__param-clue-label" for="razrezhVtopkeInput"></label>
+                  <button class="mnemo__param-clue-form-btn--ok btn-reset" type="submit">
+                    Принять
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div> 
 
-        <div class="mnemo__param zadanie-temper-na-gorelky">
+
+
+     <!--   <div class="mnemo__param zadanie-temper-na-gorelky">
           <span class="mnemo__param-text ">
             600
           </span>
@@ -620,7 +676,6 @@
             </span>
             <span class="mnemo__param-naimenov davl-v-barabane-span">кгс/см2</span>
           </div>
-
           <div class="mnemo__param-clue p-v-barabane-clue">
             <div class="mnemo__param-clue-content">
               <div class="mnemo__param-clue-title">
@@ -649,7 +704,6 @@
               </form>
             </div>
           </div>
-
         </div>
 
        <!-- <div class="mnemo__param uroven-v-barabane-kotla"> 

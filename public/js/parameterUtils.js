@@ -26,7 +26,7 @@ export const parameters = [
     modalInputSelector: '#thirdSkolzInputModal',
     clueInputSelector: '#thirdSkolzInput',
     conditionMin: 0,
-    conditionMax: 750, // Updated for "выход на режим"
+    conditionMax: 750,
     description: 'Температура на 3 скользящей',
     type: 'temperature'
   },
@@ -35,9 +35,18 @@ export const parameters = [
     modalInputSelector: '#pVbarabaneInputModal',
     clueInputSelector: '#pVbarabaneInput',
     conditionMin: 0,
-    conditionMax: 10, // Updated for "выход на режим"
+    conditionMax: 10,
     description: 'P в барабане котла',
     type: 'pressure'
+  },
+  {
+    spanSelector: '.razrezh-topka',
+    modalInputSelector: '#razrezhVtopkeInputModal',
+    clueInputSelector: '#razrezhVtopkeInput',
+    conditionMin: -4,
+    conditionMax: -1,
+    description: 'Разрежение в топке печи',
+    type: 'razrezh'
   }
 ];
 
@@ -50,10 +59,11 @@ export const syncInputsAndSpan = () => {
       isValid = !isNaN(value) && value >= 0 && value <= 1500;
     } else if (type === 'pressure') {
       isValid = !isNaN(value) && value >= 0 && value <= 20;
+    } else if (type === 'razrezh') {
+      isValid = !isNaN(value) && value >= -10 && value <= 0;
     }
-
     if (!isValid) {
-      console.error(`Value must be between ${type === 'temperature' ? '0 and 1500' : '0 and 20'}`);
+      console.error(`Value must be between ${type === 'temperature' ? '0 and 1500' : type === 'pressure' ? '0 and 20' : '0 and -10'}`);
       return;
     }
 
@@ -121,6 +131,7 @@ export const updateMode = () => {
   // Обновление параметров с учетом первого значения
   updateParameter('.temper-2-skolz', 0, 700, firstSkolzValue);
   updateParameter('.davl-v-barabane', 0, 10, firstSkolzValue);
+  updateParameter('.razrezh-topka', -4, -1, firstSkolzValue);
 
   // Изменение диапазонов для 3 скользящей в зависимости от первого значения
   if (mode === 'Установившийся режим') {
@@ -135,6 +146,7 @@ export const updateMode = () => {
   addRowIfRunning(document.querySelector('.temper-2-skolz'), 'Температура на 2 скользящей');
   addRowIfRunning(document.querySelector('.temper-3-skolz'), 'Температура на 3 скользящей');
   addRowIfRunning(document.querySelector('.davl-v-barabane'), 'P в барабане котла');
+  addRowIfRunning(document.querySelector('.razrezh-topka'), 'Разрежение в топке печи');
 
   checkAndInsertTemplate();
 };

@@ -23,14 +23,22 @@ export const validateInputs = (inputs) => {
           isValid = false;
         } else if (inputType === 'pressure' && (numericValue < 0 || numericValue > 20)) {
           isValid = false;
-        }
-      }
+        } else if (inputType === 'razrezh' && (numericValue < -10 || numericValue > 0)) {
+          isValid = false;
+      }}
       
       if (!isValid) {
         input.classList.add('error');
         if (errorElement) {
           errorElement.classList.add('active');
-          errorElement.textContent = inputType === 'temperature' ? 'Диапазон от 0 до 1500' : 'Диапазон от 0 до 20'; // Error message based on input type
+          errorElement.textContent = inputType === 'temperature' 
+          ? 'Диапазон от 0 до 1500' 
+          : inputType === 'pressure' 
+          ? 'Диапазон от 0 до 20' 
+          : inputType === 'razrezh' 
+          ? 'Диапазон от 0 до -10' 
+          : 'Неизвестный тип ввода';
+
         }
         allValid = false;
       } else {
@@ -79,7 +87,8 @@ export const setupModalEvents = (btnModal, modalBackground, modalActive, btnAcce
       document.querySelector('#firstSkolzInputModal'),
       document.querySelector('#secondSkolzInputModal'),
       document.querySelector('#thirdSkolzInputModal'),
-      document.querySelector('#pVbarabaneInputModal')
+      document.querySelector('#pVbarabaneInputModal'),
+      document.querySelector('#razrezhVtopkeInputModal'),
     ];
 
     if (validateInputs(inputs)) {

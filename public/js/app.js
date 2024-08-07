@@ -18,8 +18,12 @@ thirdSkolz.dataset.conditionMin = 400; // Новое значение для у�
 thirdSkolz.dataset.conditionMax = 750; // Новое значение для выхода на режим
 const davlVbarabane = document.querySelector('.davl-v-barabane');
 davlVbarabane.dataset.description = 'P в барабане котла';
-davlVbarabane.dataset.conditionMin = 10;
+davlVbarabane.dataset.conditionMin = 0;
 davlVbarabane.dataset.conditionMax = 10;
+const razrezhVtopke = document.querySelector('.razrezh-topka');
+razrezhVtopke.dataset.description = 'Разрежение в топке печи'
+razrezhVtopke.dataset.conditionMin = -4;
+razrezhVtopke.dataset.conditionMax = -1;
 
 
 const firstSkolzClick = document.querySelector('.first-skolz-js');
@@ -46,6 +50,12 @@ const davlVbarabaneClue = document.querySelector('.p-v-barabane-clue');
 const davlVbarabaneClose = document.querySelector('.p-v-barabane-clue-close')
 const davlVbarabaneInput = document.querySelector('#pVbarabaneInput');
 const davlVbarabaneForm = document.querySelector('.mnemo__param-clue-form--p-v-barabane-clue');
+
+const razrezhVtopkeClick = document.querySelector('.razrezh-v-topke-js');
+const razrezhVtopkeClue = document.querySelector('.razrezh-v-topke-clue');
+const razrezhVtopkeClose = document.querySelector('.razrezh-v-topke-clue-close')
+const razrezhVtopkeInput = document.querySelector('#razrezhVtopkeInput');
+const razrezhVtopkeForm = document.querySelector('.mnemo__param-clue-form--razrezh-v-topke-clue');
 
 // Фунеции для инпутов в мнемосхеме
 tooltipVisible(
@@ -96,6 +106,18 @@ tooltipVisible(
   0,
   20
 );
+tooltipVisible(
+  razrezhVtopkeClick,
+  razrezhVtopkeClue,
+  razrezhVtopkeClose,
+  razrezhVtopkeInput,
+  razrezhVtopke,
+  razrezhVtopkeForm,
+  false,
+  null,
+  -10,
+  0
+);
 
 
 
@@ -112,6 +134,7 @@ const modalInputFirstSkolz = document.querySelector('#firstSkolzInputModal');
 const modalInputSecondSkolz = document.querySelector('#secondSkolzInputModal');
 const modalInputThirdSkolz = document.querySelector('#thirdSkolzInputModal');
 const modalInputDavlVBarabane = document.querySelector('#pVbarabaneInputModal')
+const modalInputRazrezhVtopke = document.querySelector('#razrezhVtopkeInputModal')
 
 tooltipVisible(
   firstSkolzClick,
@@ -160,6 +183,18 @@ tooltipVisible(
   null,
   0,
   20
+);
+tooltipVisible(
+  razrezhVtopkeClick,
+  razrezhVtopkeClue,
+  razrezhVtopkeClose,
+  modalInputRazrezhVtopke,
+  razrezhVtopke,
+  modalForm,
+  false,
+  null,
+  -10,
+  0
 );
 
 
