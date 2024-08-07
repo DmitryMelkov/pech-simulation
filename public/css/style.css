@@ -1305,6 +1305,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .mnemo__param-clue-title-text {
+  max-width: 250px;
   margin: 0;
   font-size: 16px;
   line-height: 18px;
@@ -1890,28 +1891,28 @@ body::-webkit-scrollbar-thumb {
 
 .test {
   position: relative;
-  background-color: #ffffff; 
-  overflow: hidden; 
+  background-color: #ffffff;
+  overflow: hidden;
   padding: 20px;
 }
 
 .rhombus-pattern-left {
-  position: absolute; 
+  position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
-  pointer-events: none; 
+  pointer-events: none;
   z-index: 0;
 }
 
 .rhombus-pattern-right {
-  position: absolute; 
+  position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
-  pointer-events: none; 
+  pointer-events: none;
   z-index: 0;
 }
 
@@ -1931,7 +1932,7 @@ body::-webkit-scrollbar-thumb {
 .rhombus.left:nth-child(2) {
   top: 5%;
   left: 23px;
-  background: linear-gradient(135deg, #6a11cb, #2575fc); 
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
 }
 
 .rhombus.left:nth-child(3) {
@@ -1962,12 +1963,12 @@ body::-webkit-scrollbar-thumb {
   top: 26%;
   left: -38px;
   background: linear-gradient(135deg, #84fab0, #8fd3f4);
-} 
+}
 
 .rhombus.left:nth-child(8) {
   top: 46%;
   left: -20px;
-  background: linear-gradient(135deg, #84fab0, #8fd3f4); 
+  background: linear-gradient(135deg, #84fab0, #8fd3f4);
 }
 
 .rhombus.left:nth-child(9) {
@@ -1980,24 +1981,24 @@ body::-webkit-scrollbar-thumb {
   top: 50%;
   left: 0px;
   background: linear-gradient(135deg, #f093fb, #f5576c);
-} 
+}
 
 .rhombus.left:nth-child(11) {
   top: 76%;
   left: 71px;
-  background: linear-gradient(135deg, #f093fb, #f5576c); 
+  background: linear-gradient(135deg, #f093fb, #f5576c);
 }
 
 .rhombus.left:nth-child(12) {
   top: 80%;
   left: -44px;
-  background: linear-gradient(135deg, #f6d365, #fda085); 
+  background: linear-gradient(135deg, #f6d365, #fda085);
 }
 
 .rhombus.left:nth-child(13) {
   top: 84%;
   left: 20px;
-  background: linear-gradient(135deg, #6a11cb, #2575fc); 
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
 }
 
 /* Правый ряд */
@@ -2011,7 +2012,7 @@ body::-webkit-scrollbar-thumb {
 .rhombus.right:nth-child(2) {
   top: 4%;
   right: 25px;
-  background: linear-gradient(135deg, #6a11cb, #2575fc); 
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
 }
 
 .rhombus.right:nth-child(3) {
@@ -2023,25 +2024,25 @@ body::-webkit-scrollbar-thumb {
 .rhombus.right:nth-child(4) {
   top: 18%;
   right: -15px;
-  background: linear-gradient(135deg, #ff9a8b, #ff6a88); 
+  background: linear-gradient(135deg, #ff9a8b, #ff6a88);
 }
 
 .rhombus.right:nth-child(5) {
   top: 22%;
   right: 35px;
-  background: linear-gradient(135deg, #f6d365, #fda085); 
+  background: linear-gradient(135deg, #f6d365, #fda085);
 }
 
 .rhombus.right:nth-child(6) {
   top: 26%;
   right: -10px;
-  background: linear-gradient(135deg, #84fab0, #8fd3f4); 
+  background: linear-gradient(135deg, #84fab0, #8fd3f4);
 }
 
 .rhombus.right:nth-child(7) {
   top: 26%;
   right: -38px;
-  background: linear-gradient(135deg, #84fab0, #8fd3f4); 
+  background: linear-gradient(135deg, #84fab0, #8fd3f4);
 }
 
 .rhombus.right:nth-child(8) {
@@ -2053,25 +2054,25 @@ body::-webkit-scrollbar-thumb {
 .rhombus.right:nth-child(9) {
   top: 42%;
   right: 51px;
-  background: linear-gradient(135deg, #a8ff78, #78ffd6); 
+  background: linear-gradient(135deg, #a8ff78, #78ffd6);
 }
 
 .rhombus.right:nth-child(10) {
   top: 50%;
   right: 55px;
-  background: linear-gradient(135deg, #f093fb, #f5576c); 
+  background: linear-gradient(135deg, #f093fb, #f5576c);
 }
 
 .rhombus.right:nth-child(11) {
   top: 77%;
   right: 5px;
-  background: linear-gradient(135deg, #f093fb, #f5576c); 
+  background: linear-gradient(135deg, #f093fb, #f5576c);
 }
 
 .rhombus.right:nth-child(12) {
   top: 81%;
   right: -50px;
-  background: linear-gradient(135deg, #f6d365, #fda085); 
+  background: linear-gradient(135deg, #f6d365, #fda085);
 }
 
 .rhombus.right:nth-child(13) {
