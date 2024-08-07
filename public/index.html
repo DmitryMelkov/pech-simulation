@@ -56,26 +56,26 @@
               <div class="modal-content__form-inputs">
                 <div class="modal-content__input-box">
                   <label class="modal-content__label" for="firstSkolzInputModal">1-СК</label>
-                  <input class="modal-content__input" min="0" max="1500" step="1" name="modalInputFirstSkolz"
+                  <input class="modal-content__input" data-type="temperature" min="0" max="1500" step="1" name="modalInputFirstSkolz"
                     type="number" placeholder="Введите значение &#176C" id="firstSkolzInputModal">
                   <span class="modal-content__error">Введите значение</span>
                 </div>
                 <div class="modal-content__input-box">
                   <label class="modal-content__label" for="secondSkolzInputModal">2-СК</label>
-                  <input class="modal-content__input " min="0" max="1500" step="1" name="modalInputSecondSkolz"
+                  <input class="modal-content__input " data-type="temperature" min="0" max="1500" step="1" name="modalInputSecondSkolz"
                     type="number" placeholder="Введите значение &#176C" id="secondSkolzInputModal">
                   <span class="modal-content__error">Введите значение</span>
 
                 </div>
                 <div class="modal-content__input-box">
                   <label class="modal-content__label" for="thirdSkolzInputModal">3-СК</label>
-                  <input class="modal-content__input" min="0" max="1500" step="1" name="modalInputThirdSkolz"
+                  <input class="modal-content__input" data-type="temperature" min="0" max="1500" step="1" name="modalInputThirdSkolz"
                     type="number" placeholder="Введите значение &#176C" id="thirdSkolzInputModal">
                   <span class="modal-content__error">Введите значение</span>
                 </div>
-                 <div class="modal-content__input-box">
+                 <div class="modal-content__input-box" >
                   <label class="modal-content__label" for="pVbarabaneInputModal">P в барабане котла</label>
-                  <input class="modal-content__input" min="0" max="20" step="any" name="modalPvBarabane" type="number"
+                  <input class="modal-content__input" data-type="pressure"  min="0" max="20" step="0.1" name="modalPvBarabane"  type="number" 
                     placeholder="Введите значение кгс/см2" id="pVbarabaneInputModal">
                   <span class="modal-content__error">Введите значение</span>
                 </div>
@@ -225,6 +225,7 @@
           </div>
         </div>
       </div>
+
 
       <!-- <div class="mnemo__background"></div> -->
       <div class="mnemo">
@@ -615,7 +616,7 @@
         <div class="mnemo__param mnemo__tooltip p-v-barabane-kotla">
           <div class="davl-v-barabane-js">
             <span  class="mnemo__param-text davl-v-barabane">
-              3,1
+              0
             </span>
             <span class="mnemo__param-naimenov davl-v-barabane-span">кгс/см2</span>
           </div>
@@ -633,7 +634,7 @@
               </div>
               <div class="mnemo__param-clue-div">Рекомендуемый диапазон:
                 <span class="mnemo__param-clue-span">
-                  ###
+                  до 10
                 </span>
               </div>
               <form class="mnemo__param-clue-form mnemo__param-clue-form--p-v-barabane-clue">
@@ -641,7 +642,7 @@
                   <input class="mnemo__param-clue-input" type="number" placeholder="Введите значение"
                     id="pVbarabaneInput" min="0" max="20" step="0.1">
                   <label class="mnemo__param-clue-label" for="pVbarabaneInput"></label>
-                  <button class="mnemo__param-clue-form-btn--ok p-v-barabane-btn btn-reset" type="submit">
+                  <button class="mnemo__param-clue-form-btn--ok btn-reset" type="submit">
                     Принять
                   </button>
                 </div>

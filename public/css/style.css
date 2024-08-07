@@ -1661,6 +1661,7 @@ body::-webkit-scrollbar-thumb {
 
 .modal-content__form-inputs {
   margin-bottom: 30px;
+  gap: 25px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;

@@ -10,6 +10,7 @@ export const parameters = [
     conditionMin: 550,
     conditionMax: 800,
     description: 'Температура на 1 скользящей',
+    type: 'temperature'
   },
   {
     spanSelector: '.temper-2-skolz',
@@ -18,6 +19,7 @@ export const parameters = [
     conditionMin: 0,
     conditionMax: 700,
     description: 'Температура на 2 скользящей',
+    type: 'temperature'
   },
   {
     spanSelector: '.temper-3-skolz',
@@ -26,14 +28,32 @@ export const parameters = [
     conditionMin: 0,
     conditionMax: 750, // Updated for "выход на режим"
     description: 'Температура на 3 скользящей',
+    type: 'temperature'
   },
+  {
+    spanSelector: '.davl-v-barabane',
+    modalInputSelector: '#pVbarabaneInputModal',
+    clueInputSelector: '#pVbarabaneInput',
+    conditionMin: 0,
+    conditionMax: 10, // Updated for "выход на режим"
+    description: 'P в барабане котла',
+    type: 'pressure'
+  }
 ];
 
 // Синхронизация инпутов и спанов
 export const syncInputsAndSpan = () => {
-  const updateInputs = (value, modalInput, clueInput, spanElement) => {
-    if (isNaN(value) || value < 0 || value > 1500) {
-      console.error('Value must be between 0 and 1500');
+  const updateInputs = (value, modalInput, clueInput, spanElement, type) => {
+    let isValid = false;
+
+    if (type === 'temperature') {
+      isValid = !isNaN(value) && value >= 0 && value <= 1500;
+    } else if (type === 'pressure') {
+      isValid = !isNaN(value) && value >= 0 && value <= 20;
+    }
+
+    if (!isValid) {
+      console.error(`Value must be between ${type === 'temperature' ? '0 and 1500' : '0 and 20'}`);
       return;
     }
 
@@ -48,6 +68,7 @@ export const syncInputsAndSpan = () => {
     const spanElement = document.querySelector(param.spanSelector);
     const modalInput = document.querySelector(param.modalInputSelector);
     const clueInput = document.querySelector(param.clueInputSelector);
+    const type = param.type;
 
     if (!spanElement || !modalInput || !clueInput) {
       return;
@@ -55,17 +76,17 @@ export const syncInputsAndSpan = () => {
 
     modalInput.addEventListener('input', () => {
       const value = parseFloat(modalInput.value);
-      updateInputs(value, modalInput, clueInput, spanElement);
+      updateInputs(value, modalInput, clueInput, spanElement, type);
     });
 
     clueInput.addEventListener('input', () => {
       const value = parseFloat(clueInput.value);
-      updateInputs(value, modalInput, clueInput, spanElement);
+      updateInputs(value, modalInput, clueInput, spanElement, type);
     });
 
     spanElement.addEventListener('input', () => {
       const value = parseFloat(spanElement.textContent);
-      updateInputs(value, modalInput, clueInput, spanElement);
+      updateInputs(value, modalInput, clueInput, spanElement, type);
     });
   });
 };
@@ -99,6 +120,7 @@ export const updateMode = () => {
 
   // Обновление параметров с учетом первого значения
   updateParameter('.temper-2-skolz', 0, 700, firstSkolzValue);
+  updateParameter('.davl-v-barabane', 0, 10, firstSkolzValue);
 
   // Изменение диапазонов для 3 скользящей в зависимости от первого значения
   if (mode === 'Установившийся режим') {
@@ -112,6 +134,7 @@ export const updateMode = () => {
 
   addRowIfRunning(document.querySelector('.temper-2-skolz'), 'Температура на 2 скользящей');
   addRowIfRunning(document.querySelector('.temper-3-skolz'), 'Температура на 3 скользящей');
+  addRowIfRunning(document.querySelector('.davl-v-barabane'), 'P в барабане котла');
 
   checkAndInsertTemplate();
 };

@@ -1,32 +1,44 @@
-// Функция для проверки значений инпутов и применения стилей ошибок
+// Функция для проверки значений инпутов и применения стилей ошибок в модалке
 export const validateInputs = (inputs) => {
   let allValid = true;
 
   inputs.forEach((input) => {
     const errorElement = input.nextElementSibling;
     const value = input.value.trim();
-
-    // Проверка на пустое значение
+    const inputType = input.dataset.type; 
     if (value === '') {
       input.classList.add('error');
       if (errorElement) {
         errorElement.classList.add('active');
-        errorElement.textContent = 'Введите значение'; // Сообщение об ошибке для пустого значения
-      }
-      allValid = false;
-    } else if (isNaN(value) || value < 0 || value > 1500) {
-      // Проверка на диапазон значений
-      input.classList.add('error');
-      if (errorElement) {
-        errorElement.classList.add('active');
-        errorElement.textContent = 'Диапазон от 0 до 1500'; // Сообщение об ошибке для значения вне диапазона
+        errorElement.textContent = 'Введите значение'; 
       }
       allValid = false;
     } else {
-      input.classList.remove('error');
-      if (errorElement) {
-        errorElement.classList.remove('active');
-        errorElement.textContent = ''; // Очистка сообщения об ошибке
+      let isValid = true;
+      if (isNaN(value)) {
+        isValid = false;
+      } else {
+        const numericValue = parseFloat(value);
+        if (inputType === 'temperature' && (numericValue < 0 || numericValue > 1500)) {
+          isValid = false;
+        } else if (inputType === 'pressure' && (numericValue < 0 || numericValue > 20)) {
+          isValid = false;
+        }
+      }
+      
+      if (!isValid) {
+        input.classList.add('error');
+        if (errorElement) {
+          errorElement.classList.add('active');
+          errorElement.textContent = inputType === 'temperature' ? 'Диапазон от 0 до 1500' : 'Диапазон от 0 до 20'; // Error message based on input type
+        }
+        allValid = false;
+      } else {
+        input.classList.remove('error');
+        if (errorElement) {
+          errorElement.classList.remove('active');
+          errorElement.textContent = '';
+        }
       }
     }
   });
@@ -66,7 +78,8 @@ export const setupModalEvents = (btnModal, modalBackground, modalActive, btnAcce
     const inputs = [
       document.querySelector('#firstSkolzInputModal'),
       document.querySelector('#secondSkolzInputModal'),
-      document.querySelector('#thirdSkolzInputModal')
+      document.querySelector('#thirdSkolzInputModal'),
+      document.querySelector('#pVbarabaneInputModal')
     ];
 
     if (validateInputs(inputs)) {

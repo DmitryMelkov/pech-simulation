@@ -11,7 +11,8 @@ const getDataModalAttribute = (description) => {
   const modalMap = {
     'Температура на 1 скользящей': 'modal-param-js--temper-1-skolz',
     'Температура на 2 скользящей': 'modal-param-js--temper-2-skolz',
-    'Температура на 3 скользящей': 'modal-param-js--temper-3-skolz'
+    'Температура на 3 скользящей': 'modal-param-js--temper-3-skolz',
+    'P в барабане котла': 'modal-param-js--davl-v-barabane'
   };
   return modalMap[description] || '';
 };

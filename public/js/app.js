@@ -16,7 +16,10 @@ const thirdSkolz = document.querySelector('.temper-3-skolz');
 thirdSkolz.dataset.description = 'Температура на 3 скользящей';
 thirdSkolz.dataset.conditionMin = 400; // Новое значение для установившегося режима
 thirdSkolz.dataset.conditionMax = 750; // Новое значение для выхода на режим
-
+const davlVbarabane = document.querySelector('.davl-v-barabane');
+davlVbarabane.dataset.description = 'P в барабане котла';
+davlVbarabane.dataset.conditionMin = 10;
+davlVbarabane.dataset.conditionMax = 10;
 
 
 const firstSkolzClick = document.querySelector('.first-skolz-js');
@@ -37,6 +40,12 @@ const thirdSkolzClue = document.querySelector('.third-skolz-clue');
 const thirdSkolzClose = document.querySelector('.third-skolz-clue-close');
 const thirdSkolzInput = document.querySelector('#thirdSkolzInput');
 const thirdSkolzForm = document.querySelector('.mnemo__param-clue-form--third-skolz-clue');
+
+const davlVbarabaneClick = document.querySelector('.davl-v-barabane-js');
+const davlVbarabaneClue = document.querySelector('.p-v-barabane-clue');
+const davlVbarabaneClose = document.querySelector('.p-v-barabane-clue-close')
+const davlVbarabaneInput = document.querySelector('#pVbarabaneInput');
+const davlVbarabaneForm = document.querySelector('.mnemo__param-clue-form--p-v-barabane-clue');
 
 // Фунеции для инпутов в мнемосхеме
 tooltipVisible(
@@ -75,6 +84,20 @@ tooltipVisible(
   0,
   1500
 );
+tooltipVisible(
+  davlVbarabaneClick,
+  davlVbarabaneClue,
+  davlVbarabaneClose,
+  davlVbarabaneInput,
+  davlVbarabane,
+  davlVbarabaneForm,
+  false,
+  null,
+  0,
+  20
+);
+
+
 
 
 // Функции для инпутов в модалке
@@ -88,6 +111,7 @@ const modalForm = document.querySelector('.all__param-form');
 const modalInputFirstSkolz = document.querySelector('#firstSkolzInputModal');
 const modalInputSecondSkolz = document.querySelector('#secondSkolzInputModal');
 const modalInputThirdSkolz = document.querySelector('#thirdSkolzInputModal');
+const modalInputDavlVBarabane = document.querySelector('#pVbarabaneInputModal')
 
 tooltipVisible(
   firstSkolzClick,
@@ -125,6 +149,19 @@ tooltipVisible(
   0,
   1500 // Обновленный диапазон для выхода на режим
 );
+tooltipVisible(
+  davlVbarabaneClick,
+  davlVbarabaneClue,
+  davlVbarabaneClose,
+  modalInputDavlVBarabane,
+  davlVbarabane,
+  modalForm,
+  false,
+  null,
+  0,
+  20
+);
+
 
 // Инициализация синхронизации инпутов и span
 syncInputsAndSpan();
