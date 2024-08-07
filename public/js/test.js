@@ -23,121 +23,101 @@ const getUnansweredQuestions = (formData) => {
   return allQuestions.filter((question) => !answeredQuestions.includes(question));
 };
 
-testBtn.addEventListener('click', () => {
+testBtn.addEventListener('click', async () => {
   const form = document.getElementById('testForm');
   const result = document.getElementById('result');
-  const totalQuestions = 7;
-  const thresholds = {
-    excellent: totalQuestions * 0.9,
-    good: totalQuestions * 0.8,
-    satisfactory: totalQuestions * 0.7,
-  };
-
-  const answers = {
-    question1: 'Уволиться',
-    question2: '4',
-    question3: 'Сова',
-    question4: 'Синий',
-    question5: '3 + 3 = 6',
-    question6: 'Лев Толстой',
-    question7: 'Париж',
-  };
 
   const formData = new FormData(form);
-  let score = 0;
-  let incorrectAnswerNumbers = [];
+  console.log([...formData.keys()]);
 
   if (!checkAllQuestionsAnswered(formData)) {
     const unansweredQuestions = getUnansweredQuestions(formData);
-    const unansweredSpan = document.querySelector('.mnemo__modal-quiz-unanswered-span');
-    unansweredSpan.textContent = unansweredQuestions.join(', ');
+    document.querySelector('.mnemo__modal-quiz-unanswered-span').textContent = unansweredQuestions.join(', ');
     modalBackgroundUnanswered.classList.add('enabled');
     modalContentUnanswered.classList.add('enabled');
     return;
   }
 
-  for (let [key, value] of formData.entries()) {
-    if (answers[key] && value === answers[key]) {
-      score++;
-    } else {
-      incorrectAnswerNumbers.push(key.split('question')[1]);
+  const formObject = Object.fromEntries(formData);
+
+  try {
+    const response = await fetch('/submit-test', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formObject)
+    });
+
+    const { score, totalQuestions, resultMessage, incorrectAnswerNumbers } = await response.json();
+
+    document.querySelector('.mnemo__modal-quiz-incorrect-span').textContent = incorrectAnswerNumbers.join(', ');
+
+    if (incorrectAnswerNumbers.length === 0) {
+      document.querySelector('.mnemo__modal-quiz-incorrect').style.display = 'none';
     }
+
+    result.textContent = `${score}/${totalQuestions}`;
+    updateResultUI(resultMessage, score, totalQuestions, incorrectAnswerNumbers);
+
+    modalBackground.classList.add('enabled');
+    modalContent.classList.add('enabled');
+
+  } catch (error) {
+    console.error('Ошибка:', error);
   }
+});
 
-  // Вставляем номера неправильных вопросов внутрь тега <span>
-  const span = document.querySelector('.mnemo__modal-quiz-incorrect-span');
-  span.textContent = incorrectAnswerNumbers.join(', ');
-
-  if (incorrectAnswerNumbers.length === 0) {
-    const incorrectAnswersBlock = document.querySelector('.mnemo__modal-quiz-incorrect');
-    incorrectAnswersBlock.style.display = 'none';
-  }
-
-  result.textContent = `${score}/${totalQuestions}`;
-
+const updateResultUI = (resultMessage, score, totalQuestions, incorrectAnswerNumbers) => {
   const message = document.querySelector('.mnemo__modal-quiz');
-  if (score === totalQuestions) {
-    // Если все ответы правильные
-    message.innerHTML = 'Вы справились <span class="excellent">Отлично</span>, правильных ответов:';
-    result.innerHTML = `<span class="otlichno">${score}</span> из ${totalQuestions}`;
-    smileImage.src = 'img/excellent.svg';
-    const span = document.querySelector('.mnemo__modal-quiz-incorrect-span');
-    span.textContent = ''; // Очищаем содержимое span с неправильными ответами
-  } else if (score >= thresholds.excellent) {
-    message.innerHTML = 'Вы справились <span class="excellent">Отлично</span>, правильных ответов:';
-    result.innerHTML = `<span class="otlichno">${score}</span> из ${totalQuestions}`;
-    smileImage.src = 'img/excellent.svg';
-  } else if (score >= thresholds.good) {
-    message.innerHTML = 'Вы справились <span class="good">Хорошо</span>, правильных ответов:';
-    result.innerHTML = `<span class="horosho">${score}</span> из ${totalQuestions}`;
-    smileImage.src = 'img/good.svg';
-    goodResultBtn.classList.add('enabled');
-  } else if (score >= thresholds.satisfactory) {
-    message.innerHTML = 'Вы справились <span class="satisfactorily">Удовлетворительно</span>, правильных ответов:';
-    result.innerHTML = `<span class="udovletvoritelno">${score}</span> из ${totalQuestions}`;
-    smileImage.src = 'img/satisfactorily.svg';
-    goodResultBtn.classList.add('enabled');
-  } else {
-    message.innerHTML = 'Попробуйте еще раз, правильных ответов:';
-    result.textContent = `${score} из ${totalQuestions}`;
-    smileImage.src = 'img/not-satisfactoriry.svg';
-    badResultBtn.classList.add('enabled');
+  const span = document.querySelector('.mnemo__modal-quiz-incorrect-span');
+
+  switch (resultMessage) {
+    case 'Отлично':
+      message.innerHTML = 'Вы справились <span class="excellent">Отлично</span>, правильных ответов:';
+      result.innerHTML = `<span class="otlichno">${score}</span> из ${totalQuestions}`;
+      smileImage.src = 'img/excellent.svg';
+      span.textContent = '';
+      break;
+    case 'Хорошо':
+      message.innerHTML = 'Вы справились <span class="good">Хорошо</span>, правильных ответов:';
+      result.innerHTML = `<span class="good">${score}</span> из ${totalQuestions}`;
+      smileImage.src = 'img/good.svg';
+      break;
+    case 'Удовлетворительно':
+      message.innerHTML = 'Вы справились <span class="satisfactory">Удовлетворительно</span>, правильных ответов:';
+      result.innerHTML = `<span class="satisfactory">${score}</span> из ${totalQuestions}`;
+      smileImage.src = 'img/satisfactory.svg';
+      goodResultBtn.classList.add('enabled');
+      break;
+    default:
+      message.innerHTML = 'Попробуйте еще раз, правильных ответов:';
+      result.textContent = `${score} из ${totalQuestions}`;
+      smileImage.src = 'img/not-satisfactoriry.svg';
+      badResultBtn.classList.add('enabled');
   }
-
-  modalBackground.classList.add('enabled');
-  modalContent.classList.add('enabled');
-});
-
-// Закрытие модального окна по нажатию на крестик
-closeButton.addEventListener('click', () => {
-  closeModal();
-  location.reload(); // Обновление страницы
-});
-
-closeButtonUnanswered.addEventListener('click', () => {
-  closeModalUnanswered();
-});
-
-// Закрытие модального окна по клику вне окна
-modalBackground.addEventListener('click', (event) => {
-  if (event.target === modalBackground) {
-    closeModal();
-    location.reload(); // Обновление страницы
-  }
-});
-
-modalBackgroundUnanswered.addEventListener('click', (event) => {
-  if (event.target === modalBackgroundUnanswered) {
-    closeModalUnanswered();
-  }
-});
+};
 
 const closeModal = () => {
   modalBackground.classList.remove('enabled');
   modalContent.classList.remove('enabled');
+  location.reload();
 };
 
 const closeModalUnanswered = () => {
   modalBackgroundUnanswered.classList.remove('enabled');
   modalContentUnanswered.classList.remove('enabled');
 };
+
+closeButton.addEventListener('click', closeModal);
+closeButtonUnanswered.addEventListener('click', closeModalUnanswered);
+modalBackground.addEventListener('click', (event) => {
+  if (event.target === modalBackground) {
+    closeModal();
+  }
+});
+modalBackgroundUnanswered.addEventListener('click', (event) => {
+  if (event.target === modalBackgroundUnanswered) {
+    closeModalUnanswered();
+  }
+});
