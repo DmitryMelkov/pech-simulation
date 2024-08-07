@@ -1,5 +1,6 @@
 import { updateValueAndAnimate } from "./animationUtils.js";
 import { determineMode } from "./modeUtils.js";
+import { levelObj } from "./level.js";
 
 // Функция отображения подсказок и обновления значений
 export const tooltipVisible = (
@@ -26,6 +27,7 @@ export const tooltipVisible = (
     });
     paramClue.classList.add('enabled');
     paramClue.parentElement.classList.add('active');
+    paramInput.focus();
 
     // Добавляем обработчик для клика на пустое поле
     document.addEventListener('click', handleClickOutside, true);
@@ -68,7 +70,6 @@ export const tooltipVisible = (
     } else if (resultSpan) {
       resultSpan.textContent = value;
     }
-
     updateValueAndAnimate(value, param);
     handleClose();
   };

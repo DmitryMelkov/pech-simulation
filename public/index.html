@@ -82,15 +82,16 @@
                 <div class="modal-content__input-box" >
                   <label class="modal-content__label" for="razrezhVtopkeInputModal">Разрежение в топке печи</label>
                   <input class="modal-content__input" data-type="razrezh"  min="-10" max="0" step="0.1" name="modalPvBarabane"  type="number" 
-                    placeholder="Введите значение кгс/см2" id="razrezhVtopkeInputModal">
+                    placeholder="Введите значение кгс/м2" id="razrezhVtopkeInputModal">
                   <span class="modal-content__error">Введите значение</span>
                 </div>
-            <!--    <div class="modal-content__input-box">
-                  <input class="modal-content__input" min="0" max="1500" step="1" name="modalInputVerhKameri"
-                    type="number" placeholder="Введите значение &#176C" id="verhKameriInputModal">
-                  <label class="modal-content__label" for="verhKameriInputModal">Вверху камеры загрузки</label>
+               <div class="modal-content__input-box">
+                <label class="modal-content__label" for="urovenVkotleInputModal">Уровень в котле</label>
+                <input class="modal-content__input" data-type="level"  min="-150" max="150" step="1" name="modalInputUrovenVkotle"  type="number" 
+                  placeholder="Введите значение мм" id="urovenVkotleInputModal">
+                <span class="modal-content__error">Введите значение</span>
                 </div>
-                <div class="modal-content__input-box">
+               <!--  <div class="modal-content__input-box">
                   <input class="modal-content__input" min="0" max="1500" step="1" name="modalInputNizKameri"
                     type="number" placeholder="Введите значение &#176C" id="nizKameriInputModal">
                   <label class="modal-content__label" for="nizKameriInputModal">Внизу камеры загрузки</label>
@@ -249,6 +250,24 @@
           </div>
         </div>
       </div>
+      <div class="mnemo__modal-background modal-param-bg-js">
+        <div class="mnemo__modal-start modal-param-js modal-param-js--uroven-v-kotle">
+          <div class="mnemo__modal-title">
+            <h2 class="mnemo__modal-title-text title-reset">Уровень в котле</h2>
+            <button class="mnemo__modal-close modal-param-close-js btn-reset">
+              <div class="krest">
+                <span class="line-1"></span>
+                <span class="line-2"></span>
+              </div>
+            </button>
+          </div>
+          <div>
+            <p class="mnemo__modal-descr descr-reset">
+              Тут будет описание с выполнением каких то действий по нормализации параметра
+            </p>
+          </div>
+        </div>
+      </div>
 
 
       <!-- <div class="mnemo__background"></div> -->
@@ -371,7 +390,7 @@
         <div class="column column-kotel">
           <div class="column__box">
             <span class="column-kotel__span-1"></span>
-            <!-- <span class="column-kotel__span-2">%</span> -->
+            <span class="column-kotel__span-2">%</span>
           </div>
           <div class="column-kotel__percent">
           </div>
@@ -576,7 +595,7 @@
         <div class="mnemo__param mnemo__tooltip p-v-topke">
           <div class="razrezh-v-topke-js">
             <span class="mnemo__param-text razrezh-topka">
-              -2,1
+              -2.1
             </span>
             <span class="mnemo__param-naimenov davl-topka-span">кгс/м2</span>
           </div>
@@ -706,21 +725,50 @@
           </div>
         </div>
 
-       <!-- <div class="mnemo__param uroven-v-barabane-kotla"> 
+        <!-- <div class="mnemo__param uroven-v-barabane-kotla"> 
           <span class="mnemo__param-text uroven-v-barabane-kotla-value">
             5
           </span>
           <span class="mnemo__param-naimenov">мм</span>
+        </div> -->
+
+       <div class="mnemo__param mnemo__tooltip uroven-v-barabane-kotla-mnemo">
+        <div class="uroven-v-kotle-js">
+          <span class="mnemo__param-text uroven-v-kotle">
+            50
+          </span>
+          <span class="mnemo__param-naimenov uroven-v-kotle-span">мм</span>
+        </div>
+        <div class="mnemo__param-clue uroven-v-kotle-clue">
+          <div class="mnemo__param-clue-content">
+            <div class="mnemo__param-clue-title">
+              <h2 class="mnemo__param-clue-title-text title-reset">Уровень в барабане котла</h2>
+              <button class="mnemo__tooltip-close uroven-v-kotle-clue-close btn-reset">
+                <div class="krest">
+                  <span class="line-1"></span>
+                  <span class="line-2"></span>
+                </div>
+              </button>
+            </div>
+            <div class="mnemo__param-clue-div">Рекомендуемый диапазон:
+              <span class="mnemo__param-clue-span">
+                от -80 до 80
+              </span>
+            </div>
+            <form class="mnemo__param-clue-form mnemo__param-clue-form--uroven-v-kotle-clue">
+              <div class="mnemo__param-clue-form-div">
+                <input class="mnemo__param-clue-input" type="number" placeholder="Введите значение"
+                  id="urovenVkotleInput" min="-150" max="150" step="1">
+                <label class="mnemo__param-clue-label" for="urovenVkotleInput"></label>
+                <button class="mnemo__param-clue-form-btn--ok btn-reset" type="submit">
+                  Принять
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
         </div>
 
-        <div class="mnemo__param uroven-v-barabane-kotla-mnemo">
-
-          <span class="mnemo__param-text
-                      uroven-v-barabane-kotla-mnemo-val">
-            5
-          </span>
-          <span class="mnemo__param-naimenov uroven-v-barabane-kotla-mnemo-val-span">мм</span>
-        </div>  -->
         <!-- <div class="mnemo__param im2-percent">
                       <span class="mnemo__param-text ">
                           <#PasspValue PasspType=1 PasspID=52 Precision=0>
@@ -742,13 +790,13 @@
         </div>
         <div class="mnemo__param krutilka-2">
           <img src="../../../pic/images/ventilator.png" alt="img">
-        </div> -->
-      </div>
+        </div> 
+      </div>-->
 
 
     </div>
 
-    <!-- <script src="/js/level.js"></script> -->
+    <!-- <script src="js/level.js"></script> -->
     <script type="module" src="js/app.js"></script>
 
 </body>

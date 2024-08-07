@@ -25,6 +25,8 @@ export const validateInputs = (inputs) => {
           isValid = false;
         } else if (inputType === 'razrezh' && (numericValue < -10 || numericValue > 0)) {
           isValid = false;
+        } else if (inputType === 'level' && (numericValue < -150 || numericValue > 150)) {
+          isValid = false;
       }}
       
       if (!isValid) {
@@ -36,7 +38,9 @@ export const validateInputs = (inputs) => {
           : inputType === 'pressure' 
           ? 'Диапазон от 0 до 20' 
           : inputType === 'razrezh' 
-          ? 'Диапазон от 0 до -10' 
+          ? 'Диапазон от 0 до -10'
+          : inputType === 'level'
+          ? 'Диапазон от -150 до 150' 
           : 'Неизвестный тип ввода';
 
         }
@@ -89,6 +93,7 @@ export const setupModalEvents = (btnModal, modalBackground, modalActive, btnAcce
       document.querySelector('#thirdSkolzInputModal'),
       document.querySelector('#pVbarabaneInputModal'),
       document.querySelector('#razrezhVtopkeInputModal'),
+      document.querySelector('#urovenVkotleInputModal')
     ];
 
     if (validateInputs(inputs)) {

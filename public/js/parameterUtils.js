@@ -1,6 +1,7 @@
 import { applyAnimation, updateValueAndAnimate } from './animationUtils.js';
 import { determineMode } from './modeUtils.js';
 import { addRowIfRunning, checkAndInsertTemplate } from './tableUtils.js';
+import { levelObj } from './level.js';
 
 export const parameters = [
   {
@@ -47,6 +48,15 @@ export const parameters = [
     conditionMax: -1,
     description: 'Разрежение в топке печи',
     type: 'razrezh'
+  },
+  {
+    spanSelector: '.uroven-v-kotle',
+    modalInputSelector: '#urovenVkotleInputModal',
+    clueInputSelector: '#urovenVkotleInput',
+    conditionMin: -70,
+    conditionMax: 70,
+    description: 'Уровень в котле',
+    type: 'level'
   }
 ];
 
@@ -61,9 +71,12 @@ export const syncInputsAndSpan = () => {
       isValid = !isNaN(value) && value >= 0 && value <= 20;
     } else if (type === 'razrezh') {
       isValid = !isNaN(value) && value >= -10 && value <= 0;
+    } else if (type === 'level') {
+      isValid = !isNaN(value) && value >= -150 && value <= 150;
     }
+
     if (!isValid) {
-      console.error(`Value must be between ${type === 'temperature' ? '0 and 1500' : type === 'pressure' ? '0 and 20' : '0 and -10'}`);
+      console.error(`Value must be between ${type === 'temperature' ? '0 and 1500' : type === 'pressure' ? '0 and 20' : type === 'razrezh' ? '-4 and -1' : type === 'level' ? '-150 and 150' : 'unknown range'}`);
       return;
     }
 
@@ -72,6 +85,13 @@ export const syncInputsAndSpan = () => {
     clueInput.value = value;
     spanElement.textContent = value;
     updateValueAndAnimate(value, spanElement);
+
+    if (type === 'level') {
+      const levelKotel = document.querySelector('.column-kotel__percent');
+      const valueKotelCurrent = document.querySelector('.uroven-v-kotle').innerHTML;
+      const levelKotelPercent = document.querySelector('.column-kotel__span-1');
+      levelObj(-200, 200, valueKotelCurrent, 85, levelKotel, levelKotelPercent, 33, 70)
+    }
   };
 
   parameters.forEach((param) => {
@@ -132,6 +152,7 @@ export const updateMode = () => {
   updateParameter('.temper-2-skolz', 0, 700, firstSkolzValue);
   updateParameter('.davl-v-barabane', 0, 10, firstSkolzValue);
   updateParameter('.razrezh-topka', -4, -1, firstSkolzValue);
+  updateParameter('.uroven-v-kotle', -70, 70, firstSkolzValue);
 
   // Изменение диапазонов для 3 скользящей в зависимости от первого значения
   if (mode === 'Установившийся режим') {
@@ -147,6 +168,7 @@ export const updateMode = () => {
   addRowIfRunning(document.querySelector('.temper-3-skolz'), 'Температура на 3 скользящей');
   addRowIfRunning(document.querySelector('.davl-v-barabane'), 'P в барабане котла');
   addRowIfRunning(document.querySelector('.razrezh-topka'), 'Разрежение в топке печи');
+  addRowIfRunning(document.querySelector('.uroven-v-kotle'), 'Уровень в котле');
 
   checkAndInsertTemplate();
 };

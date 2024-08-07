@@ -1529,7 +1529,7 @@ body::-webkit-scrollbar-thumb {
 .mnemo__modal-start {
   padding: 20px;
   position: absolute;
-  max-width: 690px;
+  max-width: 710px;
   width: 100%;
   top: 50%;
   left: 50%;
@@ -1752,7 +1752,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .modal-content__label {
-  font-size: 16px;
+  font-size: 15px;
   line-height: 22px;
   font-weight: 400;
 }
