@@ -25,7 +25,7 @@ export const validateInputs = (inputs) => {
           isValid = false;
         } else if (inputType === 'razrezh' && (numericValue < -10 || numericValue > 0)) {
           isValid = false;
-        } else if (inputType === 'level' && (numericValue < -150 || numericValue > 150)) {
+        } else if (inputType === 'level' && (numericValue < -200 || numericValue > 200)) {
           isValid = false;
       }}
       
@@ -40,7 +40,7 @@ export const validateInputs = (inputs) => {
           : inputType === 'razrezh' 
           ? 'Диапазон от 0 до -10'
           : inputType === 'level'
-          ? 'Диапазон от -150 до 150' 
+          ? 'Диапазон от -200 до 200' 
           : 'Неизвестный тип ввода';
 
         }

@@ -773,7 +773,7 @@ body::-webkit-scrollbar-thumb {
 
 .column-kotel__span-2 {
   top: -45px;
-  left: 35px;
+  left: 40px;
 }
 
 .temper-vody-v-vanne-skrubber {
@@ -2280,10 +2280,11 @@ body::-webkit-scrollbar-thumb {
   left: -114px;
 }
 
-.uroven-v-barabane-kotla-mnemo-clue {
-  width: 225px;
-  top: -102px;
-  left: -90px;
+.uroven-v-kotle-clue {
+  text-align: center;
+  width: 275px;
+  top: -137px;
+  left: -114px;
 }
 
 
@@ -2747,11 +2748,11 @@ body::-webkit-scrollbar-thumb {
   }
 
   .column-kotel__span-1 {
-    left: 4px;
+    left: 0px;
   }
 
   .column-kotel__span-2 {
-    left: 26px;
+    left: 28px;
   }
 
   .column-kotel__percent {

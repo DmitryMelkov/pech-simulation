@@ -37,7 +37,7 @@ export const parameters = [
     clueInputSelector: '#pVbarabaneInput',
     conditionMin: 0,
     conditionMax: 10,
-    description: 'P в барабане котла',
+    description: 'Давление в барабане котла',
     type: 'pressure'
   },
   {
@@ -74,11 +74,11 @@ export const syncInputsAndSpan = () => {
     } else if (type === 'razrezh') {
       isValid = !isNaN(value) && value >= -10 && value <= 0;
     } else if (type === 'level') {
-      isValid = !isNaN(value) && value >= -150 && value <= 150;
+      isValid = !isNaN(value) && value >= -200 && value <= 200;
     }
 
     if (!isValid) {
-      console.error(`Value must be between ${type === 'temperature' ? '0 and 1500' : type === 'pressure' ? '0 and 20' : type === 'razrezh' ? '-4 and -1' : type === 'level' ? '-150 and 150' : 'unknown range'}`);
+      console.error(`Value must be between ${type === 'temperature' ? '0 and 1500' : type === 'pressure' ? '0 and 20' : type === 'razrezh' ? '-4 and -1' : type === 'level' ? '-200 and 200' : 'unknown range'}`);
       return;
     }
 
@@ -179,7 +179,7 @@ export const updateMode = () => {
 
   addRowIfRunning(document.querySelector('.temper-2-skolz'), 'Температура на 2 скользящей');
   addRowIfRunning(document.querySelector('.temper-3-skolz'), 'Температура на 3 скользящей');
-  addRowIfRunning(document.querySelector('.davl-v-barabane'), 'P в барабане котла');
+  addRowIfRunning(document.querySelector('.davl-v-barabane'), 'Давление в барабане котла');
   addRowIfRunning(document.querySelector('.razrezh-topka'), 'Разрежение в топке печи');
   addRowIfRunning(document.querySelector('.uroven-v-kotle'), 'Уровень в котле');
 

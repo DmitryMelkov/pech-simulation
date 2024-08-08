@@ -1,5 +1,3 @@
-
-
 export const levelObj = (minScale, maxScale, current, maxSize, level, levelPercent) => {
   // Вычисляем общий диапазон шкалы
   let totalScale = maxScale - minScale;
@@ -16,12 +14,6 @@ export const levelObj = (minScale, maxScale, current, maxSize, level, levelPerce
 
   //красим контейнер
   level.style.height = `${px}px`;
-
-
-  // if (levelPercent.innerHTML <= minSet || levelPercent.innerHTML >= maxSet) {
-  //   level.style.backgroundColor = 'red';
-  //   level.style.animationPlayState = 'running';
-  // }
 };
 
 

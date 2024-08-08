@@ -17,7 +17,7 @@ thirdSkolz.dataset.description = 'Температура на 3 скользящ
 thirdSkolz.dataset.conditionMin = 400; // Новое значение для установившегося режима
 thirdSkolz.dataset.conditionMax = 750; // Новое значение для выхода на режим
 const davlVbarabane = document.querySelector('.davl-v-barabane');
-davlVbarabane.dataset.description = 'P в барабане котла';
+davlVbarabane.dataset.description = 'Давление в барабане котла';
 davlVbarabane.dataset.conditionMin = 0;
 davlVbarabane.dataset.conditionMax = 10;
 const razrezhVtopke = document.querySelector('.razrezh-topka');
@@ -26,8 +26,8 @@ razrezhVtopke.dataset.conditionMin = -4;
 razrezhVtopke.dataset.conditionMax = -1;
 const urovenVkotle = document.querySelector('.uroven-v-kotle');
 urovenVkotle.dataset.description = 'Уровень в котле'
-urovenVkotle.dataset.conditionMin = -70;
-urovenVkotle.dataset.conditionMax = 70;
+urovenVkotle.dataset.conditionMin = -80;
+urovenVkotle.dataset.conditionMax = 80;
 
 
 const firstSkolzClick = document.querySelector('.first-skolz-js');
@@ -137,8 +137,8 @@ tooltipVisible(
   urovenVkotleForm,
   false,
   null,
-  -150,
-  150
+  -200,
+  200
 );
 
 
@@ -227,8 +227,8 @@ tooltipVisible(
   modalForm,
   false,
   null,
-  -150,
-  150
+  -200,
+  200
 );
 
 

@@ -35,7 +35,13 @@ export const applyAnimation = (value, param, paramSpan, conditionMin, conditionM
 // Функция для применения анимации к уровню
 export const updateLevelAnimation = (value, conditionMin, conditionMax, levelElement, levelPercentElement, firstSkolzValue) => {
   const levelValue = parseFloat(value);
-  levelObj(-150, 150, levelValue, 85, levelElement, levelPercentElement);
+  let screenWidth = window.innerWidth;
+  if (screenWidth < 1568) {
+    levelObj(-200, 200, levelValue, 64, levelElement, levelPercentElement);
+  } else {
+    levelObj(-200, 200, levelValue, 85, levelElement, levelPercentElement);
+  }
+  
 
   if (firstSkolzValue < 50 || (levelValue >= conditionMin && levelValue <= conditionMax)) {
     levelElement.style.backgroundColor = '#00bfff';
