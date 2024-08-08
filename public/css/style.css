@@ -2081,9 +2081,17 @@ body::-webkit-scrollbar-thumb {
 }
 
 @keyframes blink {
-  0% { background-color: red; }
-  50% { background-color: transparent; }
-  100% { background-color: red; }
+  0% {
+    background-color: red;
+  }
+
+  50% {
+    background-color: transparent;
+  }
+
+  100% {
+    background-color: red;
+  }
 }
 
 .blink {
@@ -2402,6 +2410,51 @@ body::-webkit-scrollbar-thumb {
   transition: transform 0.3s ease-in-out;
 }
 
+
+.checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.checkbox__input {
+  display: none;
+}
+.checkbox__label {
+  width: 100%;
+  display: inline-flex;
+  position: relative;
+  cursor: pointer;
+}
+.checkbox__label::before {
+  content: "";
+  align-self: flex-start;
+  flex: 0 0 25px;
+  height: 25px;
+  background-color: white;
+  border: 1px solid grey;
+  border-radius: 4px;
+  margin: 0 25px 0 0;
+}
+.checkbox__label::after {
+  content: "";
+  position: absolute;
+  left: 3px;
+  top: 2px;
+  border-radius: 5px;
+  width: 20px;
+  height: 20px;
+  background-image: url("../img/checkbox-icon.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  transform: scale(0);
+  transition: transform 0.2s;
+}
+.checkbox__input:checked + .checkbox__label::after {
+  transform: scale(1);
+}
+
+
 /* spiner */
 .spinner {
   color: green;
@@ -2492,12 +2545,19 @@ body::-webkit-scrollbar-thumb {
 
 /* animation quiz */
 @keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
     transform: translateY(0);
   }
+
   40% {
     transform: translateY(-10px);
   }
+
   60% {
     transform: translateY(-5px);
   }

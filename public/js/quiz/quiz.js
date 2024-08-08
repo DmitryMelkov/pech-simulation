@@ -12,12 +12,15 @@ const closeButton = document.querySelector('.modal-results-close-js');
 const closeButtonUnanswered = document.querySelector('.modal-unanswered-close-js');
 const loadingIndicator = document.getElementById('loadingIndicator');
 
-testBtn.addEventListener('click', async () => {
+testBtn.addEventListener('click', async (e) => {
+  e.preventDefault();
+
   const form = document.getElementById('testForm');
   const result = document.getElementById('result');
 
   const formData = new FormData(form);
 
+  // Проверяем, все ли вопросы отвечены
   if (!checkAllQuestionsAnswered(formData)) {
     const unansweredQuestions = getUnansweredQuestions(formData);
     document.querySelector('.mnemo__modal-quiz-unanswered-span').textContent = unansweredQuestions.join(', ');
@@ -26,7 +29,12 @@ testBtn.addEventListener('click', async () => {
     return;
   }
 
+  // Преобразуем FormData в объект
   const formObject = Object.fromEntries(formData);
+
+  // Собираем все выбранные значения для вопроса с несколькими чекбоксами
+  const selectedValues = formData.getAll('question8');
+  formObject.question8 = selectedValues; // Добавляем массив значений для question8 в объект
 
   try {
     // Показать индикатор загрузки

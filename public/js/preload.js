@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
       content.classList.add('active');
       setTimeout(() => {
         window.location.href = link.href;
-      }, 500); 
+      }, 500);
     });
   });
 });
