@@ -11,7 +11,7 @@ export const parameters = [
     conditionMin: 550,
     conditionMax: 800,
     description: 'Температура на 1 скользящей',
-    type: 'temperature'
+    type: 'temperature',
   },
   {
     spanSelector: '.temper-2-skolz',
@@ -20,7 +20,7 @@ export const parameters = [
     conditionMin: 0,
     conditionMax: 700,
     description: 'Температура на 2 скользящей',
-    type: 'temperature'
+    type: 'temperature',
   },
   {
     spanSelector: '.temper-3-skolz',
@@ -29,7 +29,7 @@ export const parameters = [
     conditionMin: 0,
     conditionMax: 750,
     description: 'Температура на 3 скользящей',
-    type: 'temperature'
+    type: 'temperature',
   },
   {
     spanSelector: '.davl-v-barabane',
@@ -38,7 +38,7 @@ export const parameters = [
     conditionMin: 0,
     conditionMax: 10,
     description: 'P в барабане котла',
-    type: 'pressure'
+    type: 'pressure',
   },
   {
     spanSelector: '.razrezh-topka',
@@ -47,7 +47,7 @@ export const parameters = [
     conditionMin: -4,
     conditionMax: -1,
     description: 'Разрежение в топке печи',
-    type: 'razrezh'
+    type: 'razrezh',
   },
   {
     spanSelector: '.uroven-v-kotle',
@@ -56,8 +56,8 @@ export const parameters = [
     conditionMin: -70,
     conditionMax: 70,
     description: 'Уровень в котле',
-    type: 'level'
-  }
+    type: 'level',
+  },
 ];
 
 // Синхронизация инпутов и спанов
@@ -76,7 +76,19 @@ export const syncInputsAndSpan = () => {
     }
 
     if (!isValid) {
-      console.error(`Value must be between ${type === 'temperature' ? '0 and 1500' : type === 'pressure' ? '0 and 20' : type === 'razrezh' ? '-4 and -1' : type === 'level' ? '-150 and 150' : 'unknown range'}`);
+      console.error(
+        `Value must be between ${
+          type === 'temperature'
+            ? '0 and 1500'
+            : type === 'pressure'
+            ? '0 and 20'
+            : type === 'razrezh'
+            ? '-4 and -1'
+            : type === 'level'
+            ? '-150 and 150'
+            : 'unknown range'
+        }`
+      );
       return;
     }
 
@@ -90,7 +102,7 @@ export const syncInputsAndSpan = () => {
       const levelKotel = document.querySelector('.column-kotel__percent');
       const valueKotelCurrent = document.querySelector('.uroven-v-kotle').innerHTML;
       const levelKotelPercent = document.querySelector('.column-kotel__span-1');
-      levelObj(-200, 200, valueKotelCurrent, 85, levelKotel, levelKotelPercent, 33, 70)
+      levelObj(-200, 200, valueKotelCurrent, 85, levelKotel, levelKotelPercent, 33, 70);
     }
   };
 
