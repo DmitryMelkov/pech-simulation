@@ -8,6 +8,7 @@ const closeButtonUnanswered = document.querySelector('.modal-unanswered-close-js
 const smileImage = document.getElementById('smileImage');
 const badResultBtn = document.querySelector('.bad-result-btn');
 const goodResultBtn = document.querySelector('.good-result-btn');
+const loadingIndicator = document.getElementById('loadingIndicator');
 
 const checkAllQuestionsAnswered = (formData) => {
   const answeredQuestions = [...formData.keys()].map((key) => key.split('question')[1]);
@@ -41,6 +42,9 @@ testBtn.addEventListener('click', async () => {
   const formObject = Object.fromEntries(formData);
 
   try {
+    // Показать индикатор загрузки
+    loadingIndicator.classList.add('active');
+
     const response = await fetch('/submit-test', {
       method: 'POST',
       headers: {
@@ -60,11 +64,18 @@ testBtn.addEventListener('click', async () => {
     result.textContent = `${score}/${totalQuestions}`;
     updateResultUI(resultMessage, score, totalQuestions, incorrectAnswerNumbers);
 
-    modalBackground.classList.add('enabled');
-    modalContent.classList.add('enabled');
-
+    // Добавить задержку перед открытием модального окна с результатами
+    setTimeout(() => {
+      modalBackground.classList.add('enabled');
+      modalContent.classList.add('enabled');
+    }, 1000);
   } catch (error) {
     console.error('Ошибка:', error);
+  } finally {
+    // Скрыть индикатор загрузки после небольшой задержки
+    setTimeout(() => {
+      loadingIndicator.classList.remove('active');
+    }, 1000);
   }
 });
 
@@ -75,25 +86,25 @@ const updateResultUI = (resultMessage, score, totalQuestions, incorrectAnswerNum
   switch (resultMessage) {
     case 'Отлично':
       message.innerHTML = 'Вы справились <span class="excellent">Отлично</span>, правильных ответов:';
-      result.innerHTML = `<span class="otlichno">${score}</span> из ${totalQuestions}`;
+      result.innerHTML = `${score} из ${totalQuestions}`;
       smileImage.src = 'img/excellent.svg';
       span.textContent = '';
       break;
     case 'Хорошо':
       message.innerHTML = 'Вы справились <span class="good">Хорошо</span>, правильных ответов:';
-      result.innerHTML = `<span class="good">${score}</span> из ${totalQuestions}`;
+      result.innerHTML = `${score} из ${totalQuestions}`;
       smileImage.src = 'img/good.svg';
       break;
     case 'Удовлетворительно':
-      message.innerHTML = 'Вы справились <span class="satisfactory">Удовлетворительно</span>, правильных ответов:';
-      result.innerHTML = `<span class="satisfactory">${score}</span> из ${totalQuestions}`;
-      smileImage.src = 'img/satisfactory.svg';
+      message.innerHTML = 'Вы справились <span class="satisfactorily">Удовлетворительно</span>, правильных ответов:';
+      result.innerHTML = `${score} из ${totalQuestions}`;
+      smileImage.src = 'img/satisfactorily.svg';
       goodResultBtn.classList.add('enabled');
       break;
     default:
       message.innerHTML = 'Попробуйте еще раз, правильных ответов:';
       result.textContent = `${score} из ${totalQuestions}`;
-      smileImage.src = 'img/not-satisfactoriry.svg';
+      smileImage.src = 'img/not-satisfactorily.svg';
       badResultBtn.classList.add('enabled');
   }
 };
