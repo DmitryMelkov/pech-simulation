@@ -2081,6 +2081,16 @@ body::-webkit-scrollbar-thumb {
   background: linear-gradient(135deg, #6a11cb, #2575fc);
 }
 
+@keyframes blink {
+  0% { background-color: red; }
+  50% { background-color: transparent; }
+  100% { background-color: red; }
+}
+
+.blink {
+  animation: blink 1s infinite;
+}
+
 
 /* .mnemo__tooltip:hover .mnemo__param-clue {
   box-shadow: 0 0 0 3px white, 0 0 0 6px green;
@@ -2271,12 +2281,12 @@ body::-webkit-scrollbar-thumb {
 
 
 /* level */
-.column-skrubber__percent,
+/* .column-skrubber__percent,
 .column-kotel__percent,
 .column-hvo__percent {
   animation: colorRedLevel 0.5s infinite ease-in-out;
   animation-play-state: paused;
-}
+} */
 
 @keyframes colorRedLevel {
   0% {
