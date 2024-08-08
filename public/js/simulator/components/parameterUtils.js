@@ -1,7 +1,7 @@
-import { applyAnimation, updateValueAndAnimate } from './animationUtils.js';
+import { applyAnimation, updateValueAndAnimate, updateLevelAnimation } from './animationUtils.js';
 import { determineMode } from './modeUtils.js';
 import { addRowIfRunning, checkAndInsertTemplate } from './tableUtils.js';
-import { levelObj } from './level.js';
+
 
 export const parameters = [
   {
@@ -53,12 +53,14 @@ export const parameters = [
     spanSelector: '.uroven-v-kotle',
     modalInputSelector: '#urovenVkotleInputModal',
     clueInputSelector: '#urovenVkotleInput',
-    conditionMin: -70,
-    conditionMax: 70,
+    conditionMin: -80,
+    conditionMax: 80,
     description: 'Уровень в котле',
     type: 'level'
   }
 ];
+
+
 
 // Синхронизация инпутов и спанов
 export const syncInputsAndSpan = () => {
@@ -88,9 +90,9 @@ export const syncInputsAndSpan = () => {
 
     if (type === 'level') {
       const levelKotel = document.querySelector('.column-kotel__percent');
-      const valueKotelCurrent = document.querySelector('.uroven-v-kotle').innerHTML;
+      const firstSkolzValue = parseFloat(document.querySelector('.temper-1-skolz').textContent.trim());
       const levelKotelPercent = document.querySelector('.column-kotel__span-1');
-      levelObj(-200, 200, valueKotelCurrent, 85, levelKotel, levelKotelPercent, 33, 70)
+      updateLevelAnimation(value, -80, 80, levelKotel, levelKotelPercent, firstSkolzValue);
     }
   };
 
@@ -152,7 +154,7 @@ export const updateMode = () => {
   updateParameter('.temper-2-skolz', 0, 700, firstSkolzValue);
   updateParameter('.davl-v-barabane', 0, 10, firstSkolzValue);
   updateParameter('.razrezh-topka', -4, -1, firstSkolzValue);
-  updateParameter('.uroven-v-kotle', -70, 70, firstSkolzValue);
+  updateParameter('.uroven-v-kotle', -80, 80, firstSkolzValue);
 
   // Изменение диапазонов для 3 скользящей в зависимости от первого значения
   if (mode === 'Установившийся режим') {

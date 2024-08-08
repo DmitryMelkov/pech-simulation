@@ -1,6 +1,6 @@
 
 
-export const levelObj = (minScale, maxScale, current, maxSize, level, levelPercent, minSet, maxSet) => {
+export const levelObj = (minScale, maxScale, current, maxSize, level, levelPercent) => {
   // Вычисляем общий диапазон шкалы
   let totalScale = maxScale - minScale;
 
@@ -15,7 +15,8 @@ export const levelObj = (minScale, maxScale, current, maxSize, level, levelPerce
   levelPercent.innerHTML = parseFloat(percentage.toFixed(0)) ;
 
   //красим контейнер
-  level.style.height = px + 'px';
+  level.style.height = `${px}px`;
+
 
   // if (levelPercent.innerHTML <= minSet || levelPercent.innerHTML >= maxSet) {
   //   level.style.backgroundColor = 'red';

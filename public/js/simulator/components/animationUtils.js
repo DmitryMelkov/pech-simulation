@@ -1,5 +1,6 @@
 import { addOrUpdateRow, removeRowIfExists } from './tableUtils.js';
 import { updateMode } from "./parameterUtils.js";
+import { levelObj } from './level.js';
 
 
 // Функция для обновления значений и применения анимации
@@ -30,3 +31,19 @@ export const applyAnimation = (value, param, paramSpan, conditionMin, conditionM
     return false;
   }
 }; 
+
+// Функция для применения анимации к уровню
+export const updateLevelAnimation = (value, conditionMin, conditionMax, levelElement, levelPercentElement, firstSkolzValue) => {
+  const levelValue = parseFloat(value);
+  levelObj(-150, 150, levelValue, 85, levelElement, levelPercentElement);
+
+  if (firstSkolzValue < 50 || (levelValue >= conditionMin && levelValue <= conditionMax)) {
+    levelElement.style.backgroundColor = '#00bfff';
+    levelElement.classList.remove('blink');
+    return true
+  } else {
+    levelElement.style.backgroundColor = '';
+    levelElement.classList.add('blink');
+    return false
+  }
+};
