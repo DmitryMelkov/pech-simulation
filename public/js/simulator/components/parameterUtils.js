@@ -92,8 +92,10 @@ export const syncInputsAndSpan = () => {
       const levelKotel = document.querySelector('.column-kotel__percent');
       const firstSkolzValue = parseFloat(document.querySelector('.temper-1-skolz').textContent.trim());
       const levelKotelPercent = document.querySelector('.column-kotel__span-1');
-      updateLevelAnimation(value, -80, 80, levelKotel, levelKotelPercent, firstSkolzValue);
-    }
+
+      if (levelKotel && levelKotelPercent && !isNaN(firstSkolzValue)) {
+        updateLevelAnimation(value, -80, 80, levelKotel, levelKotelPercent, firstSkolzValue);
+    }}
   };
 
   parameters.forEach((param) => {
@@ -123,6 +125,7 @@ export const syncInputsAndSpan = () => {
   });
 };
 
+
 // Функция обновления параметров
 export const updateParameter = (paramSelector, conditionMin, conditionMax, firstSkolzValue) => {
   const paramElement = document.querySelector(paramSelector);
@@ -133,6 +136,14 @@ export const updateParameter = (paramSelector, conditionMin, conditionMax, first
   const paramValue = parseFloat(paramElement.textContent);
   const paramSpan = paramElement.nextElementSibling;
   applyAnimation(paramValue, paramElement, paramSpan, conditionMin, conditionMax, firstSkolzValue);
+
+  if (paramSelector === '.uroven-v-kotle') {
+    const levelKotel = document.querySelector('.column-kotel__percent');
+    const levelKotelPercent = document.querySelector('.column-kotel__span-1');
+    if (levelKotel && levelKotelPercent) {
+      updateLevelAnimation(paramValue, conditionMin, conditionMax, levelKotel, levelKotelPercent, firstSkolzValue);
+    }
+  }
 };
 
 // Функция обновления режима

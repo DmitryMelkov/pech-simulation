@@ -2086,7 +2086,7 @@ body::-webkit-scrollbar-thumb {
   }
 
   50% {
-    background-color: transparent;
+    background-color: #00bfff;
   }
 
   100% {
