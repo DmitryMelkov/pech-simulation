@@ -53,26 +53,12 @@ export const parameters = [
     spanSelector: '.uroven-v-kotle',
     modalInputSelector: '#urovenVkotleInputModal',
     clueInputSelector: '#urovenVkotleInput',
-    conditionMin: -80,
-    conditionMax: 80,
+    conditionMin: -70,
+    conditionMax: 70,
     description: 'Уровень в котле',
     type: 'level'
   }
 ];
-
-const updateLevelAnimation = (value, conditionMin, conditionMax, levelElement, levelPercentElement, firstSkolzValue) => {
-  const levelValue = parseFloat(value);
-  levelObj(-200, 200, levelValue, 85, levelElement, levelPercentElement, 0, 100);
-
-  if (firstSkolzValue < 50 || (levelValue >= conditionMin && levelValue <= conditionMax)) {
-    levelElement.style.backgroundColor = '#00bfff';
-    levelElement.classList.remove('blink');
-  } else {
-    levelElement.style.backgroundColor = 'red';
-    levelElement.classList.add('blink');
-  }
-  
-};
 
 // Синхронизация инпутов и спанов
 export const syncInputsAndSpan = () => {
@@ -102,9 +88,9 @@ export const syncInputsAndSpan = () => {
 
     if (type === 'level') {
       const levelKotel = document.querySelector('.column-kotel__percent');
+      const valueKotelCurrent = document.querySelector('.uroven-v-kotle').innerHTML;
       const levelKotelPercent = document.querySelector('.column-kotel__span-1');
-      const firstSkolzValue = parseFloat(document.querySelector('.temper-1-skolz').textContent.trim());
-      updateLevelAnimation(value, -80, 80, levelKotel, levelKotelPercent, firstSkolzValue);
+      levelObj(-200, 200, valueKotelCurrent, 85, levelKotel, levelKotelPercent, 33, 70)
     }
   };
 
@@ -166,8 +152,7 @@ export const updateMode = () => {
   updateParameter('.temper-2-skolz', 0, 700, firstSkolzValue);
   updateParameter('.davl-v-barabane', 0, 10, firstSkolzValue);
   updateParameter('.razrezh-topka', -4, -1, firstSkolzValue);
-  updateParameter('.uroven-v-kotle', -80, 80, firstSkolzValue);
- 
+  updateParameter('.uroven-v-kotle', -70, 70, firstSkolzValue);
 
   // Изменение диапазонов для 3 скользящей в зависимости от первого значения
   if (mode === 'Установившийся режим') {

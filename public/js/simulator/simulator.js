@@ -1,7 +1,7 @@
-import { tooltipVisible } from './tooltipUtils.js';
-import { syncInputsAndSpan } from './parameterUtils.js';
-import { setupModalEvents } from './modalUtils.js';
-import { modalParamIncorrect } from './modalParamIncorrect.js';
+import { tooltipVisible } from './components/tooltipUtils.js';
+import { syncInputsAndSpan } from './components/parameterUtils.js';
+import { setupModalEvents } from './components/modalUtils.js';
+import { modalParamIncorrect } from './components/modalParamIncorrect.js';
 
 // Инициализация параметров с описанием
 const firstSkolz = document.querySelector('.temper-1-skolz');

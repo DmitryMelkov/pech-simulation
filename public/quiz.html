@@ -9,7 +9,10 @@
 </head>
 
 <body>
-  <div class="test">
+  <div class="overlay" id="loadingIndicator">
+    <div class="spinner"></div>
+  </div>
+  <div class="test content">
     <div class="rhombus-pattern-left">
       <div class="rhombus left"></div>
       <div class="rhombus left"></div>
@@ -285,7 +288,7 @@
             <a class="mnemo__modal-box--btn mnemo__modal-box--link bad-result-btn" href="index.html">
               Пройти обучение на симуляторе
             </a>
-            <a class="mnemo__modal-box--btn mnemo__modal-box--link good-result-btn" href="test.html">
+            <a class="mnemo__modal-box--btn mnemo__modal-box--link good-result-btn" href="quiz.html">
               Пройти тест еще раз
             </a>
 
@@ -315,7 +318,8 @@
     </div>
   </div>
 
-  <script src="js/test.js"></script>
+  <script src="js/preload.js"></script>
+  <script type="module" src="js/quiz/quiz.js"></script>
 </body>
 
 </html>

@@ -9,6 +9,9 @@
 </head>
 
 <body class="body">
+  <div class="overlay" id="loadingIndicator">
+    <div class="spinner"></div>
+  </div>
   <div class="content">
     <div class="content">
       <div class="mnemo__title-content">
@@ -75,19 +78,19 @@
                 </div>
                  <div class="modal-content__input-box" >
                   <label class="modal-content__label" for="pVbarabaneInputModal">Давление в барабане котла</label>
-                  <input class="modal-content__input" data-type="pressure"  min="0" max="20" step="0.1" name="modalPvBarabane"  type="number" 
+                  <input class="modal-content__input" data-type="pressure"  min="0" max="20" step="0.1" name="modalPvBarabane"  type="number"
                     placeholder="Введите значение кгс/см2" id="pVbarabaneInputModal">
                   <span class="modal-content__error">Введите значение</span>
                 </div>
                 <div class="modal-content__input-box" >
                   <label class="modal-content__label" for="razrezhVtopkeInputModal">Разрежение в топке печи</label>
-                  <input class="modal-content__input" data-type="razrezh"  min="-10" max="0" step="0.1" name="modalPvBarabane"  type="number" 
+                  <input class="modal-content__input" data-type="razrezh"  min="-10" max="0" step="0.1" name="modalPvBarabane"  type="number"
                     placeholder="Введите значение кгс/м2" id="razrezhVtopkeInputModal">
                   <span class="modal-content__error">Введите значение</span>
                 </div>
                <div class="modal-content__input-box">
                 <label class="modal-content__label" for="urovenVkotleInputModal">Уровень в котле</label>
-                <input class="modal-content__input" data-type="level"  min="-150" max="150" step="1" name="modalInputUrovenVkotle"  type="number" 
+                <input class="modal-content__input" data-type="level"  min="-150" max="150" step="1" name="modalInputUrovenVkotle"  type="number"
                   placeholder="Введите значение мм" id="urovenVkotleInputModal">
                 <span class="modal-content__error">Введите значение</span>
                 </div>
@@ -153,7 +156,7 @@
         <button class="mnemo__modal-box--btn btn-modal">
           Задать начальные условия
         </button>
-        <a class="mnemo__modal-box--btn mnemo__modal-box--link" href="test.html">
+        <a class="mnemo__modal-box--btn mnemo__modal-box--link" href="quiz.html">
           Пройти тестирование
         </a>
       </div>
@@ -627,7 +630,7 @@
               </form>
             </div>
           </div>
-        </div> 
+        </div>
 
 
 
@@ -725,7 +728,7 @@
           </div>
         </div>
 
-        <!-- <div class="mnemo__param uroven-v-barabane-kotla"> 
+        <!-- <div class="mnemo__param uroven-v-barabane-kotla">
           <span class="mnemo__param-text uroven-v-barabane-kotla-value">
             5
           </span>
@@ -790,14 +793,15 @@
         </div>
         <div class="mnemo__param krutilka-2">
           <img src="../../../pic/images/ventilator.png" alt="img">
-        </div> 
+        </div>
       </div>-->
 
 
     </div>
 
-    <!-- <script src="js/level.js"></script> -->
-    <script type="module" src="js/app.js"></script>
+
+    <script src="js/preload.js"></script>
+    <script type="module" src="js/simulator/simulator.js"></script>
 
 </body>
 
