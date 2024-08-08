@@ -135,23 +135,3 @@ modalBackgroundUnanswered.addEventListener('click', (event) => {
 
 
 
-document.addEventListener('DOMContentLoaded', () => {
-  const loadingIndicator = document.getElementById('loadingIndicator');
-
-  // Скрыть прелоудер после полной загрузки страницы
-  window.addEventListener('load', () => {
-    loadingIndicator.classList.remove('active');
-  });
-
-  // Показать прелоудер при переходе на другую страницу
-  const links = document.querySelectorAll('a.mnemo__modal-box--link');
-  links.forEach(link => {
-    link.addEventListener('click', (event) => {
-      event.preventDefault();
-      loadingIndicator.classList.add('active');
-      setTimeout(() => {
-        window.location.href = link.href;
-      }, 500); // Добавить небольшую задержку перед переходом на другую страницу
-    });
-  });
-});

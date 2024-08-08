@@ -142,7 +142,6 @@ body::-webkit-scrollbar-thumb {
 
 .content {
   position: relative;
-  max-width: 1450px;
 }
 
 .mnemo {
@@ -2469,6 +2468,15 @@ body::-webkit-scrollbar-thumb {
 
 .overlay.active {
   display: block;
+}
+
+
+.content {
+  display: block;
+}
+
+.content.active {
+  display: none;
 }
 
 
