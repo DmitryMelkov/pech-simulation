@@ -10,7 +10,6 @@ export const updateResultUI = (resultMessage, score, totalQuestions) => {
       message.innerHTML = 'Вы справились <span class="excellent">Отлично</span>, правильных ответов:';
       result.innerHTML = `${score} из ${totalQuestions}`;
       smileImage.src = 'img/excellent.svg';
-      span.textContent = '';
       break;
     case 'Хорошо':
       message.innerHTML = 'Вы справились <span class="good">Хорошо</span>, правильных ответов:';
