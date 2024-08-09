@@ -57,14 +57,22 @@
             </div>
             <div class="modal-content__form-inputs">
               <div class="modal-content__input-box">
-                <label class="modal-content__label" for="firstSkolzInputModal">1-СК</label>
+                <div class="modal-content__title">
+                  <label class="modal-content__label" for="firstSkolzInputModal">1-СК</label>
+                  <!-- <span class="modal-content__span">В установившимся режиме:</span>
+                  <span class="modal-content__span-param">550-800&#176C</span> -->
+                </div>
                 <input class="modal-content__input" data-type="temperature" min="0" max="1500" step="1"
                   name="modalInputFirstSkolz" type="number" placeholder="Введите значение &#176C"
                   id="firstSkolzInputModal">
                 <span class="modal-content__error">Введите значение</span>
               </div>
               <div class="modal-content__input-box">
-                <label class="modal-content__label" for="secondSkolzInputModal">2-СК</label>
+                <div class="modal-content__title">
+                  <label class="modal-content__label" for="secondSkolzInputModal">2-СК</label>
+                  <!-- <span class="modal-content__span">В установившимся режиме:</span>
+                  <span class="modal-content__span-param">не более 700&#176C</span> -->
+                </div>
                 <input class="modal-content__input " data-type="temperature" min="0" max="1500" step="1"
                   name="modalInputSecondSkolz" type="number" placeholder="Введите значение &#176C"
                   id="secondSkolzInputModal">
@@ -72,7 +80,13 @@
 
               </div>
               <div class="modal-content__input-box">
-                <label class="modal-content__label" for="thirdSkolzInputModal">3-СК</label>
+                <div class="modal-content__title">
+                  <label class="modal-content__label" for="thirdSkolzInputModal">3-СК</label>
+                  <!-- <span class="modal-content__span">В установившимся режиме:</span>
+                  <span class="modal-content__span-param">не более 400&#176C</span>
+                  <span class="modal-content__span">При выходе на режим:</span>
+                  <span class="modal-content__span-param">не более 700&#176C</span> -->
+                </div>
                 <input class="modal-content__input" data-type="temperature" min="0" max="1500" step="1"
                   name="modalInputThirdSkolz" type="number" placeholder="Введите значение &#176C"
                   id="thirdSkolzInputModal">
@@ -281,12 +295,15 @@
             <img class="mnemo__modal-descr-img" src="./img/init-param.png" alt="img">
           </div>
           <p class="mnemo__modal-descr mnemo__modal-descr--reference text-center descr-reset">
-            <strong>Рисунок 1</strong> - моадльное окно с начальными условиями
+            <strong>Рисунок 1</strong> - модальное окно с начальными условиями
           </p>
           <p class="mnemo__modal-descr mnemo__modal-descr--reference descr-reset">
             На <strong>Рис.1</strong> видно, что нужно заполнить все поля, и если значение некорректное то всплывающая
             подсказка укажет
             какой допустимый диапазон ввода.
+          </p>
+          <p class="mnemo__modal-descr mnemo__modal-descr--reference descr-reset">
+            Если возникнут проблемы с заполнением десятичных значений (давление, разрежение), можно воспользоваться стрелками на клавиатуре <strong>"вверх"</strong>и<strong>"вниз"</strong>.  
           </p>
           <p class="mnemo__modal-descr mnemo__modal-descr--reference descr-reset">
             <strong>2.</strong> После заполнения всех полей нажимаем кнопку <strong>Принять</strong>, и смотрим

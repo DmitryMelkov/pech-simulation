@@ -1552,7 +1552,7 @@ body::-webkit-scrollbar-thumb {
 .mnemo__modal-start {
   padding: 20px;
   position: absolute;
-  max-width: 710px;
+  max-width: 740px;
   max-height: 800px;
   width: 100%;
   top: 50%;
@@ -1668,6 +1668,23 @@ body::-webkit-scrollbar-thumb {
 
 }
 
+.modal-content__title {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-content__span {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+}
+
+.modal-content__span-param {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 600;
+}
+
 .modal__content__form-box {
   margin-bottom: 20px;
   display: flex;
@@ -1689,16 +1706,19 @@ body::-webkit-scrollbar-thumb {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: flex-end;
 }
 
 .modal-content__input-box {
   position: relative;
+  text-align: center;
+  max-width: 215px;
 }
 
 .modal-content__input {
   margin-top: 5px;
   display: block;
-  width: 200px;
+  width: 215px;
   height: 30px;
   padding: 4px 10px;
   font-size: 14px;
@@ -1777,7 +1797,7 @@ body::-webkit-scrollbar-thumb {
 .modal-content__label {
   font-size: 15px;
   line-height: 22px;
-  font-weight: 400;
+  font-weight: 600;
 }
 
 .modal-content__form-btn-box {
