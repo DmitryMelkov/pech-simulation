@@ -12,89 +12,93 @@
   <div class="overlay" id="loadingIndicator">
     <div class="spinner"></div>
   </div>
-  <div class="content">
-    <div class="content">
-      <div class="mnemo__title-content">
-        <h2 class="mnemo__title title-reset">
-          <div class="siren">
-            <!-- <audio class="siren__media-vr1-mnemo" controls loop>
+  <div class="content content-mnemo">
+    <div class="mnemo__title-content">
+      <h2 class="mnemo__title title-reset">
+        <div class="siren">
+          <!-- <audio class="siren__media-vr1-mnemo" controls loop>
               <source src="http://Techsite6/kaskad/audio/siren.mp3" type="audio/mp3">
             </audio> -->
-          </div>
-          <span class="current-param__title-span">Симулятор</span>
-          Печь карбонизации
-        </h2>
-        <h2 class="current-param__subtitle title-reset">Режим работы печи:
-          <span class="current-param__subtitle-span"></span>
-        </h2>
-      </div>
+        </div>
+        <span class="current-param__title-span">Симулятор</span>
+        Печь карбонизации
+      </h2>
+      <h2 class="current-param__subtitle title-reset">Режим работы печи:
+        <span class="current-param__subtitle-span"></span>
+      </h2>
+    </div>
 
-      <table class="table">
-        <thead class="table__thead">
-          <tr class="table__tr">
-            <th class="table__th table__left">Наименование параметра</th>
-            <th class="table__th ">Значения</th>
-          </tr>
-        </thead>
-        <tbody class="table__tbody">
-        </tbody>
-      </table>
+    <table class="table">
+      <thead class="table__thead">
+        <tr class="table__tr">
+          <th class="table__th table__left">Наименование параметра</th>
+          <th class="table__th ">Значения</th>
+        </tr>
+      </thead>
+      <tbody class="table__tbody">
+      </tbody>
+    </table>
 
-      <div class="mnemo__modal-background modal-js">
-        <div class="mnemo__modal-start">
-          <div class="mnemo__modal-title">
-            <h2 class="mnemo__modal-title-text title-reset">Начальные условия</h2>
-            <button class="mnemo__modal-close btn-reset">
-              <div class="krest">
-                <span class="line-1"></span>
-                <span class="line-2"></span>
-              </div>
-            </button>
-          </div>
-          <div class="modal-content__form-box">
-            <form class="modal-content__form all__param-form">
-              <div class="modal__accordion-title">
-                Параметры печи карбонизации
-              </div>
-              <div class="modal-content__form-inputs">
-                <div class="modal-content__input-box">
-                  <label class="modal-content__label" for="firstSkolzInputModal">1-СК</label>
-                  <input class="modal-content__input" data-type="temperature" min="0" max="1500" step="1" name="modalInputFirstSkolz"
-                    type="number" placeholder="Введите значение &#176C" id="firstSkolzInputModal">
-                  <span class="modal-content__error">Введите значение</span>
-                </div>
-                <div class="modal-content__input-box">
-                  <label class="modal-content__label" for="secondSkolzInputModal">2-СК</label>
-                  <input class="modal-content__input " data-type="temperature" min="0" max="1500" step="1" name="modalInputSecondSkolz"
-                    type="number" placeholder="Введите значение &#176C" id="secondSkolzInputModal">
-                  <span class="modal-content__error">Введите значение</span>
-
-                </div>
-                <div class="modal-content__input-box">
-                  <label class="modal-content__label" for="thirdSkolzInputModal">3-СК</label>
-                  <input class="modal-content__input" data-type="temperature" min="0" max="1500" step="1" name="modalInputThirdSkolz"
-                    type="number" placeholder="Введите значение &#176C" id="thirdSkolzInputModal">
-                  <span class="modal-content__error">Введите значение</span>
-                </div>
-                 <div class="modal-content__input-box" >
-                  <label class="modal-content__label" for="pVbarabaneInputModal">Давление в барабане котла</label>
-                  <input class="modal-content__input" data-type="pressure"  min="0" max="20" step="0.1" name="modalPvBarabane"  type="number"
-                    placeholder="Введите значение кгс/см2" id="pVbarabaneInputModal">
-                  <span class="modal-content__error">Введите значение</span>
-                </div>
-                <div class="modal-content__input-box" >
-                  <label class="modal-content__label" for="razrezhVtopkeInputModal">Разрежение в топке печи</label>
-                  <input class="modal-content__input" data-type="razrezh"  min="-10" max="0" step="0.1" name="modalPvBarabane"  type="number"
-                    placeholder="Введите значение кгс/м2" id="razrezhVtopkeInputModal">
-                  <span class="modal-content__error">Введите значение</span>
-                </div>
-               <div class="modal-content__input-box">
-                <label class="modal-content__label" for="urovenVkotleInputModal">Уровень в котле</label>
-                <input class="modal-content__input" data-type="level"  min="-150" max="150" step="1" name="modalInputUrovenVkotle"  type="number"
-                  placeholder="Введите значение мм" id="urovenVkotleInputModal">
+    <div class="mnemo__modal-background modal-js">
+      <div class="mnemo__modal-start">
+        <div class="mnemo__modal-title">
+          <h2 class="mnemo__modal-title-text title-reset">Начальные условия</h2>
+          <button class="mnemo__modal-close btn-reset">
+            <div class="krest">
+              <span class="line-1"></span>
+              <span class="line-2"></span>
+            </div>
+          </button>
+        </div>
+        <div class="modal-content__form-box">
+          <form class="modal-content__form all__param-form">
+            <div class="modal__accordion-title">
+              Параметры печи карбонизации
+            </div>
+            <div class="modal-content__form-inputs">
+              <div class="modal-content__input-box">
+                <label class="modal-content__label" for="firstSkolzInputModal">1-СК</label>
+                <input class="modal-content__input" data-type="temperature" min="0" max="1500" step="1"
+                  name="modalInputFirstSkolz" type="number" placeholder="Введите значение &#176C"
+                  id="firstSkolzInputModal">
                 <span class="modal-content__error">Введите значение</span>
-                </div>
-               <!--  <div class="modal-content__input-box">
+              </div>
+              <div class="modal-content__input-box">
+                <label class="modal-content__label" for="secondSkolzInputModal">2-СК</label>
+                <input class="modal-content__input " data-type="temperature" min="0" max="1500" step="1"
+                  name="modalInputSecondSkolz" type="number" placeholder="Введите значение &#176C"
+                  id="secondSkolzInputModal">
+                <span class="modal-content__error">Введите значение</span>
+
+              </div>
+              <div class="modal-content__input-box">
+                <label class="modal-content__label" for="thirdSkolzInputModal">3-СК</label>
+                <input class="modal-content__input" data-type="temperature" min="0" max="1500" step="1"
+                  name="modalInputThirdSkolz" type="number" placeholder="Введите значение &#176C"
+                  id="thirdSkolzInputModal">
+                <span class="modal-content__error">Введите значение</span>
+              </div>
+              <div class="modal-content__input-box">
+                <label class="modal-content__label" for="pVbarabaneInputModal">Давление в барабане котла</label>
+                <input class="modal-content__input" data-type="pressure" min="0" max="20" step="0.1"
+                  name="modalPvBarabane" type="number" placeholder="Введите значение кгс/см2" id="pVbarabaneInputModal">
+                <span class="modal-content__error">Введите значение</span>
+              </div>
+              <div class="modal-content__input-box">
+                <label class="modal-content__label" for="razrezhVtopkeInputModal">Разрежение в топке печи</label>
+                <input class="modal-content__input" data-type="razrezh" min="-10" max="0" step="0.1"
+                  name="modalPvBarabane" type="number" placeholder="Введите значение кгс/м2"
+                  id="razrezhVtopkeInputModal">
+                <span class="modal-content__error">Введите значение</span>
+              </div>
+              <div class="modal-content__input-box">
+                <label class="modal-content__label" for="urovenVkotleInputModal">Уровень в котле</label>
+                <input class="modal-content__input" data-type="level" min="-150" max="150" step="1"
+                  name="modalInputUrovenVkotle" type="number" placeholder="Введите значение мм"
+                  id="urovenVkotleInputModal">
+                <span class="modal-content__error">Введите значение</span>
+              </div>
+              <!--  <div class="modal-content__input-box">
                   <input class="modal-content__input" min="0" max="1500" step="1" name="modalInputNizKameri"
                     type="number" placeholder="Введите значение &#176C" id="nizKameriInputModal">
                   <label class="modal-content__label" for="nizKameriInputModal">Внизу камеры загрузки</label>
@@ -139,265 +143,532 @@
                     placeholder="Введите значение &#176C" id="holodInputModal">
                   <label class="modal-content__label" for="holodInputModal">Холодильник</label>
                 </div> -->
-              </div>
+            </div>
 
-              <div class="modal-content__form-btn-box">
-                <button type="submit" class="modal-content__form-btn--ok modal-btn-js">
-                  Принять
-                </button>
-              </div>
+            <div class="modal-content__form-btn-box">
+              <button type="submit" class="modal-content__form-btn--ok modal-btn-js">
+                Принять
+              </button>
+            </div>
 
-            </form>
-          </div>
+          </form>
         </div>
       </div>
+    </div>
 
-      <div class="mnemo__modal-box--btns">
-        <button class="mnemo__modal-box--btn btn-modal">
-          Задать начальные условия
-        </button>
-        <a class="mnemo__modal-box--btn mnemo__modal-box--link" href="quiz.html">
-          Пройти тестирование
-        </a>
-      </div>
+    <div class="mnemo__modal-box--btns">
+      <button class="mnemo__modal-box--btn btn-modal--reference">
+        Справка
+      </button>
+      <button class="mnemo__modal-box--btn btn-modal--initial-conditions">
+        Начальные условия
+      </button>
+      <a class="mnemo__modal-box--btn mnemo__modal-box--link" href="quiz.html">
+        Тестирование
+      </a>
+    </div>
 
+    <!-- справка -->
+    <div class="mnemo__modal-background modal-reference-bg-js">
+      <div class="mnemo__modal-start modal-param-js modal-reference-js">
+        <div class="mnemo__modal-title">
+          <h2 class="mnemo__modal-title-text title-reset">Справка</h2>
+          <button class="mnemo__modal-close modal-reference-close-js btn-reset">
+            <div class="krest">
+              <span class="line-1"></span>
+              <span class="line-2"></span>
+            </div>
+          </button>
+        </div>
+        <div>
+          <p class="mnemo__modal-descr mnemo__modal-descr--reference descr-reset">
+            Представляем вашему внимание обучающее приложение по работе на печах карбонизации. Приложение состоит из
+            двух страниц: <strong>Симулятор</strong> и <strong>Тестирование</strong> .
+          </p>
+          <p class="mnemo__modal-descr mnemo__modal-descr--reference descr-reset">
+            На мнемосхеме в заголовке расположена индикация режимов работы,
+            посередине мнемосхемы расположены кнопки <strong>Справка</strong>, <strong>Начальные условия</strong> и
+            <strong>Тестирование</strong>, в правом верхнем углу таблица с параметрами.
+          </p>
 
-      <!-- модалки для неправильных параметров -->
-      <div class="mnemo__modal-background modal-param-bg-js">
-        <div class="mnemo__modal-start modal-param-js modal-param-js--temper-1-skolz">
-          <div class="mnemo__modal-title">
-            <h2 class="mnemo__modal-title-text title-reset">1-СК</h2>
-            <button class="mnemo__modal-close modal-param-close-js btn-reset">
-              <div class="krest">
-                <span class="line-1"></span>
-                <span class="line-2"></span>
-              </div>
-            </button>
-          </div>
-          <div>
-            <p class="mnemo__modal-descr descr-reset">
-              Тут будет описание с выполнением каких то действий по нормализации параметра
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="mnemo__modal-background modal-param-bg-js">
-        <div class="mnemo__modal-start modal-param-js modal-param-js--temper-2-skolz">
-          <div class="mnemo__modal-title">
-            <h2 class="mnemo__modal-title-text title-reset">2-СК"</h2>
-            <button class="mnemo__modal-close modal-param-close-js btn-reset">
-              <div class="krest">
-                <span class="line-1"></span>
-                <span class="line-2"></span>
-              </div>
-            </button>
-          </div>
-          <div>
-            <p class="mnemo__modal-descr descr-reset">
-              Тут будет описание с выполнением каких то действий по нормализации параметра
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="mnemo__modal-background modal-param-bg-js">
-        <div class="mnemo__modal-start modal-param-js modal-param-js--temper-3-skolz">
-          <div class="mnemo__modal-title">
-            <h2 class="mnemo__modal-title-text title-reset">3-СК</h2>
-            <button class="mnemo__modal-close modal-param-close-js btn-reset">
-              <div class="krest">
-                <span class="line-1"></span>
-                <span class="line-2"></span>
-              </div>
-            </button>
-          </div>
-          <div>
-            <p class="mnemo__modal-descr descr-reset">
-              Тут будет описание с выполнением каких то действий по нормализации параметра
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="mnemo__modal-background modal-param-bg-js">
-        <div class="mnemo__modal-start modal-param-js modal-param-js--davl-v-barabane">
-          <div class="mnemo__modal-title">
-            <h2 class="mnemo__modal-title-text title-reset">Давление в барабане</h2>
-            <button class="mnemo__modal-close modal-param-close-js btn-reset">
-              <div class="krest">
-                <span class="line-1"></span>
-                <span class="line-2"></span>
-              </div>
-            </button>
-          </div>
-          <div>
-            <p class="mnemo__modal-descr descr-reset">
-              Тут будет описание с выполнением каких то действий по нормализации параметра
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="mnemo__modal-background modal-param-bg-js">
-        <div class="mnemo__modal-start modal-param-js modal-param-js--razrezh-v-topke">
-          <div class="mnemo__modal-title">
-            <h2 class="mnemo__modal-title-text title-reset">Разрежение в топке печи</h2>
-            <button class="mnemo__modal-close modal-param-close-js btn-reset">
-              <div class="krest">
-                <span class="line-1"></span>
-                <span class="line-2"></span>
-              </div>
-            </button>
-          </div>
-          <div>
-            <p class="mnemo__modal-descr descr-reset">
-              Тут будет описание с выполнением каких то действий по нормализации параметра
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="mnemo__modal-background modal-param-bg-js">
-        <div class="mnemo__modal-start modal-param-js modal-param-js--uroven-v-kotle">
-          <div class="mnemo__modal-title">
-            <h2 class="mnemo__modal-title-text title-reset">Уровень в котле</h2>
-            <button class="mnemo__modal-close modal-param-close-js btn-reset">
-              <div class="krest">
-                <span class="line-1"></span>
-                <span class="line-2"></span>
-              </div>
-            </button>
-          </div>
-          <div>
-            <p class="mnemo__modal-descr descr-reset">
-              Тут будет описание с выполнением каких то действий по нормализации параметра
-            </p>
-          </div>
-        </div>
-      </div>
+          <p class="mnemo__modal-descr mnemo__modal-descr--reference descr-reset">
+            <strong>Описание работы симулятора</strong>
+          </p>
+          <p class="mnemo__modal-descr mnemo__modal-descr--reference descr-reset">
+            <strong>1. Интерактивные параметры на мнемосхеме:</strong>
+          <ul class="mnemo__modal-descr-list">
+            <li>
+              На мнемосхеме представлены различные параметры (например, температура, давление, уровень в котле), каждый
+              из которых имеет свою область для ввода значений и отображения текущего значения.
+            </li>
+            <li>
+              Пользователь может кликнуть на любой из этих параметров, что приведет к появлению всплывающей подсказки
+              (tooltip) рядом с ним. В этой подсказке можно ввести новое значение для параметра.
+            </li>
+            <li>
+              При вводе и подтверждении значения параметр обновляется, и происходит анимация его изменения на
+              мнемосхеме.
+            </li>
+            <li>
+              Если значение введено корректно (в пределах допустимых минимального и максимального значений), оно
+              отображается и применяется к соответствующему элементу. Если значение некорректно, оно будет отклонено, и
+              параметр не изменится.
+            </li>
+          </ul>
+          <strong>2. Модальное окно с начальными условиями:</strong>
+          <ul class="mnemo__modal-descr-list">
+            <li>
+              Есть кнопка для открытия модального окна, в котором пользователь может установить начальные условия для
+              всех параметров сразу.
+            </li>
+            <li>
+              В модальном окне пользователь видит те же параметры, что и на мнемосхеме, и может задать для них начальные
+              значения.
+            </li>
+            <li>
+              После ввода значений пользователь может подтвердить или отменить изменения, соответственно кнопками
+              <strong>Ок</strong>
+              или <strong>Закрыть</strong>. Если введены некорректные значения, будет вызвана функция, уведомляющая
+              пользователя об ошибке.
+            </li>
+          </ul>
+          <strong>3. Синхронизация значений:</strong>
+          <ul class="mnemo__modal-descr-list">
+            <li>
+              Значения, введенные пользователем в модальном окне, автоматически синхронизируются с соответствующими
+              полями на мнемосхеме. Это гарантирует, что изменения, сделанные в одном месте, будут мгновенно отражаться
+              в другом.
+            </li>
+          </ul>
+          <strong>4. Таблица с параметрами, выходящими за норму:</strong>
+          <ul class="mnemo__modal-descr-list">
+            <li>
+              В интерфейсе есть специальная таблица, куда автоматически выводятся параметры, значения которых выходят за
+              нормальные пределы.
+            </li>
+            <li>
+              Эта таблица помогает пользователю быстро увидеть проблемные параметры, требующие внимания.
+            </li>
+          </ul>
+          </p>
+          <p class="mnemo__modal-descr mnemo__modal-descr--reference descr-reset">
+            <strong>Общий интерфейс</strong>
+          <ul class="mnemo__modal-descr-list">
+            <li>
+              <strong>Подсказки и анимации:</strong> Все действия пользователя сопровождаются визуальной обратной
+              связью, будь то
+              появление подсказок, обновление значений или анимация на мнемосхеме.
+            </li>
+            <li>
+              <strong>Таблица с проблемными параметрами:</strong> Пользователь всегда может
+              видеть, какие параметры требуют внимания, что упрощает контроль и мониторинг.
+            </li>
+            <li>
+              <strong>Рекомендации по нормализации параметров:</strong> Модальное
+              окно с рекомендациями по нормализации параметров делает систему более удобной и информативной.
+            </li>
+          </ul>
+          </p>
 
 
-      <!-- <div class="mnemo__background"></div> -->
-      <div class="mnemo">
-        <!-- <div class="light-alarm">
+
+          <p class="mnemo__modal-descr mnemo__modal-descr--reference descr-reset">
+            <strong>Алгоритм работы следующий:</strong>
+            <br>
+            <strong>1.</strong> Нажимаем кнопку начальные условия и заполняем
+          </p>
+          <div class="mnemo__modal-descr-img-container">
+            <img class="mnemo__modal-descr-img" src="./img/init-param.png" alt="img">
+          </div>
+          <p class="mnemo__modal-descr mnemo__modal-descr--reference text-center descr-reset">
+            <strong>Рисунок 1</strong> - моадльное окно с начальными условиями
+          </p>
+          <p class="mnemo__modal-descr mnemo__modal-descr--reference descr-reset">
+            На <strong>Рис.1</strong> видно, что нужно заполнить все поля, и если значение некорректное то всплывающая
+            подсказка укажет
+            какой допустимый диапазон ввода.
+          </p>
+          <p class="mnemo__modal-descr mnemo__modal-descr--reference descr-reset">
+            <strong>2.</strong> После заполнения всех полей нажимаем кнопку <strong>Принять</strong>, и смотрим
+            изменения:
+          </p>
+          <div class="mnemo__modal-descr-img-container">
+            <img class="mnemo__modal-descr-img" src="./img/mnemo-result.png" alt="img">
+          </div>
+          <p class="mnemo__modal-descr mnemo__modal-descr--reference text-center descr-reset">
+            <strong>Рисунок 2</strong> - мнемосхема с введенными параметрами
+          </p>
+          <p class="mnemo__modal-descr mnemo__modal-descr--reference descr-reset">
+            На <strong>Рис.2</strong> видно, что некоторые значения моргают <strong class="red">красным</strong> цветом
+            и выведены в таблицу в правом верхнем углу.
+          </p>
+          <p class="mnemo__modal-descr mnemo__modal-descr--reference descr-reset">
+            <strong>3.</strong> Если параметр моргает <strong class="red">красным</strong> цветом, значит его значение
+            выходит за допустимые пределы.
+            В этом случае кликните на соответствующий параметр.
+          </p>
+          <div class="mnemo__modal-descr-img-container">
+            <img class="mnemo__modal-descr-img" src="./img/param-alert.png" alt="img">
+          </div>
+          <p class="mnemo__modal-descr mnemo__modal-descr--reference text-center descr-reset">
+            <strong>Рисунок 3</strong> - параметр, выходящий за норму
+          </p>
+          <p class="mnemo__modal-descr mnemo__modal-descr--reference descr-reset">
+            На <strong>Рис.3</strong> показаны параметры, которые выходят за допустимые пределы, кликните на параметр и
+            откроется модальное окно с рекомендациями.
+          </p>
+          <p class="mnemo__modal-descr mnemo__modal-descr--reference descr-reset">
+            <strong>4.</strong> В открывшемся модальном окне отображаются рекомендации по корректировке параметра, чтобы
+            вернуть его в норму.
+          </p>
+          <div class="mnemo__modal-descr-img-container">
+            <img class="mnemo__modal-descr-img" src="./img/param-modal.png" alt="img">
+          </div>
+          <p class="mnemo__modal-descr mnemo__modal-descr--reference text-center descr-reset">
+            <strong>Рисунок 4</strong> - модальное окно с рекомендациями
+          </p>
+          <p class="mnemo__modal-descr mnemo__modal-descr--reference descr-reset">
+            На <strong>Рис.4</strong> видно, что модальное окно предлагает несколько вариантов действий для приведения
+            параметра в норму. Выберите наиболее подходящее действие и выполните его.
+          </p>
+          <p class="mnemo__modal-descr mnemo__modal-descr--reference descr-reset">
+            <strong>5.</strong> После выполнения рекомендуемых действий введите значение параметра, которое входит в
+            норму и ситуация на мнемосхеме поменяется. Если параметр больше не мигает <strong
+              class="red">красным</strong> цветом, значит проблема устранена.
+          </p>
+          <div class="mnemo__modal-descr-img-container">
+            <img class="mnemo__modal-descr-img" src="./img/param-fixed.png" alt="img">
+          </div>
+          <p class="mnemo__modal-descr mnemo__modal-descr--reference text-center descr-reset">
+            <strong>Рисунок 5</strong> - мнемосхема после корректировки параметра
+          </p>
+          <p class="mnemo__modal-descr mnemo__modal-descr--reference descr-reset">
+            На <strong>Рис.5</strong> показано, что после корректировки параметра, он больше не отображается в таблице,
+            и его цвет на мнемосхеме изменился на нормальный.
+          </p>
+          <p class="mnemo__modal-descr mnemo__modal-descr--reference descr-reset">
+            <strong>6.</strong> Продолжайте мониторинг всех параметров и при необходимости повторяйте действия,
+            описанные выше, чтобы поддерживать параметры в пределах нормы.
+          </p>
+
+          <p class="mnemo__modal-descr mnemo__modal-descr--reference descr-reset">
+            <strong>Описание работы тестирования</strong>
+          </p>
+          <p class="mnemo__modal-descr mnemo__modal-descr--reference descr-reset">
+            <strong>1. Заполнение формы:</strong>
+          <ul class="mnemo__modal-descr-list">
+            <li>
+              Пользователь отвечает на вопросы викторины, заполняя форму на странице.
+            </li>
+            <li>
+              После того как все вопросы будут отвечены, нажмите кнопку <strong>Отправить</strong>.
+            </li>
+          </ul>
+          <strong>2. Проверка ответов:</strong>
+          <ul class="mnemo__modal-descr-list">
+            <li>
+              При нажатии на кнопку <strong>Отправить</strong> система проверяет, все ли вопросы были отвечены. Если
+              хотя бы один
+              вопрос остался без ответа, появится модальное окно с напоминанием о необходимости ответить на все вопросы.
+            </li>
+            <li>
+              В модальном окне отображается список неотвеченных вопросов, чтобы пользователь мог вернуться и заполнить
+              пропуски.
+            </li>
+          </ul>
+          <strong>3. Отправка формы:</strong>
+          <ul class="mnemo__modal-descr-list">
+            <li>
+              Если все вопросы отвечены, форма отправляется на сервер для проверки ответов.
+            </li>
+            <li>
+              Во время отправки формы отображается индикатор загрузки, чтобы дать пользователю понять, что данные
+              обрабатываются.
+            </li>
+          </ul>
+          <strong>4. Отображение результатов:</strong>
+          <ul class="mnemo__modal-descr-list">
+            <li>
+              После обработки формы система возвращает результаты, которые включают количество правильных ответов и
+              общее количество вопросов.
+            </li>
+            <li>
+              В зависимости от результата система покажет модальное окно с итоговой оценкой:
+              <br>
+              <strong class="blue">Отлично:</strong> Если у пользователя высокий балл, результат сопровождается позитивным
+              изображением и сообщением о
+              том, что он справился <strong class="blue">"Отлично"</strong> .
+              <br>
+              <strong class="green">Хорошо:</strong> Если балл ниже, но все же хороший, пользователю сообщается, что он справился
+              <strong class="green">"Хорошо"</strong> .
+              <br>
+              <strong class="orange">Удовлетворительно:</strong> При среднем результате пользователь видит сообщение
+              <strong class="orange">"Удовлетворительно"</strong> и получает
+              возможность улучшить свой результат.
+              <br>
+              <strong>Попробуйте еще раз:</strong> Если результат неудовлетворительный, система предложит пользователю
+              попробовать пройти
+              тест снова
+            </li>
+            <li>
+              В модальном окне также указаны номера вопросов, на которые были даны неправильные ответы.
+            </li>
+          </ul>
+          <strong>5. Закрытие модальных окон:</strong>
+          <ul class="mnemo__modal-descr-list">
+            <li>
+              Для закрытия модального окна результатов пользователю достаточно нажать на кнопку
+              <strong>"Закрыть"</strong> или на область
+              вне модального окна. После закрытия страницы автоматически перезагрузится, чтобы пользователь мог начать
+              викторину заново.
+            </li>
+          </ul>
+          </p>
+          <p class="mnemo__modal-descr mnemo__modal-descr--reference descr-reset">
+            Этот процесс обеспечивает удобство для пользователя, позволяя ему не только пройти викторину, но и получить
+            подробную обратную связь по результатам.
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- модалки для неправильных параметров -->
+    <div class="mnemo__modal-background modal-param-bg-js">
+      <div class="mnemo__modal-start modal-param-js modal-param-js--temper-1-skolz">
+        <div class="mnemo__modal-title">
+          <h2 class="mnemo__modal-title-text title-reset">1-СК</h2>
+          <button class="mnemo__modal-close modal-param-close-js btn-reset">
+            <div class="krest">
+              <span class="line-1"></span>
+              <span class="line-2"></span>
+            </div>
+          </button>
+        </div>
+        <div>
+          <p class="mnemo__modal-descr descr-reset">
+            Тут будет описание с выполнением каких то действий по нормализации параметра
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="mnemo__modal-background modal-param-bg-js">
+      <div class="mnemo__modal-start modal-param-js modal-param-js--temper-2-skolz">
+        <div class="mnemo__modal-title">
+          <h2 class="mnemo__modal-title-text title-reset">2-СК"</h2>
+          <button class="mnemo__modal-close modal-param-close-js btn-reset">
+            <div class="krest">
+              <span class="line-1"></span>
+              <span class="line-2"></span>
+            </div>
+          </button>
+        </div>
+        <div>
+          <p class="mnemo__modal-descr descr-reset">
+            Тут будет описание с выполнением каких то действий по нормализации параметра
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="mnemo__modal-background modal-param-bg-js">
+      <div class="mnemo__modal-start modal-param-js modal-param-js--temper-3-skolz">
+        <div class="mnemo__modal-title">
+          <h2 class="mnemo__modal-title-text title-reset">3-СК</h2>
+          <button class="mnemo__modal-close modal-param-close-js btn-reset">
+            <div class="krest">
+              <span class="line-1"></span>
+              <span class="line-2"></span>
+            </div>
+          </button>
+        </div>
+        <div>
+          <p class="mnemo__modal-descr descr-reset">
+            Тут будет описание с выполнением каких то действий по нормализации параметра
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="mnemo__modal-background modal-param-bg-js">
+      <div class="mnemo__modal-start modal-param-js modal-param-js--davl-v-barabane">
+        <div class="mnemo__modal-title">
+          <h2 class="mnemo__modal-title-text title-reset">Давление в барабане</h2>
+          <button class="mnemo__modal-close modal-param-close-js btn-reset">
+            <div class="krest">
+              <span class="line-1"></span>
+              <span class="line-2"></span>
+            </div>
+          </button>
+        </div>
+        <div>
+          <p class="mnemo__modal-descr descr-reset">
+            Тут будет описание с выполнением каких то действий по нормализации параметра
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="mnemo__modal-background modal-param-bg-js">
+      <div class="mnemo__modal-start modal-param-js modal-param-js--razrezh-v-topke">
+        <div class="mnemo__modal-title">
+          <h2 class="mnemo__modal-title-text title-reset">Разрежение в топке печи</h2>
+          <button class="mnemo__modal-close modal-param-close-js btn-reset">
+            <div class="krest">
+              <span class="line-1"></span>
+              <span class="line-2"></span>
+            </div>
+          </button>
+        </div>
+        <div>
+          <p class="mnemo__modal-descr descr-reset">
+            Тут будет описание с выполнением каких то действий по нормализации параметра
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="mnemo__modal-background modal-param-bg-js">
+      <div class="mnemo__modal-start modal-param-js modal-param-js--uroven-v-kotle">
+        <div class="mnemo__modal-title">
+          <h2 class="mnemo__modal-title-text title-reset">Уровень в котле</h2>
+          <button class="mnemo__modal-close modal-param-close-js btn-reset">
+            <div class="krest">
+              <span class="line-1"></span>
+              <span class="line-2"></span>
+            </div>
+          </button>
+        </div>
+        <div>
+          <p class="mnemo__modal-descr descr-reset">
+            Тут будет описание с выполнением каких то действий по нормализации параметра
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- <div class="mnemo__background"></div> -->
+    <div class="mnemo">
+      <!-- <div class="light-alarm">
         <div class="light-alarm__content">
           Сирена
         </div>
       </div> -->
 
-        <!-- <div class="mnemo__gif mnemo__gif-1">
+      <!-- <div class="mnemo__gif mnemo__gif-1">
           <#PasspValue PasspType=9 PasspID=5 Type="Pictures" [true]="pic\images\fire-gif.gif"
                           [false]="pic\images\none.gif">
         </div> -->
 
-        <!-- <div class="mnemo__gif mnemo__gif-2">
+      <!-- <div class="mnemo__gif mnemo__gif-2">
           <img src="../../../pic/images/ventilator.png" alt="img">
         </div> -->
 
-        <!-- <div class="mnemo__gif mnemo__gif-3">
+      <!-- <div class="mnemo__gif mnemo__gif-3">
         </div> -->
 
-        <div class="mnemo__kran-vert kran-1">
-          <div class="mnemo__kran-box">
-            <div class="mnemo__triangle1 mnemo__kran-img mnemo__kran1-left">
+      <div class="mnemo__kran-vert kran-1">
+        <div class="mnemo__kran-box">
+          <div class="mnemo__triangle1 mnemo__kran-img mnemo__kran1-left">
 
-            </div>
-            <div class="mnemo__triangle2 mnemo__kran1-right"></div>
           </div>
+          <div class="mnemo__triangle2 mnemo__kran1-right"></div>
         </div>
+      </div>
 
-        <div class="mnemo__kran-vert kran-2">
-          <div class="mnemo__kran-box">
-            <div class="mnemo__triangle1-small mnemo__kran2-img mnemo__kran2-left">
+      <div class="mnemo__kran-vert kran-2">
+        <div class="mnemo__kran-box">
+          <div class="mnemo__triangle1-small mnemo__kran2-img mnemo__kran2-left">
 
-            </div>
-            <div class="mnemo__triangle2-small mnemo__kran2-right"></div>
           </div>
+          <div class="mnemo__triangle2-small mnemo__kran2-right"></div>
         </div>
+      </div>
 
-        <div class="mnemo__kran-vert kran-3">
-          <div class="mnemo__kran-box">
-            <div class="mnemo__triangle1 mnemo__kran3-img mnemo__kran3-left">
+      <div class="mnemo__kran-vert kran-3">
+        <div class="mnemo__kran-box">
+          <div class="mnemo__triangle1 mnemo__kran3-img mnemo__kran3-left">
 
-            </div>
-            <div class="mnemo__triangle2 mnemo__kran3-right"></div>
           </div>
+          <div class="mnemo__triangle2 mnemo__kran3-right"></div>
         </div>
+      </div>
 
-        <div class="mnemo__kran-vert kran-4">
-          <div class="mnemo__kran-box">
-            <div class="mnemo__triangle1 mnemo__kran4-img mnemo__kran4-left">
+      <div class="mnemo__kran-vert kran-4">
+        <div class="mnemo__kran-box">
+          <div class="mnemo__triangle1 mnemo__kran4-img mnemo__kran4-left">
 
-            </div>
-            <div class="mnemo__triangle2 mnemo__kran4-right"></div>
           </div>
+          <div class="mnemo__triangle2 mnemo__kran4-right"></div>
         </div>
+      </div>
 
-        <div class="mnemo__kran-vert kran-5">
-          <div class="mnemo__kran-box">
-            <div class="mnemo__triangle1 mnemo__kran5-left">
-            </div>
-            <div class="mnemo__triangle2 mnemo__kran5-right"></div>
+      <div class="mnemo__kran-vert kran-5">
+        <div class="mnemo__kran-box">
+          <div class="mnemo__triangle1 mnemo__kran5-left">
           </div>
+          <div class="mnemo__triangle2 mnemo__kran5-right"></div>
         </div>
+      </div>
 
-        <img class="mnemo__img" src="img/pech-vr.jpg">
-        <div class="mnemo__param-descr ot-hvo-text">От ХВО</div>
-        <div class="mnemo__param-descr avarini-sbros-text">Аварийный сброс</div>
-        <div class="mnemo__param-descr par-v-otdelenii-activatsi-text">Пар в отделении активации</div>
-        <div class="mnemo__param-descr borov-soedinitelni-text">Боров соединительный</div>
-        <div class="mnemo__param-descr pech-doziga-gazov-text">Печь дожига газов</div>
-        <div class="mnemo__param-descr dymosos-text">Дымосос</div>
-        <div class="mnemo__param-descr kotel-utilizator-text">Котел утилизатор</div>
-        <div class="mnemo__param-descr vyhod-dymovyh-gazov-text">Выход дымовых газов</div>
-        <div class="mnemo__param-descr mokriy-skruber-text">Мокрый скруббер</div>
-        <div class="mnemo__param-descr topka-text">Топка</div>
-        <div class="mnemo__param-descr vanna-skrubbera-text">Ванна скруббера</div>
-        <div class="mnemo__param-descr goriz-vibrotransporter-text">Вертикальный вибротранспортер</div>
-        <div class="mnemo__param-descr vr-pech-carboniz-text">Вращающаяся печь карбонизации</div>
-        <div class="mnemo__param-descr hvo-text">ХВО</div>
-        <div class="mnemo__param-descr holodilnik-text">Холодильник</div>
-        <div class="mnemo__param-descr grohot-text">Грохот</div>
-        <div class="mnemo__param-descr elevator-text">Элеватор</div>
-        <div class="mnemo__param-descr zagruzka-granul-text">Загрузка гранул</div>
-        <div class="mnemo__param-descr niz-zagr-kam-text">Низ загрузочной камеры</div>
-        <div class="mnemo__param-descr vigruzka-kam-text">Камера выгрузки</div>
-        <div class="mnemo__param-descr vniz-kamery-zagruzki-text">Внизу камеры загрузки </div>
-        <div class="mnemo__param-descr vverh-kamery-zagruzki-text">Вверху камеры загрузки </div>
-        <div class="mnemo__param-descr vhod-pechi-doziganiy-text">Вход печи дожигания </div>
-        <div class="mnemo__param-descr vyhod-pechi-doziganiy-text">Выход печи дожигания </div>
-        <div class="mnemo__param-descr zadanie-temper-na-gorelky-text">Задание</div>
-        <div class="mnemo__param-descr first-skolz-text">1-СК</div>
-        <div class="mnemo__param-descr second-skolz-text">2-СК</div>
-        <div class="mnemo__param-descr third-skolz-text">3-СК</div>
-
-
-
+      <img class="mnemo__img" src="img/pech-vr.jpg">
+      <div class="mnemo__param-descr ot-hvo-text">От ХВО</div>
+      <div class="mnemo__param-descr avarini-sbros-text">Аварийный сброс</div>
+      <div class="mnemo__param-descr par-v-otdelenii-activatsi-text">Пар в отделении активации</div>
+      <div class="mnemo__param-descr borov-soedinitelni-text">Боров соединительный</div>
+      <div class="mnemo__param-descr pech-doziga-gazov-text">Печь дожига газов</div>
+      <div class="mnemo__param-descr dymosos-text">Дымосос</div>
+      <div class="mnemo__param-descr kotel-utilizator-text">Котел утилизатор</div>
+      <div class="mnemo__param-descr vyhod-dymovyh-gazov-text">Выход дымовых газов</div>
+      <div class="mnemo__param-descr mokriy-skruber-text">Мокрый скруббер</div>
+      <div class="mnemo__param-descr topka-text">Топка</div>
+      <div class="mnemo__param-descr vanna-skrubbera-text">Ванна скруббера</div>
+      <div class="mnemo__param-descr goriz-vibrotransporter-text">Вертикальный вибротранспортер</div>
+      <div class="mnemo__param-descr vr-pech-carboniz-text">Вращающаяся печь карбонизации</div>
+      <div class="mnemo__param-descr hvo-text">ХВО</div>
+      <div class="mnemo__param-descr holodilnik-text">Холодильник</div>
+      <div class="mnemo__param-descr grohot-text">Грохот</div>
+      <div class="mnemo__param-descr elevator-text">Элеватор</div>
+      <div class="mnemo__param-descr zagruzka-granul-text">Загрузка гранул</div>
+      <div class="mnemo__param-descr niz-zagr-kam-text">Низ загрузочной камеры</div>
+      <div class="mnemo__param-descr vigruzka-kam-text">Камера выгрузки</div>
+      <div class="mnemo__param-descr vniz-kamery-zagruzki-text">Внизу камеры загрузки </div>
+      <div class="mnemo__param-descr vverh-kamery-zagruzki-text">Вверху камеры загрузки </div>
+      <div class="mnemo__param-descr vhod-pechi-doziganiy-text">Вход печи дожигания </div>
+      <div class="mnemo__param-descr vyhod-pechi-doziganiy-text">Выход печи дожигания </div>
+      <div class="mnemo__param-descr zadanie-temper-na-gorelky-text">Задание</div>
+      <div class="mnemo__param-descr first-skolz-text">1-СК</div>
+      <div class="mnemo__param-descr second-skolz-text">2-СК</div>
+      <div class="mnemo__param-descr third-skolz-text">3-СК</div>
 
 
 
-        <div class="column column-hvo">
-          <div class="column__box">
-            <span class="column-hvo__span-1"></span>
-            <!-- <span class="column-hvo__span-2">%</span> -->
-          </div>
-          <div class="column-hvo__percent">
-          </div>
+
+
+
+      <div class="column column-hvo">
+        <div class="column__box">
+          <span class="column-hvo__span-1"></span>
+          <!-- <span class="column-hvo__span-2">%</span> -->
         </div>
-
-        <div class="column column-skrubber">
-          <div class="column__box">
-            <span class="column-skrubber__span-1"></span>
-            <!-- <span class="column-skrubber__span-2">%</span> -->
-          </div>
-          <div class="column-skrubber__percent">
-          </div>
+        <div class="column-hvo__percent">
         </div>
+      </div>
 
-        <div class="column column-kotel">
-          <div class="column__box">
-            <span class="column-kotel__span-1"></span>
-            <span class="column-kotel__span-2">%</span>
-          </div>
-          <div class="column-kotel__percent">
-          </div>
+      <div class="column column-skrubber">
+        <div class="column__box">
+          <span class="column-skrubber__span-1"></span>
+          <!-- <span class="column-skrubber__span-2">%</span> -->
         </div>
+        <div class="column-skrubber__percent">
+        </div>
+      </div>
+
+      <div class="column column-kotel">
+        <div class="column__box">
+          <span class="column-kotel__span-1"></span>
+          <span class="column-kotel__span-2">%</span>
+        </div>
+        <div class="column-kotel__percent">
+        </div>
+      </div>
 
 
 
@@ -406,7 +677,7 @@
 
 
 
-        <!-- <div class="mnemo__param v-techke">
+      <!-- <div class="mnemo__param v-techke">
           <span class="mnemo__param-text razr-niz-zagr-kam">
             -1,5
           </span>
@@ -435,125 +706,125 @@
           <span class="mnemo__param-naimenov temper-vhod-pech-dozhig-span">&#176C</span>
         </div> -->
 
-        <div class="mnemo__param mnemo__tooltip third-skolz">
-          <div class="third-skolz-js">
-            <span class="mnemo__param-text temper-3-skolz">
-              300
-            </span>
-            <span class="mnemo__param-naimenov temper-3-skolz-span">&#176C</span>
-          </div>
-
-          <div class="mnemo__param-clue third-skolz-clue">
-            <div class="mnemo__param-clue-content">
-              <div class="mnemo__param-clue-title">
-                <h2 class="mnemo__param-clue-title-text title-reset">Третья скользящая</h2>
-                <button class="mnemo__tooltip-close third-skolz-clue-close btn-reset">
-                  <div class="krest">
-                    <span class="line-1"></span>
-                    <span class="line-2"></span>
-                  </div>
-                </button>
-              </div>
-              <div class="mnemo__param-clue-div">Рекомендуемый диапазон в установившимся режиме:
-                <span class="mnemo__param-clue-span">
-                  Не более 400&#176C
-                </span>
-              </div>
-              <div class="mnemo__param-clue-div">Рекомендуемый диапазон при выходе на режим:
-                <span class="mnemo__param-clue-span">
-                  Не более 750&#176C
-                </span>
-              </div>
-              <form class="mnemo__param-clue-form mnemo__param-clue-form--third-skolz-clue">
-                <div class="mnemo__param-clue-form-div">
-                  <input class="mnemo__param-clue-input" type="number" placeholder="Введите значение"
-                    id="thirdSkolzInput">
-                  <label class="mnemo__param-clue-label" for="thirdSkolzInput"></label>
-                  <button class="mnemo__param-clue-form-btn--ok btn-reset" type="submit">Принять</button>
-                </div>
-              </form>
-            </div>
-          </div>
-
+      <div class="mnemo__param mnemo__tooltip third-skolz">
+        <div class="third-skolz-js">
+          <span class="mnemo__param-text temper-3-skolz">
+            300
+          </span>
+          <span class="mnemo__param-naimenov temper-3-skolz-span">&#176C</span>
         </div>
 
-        <div class="mnemo__param mnemo__tooltip second-skolz">
-          <div class="second-skolz-js">
-            <span class="mnemo__param-text temper-2-skolz">
-              500
-            </span>
-            <span class="mnemo__param-naimenov temper-2-skolz-span">&#176C</span>
-          </div>
-
-          <div class="mnemo__param-clue second-skolz-clue">
-            <div class="mnemo__param-clue-content">
-              <div class="mnemo__param-clue-title">
-                <h2 class="mnemo__param-clue-title-text title-reset">Вторая скользящая</h2>
-                <button class="mnemo__tooltip-close second-skolz-clue-close btn-reset">
-                  <div class="krest">
-                    <span class="line-1"></span>
-                    <span class="line-2"></span>
-                  </div>
-                </button>
-              </div>
-              <div class="mnemo__param-clue-div">Рекомендуемый диапазон в установившимся режиме :
-                <span class="mnemo__param-clue-span">
-                  Не более 700&#176C
-                </span>
-              </div>
-              <form class="mnemo__param-clue-form mnemo__param-clue-form--second-skolz-clue">
-                <div class="mnemo__param-clue-form-div">
-                  <input class="mnemo__param-clue-input" type="number" placeholder="Введите значение"
-                    id="secondSkolzInput" min="0" max="1500" step="1">
-                  <label class="mnemo__param-clue-label" for="secondSkolzInput"></label>
-                  <button class="mnemo__param-clue-form-btn--ok btn-reset" type="submit">Принять</button>
+        <div class="mnemo__param-clue third-skolz-clue">
+          <div class="mnemo__param-clue-content">
+            <div class="mnemo__param-clue-title">
+              <h2 class="mnemo__param-clue-title-text title-reset">Третья скользящая</h2>
+              <button class="mnemo__tooltip-close third-skolz-clue-close btn-reset">
+                <div class="krest">
+                  <span class="line-1"></span>
+                  <span class="line-2"></span>
                 </div>
-              </form>
+              </button>
             </div>
+            <div class="mnemo__param-clue-div">Рекомендуемый диапазон в установившимся режиме:
+              <span class="mnemo__param-clue-span">
+                Не более 400&#176C
+              </span>
+            </div>
+            <div class="mnemo__param-clue-div">Рекомендуемый диапазон при выходе на режим:
+              <span class="mnemo__param-clue-span">
+                Не более 750&#176C
+              </span>
+            </div>
+            <form class="mnemo__param-clue-form mnemo__param-clue-form--third-skolz-clue">
+              <div class="mnemo__param-clue-form-div">
+                <input class="mnemo__param-clue-input" type="number" placeholder="Введите значение"
+                  id="thirdSkolzInput">
+                <label class="mnemo__param-clue-label" for="thirdSkolzInput"></label>
+                <button class="mnemo__param-clue-form-btn--ok btn-reset" type="submit">Принять</button>
+              </div>
+            </form>
           </div>
-
         </div>
 
-        <div class="mnemo__param mnemo__tooltip first-skolz">
-          <div class="first-skolz-js">
-            <span id="1SkolzSpan" class="mnemo__param-text temper-1-skolz">
-              10
-            </span>
-            <span class="mnemo__param-naimenov temper-1-skolz-span">&#176C</span>
-          </div>
+      </div>
 
-          <div class="mnemo__param-clue first-skolz-clue">
-            <div class="mnemo__param-clue-content">
-              <div class="mnemo__param-clue-title">
-                <h2 class="mnemo__param-clue-title-text title-reset">Первая скользящая</h2>
-                <button class="mnemo__tooltip-close first-skolz-clue-close btn-reset">
-                  <div class="krest">
-                    <span class="line-1"></span>
-                    <span class="line-2"></span>
-                  </div>
-                </button>
-              </div>
-              <div class="mnemo__param-clue-div">Рекомендуемый диапазон в установившимся режиме :
-                <span class="mnemo__param-clue-span">
-                  550-800&#176C
-                </span>
-              </div>
-              <form class="mnemo__param-clue-form mnemo__param-clue-form--first-skolz-clue">
-                <div class="mnemo__param-clue-form-div">
-                  <input class="mnemo__param-clue-input" type="number" placeholder="Введите значение"
-                    id="firstSkolzInput" min="0" max="1500" step="1">
-                  <label class="mnemo__param-clue-label" for="1skolzInput"></label>
-                  <button class="mnemo__param-clue-form-btn--ok first-skolz-btn btn-reset" type="submit">
-                    Принять
-                  </button>
-                </div>
-              </form>
-            </div>
-          </div>
-
+      <div class="mnemo__param mnemo__tooltip second-skolz">
+        <div class="second-skolz-js">
+          <span class="mnemo__param-text temper-2-skolz">
+            500
+          </span>
+          <span class="mnemo__param-naimenov temper-2-skolz-span">&#176C</span>
         </div>
 
-        <!-- <div class="mnemo__param granul-posle-holodil">
+        <div class="mnemo__param-clue second-skolz-clue">
+          <div class="mnemo__param-clue-content">
+            <div class="mnemo__param-clue-title">
+              <h2 class="mnemo__param-clue-title-text title-reset">Вторая скользящая</h2>
+              <button class="mnemo__tooltip-close second-skolz-clue-close btn-reset">
+                <div class="krest">
+                  <span class="line-1"></span>
+                  <span class="line-2"></span>
+                </div>
+              </button>
+            </div>
+            <div class="mnemo__param-clue-div">Рекомендуемый диапазон в установившимся режиме :
+              <span class="mnemo__param-clue-span">
+                Не более 700&#176C
+              </span>
+            </div>
+            <form class="mnemo__param-clue-form mnemo__param-clue-form--second-skolz-clue">
+              <div class="mnemo__param-clue-form-div">
+                <input class="mnemo__param-clue-input" type="number" placeholder="Введите значение"
+                  id="secondSkolzInput" min="0" max="1500" step="1">
+                <label class="mnemo__param-clue-label" for="secondSkolzInput"></label>
+                <button class="mnemo__param-clue-form-btn--ok btn-reset" type="submit">Принять</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="mnemo__param mnemo__tooltip first-skolz">
+        <div class="first-skolz-js">
+          <span id="1SkolzSpan" class="mnemo__param-text temper-1-skolz">
+            10
+          </span>
+          <span class="mnemo__param-naimenov temper-1-skolz-span">&#176C</span>
+        </div>
+
+        <div class="mnemo__param-clue first-skolz-clue">
+          <div class="mnemo__param-clue-content">
+            <div class="mnemo__param-clue-title">
+              <h2 class="mnemo__param-clue-title-text title-reset">Первая скользящая</h2>
+              <button class="mnemo__tooltip-close first-skolz-clue-close btn-reset">
+                <div class="krest">
+                  <span class="line-1"></span>
+                  <span class="line-2"></span>
+                </div>
+              </button>
+            </div>
+            <div class="mnemo__param-clue-div">Рекомендуемый диапазон в установившимся режиме :
+              <span class="mnemo__param-clue-span">
+                550-800&#176C
+              </span>
+            </div>
+            <form class="mnemo__param-clue-form mnemo__param-clue-form--first-skolz-clue">
+              <div class="mnemo__param-clue-form-div">
+                <input class="mnemo__param-clue-input" type="number" placeholder="Введите значение" id="firstSkolzInput"
+                  min="0" max="1500" step="1">
+                <label class="mnemo__param-clue-label" for="1skolzInput"></label>
+                <button class="mnemo__param-clue-form-btn--ok first-skolz-btn btn-reset" type="submit">
+                  Принять
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- <div class="mnemo__param granul-posle-holodil">
           <span class="mnemo__param-text temper-granul-holod">
             50
           </span>
@@ -595,46 +866,46 @@
           <span class="mnemo__param-naimenov temper-topka-span">&#176C</span>
         </div> -->
 
-        <div class="mnemo__param mnemo__tooltip p-v-topke">
-          <div class="razrezh-v-topke-js">
-            <span class="mnemo__param-text razrezh-topka">
-              -2.1
-            </span>
-            <span class="mnemo__param-naimenov davl-topka-span">кгс/м2</span>
-          </div>
-          <div class="mnemo__param-clue razrezh-v-topke-clue">
-            <div class="mnemo__param-clue-content">
-              <div class="mnemo__param-clue-title">
-                <h2 class="mnemo__param-clue-title-text title-reset">Разрежение в топке печи</h2>
-                <button class="mnemo__tooltip-close razrezh-v-topke-clue-close btn-reset">
-                  <div class="krest">
-                    <span class="line-1"></span>
-                    <span class="line-2"></span>
-                  </div>
+      <div class="mnemo__param mnemo__tooltip p-v-topke">
+        <div class="razrezh-v-topke-js">
+          <span class="mnemo__param-text razrezh-topka">
+            -2.1
+          </span>
+          <span class="mnemo__param-naimenov davl-topka-span">кгс/м2</span>
+        </div>
+        <div class="mnemo__param-clue razrezh-v-topke-clue">
+          <div class="mnemo__param-clue-content">
+            <div class="mnemo__param-clue-title">
+              <h2 class="mnemo__param-clue-title-text title-reset">Разрежение в топке печи</h2>
+              <button class="mnemo__tooltip-close razrezh-v-topke-clue-close btn-reset">
+                <div class="krest">
+                  <span class="line-1"></span>
+                  <span class="line-2"></span>
+                </div>
+              </button>
+            </div>
+            <div class="mnemo__param-clue-div">Рекомендуемый диапазон в установившимся режиме:
+              <span class="mnemo__param-clue-span">
+                от -1.0 до -4.0
+              </span>
+            </div>
+            <form class="mnemo__param-clue-form mnemo__param-clue-form--razrezh-v-topke-clue">
+              <div class="mnemo__param-clue-form-div">
+                <input class="mnemo__param-clue-input" type="number" placeholder="Введите значение"
+                  id="razrezhVtopkeInput" min="-10" max="0" step="0.1">
+                <label class="mnemo__param-clue-label" for="razrezhVtopkeInput"></label>
+                <button class="mnemo__param-clue-form-btn--ok btn-reset" type="submit">
+                  Принять
                 </button>
               </div>
-              <div class="mnemo__param-clue-div">Рекомендуемый диапазон в установившимся режиме:
-                <span class="mnemo__param-clue-span">
-                  от -1.0 до -4.0
-                </span>
-              </div>
-              <form class="mnemo__param-clue-form mnemo__param-clue-form--razrezh-v-topke-clue">
-                <div class="mnemo__param-clue-form-div">
-                  <input class="mnemo__param-clue-input" type="number" placeholder="Введите значение"
-                    id="razrezhVtopkeInput" min="-10" max="0" step="0.1">
-                  <label class="mnemo__param-clue-label" for="razrezhVtopkeInput"></label>
-                  <button class="mnemo__param-clue-form-btn--ok btn-reset" type="submit">
-                    Принять
-                  </button>
-                </div>
-              </form>
-            </div>
+            </form>
           </div>
         </div>
+      </div>
 
 
 
-     <!--   <div class="mnemo__param zadanie-temper-na-gorelky">
+      <!--   <div class="mnemo__param zadanie-temper-na-gorelky">
           <span class="mnemo__param-text ">
             600
           </span>
@@ -691,51 +962,51 @@
         </div> -->
 
 
-        <div class="mnemo__param mnemo__tooltip p-v-barabane-kotla">
-          <div class="davl-v-barabane-js">
-            <span  class="mnemo__param-text davl-v-barabane">
-              0
-            </span>
-            <span class="mnemo__param-naimenov davl-v-barabane-span">кгс/см2</span>
-          </div>
-          <div class="mnemo__param-clue p-v-barabane-clue">
-            <div class="mnemo__param-clue-content">
-              <div class="mnemo__param-clue-title">
-                <h2 class="mnemo__param-clue-title-text title-reset">Давление пара в барабане котла</h2>
-                <button class="mnemo__tooltip-close p-v-barabane-clue-close btn-reset">
-                  <div class="krest">
-                    <span class="line-1"></span>
-                    <span class="line-2"></span>
-                  </div>
+      <div class="mnemo__param mnemo__tooltip p-v-barabane-kotla">
+        <div class="davl-v-barabane-js">
+          <span class="mnemo__param-text davl-v-barabane">
+            0
+          </span>
+          <span class="mnemo__param-naimenov davl-v-barabane-span">кгс/см2</span>
+        </div>
+        <div class="mnemo__param-clue p-v-barabane-clue">
+          <div class="mnemo__param-clue-content">
+            <div class="mnemo__param-clue-title">
+              <h2 class="mnemo__param-clue-title-text title-reset">Давление пара в барабане котла</h2>
+              <button class="mnemo__tooltip-close p-v-barabane-clue-close btn-reset">
+                <div class="krest">
+                  <span class="line-1"></span>
+                  <span class="line-2"></span>
+                </div>
+              </button>
+            </div>
+            <div class="mnemo__param-clue-div">Рекомендуемый диапазон:
+              <span class="mnemo__param-clue-span">
+                от 0 до 10
+              </span>
+            </div>
+            <form class="mnemo__param-clue-form mnemo__param-clue-form--p-v-barabane-clue">
+              <div class="mnemo__param-clue-form-div">
+                <input class="mnemo__param-clue-input" type="number" placeholder="Введите значение" id="pVbarabaneInput"
+                  min="0" max="20" step="0.1">
+                <label class="mnemo__param-clue-label" for="pVbarabaneInput"></label>
+                <button class="mnemo__param-clue-form-btn--ok btn-reset" type="submit">
+                  Принять
                 </button>
               </div>
-              <div class="mnemo__param-clue-div">Рекомендуемый диапазон:
-                <span class="mnemo__param-clue-span">
-                  до 10
-                </span>
-              </div>
-              <form class="mnemo__param-clue-form mnemo__param-clue-form--p-v-barabane-clue">
-                <div class="mnemo__param-clue-form-div">
-                  <input class="mnemo__param-clue-input" type="number" placeholder="Введите значение"
-                    id="pVbarabaneInput" min="0" max="20" step="0.1">
-                  <label class="mnemo__param-clue-label" for="pVbarabaneInput"></label>
-                  <button class="mnemo__param-clue-form-btn--ok btn-reset" type="submit">
-                    Принять
-                  </button>
-                </div>
-              </form>
-            </div>
+            </form>
           </div>
         </div>
+      </div>
 
-        <!-- <div class="mnemo__param uroven-v-barabane-kotla">
+      <!-- <div class="mnemo__param uroven-v-barabane-kotla">
           <span class="mnemo__param-text uroven-v-barabane-kotla-value">
             5
           </span>
           <span class="mnemo__param-naimenov">мм</span>
         </div> -->
 
-       <div class="mnemo__param mnemo__tooltip uroven-v-barabane-kotla-mnemo">
+      <div class="mnemo__param mnemo__tooltip uroven-v-barabane-kotla-mnemo">
         <div class="uroven-v-kotle-js">
           <span class="mnemo__param-text uroven-v-kotle">
             50
@@ -758,6 +1029,11 @@
                 от -80 до 80
               </span>
             </div>
+            <div class="mnemo__param-clue-div">Шкала:
+              <span class="mnemo__param-clue-span">
+                от -200 до 200
+              </span>
+            </div>
             <form class="mnemo__param-clue-form mnemo__param-clue-form--uroven-v-kotle-clue">
               <div class="mnemo__param-clue-form-div">
                 <input class="mnemo__param-clue-input" type="number" placeholder="Введите значение"
@@ -770,25 +1046,25 @@
             </form>
           </div>
         </div>
-        </div>
+      </div>
 
-        <!-- <div class="mnemo__param im2-percent">
+      <!-- <div class="mnemo__param im2-percent">
                       <span class="mnemo__param-text ">
                           <#PasspValue PasspType=1 PasspID=52 Precision=0>
                       </span>
                       <span class="mnemo__param-naimenov">%</span>
                   </div> -->
 
-        <!-- <div class="mnemo__param im5-percent">
+      <!-- <div class="mnemo__param im5-percent">
 
           <span class="mnemo__param-text im5-pech1-value">
             24
           </span>
           <span class="mnemo__param-naimenov">%</span>
         </div> -->
-        <!-- <img src="../pic/images/ventilator.JFIF" alt="img"> -->
+      <!-- <img src="../pic/images/ventilator.JFIF" alt="img"> -->
 
-        <!-- <div class="mnemo__param krutilka-1">
+      <!-- <div class="mnemo__param krutilka-1">
           <img src="../../../pic/images/ventilator.png" alt="img">
         </div>
         <div class="mnemo__param krutilka-2">
@@ -797,12 +1073,14 @@
       </div>-->
 
 
-      </div>
-  </div>
-</div>
+    </div>
 
-    <script src="js/preload.js"></script>
-    <script type="module" src="js/simulator/simulator.js"></script>
+  </div>
+
+
+  <script src="js/simulator/reference.js"></script>
+  <script src="js/preload.js"></script>
+  <script type="module" src="js/simulator/simulator.js"></script>
 
 </body>
 

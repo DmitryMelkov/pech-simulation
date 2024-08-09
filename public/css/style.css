@@ -108,11 +108,29 @@ body::-webkit-scrollbar-thumb {
 
 .body {
   margin: 0;
-  padding: 5px;
+  padding: 5px 15px;
 }
 
 .title-reset {
   margin: 0;
+}
+
+
+
+.red {
+  color: red;
+}
+
+.blue {
+  color: blue;
+}
+
+.green {
+  color: green;
+}
+
+.orange {
+  color: orange;
 }
 
 .btn-reset {
@@ -144,9 +162,15 @@ body::-webkit-scrollbar-thumb {
   position: relative;
 }
 
+.content-mnemo {
+  max-width: 1450px;
+  margin: 0 auto;
+}
+
 .mnemo {
   position: relative;
   width: 1316px;
+  margin-top: 30px;
   /* margin: 0 auto; */
 }
 
@@ -978,7 +1002,7 @@ body::-webkit-scrollbar-thumb {
   position: absolute;
   top: 10px;
   right: 10px;
-  z-index: 1;
+  z-index: 11;
   width: 100%;
   max-width: 340px;
   height: fit-content;
@@ -1463,8 +1487,8 @@ body::-webkit-scrollbar-thumb {
 
 .mnemo__modal-box--btns {
   position: absolute;
-  top: 530px;
-  left: 400px;
+  top: 550px;
+  left: 243px;
   z-index: 1;
   display: flex;
   align-items: center;
@@ -1529,6 +1553,7 @@ body::-webkit-scrollbar-thumb {
   padding: 20px;
   position: absolute;
   max-width: 710px;
+  max-height: 800px;
   width: 100%;
   top: 50%;
   left: 50%;
@@ -1538,11 +1563,10 @@ body::-webkit-scrollbar-thumb {
   background-color: rgb(255, 255, 255);
   box-shadow: rgba(0, 0, 0, 0.6) 0px 3px 6px, rgba(0, 0, 0, 0.7) 0px 3px 6px;
   cursor: default;
+  overflow-y: auto;
 }
 
 .mnemo__modal-start.enabled {
-  /* height: 100%; */
-  max-height: 800px;
   transition: height .4s ease-in-out;
 }
 
@@ -2283,7 +2307,7 @@ body::-webkit-scrollbar-thumb {
 .uroven-v-kotle-clue {
   text-align: center;
   width: 275px;
-  top: -137px;
+  top: -176px;
   left: -114px;
 }
 
@@ -2305,6 +2329,44 @@ body::-webkit-scrollbar-thumb {
     background-color: red;
   }
 }
+
+/* modal reference */
+
+
+.modal-reference-js {
+  max-width: 900px;
+  max-height: 900px;
+}
+.btn-modal--reference {
+ border-right: 1px solid transparent;
+}
+
+.mnemo__modal-descr--reference {
+  font-size: 16px;
+  line-height: 22px;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mnemo__modal-descr-list li {
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.mnemo__modal-descr-img-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.mnemo__modal-descr-img {
+  max-width: 600px;
+}
+
 
 
 /* test page */
@@ -2931,7 +2993,12 @@ body::-webkit-scrollbar-thumb {
 
   .mnemo__modal-box--btns {
     top: 430px;
-    left: 260px;
+    left: 175px;
     z-index: 1;
+  }
+  .mnemo__modal-box--btn {
+    height: 35px;
+    font-size: 14px;
+    line-height: 19px;
   }
 }

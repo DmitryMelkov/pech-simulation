@@ -144,7 +144,7 @@ tooltipVisible(
 
 
 // Функции для инпутов в модалке
-const btnModal = document.querySelector('.btn-modal');
+const btnModal = document.querySelector('.btn-modal--initial-conditions');
 const modalBackground = document.querySelector('.modal-js');
 const modalActive = document.querySelector('.mnemo__modal-start');
 const btnAccept = document.querySelector('.modal-content__form-btn--ok');
