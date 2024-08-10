@@ -1328,7 +1328,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .mnemo__param-clue-title-text {
-  max-width: 250px;
+  max-width: 200px;
   margin: 0;
   font-size: 16px;
   line-height: 18px;
@@ -1528,6 +1528,39 @@ body::-webkit-scrollbar-thumb {
   cursor: pointer;
 }
 
+.modal__table {
+  position: static;
+  width: 100%;
+  max-width: 740px;
+  height: fit-content;
+  text-align: left;
+  border-collapse: collapse;
+  border-spacing: 5px;
+  background-color: #e7eef4;
+  box-shadow: 0 0 5px 0 black;
+  cursor: default;
+}
+
+.modal__table-tr {
+  height: 15px;
+  border: 1px solid black;
+}
+
+.modal__table-td {
+  padding: 5px;
+  text-align: center;
+  font-family: 'Bitter', sans-serif;
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: 400;
+  color: black;
+}
+
+.modal__table-th:not(:last-child),
+.modal__table-td:not(:last-child) {
+  border-right: 1px solid black;
+}
+
 .mnemo__modal-background {
   position: fixed;
   top: 0;
@@ -1568,6 +1601,10 @@ body::-webkit-scrollbar-thumb {
 
 .mnemo__modal-start.enabled {
   transition: height .4s ease-in-out;
+}
+
+.modal-content__form-box {
+  margin-bottom: 15px;
 }
 
 .mnemo__modal-title {
@@ -2035,13 +2072,13 @@ body::-webkit-scrollbar-thumb {
 .rhombus.left:nth-child(12) {
   top: 80%;
   left: -44px;
-  background: linear-gradient(135deg, #f6d365, #fda085);
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
 }
 
 .rhombus.left:nth-child(13) {
   top: 84%;
   left: 20px;
-  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  background: linear-gradient(135deg, #f6d365, #fda085);
 }
 
 /* Правый ряд */
@@ -2115,13 +2152,13 @@ body::-webkit-scrollbar-thumb {
 .rhombus.right:nth-child(12) {
   top: 81%;
   right: -50px;
-  background: linear-gradient(135deg, #f6d365, #fda085);
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
 }
 
 .rhombus.right:nth-child(13) {
   top: 84%;
   right: 19px;
-  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  background: linear-gradient(135deg, #f6d365, #fda085);
 }
 
 @keyframes blink {
@@ -2224,19 +2261,19 @@ body::-webkit-scrollbar-thumb {
 .third-skolz-clue {
   width: 250px;
   top: -214px;
-  left: -112px;
+  left: -100px;
 }
 
 .second-skolz-clue {
   width: 250px;
   top: -156px;
-  left: -111px;
+  left: -100px;
 }
 
 .first-skolz-clue {
   width: 250px;
   top: -156px;
-  left: -111px;
+  left: -106px;
 }
 
 .granul-posle-holodil-clue {
@@ -2277,8 +2314,8 @@ body::-webkit-scrollbar-thumb {
 
 .razrezh-v-topke-clue {
   width: 280px;
-  top: -152px;
-  left: -111px;
+  top: -155px;
+  left: -97px;
 }
 
 .temper-gazov-do-skrubber-clue {
@@ -2320,14 +2357,14 @@ body::-webkit-scrollbar-thumb {
 .p-v-barabane-clue {
   text-align: center;
   width: 280px;
-  top: -156px;
-  left: -114px;
+  top: -155px;
+  left: -100px;
 }
 
 .uroven-v-kotle-clue {
   text-align: center;
   width: 275px;
-  top: -176px;
+  top: -193px;
   left: -114px;
 }
 
@@ -2830,7 +2867,7 @@ body::-webkit-scrollbar-thumb {
   }
 
   .column-kotel__span-1 {
-    left: 0px;
+    left: 5px;
   }
 
   .column-kotel__span-2 {
@@ -3020,5 +3057,80 @@ body::-webkit-scrollbar-thumb {
     height: 35px;
     font-size: 14px;
     line-height: 19px;
+  }
+
+  /* .modal__table {
+    top: 66%;
+    right: 30%;
+  } */
+
+  .mnemo__param-clue-title-text {
+    font-size: 14px;
+    line-height: 16px;
+  }
+
+  .mnemo__param-clue-div {
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .mnemo__param-clue-span {
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .mnemo__param-clue-input {
+    padding: 5px 4px;
+    font-size: 12px;
+    height: 25px
+  }
+
+  .mnemo__param-clue-form-btn--ok {
+    height: 25px;
+    padding: 3px;
+    font-size: 12px;
+  }
+  .mnemo__tooltip-close {
+    width: 15px;
+    height: 15px;
+  }
+
+  .first-skolz-clue {
+    width: 200px;
+    top: -140px;
+    left: -88px;
+  }
+
+  .second-skolz-clue {
+    width: 200px;
+    top: -140px;
+    left: -83px;
+  }
+
+  .third-skolz-clue {
+    width: 200px;
+    top: -193px;
+    left: -84px;
+  }
+
+  .uroven-v-kotle-clue {
+    width: 240px;
+    top: -162px;
+    left: -105px;
+  }
+
+  .razrezh-v-topke-clue {
+    width: 235px;
+    top: -140px;
+    left: -90px;
+  }
+  .p-v-barabane-clue {
+    width: 240px;
+    top: -140px;
+    left: -94px;
+  }
+
+  .column-kotel__span-1, .column-kotel__span-2 {
+    font-size: 12px;
   }
 }
