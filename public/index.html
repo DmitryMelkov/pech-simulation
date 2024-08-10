@@ -39,10 +39,10 @@
       </tbody>
     </table>
 
-    
+
 
     <div class="mnemo__modal-background modal-js">
-      
+
 
       <div class="mnemo__modal-start">
         <div class="mnemo__modal-title">
@@ -116,7 +116,7 @@
                   id="urovenVkotleInputModal">
                 <span class="modal-content__error">Введите значение</span>
               </div>
-               <!-- <div class="modal-content__input-box">
+              <!-- <div class="modal-content__input-box">
                   <input class="modal-content__input" min="0" max="1500" step="1" name="modalInputNizKameri"
                     type="number" placeholder="Введите значение &#176C" id="nizKameriInputModal">
                   <label class="modal-content__label" for="nizKameriInputModal">Внизу камеры загрузки</label>
@@ -181,43 +181,43 @@
           </thead>
           <tbody class="modal__table-tbody">
             <tr class="modal__table-tr">
-              <td class = "modal__table-td table__left">Первая скользящая</td>
+              <td class="modal__table-td table__left">Первая скользящая</td>
               <td class="modal__table-td table__center">Установившийся</td>
               <td class="modal__table-td">550-800&#176C</td>
             </tr>
             <tr class="modal__table-tr">
-              <td class = "modal__table-td table__left">Вторая скользящая</td>
+              <td class="modal__table-td table__left">Вторая скользящая</td>
               <td class="modal__table-td table__center">Установившийся</td>
               <td class="modal__table-td">не более 700&#176C</td>
             </tr>
             <tr class="modal__table-tr">
-              <td class = "modal__table-td table__left" rowspan="2">Третья скользящая</td>
+              <td class="modal__table-td table__left" rowspan="2">Третья скользящая</td>
               <td class="modal__table-td table__center">Установившийся</td>
               <td class="modal__table-td">не более 400&#176C</td>
-            </tr >
+            </tr>
             <tr class="modal__table-tr">
               <td class="modal__table-td table__center">Выход на режим</td>
               <td class="modal__table-td table__center">не более 750&#176C</td>
             </tr>
             <tr class="modal__table-tr">
-              <td class = "modal__table-td table__left">Давление в барабане котла</td>
+              <td class="modal__table-td table__left">Давление в барабане котла</td>
               <td class="modal__table-td table__center">Все режимы</td>
               <td class="modal__table-td">от 0 до 10 кгс/см2</td>
             </tr>
             <tr class="modal__table-tr">
-              <td class = "modal__table-td table__left">Разрежение в топке печи</td>
+              <td class="modal__table-td table__left">Разрежение в топке печи</td>
               <td class="modal__table-td table__center">Установившийся</td>
               <td class="modal__table-td">от -1.0 до -4.0 кгс/м2</td>
             </tr>
             <tr class="modal__table-tr">
-              <td class = "modal__table-td table__left">Уровень в барабане котла</td>
+              <td class="modal__table-td table__left">Уровень в барабане котла</td>
               <td class="modal__table-td table__center">Все режимы</td>
               <td class="modal__table-td">от -80 до 80</td>
             </tr>
           </tbody>
         </table>
       </div>
-      
+
     </div>
 
     <div class="mnemo__modal-box--btns">
@@ -295,6 +295,9 @@
               или <strong>Закрыть</strong>. Если введены некорректные значения, будет вызвана функция, уведомляющая
               пользователя об ошибке.
             </li>
+            <li>
+              Также в модальном окне присутствует таблица с рекомендуемыми параметрами работы
+            </li>
           </ul>
           <strong>3. Синхронизация значений:</strong>
           <ul class="mnemo__modal-descr-list">
@@ -351,9 +354,12 @@
             На <strong>Рис.1</strong> видно, что нужно заполнить все поля, и если значение некорректное то всплывающая
             подсказка укажет
             какой допустимый диапазон ввода.
+            <br>
+            Таблица внизу показывает рекомендуемые параметры работы печи
           </p>
           <p class="mnemo__modal-descr mnemo__modal-descr--reference descr-reset">
-            Если возникнут проблемы с заполнением десятичных значений (давление, разрежение), можно воспользоваться стрелками на клавиатуре <strong>"вверх"</strong>и<strong>"вниз"</strong>.  
+            Если возникнут проблемы с заполнением десятичных значений (давление, разрежение), можно воспользоваться
+            стрелками на клавиатуре <strong>"вверх"</strong>и<strong>"вниз"</strong>.
           </p>
           <p class="mnemo__modal-descr mnemo__modal-descr--reference descr-reset">
             <strong>2.</strong> После заполнения всех полей нажимаем кнопку <strong>Принять</strong>, и смотрим
@@ -462,11 +468,13 @@
             <li>
               В зависимости от результата система покажет модальное окно с итоговой оценкой:
               <br>
-              <strong class="blue">Отлично:</strong> Если у пользователя высокий балл, результат сопровождается позитивным
+              <strong class="blue">Отлично:</strong> Если у пользователя высокий балл, результат сопровождается
+              позитивным
               изображением и сообщением о
               том, что он справился <strong class="blue">"Отлично"</strong> .
               <br>
-              <strong class="green">Хорошо:</strong> Если балл ниже, но все же хороший, пользователю сообщается, что он справился
+              <strong class="green">Хорошо:</strong> Если балл ниже, но все же хороший, пользователю сообщается, что он
+              справился
               <strong class="green">"Хорошо"</strong> .
               <br>
               <strong class="orange">Удовлетворительно:</strong> При среднем результате пользователь видит сообщение
