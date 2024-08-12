@@ -74,7 +74,7 @@ testBtn.addEventListener('click', async (e) => {
   }
 });
 
-setupModalCloseEvents(closeButton, modalBackground, () => closeModal(modalBackground, modalContent));
+setupModalCloseEvents(closeButton, modalBackground, () => closeModal(modalBackground, modalContent, true)); // Перезагрузка после закрытия
 setupModalCloseEvents(closeButtonUnanswered, modalBackgroundUnanswered, () =>
-  closeModal(modalBackgroundUnanswered, modalContentUnanswered)
+  closeModal(modalBackgroundUnanswered, modalContentUnanswered, false) // Не перезагружать страницу при закрытии модалки для неотвеченных вопросов
 );

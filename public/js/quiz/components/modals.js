@@ -5,10 +5,12 @@ export const openModal = (background, content) => {
   content.classList.add('enabled');
 };
 
-export const closeModal = (background, content) => {
+export const closeModal = (background, content, shouldReload = true) => {
   background.classList.remove('enabled');
   content.classList.remove('enabled');
-  location.reload();
+  if (shouldReload) {
+    location.reload();
+  }
 };
 
 export const setupModalCloseEvents = (closeButton, background, closeModalFunction) => {
