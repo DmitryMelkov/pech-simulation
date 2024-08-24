@@ -41,6 +41,15 @@ export const parameters = [
     type: 'temperature'
   },
   {
+    spanSelector: '.temper-kamer-vygruz',
+    modalInputSelector: '#temperKamerVygruzInputModal',
+    clueInputSelector: '#temperKamerVygruzInput',
+    conditionMin: 0,
+    conditionMax: 750,
+    description: 'Температура камеры выгрузки',
+    type: 'temperature'
+  },
+  {
     spanSelector: '.davl-v-barabane',
     modalInputSelector: '#pVbarabaneInputModal',
     clueInputSelector: '#pVbarabaneInput',
@@ -173,6 +182,7 @@ export const updateMode = () => {
   // Обновление параметров с учетом первого значения
   updateParameter('.temper-2-skolz', 0, 700, firstSkolzValue);
   updateParameter('.temper-topka', 0, 1000, firstSkolzValue);
+  updateParameter('.temper-kamer-vygruz', 0, 750, firstSkolzValue);
   updateParameter('.davl-v-barabane', 0, 10, firstSkolzValue);
   updateParameter('.razrezh-topka', -4, -1, firstSkolzValue);
   updateParameter('.uroven-v-kotle', -80, 80, firstSkolzValue);
@@ -190,6 +200,7 @@ export const updateMode = () => {
   addRowIfRunning(document.querySelector('.temper-2-skolz'), 'Температура на 2 скользящей');
   addRowIfRunning(document.querySelector('.temper-3-skolz'), 'Температура на 3 скользящей');
   addRowIfRunning(document.querySelector('.temper-v-topke'), 'Температура в топке');
+  addRowIfRunning(document.querySelector('.temper-kamer-vygruz'), 'Температура камеры выгрузки');
   addRowIfRunning(document.querySelector('.davl-v-barabane'), 'Давление в барабане котла');
   addRowIfRunning(document.querySelector('.razrezh-topka'), 'Разрежение в топке печи');
   addRowIfRunning(document.querySelector('.uroven-v-kotle'), 'Уровень в котле');
