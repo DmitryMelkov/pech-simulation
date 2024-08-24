@@ -1677,6 +1677,9 @@ body::-webkit-scrollbar-thumb {
   color: black;
 }
 
+
+
+
 .mnemo__modal-quiz {
   margin-bottom: 30px;
   font-size: 28px;
@@ -1885,6 +1888,90 @@ body::-webkit-scrollbar-thumb {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+
+.troubleshooting {
+  display: flex;
+  flex-direction: column;
+}
+
+.troubleshooting__title {
+  text-align: center;
+  font-size: 22px;
+  line-height: 30px;
+  font-weight: 600;
+  color: green;
+  margin-bottom: 30px;
+}
+
+.troubleshooting__descr {
+  margin-bottom: 10px;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 400;
+  color: black;
+}
+
+.troubleshooting__section {
+  margin-bottom: 20px;
+}
+
+.troubleshooting__item {
+  padding: 10px;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 400;
+  color: black;
+
+  background-color: #e9f5e9;
+  border-left: 4px solid green;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.troubleshooting__item:hover {
+  background-color: #d4edda;
+  transform: translateX(5px);
+}
+
+.troubleshooting__item--cause--active:hover {
+  background-color: #f8d7da;
+  transform: none;
+  cursor: unset;
+
+}
+
+.troubleshooting__item--cause {
+  background-color: #f8d7da;
+  border-left-color: #dc3545;
+}
+
+.troubleshooting__item--action {
+  display: none;
+  background-color: #d4edda;
+  border-left-color: green;
+  margin-top: 5px;
+  padding: 10px 10px 10px 20px;
+  border: 1px solid green;
+  border-radius: 4px;
+  cursor: default;
+}
+
+.troubleshooting__item--action:hover {
+  transform: none;
+}
+
+.troubleshooting__item--active+.troubleshooting__item--action {
+  display: block;
+}
+
+.troubleshooting__label {
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 600;
+  color: black;
 }
 
 .bad-result-btn {
@@ -2399,8 +2486,9 @@ body::-webkit-scrollbar-thumb {
   max-width: 900px;
   max-height: 700px;
 }
+
 .btn-modal--reference {
- border-right: 1px solid transparent;
+  border-right: 1px solid transparent;
 }
 
 .mnemo__modal-descr--reference {
@@ -2541,15 +2629,18 @@ body::-webkit-scrollbar-thumb {
   justify-content: center;
   align-items: center;
 }
+
 .checkbox__input {
   display: none;
 }
+
 .checkbox__label {
   width: 100%;
   display: inline-flex;
   position: relative;
   cursor: pointer;
 }
+
 .checkbox__label::before {
   content: "";
   align-self: flex-start;
@@ -2560,6 +2651,7 @@ body::-webkit-scrollbar-thumb {
   border-radius: 4px;
   margin: 0 25px 0 0;
 }
+
 .checkbox__label::after {
   content: "";
   position: absolute;
@@ -2575,7 +2667,8 @@ body::-webkit-scrollbar-thumb {
   transform: scale(0);
   transition: transform 0.2s;
 }
-.checkbox__input:checked + .checkbox__label::after {
+
+.checkbox__input:checked+.checkbox__label::after {
   transform: scale(1);
 }
 
@@ -3058,6 +3151,7 @@ body::-webkit-scrollbar-thumb {
     left: 175px;
     z-index: 1;
   }
+
   .mnemo__modal-box--btn {
     height: 35px;
     font-size: 14px;
@@ -3095,6 +3189,7 @@ body::-webkit-scrollbar-thumb {
     padding: 3px;
     font-size: 12px;
   }
+
   .mnemo__tooltip-close {
     width: 15px;
     height: 15px;
@@ -3129,13 +3224,15 @@ body::-webkit-scrollbar-thumb {
     top: -140px;
     left: -90px;
   }
+
   .p-v-barabane-clue {
     width: 240px;
     top: -140px;
     left: -94px;
   }
 
-  .column-kotel__span-1, .column-kotel__span-2 {
+  .column-kotel__span-1,
+  .column-kotel__span-2 {
     font-size: 12px;
   }
 }
