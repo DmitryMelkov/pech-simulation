@@ -5,12 +5,12 @@ export const validateInputs = (inputs) => {
   inputs.forEach((input) => {
     const errorElement = input.nextElementSibling;
     const value = input.value.trim();
-    const inputType = input.dataset.type; 
+    const inputType = input.dataset.type;
     if (value === '') {
       input.classList.add('error');
       if (errorElement) {
         errorElement.classList.add('active');
-        errorElement.textContent = 'Введите значение'; 
+        errorElement.textContent = 'Введите значение';
       }
       allValid = false;
     } else {
@@ -28,19 +28,19 @@ export const validateInputs = (inputs) => {
         } else if (inputType === 'level' && (numericValue < -200 || numericValue > 200)) {
           isValid = false;
       }}
-      
+
       if (!isValid) {
         input.classList.add('error');
         if (errorElement) {
           errorElement.classList.add('active');
-          errorElement.textContent = inputType === 'temperature' 
-          ? 'Диапазон от 0 до 1500' 
-          : inputType === 'pressure' 
-          ? 'Диапазон от 0 до 20' 
-          : inputType === 'razrezh' 
+          errorElement.textContent = inputType === 'temperature'
+          ? 'Диапазон от 0 до 1500'
+          : inputType === 'pressure'
+          ? 'Диапазон от 0 до 20'
+          : inputType === 'razrezh'
           ? 'Диапазон от 0 до -10'
           : inputType === 'level'
-          ? 'Диапазон от -200 до 200' 
+          ? 'Диапазон от -200 до 200'
           : 'Неизвестный тип ввода';
 
         }
@@ -91,6 +91,7 @@ export const setupModalEvents = (btnModal, modalBackground, modalActive, btnAcce
       document.querySelector('#firstSkolzInputModal'),
       document.querySelector('#secondSkolzInputModal'),
       document.querySelector('#thirdSkolzInputModal'),
+      document.querySelector('#temperVTopkeInputModal'),
       document.querySelector('#pVbarabaneInputModal'),
       document.querySelector('#razrezhVtopkeInputModal'),
       document.querySelector('#urovenVkotleInputModal')

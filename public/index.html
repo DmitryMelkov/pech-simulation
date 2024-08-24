@@ -96,6 +96,19 @@
                   id="thirdSkolzInputModal">
                 <span class="modal-content__error">Введите значение</span>
               </div>
+
+              <div class="modal-content__input-box">
+                <div class="modal-content__title">
+                  <label class="modal-content__label" for="temperVTopkeInputModal">Температура в топке</label>
+                  <!-- <span class="modal-content__span">В установившимся режиме:</span>
+                  <span class="modal-content__span-param">не более 700&#176C</span> -->
+                </div>
+                <input class="modal-content__input " data-type="temperature" min="0" max="1500" step="1"
+                  name="modalInputVTopke" type="number" placeholder="Введите значение &#176C"
+                  id="temperVTopkeInputModal">
+                <span class="modal-content__error">Введите значение</span>
+              </div>
+
               <div class="modal-content__input-box">
                 <label class="modal-content__label" for="pVbarabaneInputModal">Давление в барабане котла</label>
                 <input class="modal-content__input" data-type="pressure" min="0" max="20" step="0.1"
@@ -192,12 +205,12 @@
             </tr>
             <tr class="modal__table-tr">
               <td class="modal__table-td table__left" rowspan="2">Третья скользящая</td>
-              <td class="modal__table-td table__center">Установившийся</td>
-              <td class="modal__table-td">не более 400&#176C</td>
+              <td class="modal__table-td table__center">Выход на режим</td>
+              <td class="modal__table-td">не более 750&#176C</td>
             </tr>
             <tr class="modal__table-tr">
-              <td class="modal__table-td table__center">Выход на режим</td>
-              <td class="modal__table-td table__center">не более 750&#176C</td>
+              <td class="modal__table-td table__center">Установившийся</td>
+              <td class="modal__table-td">не более 400&#176C</td>
             </tr>
             <tr class="modal__table-tr">
               <td class="modal__table-td table__left">Давление в барабане котла</td>
@@ -557,6 +570,50 @@
           </button>
         </div>
         <div>
+          <p class="mnemo__modal-descr descr-reset">
+            Тут будет описание с выполнением каких то действий по нормализации параметра
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="mnemo__modal-background modal-param-bg-js">
+      <div class="mnemo__modal-start modal-param-js modal-param-js--temper-v-topke">
+        <div class="mnemo__modal-title">
+          <h2 class="mnemo__modal-title-text title-reset">Температура в топке</h2>
+          <button class="mnemo__modal-close modal-param-close-js btn-reset">
+            <div class="krest">
+              <span class="line-1"></span>
+              <span class="line-2"></span>
+            </div>
+          </button>
+        </div>
+        <div>
+          <h3>Возможные причины возникновения неполадок</h3>
+          <ol>
+            <li>
+              Повышенная загрузка п/ф.
+            </li>
+            <li>
+              Разрежение не соответствует норматив-ному показателю.
+            </li>
+            <li>
+              Отсутствие или низкая подача пара в выгрузочную камеру.
+            </li>
+          </ol>
+
+          <h3>Пошаговые действия персонала для устранения неполадок</h3>
+          <ol>
+            <li>
+              Снизить загрузку п/ф на 50-100 кг/ч
+            </li>
+            <li>
+              Снизить разрежение путем увеличения значения с помощью частотного преобразователя вытяжного вентилятора
+              (на щите управления).
+            </li>
+            <li>
+              Отрегулировать подачу пара.
+            </li>
+          </ol>
           <p class="mnemo__modal-descr descr-reset">
             Тут будет описание с выполнением каких то действий по нормализации параметра
           </p>
@@ -932,14 +989,44 @@
             15,4
           </span>
           <span class="mnemo__param-naimenov davl-gaz-posle-skruber-span">кгс/м2</span>
-        </div>
+        </div> -->
 
-        <div class="mnemo__param temper-v-topke">
+      <div class="mnemo__param mnemo__tooltip temper-v-topke">
+        <div class="temper-v-topke-js">
           <span class="mnemo__param-text temper-topka">
             950
           </span>
           <span class="mnemo__param-naimenov temper-topka-span">&#176C</span>
-        </div> -->
+        </div>
+        <div class="mnemo__param-clue temper-v-topke-clue">
+          <div class="mnemo__param-clue-content">
+            <div class="mnemo__param-clue-title">
+              <h2 class="mnemo__param-clue-title-text title-reset">В топке</h2>
+              <button class="mnemo__tooltip-close temper-v-topke-clue-close btn-reset">
+                <div class="krest">
+                  <span class="line-1"></span>
+                  <span class="line-2"></span>
+                </div>
+              </button>
+            </div>
+            <div class="mnemo__param-clue-div">Рекомендуемый диапазон в установившимся режиме :
+              <span class="mnemo__param-clue-span">
+                0-1000&#176C
+              </span>
+            </div>
+            <form class="mnemo__param-clue-form mnemo__param-clue-form--temper-v-topke-clue">
+              <div class="mnemo__param-clue-form-div">
+                <input class="mnemo__param-clue-input" type="number" placeholder="Введите значение"
+                  id="temperVTopkeInput" min="0" max="1500" step="1">
+                <label class="mnemo__param-clue-label" for="temperVTopkeInput"></label>
+                <button class="mnemo__param-clue-form-btn--ok btn-reset" type="submit">
+                  Принять
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
 
       <div class="mnemo__param mnemo__tooltip p-v-topke">
         <div class="razrezh-v-topke-js">

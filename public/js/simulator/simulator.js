@@ -8,28 +8,6 @@ const firstSkolz = document.querySelector('.temper-1-skolz');
 firstSkolz.dataset.description = 'Температура на 1 скользящей';
 firstSkolz.dataset.conditionMin = 550;
 firstSkolz.dataset.conditionMax = 800;
-const secondSkolz = document.querySelector('.temper-2-skolz');
-secondSkolz.dataset.description = 'Температура на 2 скользящей';
-secondSkolz.dataset.conditionMin = 0;
-secondSkolz.dataset.conditionMax = 700;
-const thirdSkolz = document.querySelector('.temper-3-skolz');
-thirdSkolz.dataset.description = 'Температура на 3 скользящей';
-thirdSkolz.dataset.conditionMin = 400; // Новое значение для установившегося режима
-thirdSkolz.dataset.conditionMax = 750; // Новое значение для выхода на режим
-const davlVbarabane = document.querySelector('.davl-v-barabane');
-davlVbarabane.dataset.description = 'Давление в барабане котла';
-davlVbarabane.dataset.conditionMin = 0;
-davlVbarabane.dataset.conditionMax = 10;
-const razrezhVtopke = document.querySelector('.razrezh-topka');
-razrezhVtopke.dataset.description = 'Разрежение в топке печи'
-razrezhVtopke.dataset.conditionMin = -4;
-razrezhVtopke.dataset.conditionMax = -1;
-const urovenVkotle = document.querySelector('.uroven-v-kotle');
-urovenVkotle.dataset.description = 'Уровень в котле'
-urovenVkotle.dataset.conditionMin = -80;
-urovenVkotle.dataset.conditionMax = 80;
-
-
 const firstSkolzClick = document.querySelector('.first-skolz-js');
 const firstSkolzClue = document.querySelector('.first-skolz-clue');
 const firstSkolzClose = document.querySelector('.first-skolz-clue-close');
@@ -37,30 +15,65 @@ const firstSkolzInput = document.querySelector('#firstSkolzInput');
 const firstSkolzForm = document.querySelector('.mnemo__param-clue-form--first-skolz-clue');
 const resultSpan = document.querySelector('.current-param__subtitle-span');
 
+
+const secondSkolz = document.querySelector('.temper-2-skolz');
+secondSkolz.dataset.description = 'Температура на 2 скользящей';
+secondSkolz.dataset.conditionMin = 0;
+secondSkolz.dataset.conditionMax = 700;
 const secondSkolzClick = document.querySelector('.second-skolz-js');
 const secondSkolzClue = document.querySelector('.second-skolz-clue');
 const secondSkolzClose = document.querySelector('.second-skolz-clue-close');
 const secondSkolzInput = document.querySelector('#secondSkolzInput');
 const secondSkolzForm = document.querySelector('.mnemo__param-clue-form--second-skolz-clue');
 
+
+const thirdSkolz = document.querySelector('.temper-3-skolz');
+thirdSkolz.dataset.description = 'Температура на 3 скользящей';
+thirdSkolz.dataset.conditionMin = 400; // Новое значение для установившегося режима
+thirdSkolz.dataset.conditionMax = 750; // Новое значение для выхода на режим
 const thirdSkolzClick = document.querySelector('.third-skolz-js');
 const thirdSkolzClue = document.querySelector('.third-skolz-clue');
 const thirdSkolzClose = document.querySelector('.third-skolz-clue-close');
 const thirdSkolzInput = document.querySelector('#thirdSkolzInput');
 const thirdSkolzForm = document.querySelector('.mnemo__param-clue-form--third-skolz-clue');
 
+
+const temperVTopke = document.querySelector('.temper-topka');
+temperVTopke.dataset.description = 'Температура в топке';
+temperVTopke.dataset.conditionMin = 0;
+temperVTopke.dataset.conditionMax = 1000;
+const temperVTopkeClick = document.querySelector('.temper-v-topke-js');
+const temperVTopkeClue = document.querySelector('.temper-v-topke-clue');
+const temperVTopkeClose = document.querySelector('.temper-v-topke-clue-close');
+const temperVTopkeInput = document.querySelector('#temperVTopkeInput');
+const temperVTopkeForm = document.querySelector('.mnemo__param-clue-form--temper-v-topke-clue');
+
+
+
+const davlVbarabane = document.querySelector('.davl-v-barabane');
+davlVbarabane.dataset.description = 'Давление в барабане котла';
+davlVbarabane.dataset.conditionMin = 0;
+davlVbarabane.dataset.conditionMax = 10;
 const davlVbarabaneClick = document.querySelector('.davl-v-barabane-js');
 const davlVbarabaneClue = document.querySelector('.p-v-barabane-clue');
 const davlVbarabaneClose = document.querySelector('.p-v-barabane-clue-close')
 const davlVbarabaneInput = document.querySelector('#pVbarabaneInput');
 const davlVbarabaneForm = document.querySelector('.mnemo__param-clue-form--p-v-barabane-clue');
 
+const razrezhVtopke = document.querySelector('.razrezh-topka');
+razrezhVtopke.dataset.description = 'Разрежение в топке печи'
+razrezhVtopke.dataset.conditionMin = -4;
+razrezhVtopke.dataset.conditionMax = -1;
 const razrezhVtopkeClick = document.querySelector('.razrezh-v-topke-js');
 const razrezhVtopkeClue = document.querySelector('.razrezh-v-topke-clue');
 const razrezhVtopkeClose = document.querySelector('.razrezh-v-topke-clue-close')
 const razrezhVtopkeInput = document.querySelector('#razrezhVtopkeInput');
 const razrezhVtopkeForm = document.querySelector('.mnemo__param-clue-form--razrezh-v-topke-clue');
 
+const urovenVkotle = document.querySelector('.uroven-v-kotle');
+urovenVkotle.dataset.description = 'Уровень в котле'
+urovenVkotle.dataset.conditionMin = -80;
+urovenVkotle.dataset.conditionMax = 80;
 const urovenVkotleClick = document.querySelector('.uroven-v-kotle-js');
 const urovenVkotleClue = document.querySelector('.uroven-v-kotle-clue');
 const urovenVkotleClose = document.querySelector('.uroven-v-kotle-clue-close')
@@ -104,6 +117,20 @@ tooltipVisible(
   0,
   1500
 );
+
+tooltipVisible(
+  temperVTopkeClick,
+  temperVTopkeClue,
+  temperVTopkeClose,
+  temperVTopkeInput,
+  temperVTopke,
+  temperVTopkeForm,
+  false,
+  null,
+  0,
+  1500
+);
+
 tooltipVisible(
   davlVbarabaneClick,
   davlVbarabaneClue,
@@ -154,6 +181,7 @@ const modalForm = document.querySelector('.all__param-form');
 const modalInputFirstSkolz = document.querySelector('#firstSkolzInputModal');
 const modalInputSecondSkolz = document.querySelector('#secondSkolzInputModal');
 const modalInputThirdSkolz = document.querySelector('#thirdSkolzInputModal');
+const modalInputTemperVTopke = document.querySelector('#temperVTopkeInputModal');
 const modalInputDavlVBarabane = document.querySelector('#pVbarabaneInputModal');
 const modalInputRazrezhVtopke = document.querySelector('#razrezhVtopkeInputModal');
 const modalInputUrovenVkotle = document.querySelector('#urovenVkotleInputModal')
@@ -194,6 +222,20 @@ tooltipVisible(
   0,
   1500 // Обновленный диапазон для выхода на режим
 );
+
+tooltipVisible(
+  temperVTopkeClick,
+  temperVTopkeClue,
+  temperVTopkeClose,
+  modalInputTemperVTopke,
+  temperVTopke,
+  modalForm,
+  false,
+  null,
+  0,
+  1500 // Обновленный диапазон для выхода на режим
+);
+
 tooltipVisible(
   davlVbarabaneClick,
   davlVbarabaneClue,

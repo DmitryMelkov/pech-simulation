@@ -1076,6 +1076,11 @@ body::-webkit-scrollbar-thumb {
   background-color: white;
 }
 
+.modal__table-tr-two {
+  display: flex;
+  flex-direction: column;
+}
+
 @keyframes colorRed {
   0% {
     color: red;
@@ -2308,7 +2313,7 @@ body::-webkit-scrollbar-thumb {
 
 .temper-v-topke-clue {
   width: 225px;
-  top: -102px;
+  top: -158px;
   left: -90px;
 }
 
