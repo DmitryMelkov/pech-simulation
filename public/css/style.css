@@ -2338,10 +2338,10 @@ body::-webkit-scrollbar-thumb {
   left: -85px;
 }
 
-.vverh-kamery-zagruzki-clue {
-  width: 225px;
-  top: -102px;
-  left: -85px;
+.verh-kamery-zagruzki-clue {
+  width: 245px;
+  top: -151px;
+  left: -98px;
 }
 
 .vhod-pechi-doziganiy-clue {
@@ -3122,7 +3122,7 @@ body::-webkit-scrollbar-thumb {
     left: -75px;
   }
 
-  .vverh-kamery-zagruzki-clue {
+  .verh-kamery-zagruzki-clue {
     left: -75px;
   }
 

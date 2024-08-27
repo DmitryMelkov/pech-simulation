@@ -58,6 +58,16 @@ const temperKamerVygruzClose = document.querySelector('.temper-kamer-vygruz-clue
 const temperKamerVygruzInput = document.querySelector('#temperKamerVygruzInput');
 const temperKamerVygruzForm = document.querySelector('.mnemo__param-clue-form--temper-kamer-vygruz-clue');
 
+const temperVerhKamerZagruz = document.querySelector('.temper-verh-kamer-zagruz')
+temperVerhKamerZagruz.dataset.description = 'Температура вверху камеры загрузки';
+temperVerhKamerZagruz.dataset.conditionMin = 0;
+temperVerhKamerZagruz.dataset.conditionMax = 1000;
+const temperVerhKamerZagruzClick = document.querySelector('.verh-kamery-zagruzki-js');
+const temperVerhKamerZagruzClue = document.querySelector('.verh-kamery-zagruzki-clue');
+const temperVerhKamerZagruzClose = document.querySelector('.verh-kamery-zagruzki-clue-close');
+const temperVerhKamerZagruzInput = document.querySelector('#verhKameryZagruzInput');
+const temperVerhKamerZagruzForm = document.querySelector('.mnemo__param-clue-form--verh-kamery-zagruzki-clue');
+
 const davlVbarabane = document.querySelector('.davl-v-barabane');
 davlVbarabane.dataset.description = 'Давление в барабане котла';
 davlVbarabane.dataset.conditionMin = 0;
@@ -153,6 +163,19 @@ tooltipVisible(
 )
 
 tooltipVisible(
+  temperVerhKamerZagruzClick,
+  temperVerhKamerZagruzClue,
+  temperVerhKamerZagruzClose,
+  temperVerhKamerZagruzInput,
+  temperVerhKamerZagruz,
+  temperVerhKamerZagruzForm,
+  false,
+  null,
+  0,
+  1500
+)
+
+tooltipVisible(
   davlVbarabaneClick,
   davlVbarabaneClue,
   davlVbarabaneClose,
@@ -204,9 +227,11 @@ const modalInputSecondSkolz = document.querySelector('#secondSkolzInputModal');
 const modalInputThirdSkolz = document.querySelector('#thirdSkolzInputModal');
 const modalInputTemperVTopke = document.querySelector('#temperVTopkeInputModal');
 const modalInputKamerVygruz = document.querySelector('#temperKamerVygruzInputModal')
+const modalInputVerhKamerZagruz = document.querySelector('#temperVerhKamerZagruzInputModal')
 const modalInputDavlVBarabane = document.querySelector('#pVbarabaneInputModal');
 const modalInputRazrezhVtopke = document.querySelector('#razrezhVtopkeInputModal');
 const modalInputUrovenVkotle = document.querySelector('#urovenVkotleInputModal');
+
 
 tooltipVisible(
   firstSkolzClick,
@@ -242,7 +267,7 @@ tooltipVisible(
   false,
   null,
   0,
-  1500 // Обновленный диапазон для выхода на режим
+  1500
 );
 
 tooltipVisible(
@@ -255,7 +280,7 @@ tooltipVisible(
   false,
   null,
   0,
-  1500 // Обновленный диапазон для выхода на режим
+  1500 
 );
 
 
@@ -265,6 +290,19 @@ tooltipVisible(
   temperKamerVygruzClose,
   modalInputKamerVygruz,
   temperKamerVygruz,
+  modalForm,
+  false,
+  null,
+  0,
+  1500
+)
+
+tooltipVisible(
+  temperVerhKamerZagruzClick,
+  temperVerhKamerZagruzClue,
+  temperVerhKamerZagruzClose,
+  modalInputVerhKamerZagruz,
+  temperVerhKamerZagruz,
   modalForm,
   false,
   null,
