@@ -18,7 +18,8 @@ const getDataModalAttribute = (description) => {
     'Разрежение в топке печи': 'modal-param-js--razrezh-v-topke',
     'Уровень в котле': 'modal-param-js--uroven-v-kotle',
     'Температура вверху камеры загрузки': 'modal-param-js--temper-verh-kamer-zagruz',
-    'Температура внизу камеры загрузки': 'modal-param-js--temper-vniz-kamer-zagruz'
+    'Температура внизу камеры загрузки': 'modal-param-js--temper-vniz-kamer-zagruz',
+    'Температура гранул после холодильника': 'modal-param-js--granul-holod-zagruz'
   };
   return modalMap[description] || '';
 };

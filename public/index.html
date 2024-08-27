@@ -142,6 +142,16 @@
               </div>
 
               <div class="modal-content__input-box">
+                <div class="modal-content__title">
+                  <label class="modal-content__label" for="temperGranulHolodInputModal">Гранул после холод-ка</label>
+                </div>
+                <input class="modal-content__input " data-type="temperature" min="0" max="1500" step="1"
+                  name="modalInputGranulHolod" type="number" placeholder="Введите значение &#176C"
+                  id="temperGranulHolodInputModal">
+                <span class="modal-content__error">Введите значение</span>
+              </div>
+
+              <div class="modal-content__input-box">
                 <label class="modal-content__label" for="pVbarabaneInputModal">Давление в барабане котла</label>
                 <input class="modal-content__input" data-type="pressure" min="0" max="20" step="0.1"
                   name="modalPvBarabane" type="number" placeholder="Введите значение кгс/см2" id="pVbarabaneInputModal">
@@ -263,6 +273,11 @@
               <td class="modal__table-td table__left">Температура внизу камеры загрузки</td>
               <td class="modal__table-td table__center">Установившийся</td>
               <td class="modal__table-td">не более 1100&#176C</td>
+            </tr>
+            <tr class="modal__table-tr">
+              <td class="modal__table-td table__left">Температура гранул после холодильника</td>
+              <td class="modal__table-td table__center">Установившийся</td>
+              <td class="modal__table-td">не более 70&#176C</td>
             </tr>
             <tr class="modal__table-tr">
               <td class="modal__table-td table__left">Давление в барабане котла</td>
@@ -877,6 +892,53 @@
     </div>
   </div>
   <div class="mnemo__modal-background modal-param-bg-js">
+    <div class="mnemo__modal-start modal-param-js modal-param-js--granul-holod-zagruz">
+      <div class="mnemo__modal-title">
+        <h2 class="mnemo__modal-title-text title-reset">Температура гранул после холодильника</h2>
+        <button class="mnemo__modal-close modal-param-close-js btn-reset">
+          <div class="krest">
+            <span class="line-1"></span>
+            <span class="line-2"></span>
+          </div>
+        </button>
+      </div>
+      <div class="troubleshooting">
+        <h3 class="troubleshooting__title title-reset">
+          Возможные причины и действия по устранению неполадок
+        </h3>
+        <p class="troubleshooting__descr descr-reset">
+          Нажмите на причину чтобы прочитать пошаговые действия
+        </p>
+        <div class="troubleshooting__section">
+          <div class="troubleshooting__item troubleshooting__item--cause">
+            <span class="troubleshooting__label">Причина:</span> Воздушная пробка в охлаждающем барабане.
+          </div>
+          <div class="troubleshooting__item troubleshooting__item--action">
+            <span class="troubleshooting__label">Действие:</span> Остановить вращение барабана охлаждающего в положение крана сброса вверху, открыть кран сброса воды и спустить воздух или пар в течение  20 с.
+          </div>
+        </div>
+        <div class="troubleshooting__section">
+          <div class="troubleshooting__item troubleshooting__item--cause">
+            <span class="troubleshooting__label">Причина:</span> Высокая загрузка п/ф.
+          </div>
+          <div class="troubleshooting__item troubleshooting__item--action">
+            <span class="troubleshooting__label">Действие:</span> Снизить загрузку п/ф на 50 кг.
+          </div>
+        </div>
+        <div class="troubleshooting__section">
+          <div class="troubleshooting__item troubleshooting__item--cause">
+            <span class="troubleshooting__label">Причина:</span> Недостаточная подача воды на охлаждение → встал насос ХОВ или закрыта запорная арматура.
+          </div>
+          <div class="troubleshooting__item troubleshooting__item--action">
+            <span class="troubleshooting__label">Действие:</span> Вызвать дежурных электрика и слесаря, проверить:
+            <p>- работу насоса ХОВ, запорную арматуру, при необходимости открыть;</p>
+            <p>- подачу воды в питатель вибрационный горизонтальный, в случае необходимости отрегулировать расход воды. </p>           
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mnemo__modal-background modal-param-bg-js">
     <div class="mnemo__modal-start modal-param-js modal-param-js--davl-v-barabane">
       <div class="mnemo__modal-title">
         <h2 class="mnemo__modal-title-text title-reset">Давление в барабане</h2>
@@ -1233,7 +1295,6 @@
         </span>
         <span class="mnemo__param-naimenov temper-1-skolz-span">&#176C</span>
       </div>
-
       <div class="mnemo__param-clue first-skolz-clue">
         <div class="mnemo__param-clue-content">
           <div class="mnemo__param-clue-title">
@@ -1265,13 +1326,45 @@
 
     </div>
 
-    <!-- <div class="mnemo__param granul-posle-holodil">
-          <span class="mnemo__param-text temper-granul-holod">
-            50
-          </span>
-          <span class="mnemo__param-naimenov temper-granul-holod-span">&#176C</span>
+        <div class="mnemo__param mnemo__tooltip granul-posle-holodil">
+          <div class="granul-holod-js">
+            <span class="mnemo__param-text temper-granul-holod">
+              50
+            </span>
+            <span class="mnemo__param-naimenov temper-granul-holod-span">&#176C</span>
+          </div>
+          <div class="mnemo__param-clue granul-holod-clue">
+            <div class="mnemo__param-clue-content">
+              <div class="mnemo__param-clue-title">
+                <h2 class="mnemo__param-clue-title-text title-reset">Температура гранул после холод-ка</h2>
+                <button class="mnemo__tooltip-close granul-holod-clue-close btn-reset">
+                  <div class="krest">
+                    <span class="line-1"></span>
+                    <span class="line-2"></span>
+                  </div>
+                </button>
+              </div>
+              <div class="mnemo__param-clue-div">Рекомендуемый диапазон в установившимся режиме :
+                <span class="mnemo__param-clue-span">
+                  не более 70&#176C
+                </span>
+              </div>
+              <form class="mnemo__param-clue-form mnemo__param-clue-form--granul-holod-clue">
+                <div class="mnemo__param-clue-form-div">
+                  <input class="mnemo__param-clue-input" type="number" placeholder="Введите значение" id="granulHolodInput"
+                    min="0" max="1500" step="1">
+                  <label class="mnemo__param-clue-label" for="granulHolodInput"></label>
+                  <button class="mnemo__param-clue-form-btn--ok granul-holod-btn btn-reset" type="submit">
+                    Принять
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
 
+
+<!--
         <div class="mnemo__param uroven-vody-hvo">
           <span class="mnemo__param-text uroven-vody-hvo-value">
             2000
