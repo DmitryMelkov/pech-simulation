@@ -132,6 +132,16 @@
               </div>
 
               <div class="modal-content__input-box">
+                <div class="modal-content__title">
+                  <label class="modal-content__label" for="temperVnizKamerZagruzInputModal">Низ камеры загрузки</label>
+                </div>
+                <input class="modal-content__input " data-type="temperature" min="0" max="1500" step="1"
+                  name="modalInputVnizKamerZagruz" type="number" placeholder="Введите значение &#176C"
+                  id="temperVnizKamerZagruzInputModal">
+                <span class="modal-content__error">Введите значение</span>
+              </div>
+
+              <div class="modal-content__input-box">
                 <label class="modal-content__label" for="pVbarabaneInputModal">Давление в барабане котла</label>
                 <input class="modal-content__input" data-type="pressure" min="0" max="20" step="0.1"
                   name="modalPvBarabane" type="number" placeholder="Введите значение кгс/см2" id="pVbarabaneInputModal">
@@ -248,6 +258,11 @@
               <td class="modal__table-td table__left">Температура вверху камеры загрузки</td>
               <td class="modal__table-td table__center">Установившийся</td>
               <td class="modal__table-td">не более 1000&#176C</td>
+            </tr>
+            <tr class="modal__table-tr">
+              <td class="modal__table-td table__left">Температура внизу камеры загрузки</td>
+              <td class="modal__table-td table__center">Установившийся</td>
+              <td class="modal__table-td">не более 1100&#176C</td>
             </tr>
             <tr class="modal__table-tr">
               <td class="modal__table-td table__left">Давление в барабане котла</td>
@@ -825,6 +840,43 @@
     </div>
   </div>
   <div class="mnemo__modal-background modal-param-bg-js">
+    <div class="mnemo__modal-start modal-param-js modal-param-js--temper-vniz-kamer-zagruz">
+      <div class="mnemo__modal-title">
+        <h2 class="mnemo__modal-title-text title-reset">Температура внизу камеры загрузки</h2>
+        <button class="mnemo__modal-close modal-param-close-js btn-reset">
+          <div class="krest">
+            <span class="line-1"></span>
+            <span class="line-2"></span>
+          </div>
+        </button>
+      </div>
+      <div class="troubleshooting">
+        <h3 class="troubleshooting__title title-reset">
+          Возможные причины и действия по устранению неполадок
+        </h3>
+        <p class="troubleshooting__descr descr-reset">
+          Нажмите на причину чтобы прочитать пошаговые действия
+        </p>
+        <div class="troubleshooting__section">
+          <div class="troubleshooting__item troubleshooting__item--cause">
+            <span class="troubleshooting__label">Причина:</span> Подсос воздуха в камере загрузки.
+          </div>
+          <div class="troubleshooting__item troubleshooting__item--action">
+            <span class="troubleshooting__label">Действие:</span> Вызвать дежурного слесаря для регулировки сальниковых уплотнений.
+          </div>
+        </div>
+        <div class="troubleshooting__section">
+          <div class="troubleshooting__item troubleshooting__item--cause">
+            <span class="troubleshooting__label">Причина:</span> Повышенный расход воздуха на догорание газов карбонизации.
+          </div>
+          <div class="troubleshooting__item troubleshooting__item--action">
+            <span class="troubleshooting__label">Действие:</span> Отключить вентиляторы (1 или 2) подачи воздуха в камеру загрузки.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mnemo__modal-background modal-param-bg-js">
     <div class="mnemo__modal-start modal-param-js modal-param-js--davl-v-barabane">
       <div class="mnemo__modal-title">
         <h2 class="mnemo__modal-title-text title-reset">Давление в барабане</h2>
@@ -1021,17 +1073,44 @@
         </div> -->
 
 
-        <!-- <div class="mnemo__param vniz-kamery-zagruzki">
-          <span class="mnemo__param-text temper-vniz-kamer-zagruz">
-            1050
-          </span>
-          <span class="mnemo__param-naimenov temper-vniz-kamer-zagruz-span">&#176C</span>
-        </div> -->
+        <div class="mnemo__param mnemo__tooltip vniz-kamery-zagruzki">
+          <div class="vniz-kamery-zagruzki-js">
+            <span class="mnemo__param-text temper-vniz-kamer-zagruz">
+              50
+            </span>
+            <span class="mnemo__param-naimenov temper-vniz-kamer-zagruz-span">&#176C</span>
+          </div>
+          <div class="mnemo__param-clue vniz-kamery-zagruzki-clue">
+            <div class="mnemo__param-clue-content">
+              <div class="mnemo__param-clue-title">
+                <h2 class="mnemo__param-clue-title-text title-reset">Внизу камеры загрузки</h2>
+                <button class="mnemo__tooltip-close vniz-kamery-zagruzki-clue-close btn-reset">
+                  <div class="krest">
+                    <span class="line-1"></span>
+                    <span class="line-2"></span>
+                  </div>
+                </button>
+              </div>
+              <div class="mnemo__param-clue-div">Рекомендуемый диапазон в установившимся режиме :
+                <span class="mnemo__param-clue-span">
+                  Не более 1100&#176C
+                </span>
+              </div>
+              <form class="mnemo__param-clue-form mnemo__param-clue-form--vniz-kamery-zagruzki-clue">
+                <div class="mnemo__param-clue-form-div">
+                  <input class="mnemo__param-clue-input" type="number" placeholder="Введите значение" id="vnizKameryZagruzInput" min="0" max="1500" step="1">
+                  <label class="mnemo__param-clue-label" for="vnizKameryZagruzInput"></label>
+                  <button class="mnemo__param-clue-form-btn--ok btn-reset" type="submit">Принять</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
 
         <div class="mnemo__param mnemo__tooltip vverh-kamery-zagruzki">
           <div class="verh-kamery-zagruzki-js">
             <span class="mnemo__param-text temper-verh-kamer-zagruz">
-              950
+              50
             </span>
             <span class="mnemo__param-naimenov temper-verh-kamer-zagruz-span">&#176C</span>
           </div>

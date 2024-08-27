@@ -68,6 +68,16 @@ const temperVerhKamerZagruzClose = document.querySelector('.verh-kamery-zagruzki
 const temperVerhKamerZagruzInput = document.querySelector('#verhKameryZagruzInput');
 const temperVerhKamerZagruzForm = document.querySelector('.mnemo__param-clue-form--verh-kamery-zagruzki-clue');
 
+const temperVnizKamerZagruz = document.querySelector('.temper-vniz-kamer-zagruz')
+temperVnizKamerZagruz.dataset.description = 'Температура внизу камеры загрузки';
+temperVnizKamerZagruz.dataset.conditionMin = 0;
+temperVnizKamerZagruz.dataset.conditionMax = 1100;
+const temperVnizKamerZagruzClick = document.querySelector('.vniz-kamery-zagruzki-js');
+const temperVnizKamerZagruzClue = document.querySelector('.vniz-kamery-zagruzki-clue');
+const temperVnizKamerZagruzClose = document.querySelector('.vniz-kamery-zagruzki-clue-close');
+const temperVnizKamerZagruzInput = document.querySelector('#vnizKameryZagruzInput');
+const temperVnizKamerZagruzForm = document.querySelector('.mnemo__param-clue-form--vniz-kamery-zagruzki-clue');
+
 const davlVbarabane = document.querySelector('.davl-v-barabane');
 davlVbarabane.dataset.description = 'Давление в барабане котла';
 davlVbarabane.dataset.conditionMin = 0;
@@ -176,6 +186,19 @@ tooltipVisible(
 )
 
 tooltipVisible(
+  temperVnizKamerZagruzClick,
+  temperVnizKamerZagruzClue,
+  temperVnizKamerZagruzClose,
+  temperVnizKamerZagruzInput,
+  temperVnizKamerZagruz,
+  temperVnizKamerZagruzForm,
+  false,
+  null,
+  0,
+  1500
+)
+
+tooltipVisible(
   davlVbarabaneClick,
   davlVbarabaneClue,
   davlVbarabaneClose,
@@ -228,6 +251,7 @@ const modalInputThirdSkolz = document.querySelector('#thirdSkolzInputModal');
 const modalInputTemperVTopke = document.querySelector('#temperVTopkeInputModal');
 const modalInputKamerVygruz = document.querySelector('#temperKamerVygruzInputModal')
 const modalInputVerhKamerZagruz = document.querySelector('#temperVerhKamerZagruzInputModal')
+const modalInputVnizKamerZagruz = document.querySelector('#temperVnizKamerZagruzInputModal')
 const modalInputDavlVBarabane = document.querySelector('#pVbarabaneInputModal');
 const modalInputRazrezhVtopke = document.querySelector('#razrezhVtopkeInputModal');
 const modalInputUrovenVkotle = document.querySelector('#urovenVkotleInputModal');
@@ -303,6 +327,19 @@ tooltipVisible(
   temperVerhKamerZagruzClose,
   modalInputVerhKamerZagruz,
   temperVerhKamerZagruz,
+  modalForm,
+  false,
+  null,
+  0,
+  1500
+)
+
+tooltipVisible(
+  temperVnizKamerZagruzClick,
+  temperVnizKamerZagruzClue,
+  temperVnizKamerZagruzClose,
+  modalInputVnizKamerZagruz,
+  temperVnizKamerZagruz,
   modalForm,
   false,
   null,

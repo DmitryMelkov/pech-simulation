@@ -1590,7 +1590,7 @@ body::-webkit-scrollbar-thumb {
 .mnemo__modal-start {
   padding: 20px;
   position: absolute;
-  max-width: 740px;
+  max-width: 800px;
   max-height: 800px;
   width: 100%;
   top: 50%;
@@ -2333,9 +2333,9 @@ body::-webkit-scrollbar-thumb {
 }
 
 .vniz-kamery-zagruzki-clue {
-  width: 225px;
-  top: -102px;
-  left: -85px;
+  width: 250px;
+  top: -152px;
+  left: -102px;
 }
 
 .verh-kamery-zagruzki-clue {
