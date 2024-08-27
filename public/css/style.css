@@ -1285,9 +1285,9 @@ body::-webkit-scrollbar-thumb {
   transition: opacity 0.5s ease-in-out;
 }
 
-.mnemo__tooltip {
+/* .mnemo__tooltip {
   z-index: 1;
-}
+} */
 
 .mnemo__tooltip:hover {
   box-shadow: 0 0 0 3px white, 0 0 0 6px green;
