@@ -143,6 +143,16 @@
 
               <div class="modal-content__input-box">
                 <div class="modal-content__title">
+                  <label class="modal-content__label" for="temperVhodPechDozhigInputModal">Вход печи дожигания</label>
+                </div>
+                <input class="modal-content__input " data-type="temperature" min="0" max="1500" step="1"
+                  name="modalInputVhodPechDozhig" type="number" placeholder="Введите значение &#176C"
+                  id="temperVhodPechDozhigInputModal">
+                <span class="modal-content__error">Введите значение</span>
+              </div>
+
+              <div class="modal-content__input-box">
+                <div class="modal-content__title">
                   <label class="modal-content__label" for="temperGranulHolodInputModal">Гранул после холод-ка</label>
                 </div>
                 <input class="modal-content__input " data-type="temperature" min="0" max="1500" step="1"
@@ -273,6 +283,11 @@
               <td class="modal__table-td table__left">Температура внизу камеры загрузки</td>
               <td class="modal__table-td table__center">Установившийся</td>
               <td class="modal__table-td">не более 1100&#176C</td>
+            </tr>
+            <tr class="modal__table-tr">
+              <td class="modal__table-td table__left">Температура на входе печи дожигания</td>
+              <td class="modal__table-td table__center">Установившийся</td>
+              <td class="modal__table-td">не более 1150&#176C</td>
             </tr>
             <tr class="modal__table-tr">
               <td class="modal__table-td table__left">Температура гранул после холодильника</td>
@@ -892,6 +907,38 @@
     </div>
   </div>
   <div class="mnemo__modal-background modal-param-bg-js">
+    <div class="mnemo__modal-start modal-param-js modal-param-js--temper-vhod-pech-dozhig">
+      <div class="mnemo__modal-title">
+        <h2 class="mnemo__modal-title-text title-reset">Температура на входе печи дожигания</h2>
+        <button class="mnemo__modal-close modal-param-close-js btn-reset">
+          <div class="krest">
+            <span class="line-1"></span>
+            <span class="line-2"></span>
+          </div>
+        </button>
+      </div>
+      <div class="troubleshooting">
+        <h3 class="troubleshooting__title title-reset">
+          Возможные причины и действия по устранению неполадок
+        </h3>
+        <p class="troubleshooting__descr descr-reset">
+          Нажмите на причину чтобы прочитать пошаговые действия
+        </p>
+        <div class="troubleshooting__section">
+          <div class="troubleshooting__item troubleshooting__item--cause">
+            <span class="troubleshooting__label">Причина:</span> Повышенная загрузка п/ф.
+          </div>
+          <div class="troubleshooting__item troubleshooting__item--action">
+            <span class="troubleshooting__label">Действие:</span> 
+            <p>Снизить загрузку на 50 кг, в случае дальнейшего роста еще снизить загрузку на 50 кг.</p>
+            <p>При отрицательном результате – остановить загрузку на 2-3 ч.</p> 
+            <p>При этом разрежение в топке должно быть в пределах минус (1,0-4,0) кгс/м2, а уровень воды в котле-утилизаторе – не менее 100 мм.</p> 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mnemo__modal-background modal-param-bg-js">
     <div class="mnemo__modal-start modal-param-js modal-param-js--granul-holod-zagruz">
       <div class="mnemo__modal-title">
         <h2 class="mnemo__modal-title-text title-reset">Температура гранул после холодильника</h2>
@@ -1179,7 +1226,7 @@
           <div class="mnemo__param-clue verh-kamery-zagruzki-clue">
             <div class="mnemo__param-clue-content">
               <div class="mnemo__param-clue-title">
-                <h2 class="mnemo__param-clue-title-text title-reset">Верх камеры загрузки</h2>
+                <h2 class="mnemo__param-clue-title-text title-reset">Вверху камеры загрузки</h2>
                 <button class="mnemo__tooltip-close verh-kamery-zagruzki-clue-close btn-reset">
                   <div class="krest">
                     <span class="line-1"></span>
@@ -1203,12 +1250,39 @@
           </div>
         </div>
 
-        <!-- <div class="mnemo__param vhod-pechi-doziganiy">
-          <span class="mnemo__param-text temper-vhod-pech-dozhig">
-            1100
-          </span>
-          <span class="mnemo__param-naimenov temper-vhod-pech-dozhig-span">&#176C</span>
-        </div> -->
+        <div class="mnemo__param mnemo__tooltip vhod-pechi-doziganiy">
+          <div class="vhod-pech-dozhig-js">
+            <span class="mnemo__param-text temper-vhod-pech-dozhig">
+              50
+            </span>
+            <span class="mnemo__param-naimenov temper-vhod-pech-dozhig-span">&#176C</span>
+          </div>
+          <div class="mnemo__param-clue vhod-pech-dozhig-clue">
+            <div class="mnemo__param-clue-content">
+              <div class="mnemo__param-clue-title">
+                <h2 class="mnemo__param-clue-title-text title-reset">Вход печи дожигания</h2>
+                <button class="mnemo__tooltip-close vhod-pech-dozhig-clue-close btn-reset">
+                  <div class="krest">
+                    <span class="line-1"></span>
+                    <span class="line-2"></span>
+                  </div>
+                </button>
+              </div>
+              <div class="mnemo__param-clue-div">Рекомендуемый диапазон в установившимся режиме :
+                <span class="mnemo__param-clue-span">
+                  Не более 1150&#176C
+                </span>
+              </div>
+              <form class="mnemo__param-clue-form mnemo__param-clue-form--vhod-pech-dozhig-clue">
+                <div class="mnemo__param-clue-form-div">
+                  <input class="mnemo__param-clue-input" type="number" placeholder="Введите значение" id="vhodPechDozhigInput" min="0" max="1500" step="1">
+                  <label class="mnemo__param-clue-label" for="vhodPechDozhigInput"></label>
+                  <button class="mnemo__param-clue-form-btn--ok btn-reset" type="submit">Принять</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
 
     <div class="mnemo__param mnemo__tooltip third-skolz">
       <div class="third-skolz-js">
