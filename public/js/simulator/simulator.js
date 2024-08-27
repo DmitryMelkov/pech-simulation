@@ -88,6 +88,16 @@ const temperVhodPechDozhigClose = document.querySelector('.vhod-pech-dozhig-clue
 const temperVhodPechDozhigInput = document.querySelector('#vhodPechDozhigInput');
 const temperVhodPechDozhigForm = document.querySelector('.mnemo__param-clue-form--vhod-pech-dozhig-clue');
 
+const temperVyhodPechDozhig = document.querySelector('.temper-vyhod-pech-dozhig')
+temperVyhodPechDozhig.dataset.description = 'Температура на выходе печи дожигания';
+temperVyhodPechDozhig.dataset.conditionMin = 0;
+temperVyhodPechDozhig.dataset.conditionMax = 1200;
+const temperVyhodPechDozhigClick = document.querySelector('.vyhod-pech-dozhig-js');
+const temperVyhodPechDozhigClue = document.querySelector('.vyhod-pech-dozhig-clue');
+const temperVyhodPechDozhigClose = document.querySelector('.vyhod-pech-dozhig-clue-close');
+const temperVyhodPechDozhigInput = document.querySelector('#vyhodPechDozhigInput');
+const temperVyhodPechDozhigForm = document.querySelector('.mnemo__param-clue-form--vyhod-pech-dozhig-clue');
+
 const temperGranulHolod = document.querySelector('.temper-granul-holod')
 temperGranulHolod.dataset.description = 'Температура гранул после холодильника';
 temperGranulHolod.dataset.conditionMin = 0;
@@ -232,6 +242,19 @@ tooltipVisible(
 )
 
 tooltipVisible(
+  temperVyhodPechDozhigClick,
+  temperVyhodPechDozhigClue,
+  temperVyhodPechDozhigClose,
+  temperVyhodPechDozhigInput,
+  temperVyhodPechDozhig,
+  temperVyhodPechDozhigForm,
+  false,
+  null,
+  0,
+  1500
+)
+
+tooltipVisible(
   temperGranulHolodClick,
   temperGranulHolodClue,
   temperGranulHolodClose,
@@ -299,6 +322,7 @@ const modalInputKamerVygruz = document.querySelector('#temperKamerVygruzInputMod
 const modalInputVerhKamerZagruz = document.querySelector('#temperVerhKamerZagruzInputModal');
 const modalInputVnizKamerZagruz = document.querySelector('#temperVnizKamerZagruzInputModal');
 const modalInputVhodPechDozhig = document.querySelector('#temperVhodPechDozhigInputModal');
+const modalInputVyhodPechDozhig = document.querySelector('#temperVyhodPechDozhigInputModal');
 const modalInputGranulHolod = document.querySelector('#temperGranulHolodInputModal');
 const modalInputDavlVBarabane = document.querySelector('#pVbarabaneInputModal');
 const modalInputRazrezhVtopke = document.querySelector('#razrezhVtopkeInputModal');
@@ -402,6 +426,19 @@ tooltipVisible(
   temperVhodPechDozhigClose,
   modalInputVhodPechDozhig,
   temperVhodPechDozhig,
+  modalForm,
+  false,
+  null,
+  0,
+  1500
+)
+
+tooltipVisible(
+  temperVyhodPechDozhigClick,
+  temperVyhodPechDozhigClue,
+  temperVyhodPechDozhigClose,
+  modalInputVyhodPechDozhig,
+  temperVyhodPechDozhig,
   modalForm,
   false,
   null,

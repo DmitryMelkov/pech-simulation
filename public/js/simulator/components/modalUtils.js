@@ -96,6 +96,7 @@ export const setupModalEvents = (btnModal, modalBackground, modalActive, btnAcce
       document.querySelector('#temperVerhKamerZagruzInputModal'),
       document.querySelector('#temperVnizKamerZagruzInputModal'),
       document.querySelector('#temperVhodPechDozhigInputModal'),
+      document.querySelector('#temperVyhodPechDozhigInputModal'),
       document.querySelector('#temperGranulHolodInputModal'),
       document.querySelector('#pVbarabaneInputModal'),
       document.querySelector('#razrezhVtopkeInputModal'),

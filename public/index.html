@@ -153,6 +153,16 @@
 
               <div class="modal-content__input-box">
                 <div class="modal-content__title">
+                  <label class="modal-content__label" for="temperVyhodPechDozhigInputModal">Выход печи дожигания</label>
+                </div>
+                <input class="modal-content__input " data-type="temperature" min="0" max="1500" step="1"
+                  name="modalInputVyhodPechDozhig" type="number" placeholder="Введите значение &#176C"
+                  id="temperVyhodPechDozhigInputModal">
+                <span class="modal-content__error">Введите значение</span>
+              </div>
+
+              <div class="modal-content__input-box">
+                <div class="modal-content__title">
                   <label class="modal-content__label" for="temperGranulHolodInputModal">Гранул после холод-ка</label>
                 </div>
                 <input class="modal-content__input " data-type="temperature" min="0" max="1500" step="1"
@@ -288,6 +298,10 @@
               <td class="modal__table-td table__left">Температура на входе печи дожигания</td>
               <td class="modal__table-td table__center">Установившийся</td>
               <td class="modal__table-td">не более 1150&#176C</td>
+            </tr> <tr class="modal__table-tr">
+              <td class="modal__table-td table__left">Температура на выходе печи дожигания</td>
+              <td class="modal__table-td table__center">Установившийся</td>
+              <td class="modal__table-td">не более 1200&#176C</td>
             </tr>
             <tr class="modal__table-tr">
               <td class="modal__table-td table__left">Температура гранул после холодильника</td>
@@ -933,6 +947,39 @@
             <p>Снизить загрузку на 50 кг, в случае дальнейшего роста еще снизить загрузку на 50 кг.</p>
             <p>При отрицательном результате – остановить загрузку на 2-3 ч.</p> 
             <p>При этом разрежение в топке должно быть в пределах минус (1,0-4,0) кгс/м2, а уровень воды в котле-утилизаторе – не менее 100 мм.</p> 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mnemo__modal-background modal-param-bg-js">
+    <div class="mnemo__modal-start modal-param-js modal-param-js--temper-vyhod-pech-dozhig">
+      <div class="mnemo__modal-title">
+        <h2 class="mnemo__modal-title-text title-reset">Температура на выходе печи дожигания</h2>
+        <button class="mnemo__modal-close modal-param-close-js btn-reset">
+          <div class="krest">
+            <span class="line-1"></span>
+            <span class="line-2"></span>
+          </div>
+        </button>
+      </div>
+      <div class="troubleshooting">
+        <h3 class="troubleshooting__title title-reset">
+          Возможные причины и действия по устранению неполадок
+        </h3>
+        <p class="troubleshooting__descr descr-reset">
+          Нажмите на причину чтобы прочитать пошаговые действия
+        </p>
+        <div class="troubleshooting__section">
+          <div class="troubleshooting__item troubleshooting__item--cause">
+            <span class="troubleshooting__label">Причина:</span> Повышенная загрузка п/ф.
+          </div>
+          <div class="troubleshooting__item troubleshooting__item--action">
+            <span class="troubleshooting__label">Действие:</span> 
+            <p>Снизить загрузку на 50 кг, в случае дальнейшего роста еще снизить загрузку на 50 кг.</p>
+            <p>При отрицательном результате – остановить загрузку на 2-3 ч.</p> 
+            <p>При этом разрежение в топке должно быть в пределах минус (1,0-4,0) кгс/м2, а уровень воды в котле-утилизаторе – не менее 100 мм.</p>
+            <p>Отключить вентилятор камеры загрузки.</p>  
           </div>
         </div>
       </div>
@@ -1608,18 +1655,43 @@
           </div>
         </div>  
 
-
-
-
+        <div class="mnemo__param mnemo__tooltip vyhod-pechi-doziganiy">
+          <div class="vyhod-pech-dozhig-js">
+            <span class="mnemo__param-text temper-vyhod-pech-dozhig">
+              100
+            </span>
+            <span class="mnemo__param-naimenov temper-vyhod-pech-dozhig-span">&#176C</span>
+          </div>
+            <div class="mnemo__param-clue vyhod-pech-dozhig-clue">
+              <div class="mnemo__param-clue-content">
+                <div class="mnemo__param-clue-title">
+                  <h2 class="mnemo__param-clue-title-text title-reset">Выход печи дожигания</h2>
+                  <button class="mnemo__tooltip-close vyhod-pech-dozhig-clue-close btn-reset">
+                    <div class="krest">
+                      <span class="line-1"></span>
+                      <span class="line-2"></span>
+                    </div>
+                  </button>
+                </div>
+                <div class="mnemo__param-clue-div">Рекомендуемый диапазон в установившимся режиме :
+                  <span class="mnemo__param-clue-span">
+                    Не более 1200&#176C
+                  </span>
+                </div>
+                <form class="mnemo__param-clue-form mnemo__param-clue-form--vyhod-pech-dozhig-clue">
+                  <div class="mnemo__param-clue-form-div">
+                    <input class="mnemo__param-clue-input" type="number" placeholder="Введите значение" id="vyhodPechDozhigInput" min="0" max="1500" step="1">
+                    <label class="mnemo__param-clue-label" for="vyhodPechDozhigInput"></label>
+                    <button class="mnemo__param-clue-form-btn--ok btn-reset" type="submit">Принять</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
 
 
 <!--
-        <div class="mnemo__param vyhod-pechi-doziganiy">
-          <span class="mnemo__param-text temper-vihod-pech-dozhig">
-            1100
-          </span>
-          <span class="mnemo__param-naimenov temper-vihod-pech-dozhig-span">&#176C</span>
-
         </div>
         <div class="mnemo__param gazy-kotla-utilizazi">
           <span class="mnemo__param-text temper-gazov-kotel-utiliz">

@@ -77,6 +77,15 @@ export const parameters = [
     type: 'temperature'
   },
   {
+    spanSelector: '.temper-vyhod-pech-dozhig',
+    modalInputSelector: '#temperVyhodPechDozhigInputModal',
+    clueInputSelector: '#vyhodPechDozhigInput',
+    conditionMin: 0,
+    conditionMax: 1200,
+    description: 'Температура на выходе печи дожигания',
+    type: 'temperature'
+  },
+  {
     spanSelector: '.temper-granul-holod',
     modalInputSelector: '#temperGranulHolodInputModal',
     clueInputSelector: '#granulHolodInput',
@@ -222,6 +231,7 @@ export const updateMode = () => {
   updateParameter('.temper-verh-kamer-zagruz', 0, 1000, firstSkolzValue);
   updateParameter('.temper-vniz-kamer-zagruz', 0, 1100, firstSkolzValue);
   updateParameter('.temper-vhod-pech-dozhig', 0, 1150, firstSkolzValue);
+  updateParameter('.temper-vyhod-pech-dozhig', 0, 1200, firstSkolzValue);
   updateParameter('.temper-granul-holod', 0, 70, firstSkolzValue);
   updateParameter('.davl-v-barabane', 0, 10, firstSkolzValue);
   updateParameter('.razrezh-topka', -4, -1, firstSkolzValue);
@@ -244,6 +254,7 @@ export const updateMode = () => {
   addRowIfRunning(document.querySelector('.temper-verh-kamer-zagruz'), 'Температура вверху камеры загрузки');
   addRowIfRunning(document.querySelector('.temper-vniz-kamer-zagruz'), 'Температура внизу камеры загрузки');
   addRowIfRunning(document.querySelector('.temper-vhod-pech-dozhig'), 'Температура на входе печи дожигания');
+  addRowIfRunning(document.querySelector('.temper-vyhod-pech-dozhig'), 'Температура на выходе печи дожигания');
   addRowIfRunning(document.querySelector('.temper-granul-holod'), 'Температура гранул после холодильника');
   addRowIfRunning(document.querySelector('.davl-v-barabane'), 'Давление в барабане котла');
   addRowIfRunning(document.querySelector('.razrezh-topka'), 'Разрежение в топке печи');
