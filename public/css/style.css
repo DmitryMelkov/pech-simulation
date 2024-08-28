@@ -1949,10 +1949,12 @@ body::-webkit-scrollbar-thumb {
 }
 
 .troubleshooting__item--action {
+  width: 95%;
   display: none;
   background-color: #d4edda;
   border-left-color: green;
-  margin-top: 5px;
+  margin-top: 20px;
+  margin-left: auto;
   padding: 10px 10px 10px 20px;
   border: 1px solid green;
   border-radius: 4px;
@@ -2389,7 +2391,7 @@ body::-webkit-scrollbar-thumb {
 
 .temper-vody-v-vanne-skrubber-clue {
   width: 225px;
-  top: -102px;
+  top: -175px;
   left: -90px;
 }
 

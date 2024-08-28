@@ -118,6 +118,16 @@ const temperGazovPosleSkrubberClose = document.querySelector('.temper-gazov-posl
 const temperGazovPosleSkrubberInput = document.querySelector('#temperGazovPosleSkrubberInput');
 const temperGazovPosleSkrubberForm = document.querySelector('.mnemo__param-clue-form--temper-gazov-posle-skrubber-clue');
 
+const temperVodyVVanneSkrubber = document.querySelector('.temper-vody-v-vanne-skrubber-span')
+temperVodyVVanneSkrubber.dataset.description = 'Температура воды в ванне скруббера';
+temperVodyVVanneSkrubber.dataset.conditionMin = 0;
+temperVodyVVanneSkrubber.dataset.conditionMax = 90;
+const temperVodyVVanneSkrubberClick = document.querySelector('.temper-vody-v-vanne-skrubber-js');
+const temperVodyVVanneSkrubberClue = document.querySelector('.temper-vody-v-vanne-skrubber-clue');
+const temperVodyVVanneSkrubberClose = document.querySelector('.temper-vody-v-vanne-skrubber-close');
+const temperVodyVVanneSkrubberInput = document.querySelector('#temperVodyVVanneSkrubberInput');
+const temperVodyVVanneSkrubberForm = document.querySelector('.mnemo__param-clue-form--temper-vody-v-vanne-skrubber-clue');
+
 
 const temperGranulHolod = document.querySelector('.temper-granul-holod')
 temperGranulHolod.dataset.description = 'Температура гранул после холодильника';
@@ -317,6 +327,19 @@ tooltipVisible(
 )
 
 tooltipVisible(
+  temperVodyVVanneSkrubberClick,
+  temperVodyVVanneSkrubberClue,
+  temperVodyVVanneSkrubberClose,
+  temperVodyVVanneSkrubberInput,
+  temperVodyVVanneSkrubber,
+  temperVodyVVanneSkrubberForm,
+  false,
+  null,
+  0,
+  1500
+)
+
+tooltipVisible(
   davlVbarabaneClick,
   davlVbarabaneClue,
   davlVbarabaneClose,
@@ -375,6 +398,7 @@ const modalInputVyhodPechDozhig = document.querySelector('#temperVyhodPechDozhig
 const modalInputGranulHolod = document.querySelector('#temperGranulHolodInputModal');
 const modalInputTemperGazovDoSkrubber = document.querySelector('#temperGazovDoSkrubberInputModal');
 const modalInputTemperGazovPosleSkrubber = document.querySelector('#temperGazovPosleSkrubberInputModal');
+const modalInputTemperVodyVVanneSkrubber = document.querySelector('#temperVodyVVanneSkrubberInputModal');
 
 
 const modalInputDavlVBarabane = document.querySelector('#pVbarabaneInputModal');
@@ -531,6 +555,19 @@ tooltipVisible(
   temperGazovPosleSkrubberClose,
   modalInputTemperGazovPosleSkrubber,
   temperGazovPosleSkrubber,
+  modalForm,
+  false,
+  null,
+  0,
+  1500
+)
+
+tooltipVisible(
+  temperVodyVVanneSkrubberClick,
+  temperVodyVVanneSkrubberClue,
+  temperVodyVVanneSkrubberClose,
+  modalInputTemperVodyVVanneSkrubber,
+  temperVodyVVanneSkrubber,
   modalForm,
   false,
   null,

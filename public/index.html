@@ -189,14 +189,26 @@
                   <label class="modal-content__label" for="temperGazovPosleSkrubberInputModal">Темп-ра газов после
                     скруббера</label>
                 </div>
-                <input class="modal-content__input" min="0" max="1500" step="1" name="modalInputTemperGazovPosleSkrubber"
-                  type="number" placeholder="Введите значение &#176C" id="temperGazovPosleSkrubberInputModal" value="75">
+                <input class="modal-content__input" min="0" max="1500" step="1"
+                  name="modalInputTemperGazovPosleSkrubber" type="number" placeholder="Введите значение &#176C"
+                  id="temperGazovPosleSkrubberInputModal" value="75">
+                <span class="modal-content__error">Введите значение</span>
+              </div>
+              <div class="modal-content__input-box">
+                <div class="modal-content__title">
+                  <label class="modal-content__label" for="temperVodyVVanneSkrubberInputModal">Темп-ра воды в ванне
+                    скруббера</label>
+                </div>
+                <input class="modal-content__input" min="0" max="1500" step="1"
+                  name="modalInputTemperVodyVVanneSkrubber" type="number" placeholder="Введите значение &#176C"
+                  id="temperVodyVVanneSkrubberInputModal" value="70">
                 <span class="modal-content__error">Введите значение</span>
               </div>
               <div class="modal-content__input-box">
                 <label class="modal-content__label" for="pVbarabaneInputModal">Давление в барабане котла</label>
                 <input class="modal-content__input" data-type="pressure" min="0" max="20" step="0.1"
-                  name="modalPvBarabane" type="number" placeholder="Введите значение кгс/см2" id="pVbarabaneInputModal" value="0">
+                  name="modalPvBarabane" type="number" placeholder="Введите значение кгс/см2" id="pVbarabaneInputModal"
+                  value="0">
                 <span class="modal-content__error">Введите значение</span>
               </div>
               <div class="modal-content__input-box">
@@ -334,6 +346,11 @@
             </tr>
             <tr class="modal__table-tr">
               <td class="modal__table-td table__left">Температура газов после скруббера</td>
+              <td class="modal__table-td table__center">Установившийся</td>
+              <td class="modal__table-td">не более 100&#176C</td>
+            </tr>
+            <tr class="modal__table-tr">
+              <td class="modal__table-td table__left">Температура воды в ванне скруббера</td>
               <td class="modal__table-td table__center">Установившийся</td>
               <td class="modal__table-td">не более 100&#176C</td>
             </tr>
@@ -1157,6 +1174,46 @@
     </div>
   </div>
   <div class="mnemo__modal-background modal-param-bg-js">
+    <div class="mnemo__modal-start modal-param-js modal-param-js--temper-vody-v-vanne-skrubber">
+      <div class="mnemo__modal-title">
+        <h2 class="mnemo__modal-title-text title-reset">Температура воды в ванне скруббера</h2>
+        <button class="mnemo__modal-close modal-param-close-js btn-reset">
+          <div class="krest">
+            <span class="line-1"></span>
+            <span class="line-2"></span>
+          </div>
+        </button>
+      </div>
+      <div class="troubleshooting">
+        <h3 class="troubleshooting__title title-reset">
+          Возможные причины и действия по устранению неполадок
+        </h3>
+        <p class="troubleshooting__descr descr-reset">
+          Нажмите на причину чтобы прочитать пошаговые действия
+        </p>
+        <div class="troubleshooting__section">
+          <div class="troubleshooting__item troubleshooting__item--cause">
+            <span class="troubleshooting__label">Причина:</span> Отсутствие подпитки из тр/пр воды, по-ломка крана
+            шарового с эл/задвижкой.
+          </div>
+          <div class="troubleshooting__item troubleshooting__item--action">
+            <span class="troubleshooting__label">Действие:</span> Принять меры по устранению неисправности
+            ав-томатической запорной арматуры, заполнить ре-зервуар водой до рабочего уровня.
+          </div>
+        </div>
+        <div class="troubleshooting__section">
+          <div class="troubleshooting__item troubleshooting__item--cause">
+            <span class="troubleshooting__label">Причина:</span> Увеличение количества дымовых газов.
+          </div>
+          <div class="troubleshooting__item troubleshooting__item--action">
+            <span class="troubleshooting__label">Действие:</span> Снизить загрузку п/ф на 50-100 кг/ч. Проверить работу
+            циркуляционного насоса.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mnemo__modal-background modal-param-bg-js">
     <div class="mnemo__modal-start modal-param-js modal-param-js--davl-v-barabane">
       <div class="mnemo__modal-title">
         <h2 class="mnemo__modal-title-text title-reset">Давление в барабане</h2>
@@ -1626,12 +1683,6 @@
           <span class="mnemo__param-naimenov uroven-vanne-skrubber-value-span">мм</span>
         </div>
 
-        <div class="mnemo__param  temper-vody-v-vanne-skrubber">
-          <span class="mnemo__param-text temper-vody-vanna-skruber">
-            70
-          </span>
-          <span class="mnemo__param-naimenov temper-vody-vanna-skruber-span">&#176C</span>
-        </div>
 
         <div class="mnemo__param  p-gazov-posle-skrubber">
           <span class="mnemo__param-text davl-gaz-posle-skruber">
@@ -1795,6 +1846,44 @@
               <input class="mnemo__param-clue-input" type="number" placeholder="Введите значение"
                 id="temperGazovPosleSkrubberInput" min="0" max="1500" step="1">
               <label class="mnemo__param-clue-label" for="temperGazovPosleSkrubberInput"></label>
+              <button class="mnemo__param-clue-form-btn--ok btn-reset" type="submit">
+                Принять
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="mnemo__param mnemo__tooltip temper-vody-v-vanne-skrubber">
+      <div class="temper-vody-v-vanne-skrubber-js">
+        <span class="mnemo__param-text temper-vody-v-vanne-skrubber-span">
+          70
+        </span>
+        <span class="mnemo__param-naimenov temper-vody-vanna-skruber-span">&#176C</span>
+      </div>
+      <div class="mnemo__param-clue temper-vody-v-vanne-skrubber-clue">
+        <div class="mnemo__param-clue-content">
+          <div class="mnemo__param-clue-title">
+            <h2 class="mnemo__param-clue-title-text title-reset">Температура воды в ванне скруббера</h2>
+            <button class="mnemo__tooltip-close temper-vody-v-vanne-skrubber-close btn-reset">
+              <div class="krest">
+                <span class="line-1"></span>
+                <span class="line-2"></span>
+              </div>
+            </button>
+          </div>
+          <div class="mnemo__param-clue-div">Рекомендуемый диапазон в установившимся режиме :
+            <span class="mnemo__param-clue-span">
+              не более 90&#176C
+            </span>
+          </div>
+          <form class="mnemo__param-clue-form mnemo__param-clue-form--temper-vody-v-vanne-skrubber-clue">
+            <div class="mnemo__param-clue-form-div">
+              <input class="mnemo__param-clue-input" type="number" placeholder="Введите значение"
+                id="temperVodyVVanneSkrubberInput" min="0" max="1500" step="1">
+              <label class="mnemo__param-clue-label" for="temperVodyVVanneSkrubberInput"></label>
               <button class="mnemo__param-clue-form-btn--ok btn-reset" type="submit">
                 Принять
               </button>
