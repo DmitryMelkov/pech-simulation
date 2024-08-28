@@ -19,6 +19,7 @@ const getDataModalAttribute = (description) => {
     'Температура на входе печи дожигания': 'modal-param-js--temper-vhod-pech-dozhig',
     'Температура на выходе печи дожигания': 'modal-param-js--temper-vyhod-pech-dozhig',
     'Температура гранул после холодильника': 'modal-param-js--granul-holod-zagruz',
+    'Температура газов до скруббера': 'modal-param-js--temper-gazov-do-skrubber',
     'Давление в барабане котла': 'modal-param-js--davl-v-barabane',
     'Разрежение в топке печи': 'modal-param-js--razrezh-v-topke',
     'Уровень в котле': 'modal-param-js--uroven-v-kotle'

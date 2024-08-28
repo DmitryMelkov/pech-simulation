@@ -98,6 +98,17 @@ const temperVyhodPechDozhigClose = document.querySelector('.vyhod-pech-dozhig-cl
 const temperVyhodPechDozhigInput = document.querySelector('#vyhodPechDozhigInput');
 const temperVyhodPechDozhigForm = document.querySelector('.mnemo__param-clue-form--vyhod-pech-dozhig-clue');
 
+const temperGazovDoSkrubber = document.querySelector('.temper-gazov-do-skruber-span')
+temperGazovDoSkrubber.dataset.description = 'Температура газов до скруббера';
+temperGazovDoSkrubber.dataset.conditionMin = 0;
+temperGazovDoSkrubber.dataset.conditionMax = 400;
+const temperGazovDoSkrubberClick = document.querySelector('.temper-gazov-do-skrubber-js');
+const temperGazovDoSkrubberClue = document.querySelector('.temper-gazov-do-skrubber-clue');
+const temperGazovDoSkrubberClose = document.querySelector('.temper-gazov-do-skrubber-close');
+const temperGazovDoSkrubberInput = document.querySelector('#temperGazovDoSkrubberInput');
+const temperGazovDoSkrubberForm = document.querySelector('.mnemo__param-clue-form--temper-gazov-do-skrubber-clue');
+
+
 const temperGranulHolod = document.querySelector('.temper-granul-holod')
 temperGranulHolod.dataset.description = 'Температура гранул после холодильника';
 temperGranulHolod.dataset.conditionMin = 0;
@@ -107,6 +118,8 @@ const temperGranulHolodClue = document.querySelector('.granul-holod-clue');
 const temperGranulHolodClose = document.querySelector('.granul-holod-clue-close');
 const temperGranulHolodInput = document.querySelector('#granulHolodInput');
 const temperGranulHolodForm = document.querySelector('.mnemo__param-clue-form--granul-holod-clue');
+
+
 
 const davlVbarabane = document.querySelector('.davl-v-barabane');
 davlVbarabane.dataset.description = 'Давление в барабане котла';
@@ -267,6 +280,20 @@ tooltipVisible(
   1500
 )
 
+
+tooltipVisible(
+  temperGazovDoSkrubberClick,
+  temperGazovDoSkrubberClue,
+  temperGazovDoSkrubberClose,
+  temperGazovDoSkrubberInput,
+  temperGazovDoSkrubber,
+  temperGazovDoSkrubberForm,
+  false,
+  null,
+  0,
+  1500
+)
+
 tooltipVisible(
   davlVbarabaneClick,
   davlVbarabaneClue,
@@ -324,6 +351,9 @@ const modalInputVnizKamerZagruz = document.querySelector('#temperVnizKamerZagruz
 const modalInputVhodPechDozhig = document.querySelector('#temperVhodPechDozhigInputModal');
 const modalInputVyhodPechDozhig = document.querySelector('#temperVyhodPechDozhigInputModal');
 const modalInputGranulHolod = document.querySelector('#temperGranulHolodInputModal');
+const modalInputTemperGazovDoSkrubber = document.querySelector('#temperGazovDoSkrubberaInputModal');
+
+
 const modalInputDavlVBarabane = document.querySelector('#pVbarabaneInputModal');
 const modalInputRazrezhVtopke = document.querySelector('#razrezhVtopkeInputModal');
 const modalInputUrovenVkotle = document.querySelector('#urovenVkotleInputModal');
@@ -377,7 +407,7 @@ tooltipVisible(
   false,
   null,
   0,
-  1500 
+  1500
 );
 
 
@@ -452,6 +482,19 @@ tooltipVisible(
   temperGranulHolodClose,
   modalInputGranulHolod,
   temperGranulHolod,
+  modalForm,
+  false,
+  null,
+  0,
+  1500
+)
+
+tooltipVisible(
+  temperGazovDoSkrubberClick,
+  temperGazovDoSkrubberClue,
+  temperGazovDoSkrubberClose,
+  modalInputTemperGazovDoSkrubber,
+  temperGazovDoSkrubber,
   modalForm,
   false,
   null,
