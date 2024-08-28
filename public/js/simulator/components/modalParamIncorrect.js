@@ -27,13 +27,13 @@ export const modalParamIncorrect = () => {
       return;
     }
 
-    // Обработчик для закрытия модальных окон по клику на фон
-    if (event.target.classList.contains('modal-param-bg-js')) {
-      const modalParamIncorrect = event.target.querySelector('.modal-param-js.enabled');
-      if (modalParamIncorrect) {
-        modalParamIncorrect.classList.remove('enabled');
-        event.target.classList.remove('enabled');
-      }
-    }
+    // // Обработчик для закрытия модальных окон по клику на фон
+    // if (event.target.classList.contains('modal-param-bg-js')) {
+    //   const modalParamIncorrect = event.target.querySelector('.modal-param-js.enabled');
+    //   if (modalParamIncorrect) {
+    //     modalParamIncorrect.classList.remove('enabled');
+    //     event.target.classList.remove('enabled');
+    //   }
+    // }
   });
 };

@@ -406,7 +406,7 @@ const btnModal = document.querySelector('.btn-modal--initial-conditions');
 const modalBackground = document.querySelector('.modal-js');
 const modalActive = document.querySelector('.mnemo__modal-start');
 const btnAccept = document.querySelector('.modal-content__form-btn--ok');
-const btnClose = document.querySelector('.mnemo__modal-close');
+const btnClose = document.querySelector('.mnemo__modal-close-js');
 
 const modalForm = document.querySelector('.all__param-form');
 const modalInputFirstSkolz = document.querySelector('#firstSkolzInputModal');

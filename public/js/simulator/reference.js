@@ -12,10 +12,10 @@ const toggleModal = (action) => {
 
 modalElements.btnModal.addEventListener('click', () => toggleModal('add'));
 
-modalElements.modalBackground.addEventListener('click', (event) => {
-  if (event.target === modalElements.modalBackground) {
-    toggleModal('remove');
-  }
-});
+// modalElements.modalBackground.addEventListener('click', (event) => {
+//   if (event.target === modalElements.modalBackground) {
+//     toggleModal('remove');
+//   }
+// });
 
 modalElements.btnClose.addEventListener('click', () => toggleModal('remove'));

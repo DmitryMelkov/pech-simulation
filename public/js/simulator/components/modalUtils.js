@@ -74,12 +74,12 @@ export const setupModalEvents = (btnModal, modalBackground, modalActive, btnAcce
     modalActive.classList.add('enabled');
   });
 
-  modalBackground.addEventListener('click', (event) => {
-    if (event.target === modalBackground) {
-      modalBackground.classList.remove('enabled');
-      modalActive.classList.remove('enabled');
-    }
-  });
+  // modalBackground.addEventListener('click', (event) => {
+  //   if (event.target === modalBackground) {
+  //     modalBackground.classList.remove('enabled');
+  //     modalActive.classList.remove('enabled');
+  //   }
+  // });
 
   btnClose.addEventListener('click', () => {
     modalBackground.classList.remove('enabled');
