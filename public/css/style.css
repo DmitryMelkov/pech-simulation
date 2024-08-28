@@ -851,7 +851,7 @@ body::-webkit-scrollbar-thumb {
   left: 37%;
 }
 
-.gazy-kotla-utilizazi {
+.temper-gazov-kotel-utiliz-val {
   top: 34%;
   left: 54.5%;
 }
@@ -2437,9 +2437,9 @@ body::-webkit-scrollbar-thumb {
   left: -99px;
 }
 
-.gazy-kotla-utilizazi-clue {
+.temper-gazov-kotel-utiliz-val-clue {
   width: 225px;
-  top: -102px;
+  top: -175px;
   left: -90px;
 }
 
@@ -3106,7 +3106,7 @@ body::-webkit-scrollbar-thumb {
     line-height: 19px;
   }
 
-  .gazy-kotla-utilizazi {
+  .temper-gazov-kotel-utiliz-val {
     top: 37%;
     left: 49.5%;
   }

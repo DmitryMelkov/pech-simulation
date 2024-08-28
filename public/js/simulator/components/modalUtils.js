@@ -101,8 +101,7 @@ export const setupModalEvents = (btnModal, modalBackground, modalActive, btnAcce
       document.querySelector('#temperGazovDoSkrubberInputModal'),
       document.querySelector('#temperGazovPosleSkrubberInputModal'),
       document.querySelector('#temperVodyVVanneSkrubberInputModal'),
-
-
+      document.querySelector('#temperGazovKotelUtilizValInputModal'),
 
       document.querySelector('#pVbarabaneInputModal'),
       document.querySelector('#razrezhVtopkeInputModal'),

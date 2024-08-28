@@ -139,6 +139,16 @@ const temperGranulHolodClose = document.querySelector('.granul-holod-clue-close'
 const temperGranulHolodInput = document.querySelector('#granulHolodInput');
 const temperGranulHolodForm = document.querySelector('.mnemo__param-clue-form--granul-holod-clue');
 
+const tempergazovKotelUtiliz = document.querySelector('.temper-gazov-kotel-utiliz-val-span')
+tempergazovKotelUtiliz.dataset.description = 'Температура газов котла утилизатора';
+tempergazovKotelUtiliz.dataset.conditionMin = 0;
+tempergazovKotelUtiliz.dataset.conditionMax = 1000;
+const tempergazovKotelUtilizClick = document.querySelector('.temper-gazov-kotel-utiliz-val-js');
+const tempergazovKotelUtilizClue = document.querySelector('.temper-gazov-kotel-utiliz-val-clue');
+const tempergazovKotelUtilizClose = document.querySelector('.temper-gazov-kotel-utiliz-val-close');
+const tempergazovKotelUtilizInput = document.querySelector('#temperGazovKotelUtilizValInput');
+const tempergazovKotelUtilizForm = document.querySelector('.mnemo__param-clue-form--temper-gazov-kotel-utiliz-val-clue');
+
 
 const davlVbarabane = document.querySelector('.davl-v-barabane');
 davlVbarabane.dataset.description = 'Давление в барабане котла';
@@ -340,6 +350,19 @@ tooltipVisible(
 )
 
 tooltipVisible(
+  tempergazovKotelUtilizClick,
+  tempergazovKotelUtilizClue,
+  tempergazovKotelUtilizClose,
+  tempergazovKotelUtilizInput,
+  tempergazovKotelUtiliz,
+  tempergazovKotelUtilizForm,
+  false,
+  null,
+  0,
+  1500
+)
+
+tooltipVisible(
   davlVbarabaneClick,
   davlVbarabaneClue,
   davlVbarabaneClose,
@@ -399,6 +422,8 @@ const modalInputGranulHolod = document.querySelector('#temperGranulHolodInputMod
 const modalInputTemperGazovDoSkrubber = document.querySelector('#temperGazovDoSkrubberInputModal');
 const modalInputTemperGazovPosleSkrubber = document.querySelector('#temperGazovPosleSkrubberInputModal');
 const modalInputTemperVodyVVanneSkrubber = document.querySelector('#temperVodyVVanneSkrubberInputModal');
+const modalInputTemperGazovKotelUtilizVal = document.querySelector('#temperGazovKotelUtilizValInputModal');
+
 
 
 const modalInputDavlVBarabane = document.querySelector('#pVbarabaneInputModal');
@@ -568,6 +593,19 @@ tooltipVisible(
   temperVodyVVanneSkrubberClose,
   modalInputTemperVodyVVanneSkrubber,
   temperVodyVVanneSkrubber,
+  modalForm,
+  false,
+  null,
+  0,
+  1500
+)
+
+tooltipVisible(
+  tempergazovKotelUtilizClick,
+  tempergazovKotelUtilizClue,
+  tempergazovKotelUtilizClose,
+  modalInputTemperGazovKotelUtilizVal,
+  tempergazovKotelUtiliz,
   modalForm,
   false,
   null,

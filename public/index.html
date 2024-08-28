@@ -205,6 +205,16 @@
                 <span class="modal-content__error">Введите значение</span>
               </div>
               <div class="modal-content__input-box">
+                <div class="modal-content__title">
+                  <label class="modal-content__label" for="temperGazovKotelUtilizValInputModal">Темп-ра газов котла
+                    утилизатора</label>
+                </div>
+                <input class="modal-content__input" min="0" max="1500" step="1"
+                  name="modalInputTemperGazovKotelUtilizVal" type="number" placeholder="Введите значение &#176C"
+                  id="temperGazovKotelUtilizValInputModal" value="1050">
+                <span class="modal-content__error">Введите значение</span>
+              </div>
+              <div class="modal-content__input-box">
                 <label class="modal-content__label" for="pVbarabaneInputModal">Давление в барабане котла</label>
                 <input class="modal-content__input" data-type="pressure" min="0" max="20" step="0.1"
                   name="modalPvBarabane" type="number" placeholder="Введите значение кгс/см2" id="pVbarabaneInputModal"
@@ -351,6 +361,11 @@
             </tr>
             <tr class="modal__table-tr">
               <td class="modal__table-td table__left">Температура воды в ванне скруббера</td>
+              <td class="modal__table-td table__center">Установившийся</td>
+              <td class="modal__table-td">не более 100&#176C</td>
+            </tr>
+            <tr class="modal__table-tr">
+              <td class="modal__table-td table__left">Температура газов котла утилизатора</td>
               <td class="modal__table-td table__center">Установившийся</td>
               <td class="modal__table-td">не более 100&#176C</td>
             </tr>
@@ -1214,6 +1229,45 @@
     </div>
   </div>
   <div class="mnemo__modal-background modal-param-bg-js">
+    <div class="mnemo__modal-start modal-param-js modal-param-js--temper-gazov-kotel-utiliz-val">
+      <div class="mnemo__modal-title">
+        <h2 class="mnemo__modal-title-text title-reset">Температура газов котла утилизатора</h2>
+        <button class="mnemo__modal-close modal-param-close-js btn-reset">
+          <div class="krest">
+            <span class="line-1"></span>
+            <span class="line-2"></span>
+          </div>
+        </button>
+      </div>
+      <div class="troubleshooting">
+        <h3 class="troubleshooting__title title-reset">
+          Возможные причины и действия по устранению неполадок
+        </h3>
+        <p class="troubleshooting__descr descr-reset">
+          Нажмите на причину чтобы прочитать пошаговые действия
+        </p>
+        <div class="troubleshooting__section">
+          <div class="troubleshooting__item troubleshooting__item--cause">
+            <span class="troubleshooting__label">Причина:</span> Повышенная загрузка п/ф.
+          </div>
+          <div class="troubleshooting__item troubleshooting__item--action">
+            <span class="troubleshooting__label">Действие:</span> Снизить загрузку п/ф на 50-100 кг/ч
+          </div>
+        </div>
+        <div class="troubleshooting__section">
+          <div class="troubleshooting__item troubleshooting__item--cause">
+            <span class="troubleshooting__label">Причина:</span> Низкое разрежение.
+          </div>
+          <div class="troubleshooting__item troubleshooting__item--action">
+            <span class="troubleshooting__label">Действие:</span> Отрегулировать разрежение путем увеличения зна-чения
+            на частотном преобразователе вытяжного вентилятора (на щите управления). Проверить от-крытие дросселя на
+            вытяжном вентиляторе.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mnemo__modal-background modal-param-bg-js">
     <div class="mnemo__modal-start modal-param-js modal-param-js--davl-v-barabane">
       <div class="mnemo__modal-title">
         <h2 class="mnemo__modal-title-text title-reset">Давление в барабане</h2>
@@ -1965,16 +2019,47 @@
       </div>
     </div>
 
+    <div class="mnemo__param mnemo__tooltip temper-gazov-kotel-utiliz-val">
+      <div class="temper-gazov-kotel-utiliz-val-js">
+        <span class="mnemo__param-text temper-gazov-kotel-utiliz-val-span">
+          1050
+        </span>
+        <span class="mnemo__param-naimenov temper-gazov-kotel-utiliz-span">&#176C</span>
+      </div>
+      <div class="mnemo__param-clue temper-gazov-kotel-utiliz-val-clue">
+        <div class="mnemo__param-clue-content">
+          <div class="mnemo__param-clue-title">
+            <h2 class="mnemo__param-clue-title-text title-reset">Темп-ра газов котла утил-ра</h2>
+            <button class="mnemo__tooltip-close temper-gazov-kotel-utiliz-val-close btn-reset">
+              <div class="krest">
+                <span class="line-1"></span>
+                <span class="line-2"></span>
+              </div>
+            </button>
+          </div>
+          <div class="mnemo__param-clue-div">Рекомендуемый диапазон в установившимся режиме :
+            <span class="mnemo__param-clue-span">
+              Не более 1000&#176C
+            </span>
+          </div>
+          <form class="mnemo__param-clue-form mnemo__param-clue-form--temper-gazov-kotel-utiliz-val-clue">
+            <div class="mnemo__param-clue-form-div">
+              <input class="mnemo__param-clue-input" type="number" placeholder="Введите значение"
+                id="temperGazovKotelUtilizValInput" min="0" max="1500" step="1">
+              <label class="mnemo__param-clue-label" for="temperGazovKotelUtilizValInput"></label>
+              <button class="mnemo__param-clue-form-btn--ok btn-reset" type="submit">Принять</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+
+    </div>
+
 
     <!--
-        </div>
-        <div class="mnemo__param gazy-kotla-utilizazi">
-          <span class="mnemo__param-text temper-gazov-kotel-utiliz">
-            1050
-          </span>
-          <span class="mnemo__param-naimenov temper-gazov-kotel-utiliz-span">&#176C</span>
 
-        </div>
+
         <div class="mnemo__param p-v-prostranstve-kotla">
           <span class="mnemo__param-text razr-kotel-utiliz">
             -4,1

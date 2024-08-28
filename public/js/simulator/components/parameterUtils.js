@@ -111,7 +111,6 @@ export const parameters = [
     description: 'Температура газов после скруббера',
     type: 'temperature',
   },
-
   {
     spanSelector: '.temper-vody-v-vanne-skrubber-span',
     modalInputSelector: '#temperVodyVVanneSkrubberInputModal',
@@ -119,6 +118,15 @@ export const parameters = [
     conditionMin: 0,
     conditionMax: 90,
     description: 'Температура воды в ванне скруббера',
+    type: 'temperature',
+  },
+  {
+    spanSelector: '.temper-gazov-kotel-utiliz-val-span',
+    modalInputSelector: '#temperGazovKotelUtilizValInputModal',
+    clueInputSelector: '#temperGazovKotelUtilizValInput',
+    conditionMin: 0,
+    conditionMax: 1000,
+    description: 'Температура газов котла утилизатора',
     type: 'temperature',
   },
   {
@@ -273,8 +281,7 @@ export const updateMode = () => {
   updateParameter('.temper-gazov-do-skrubber-span', 0, 400, firstSkolzValue);
   updateParameter('.temper-gazov-posle-skrubber-span', 0, 100, firstSkolzValue);
   updateParameter('.temper-vody-v-vanne-skrubber-span', 0, 90, firstSkolzValue);
-
-
+  updateParameter('.temper-gazov-kotel-utiliz-val-span', 0, 1000, firstSkolzValue);
 
   updateParameter('.davl-v-barabane', 0, 10, firstSkolzValue);
   updateParameter('.razrezh-topka', -4, -1, firstSkolzValue);
@@ -302,7 +309,7 @@ export const updateMode = () => {
   addRowIfRunning(document.querySelector('.temper-gazov-do-skrubber-span'), 'Температура газов до скруббера');
   addRowIfRunning(document.querySelector('.temper-gazov-posle-skrubber-span'), 'Температура газов после скруббера');
   addRowIfRunning(document.querySelector('.temper-vody-v-vanne-skrubber-span'), 'Температура воды в ванне скруббера');
-
+  addRowIfRunning(document.querySelector('.temper-gazov-kotel-utiliz-val-span'), 'Температура газов котла утилизатора');
 
   addRowIfRunning(document.querySelector('.davl-v-barabane'), 'Давление в барабане котла');
   addRowIfRunning(document.querySelector('.razrezh-topka'), 'Разрежение в топке печи');

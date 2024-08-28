@@ -22,6 +22,7 @@ const getDataModalAttribute = (description) => {
     'Температура газов до скруббера': 'modal-param-js--temper-gazov-do-skrubber',
     'Температура газов после скруббера': 'modal-param-js--temper-gazov-posle-skrubber',
     'Температура воды в ванне скруббера': 'modal-param-js--temper-vody-v-vanne-skrubber',
+    'Температура газов котла утилизатора': 'modal-param-js--temper-gazov-kotel-utiliz-val',
     'Давление в барабане котла': 'modal-param-js--davl-v-barabane',
     'Разрежение в топке печи': 'modal-param-js--razrezh-v-topke',
     'Уровень в котле': 'modal-param-js--uroven-v-kotle'
