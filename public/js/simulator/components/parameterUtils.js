@@ -94,12 +94,21 @@ export const parameters = [
     type: 'temperature',
   },
   {
-    spanSelector: '.temper-gazov-do-skruber-span',
-    modalInputSelector: '#temperGazovDoSkrubberaInputModal',
+    spanSelector: '.temper-gazov-do-skrubber-span',
+    modalInputSelector: '#temperGazovDoSkrubberInputModal',
     clueInputSelector: '#temperGazovDoSkrubberInput',
     conditionMin: 0,
     conditionMax: 400,
     description: 'Температура газов до скруббера',
+    type: 'temperature',
+  },
+  {
+    spanSelector: '.temper-gazov-posle-skrubber-span',
+    modalInputSelector: '#temperGazovPosleSkrubberInputModal',
+    clueInputSelector: '#temperGazovPosleSkrubberInput',
+    conditionMin: 0,
+    conditionMax: 100,
+    description: 'Температура газов после скруббера',
     type: 'temperature',
   },
   {
@@ -251,7 +260,9 @@ export const updateMode = () => {
   updateParameter('.temper-vhod-pech-dozhig', 0, 1150, firstSkolzValue);
   updateParameter('.temper-vyhod-pech-dozhig', 0, 1200, firstSkolzValue);
   updateParameter('.temper-granul-holod', 0, 70, firstSkolzValue);
-  updateParameter('.temper-gazov-do-skruber-span', 0, 400, firstSkolzValue);
+  updateParameter('.temper-gazov-do-skrubber-span', 0, 400, firstSkolzValue);
+  updateParameter('.temper-gazov-posle-skrubber-span', 0, 100, firstSkolzValue);
+
 
   updateParameter('.davl-v-barabane', 0, 10, firstSkolzValue);
   updateParameter('.razrezh-topka', -4, -1, firstSkolzValue);
@@ -276,7 +287,9 @@ export const updateMode = () => {
   addRowIfRunning(document.querySelector('.temper-vhod-pech-dozhig'), 'Температура на входе печи дожигания');
   addRowIfRunning(document.querySelector('.temper-vyhod-pech-dozhig'), 'Температура на выходе печи дожигания');
   addRowIfRunning(document.querySelector('.temper-granul-holod'), 'Температура гранул после холодильника');
-  addRowIfRunning(document.querySelector('.temper-gazov-do-skruber-span'), 'Температура газов до скруббера');
+  addRowIfRunning(document.querySelector('.temper-gazov-do-skrubber-span'), 'Температура газов до скруббера');
+  addRowIfRunning(document.querySelector('.temper-gazov-posle-skrubber-span'), 'Температура газов после скруббера');
+
 
   addRowIfRunning(document.querySelector('.davl-v-barabane'), 'Давление в барабане котла');
   addRowIfRunning(document.querySelector('.razrezh-topka'), 'Разрежение в топке печи');

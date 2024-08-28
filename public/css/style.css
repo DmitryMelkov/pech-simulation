@@ -1333,7 +1333,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .mnemo__param-clue-title-text {
-  max-width: 200px;
+  max-width: 195px;
   margin: 0;
   font-size: 16px;
   line-height: 18px;
@@ -2413,13 +2413,13 @@ body::-webkit-scrollbar-thumb {
 
 .temper-gazov-do-skrubber-clue {
   width: 225px;
-  top: -155px;
+  top: -175px;
   left: -90px;
 }
 
 .temper-gazov-posle-skrubber-clue {
   width: 225px;
-  top: -102px;
+  top: -175px;
   left: -90px;
 }
 
