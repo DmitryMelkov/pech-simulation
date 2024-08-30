@@ -509,338 +509,341 @@
             </div>
           </button>
         </div>
-        <div class="modal-content__form-box">
-          <form class="modal-content__form all__param-form">
-            <div class="modal__accordion-title">
-              Параметры печи карбонизации
-            </div>
-            <div class="modal-content__form-inputs">
-              <div class="modal-content__input-box">
-                <div class="modal-content__title">
-                  <label class="modal-content__label" for="firstSkolzInputModal">Темп-ра 1-СК</label>
-                  <!-- <span class="modal-content__span">В установившимся режиме:</span>
-                  <span class="modal-content__span-param">550-800&#176C</span> -->
-                </div>
-                <input class="modal-content__input" data-type="temperature" min="0" max="1500" step="1"
-                  name="modalInputFirstSkolz" type="number" placeholder="Введите значение &#176C"
-                  id="firstSkolzInputModal" value="10">
-                <span class="modal-content__error">Введите значение</span>
+        <div class="mnemo__modal-descr-container">
+          <div class="modal-content__form-box">
+            <form class="modal-content__form all__param-form">
+              <div class="modal__accordion-title">
+                Параметры печи карбонизации
               </div>
-              <div class="modal-content__input-box">
-                <div class="modal-content__title">
-                  <label class="modal-content__label" for="secondSkolzInputModal"> Темп-ра 2-СК</label>
-                  <!-- <span class="modal-content__span">В установившимся режиме:</span>
-                  <span class="modal-content__span-param">не более 700&#176C</span> -->
-                </div>
-                <input class="modal-content__input " data-type="temperature" min="0" max="1500" step="1"
-                  name="modalInputSecondSkolz" type="number" placeholder="Введите значение &#176C"
-                  id="secondSkolzInputModal" value="500">
-                <span class="modal-content__error">Введите значение</span>
-
-              </div>
-              <div class="modal-content__input-box">
-                <div class="modal-content__title">
-                  <label class="modal-content__label" for="thirdSkolzInputModal">Темп-ра 3-СК</label>
-                  <!-- <span class="modal-content__span">В установившимся режиме:</span>
-                  <span class="modal-content__span-param">не более 400&#176C</span>
-                  <span class="modal-content__span">При выходе на режим:</span>
-                  <span class="modal-content__span-param">не более 700&#176C</span> -->
-                </div>
-                <input class="modal-content__input" data-type="temperature" min="0" max="1500" step="1"
-                  name="modalInputThirdSkolz" type="number" placeholder="Введите значение &#176C"
-                  id="thirdSkolzInputModal" value="300">
-                <span class="modal-content__error">Введите значение</span>
-              </div>
-
-              <div class="modal-content__input-box">
-                <div class="modal-content__title">
-                  <label class="modal-content__label" for="temperVTopkeInputModal">Темп-ра в топке</label>
-                  <!-- <span class="modal-content__span">В установившимся режиме:</span>
-                  <span class="modal-content__span-param">не более 700&#176C</span> -->
-                </div>
-                <input class="modal-content__input " data-type="temperature" min="0" max="1500" step="1"
-                  name="modalInputVTopke" type="number" placeholder="Введите значение &#176C"
-                  id="temperVTopkeInputModal" value="950">
-                <span class="modal-content__error">Введите значение</span>
-              </div>
-
-              <div class="modal-content__input-box">
-                <div class="modal-content__title">
-                  <label class="modal-content__label" for="temperKamerVygruzInputModal">Темп-ра камеры выгрузки</label>
-                  <!-- <span class="modal-content__span">В установившимся режиме:</span>
-                  <span class="modal-content__span-param">не более 700&#176C</span> -->
-                </div>
-                <input class="modal-content__input " data-type="temperature" min="0" max="1500" step="1"
-                  name="modalInputKamerVygruz" type="number" placeholder="Введите значение &#176C"
-                  id="temperKamerVygruzInputModal" value="650">
-                <span class="modal-content__error">Введите значение</span>
-              </div>
-
-              <div class="modal-content__input-box">
-                <div class="modal-content__title">
-                  <label class="modal-content__label" for="temperVerhKamerZagruzInputModal">Темп-ра верх камеры
-                    загрузки</label>
-                </div>
-                <input class="modal-content__input " data-type="temperature" min="0" max="1500" step="1"
-                  name="modalInputVerhKamerZagruz" type="number" placeholder="Введите значение &#176C"
-                  id="temperVerhKamerZagruzInputModal" value="50">
-                <span class="modal-content__error">Введите значение</span>
-              </div>
-
-              <div class="modal-content__input-box">
-                <div class="modal-content__title">
-                  <label class="modal-content__label" for="temperVnizKamerZagruzInputModal">Темп-ра низ камеры
-                    загрузки</label>
-                </div>
-                <input class="modal-content__input " data-type="temperature" min="0" max="1500" step="1"
-                  name="modalInputVnizKamerZagruz" type="number" placeholder="Введите значение &#176C"
-                  id="temperVnizKamerZagruzInputModal" value="50">
-                <span class="modal-content__error">Введите значение</span>
-              </div>
-
-              <div class="modal-content__input-box">
-                <div class="modal-content__title">
-                  <label class="modal-content__label" for="temperVhodPechDozhigInputModal">Темп-ра вход печи
-                    дожигания</label>
-                </div>
-                <input class="modal-content__input " data-type="temperature" min="0" max="1500" step="1"
-                  name="modalInputVhodPechDozhig" type="number" placeholder="Введите значение &#176C"
-                  id="temperVhodPechDozhigInputModal" value="50">
-                <span class="modal-content__error">Введите значение</span>
-              </div>
-
-              <div class="modal-content__input-box">
-                <div class="modal-content__title">
-                  <label class="modal-content__label" for="temperVyhodPechDozhigInputModal">Темп-ра выход печи
-                    дожигания</label>
-                </div>
-                <input class="modal-content__input " data-type="temperature" min="0" max="1500" step="1"
-                  name="modalInputVyhodPechDozhig" type="number" placeholder="Введите значение &#176C"
-                  id="temperVyhodPechDozhigInputModal" value="100">
-                <span class="modal-content__error">Введите значение</span>
-              </div>
-
-              <div class="modal-content__input-box">
-                <div class="modal-content__title">
-                  <label class="modal-content__label" for="temperGranulHolodInputModal">Темп-ра гранул после
-                    холод-ка</label>
-                </div>
-                <input class="modal-content__input " data-type="temperature" min="0" max="1500" step="1"
-                  name="modalInputGranulHolod" type="number" placeholder="Введите значение &#176C"
-                  id="temperGranulHolodInputModal" value="50">
-                <span class="modal-content__error">Введите значение</span>
-              </div>
-              <div class="modal-content__input-box">
-                <div class="modal-content__title">
-                  <label class="modal-content__label" for="temperGazovDoSkrubberInputModal">Темп-ра газов до
-                    скруббера</label>
-                </div>
-                <input class="modal-content__input" min="0" max="1500" step="1" name="modalInputTemperGazovDoSkrubber"
-                  type="number" placeholder="Введите значение &#176C" id="temperGazovDoSkrubberInputModal" value="300">
-                <span class="modal-content__error">Введите значение</span>
-              </div>
-              <div class="modal-content__input-box">
-                <div class="modal-content__title">
-                  <label class="modal-content__label" for="temperGazovPosleSkrubberInputModal">Темп-ра газов после
-                    скруббера</label>
-                </div>
-                <input class="modal-content__input" min="0" max="1500" step="1"
-                  name="modalInputTemperGazovPosleSkrubber" type="number" placeholder="Введите значение &#176C"
-                  id="temperGazovPosleSkrubberInputModal" value="75">
-                <span class="modal-content__error">Введите значение</span>
-              </div>
-              <div class="modal-content__input-box">
-                <div class="modal-content__title">
-                  <label class="modal-content__label" for="temperVodyVVanneSkrubberInputModal">Темп-ра воды в ванне
-                    скруббера</label>
-                </div>
-                <input class="modal-content__input" min="0" max="1500" step="1"
-                  name="modalInputTemperVodyVVanneSkrubber" type="number" placeholder="Введите значение &#176C"
-                  id="temperVodyVVanneSkrubberInputModal" value="70">
-                <span class="modal-content__error">Введите значение</span>
-              </div>
-              <div class="modal-content__input-box">
-                <div class="modal-content__title">
-                  <label class="modal-content__label" for="temperGazovKotelUtilizValInputModal">Темп-ра газов котла
-                    утилизатора</label>
-                </div>
-                <input class="modal-content__input" min="0" max="1500" step="1"
-                  name="modalInputTemperGazovKotelUtilizVal" type="number" placeholder="Введите значение &#176C"
-                  id="temperGazovKotelUtilizValInputModal" value="1050">
-                <span class="modal-content__error">Введите значение</span>
-              </div>
-              <div class="modal-content__input-box">
-                <label class="modal-content__label" for="pVbarabaneInputModal">Давление в барабане котла</label>
-                <input class="modal-content__input" data-type="pressure" min="0" max="20" step="0.1"
-                  name="modalPvBarabane" type="number" placeholder="Введите значение кгс/см2" id="pVbarabaneInputModal"
-                  value="0">
-                <span class="modal-content__error">Введите значение</span>
-              </div>
-              <div class="modal-content__input-box">
-                <label class="modal-content__label" for="razrezhVtopkeInputModal">Разрежение в топке печи</label>
-                <input class="modal-content__input" data-type="razrezh" min="-10" max="0" step="0.1"
-                  name="modalPvBarabane" type="number" placeholder="Введите значение кгс/м2"
-                  id="razrezhVtopkeInputModal" value="-2.1">
-                <span class="modal-content__error">Введите значение</span>
-              </div>
-              <div class="modal-content__input-box">
-                <label class="modal-content__label" for="urovenVkotleInputModal">Уровень в котле</label>
-                <input class="modal-content__input" data-type="level" min="-150" max="150" step="1"
-                  name="modalInputUrovenVkotle" type="number" placeholder="Введите значение мм"
-                  id="urovenVkotleInputModal" value="50">
-                <span class="modal-content__error">Введите значение</span>
-              </div>
-              <!-- <div class="modal-content__input-box">
-                  <input class="modal-content__input" min="0" max="1500" step="1" name="modalInputNizKameri"
-                    type="number" placeholder="Введите значение &#176C" id="nizKameriInputModal">
-                  <label class="modal-content__label" for="nizKameriInputModal">Внизу камеры загрузки</label>
+              <div class="modal-content__form-inputs">
+                <div class="modal-content__input-box">
+                  <div class="modal-content__title">
+                    <label class="modal-content__label" for="firstSkolzInputModal">Темп-ра 1-СК</label>
+                    <!-- <span class="modal-content__span">В установившимся режиме:</span>
+                    <span class="modal-content__span-param">550-800&#176C</span> -->
+                  </div>
+                  <input class="modal-content__input" data-type="temperature" min="0" max="1500" step="1"
+                    name="modalInputFirstSkolz" type="number" placeholder="Введите значение &#176C"
+                    id="firstSkolzInputModal" value="10">
+                  <span class="modal-content__error">Введите значение</span>
                 </div>
                 <div class="modal-content__input-box">
-                  <input class="modal-content__input" min="0" max="1500" step="1" name="modalInputVhodDozhig"
-                    type="number" placeholder="Введите значение &#176C" id="vhodDozhigInputModal">
-                  <label class="modal-content__label" for="vhodDozhigInputModal">Вход печи дожигания</label>
+                  <div class="modal-content__title">
+                    <label class="modal-content__label" for="secondSkolzInputModal"> Темп-ра 2-СК</label>
+                    <!-- <span class="modal-content__span">В установившимся режиме:</span>
+                    <span class="modal-content__span-param">не более 700&#176C</span> -->
+                  </div>
+                  <input class="modal-content__input " data-type="temperature" min="0" max="1500" step="1"
+                    name="modalInputSecondSkolz" type="number" placeholder="Введите значение &#176C"
+                    id="secondSkolzInputModal" value="500">
+                  <span class="modal-content__error">Введите значение</span>
+
                 </div>
                 <div class="modal-content__input-box">
-                  <input class="modal-content__input" min="0" max="1500" step="1" name="modalInputVihodDozhig"
-                    type="number" placeholder="Введите значение &#176C" id="vihodDozhigInputModal">
-                  <label class="modal-content__label" for="vihodDozhigInputModal">Выход печи дожигания</label>
-                </div>
-                <div class="modal-content__input-box">
-                  <input class="modal-content__input" min="0" max="1500" step="1" name="modalInputVkotle" type="number"
-                    placeholder="Введите значение &#176C" id="vKotleInput">
-                  <label class="modal-content__label" for="vKotleInput">В котле утилизаторе</label>
+                  <div class="modal-content__title">
+                    <label class="modal-content__label" for="thirdSkolzInputModal">Темп-ра 3-СК</label>
+                    <!-- <span class="modal-content__span">В установившимся режиме:</span>
+                    <span class="modal-content__span-param">не более 400&#176C</span>
+                    <span class="modal-content__span">При выходе на режим:</span>
+                    <span class="modal-content__span-param">не более 700&#176C</span> -->
+                  </div>
+                  <input class="modal-content__input" data-type="temperature" min="0" max="1500" step="1"
+                    name="modalInputThirdSkolz" type="number" placeholder="Введите значение &#176C"
+                    id="thirdSkolzInputModal" value="300">
+                  <span class="modal-content__error">Введите значение</span>
                 </div>
 
                 <div class="modal-content__input-box">
-                  <input class="modal-content__input" min="0" max="1500" step="1" name="modalInputKameraVigruzki"
-                    type="number" placeholder="Введите значение &#176C" id="kameraVigruzkiInputModal">
-                  <label class="modal-content__label" for="kameraVigruzkiInputModal">Камера выгрузки</label>
+                  <div class="modal-content__title">
+                    <label class="modal-content__label" for="temperVTopkeInputModal">Темп-ра в топке</label>
+                    <!-- <span class="modal-content__span">В установившимся режиме:</span>
+                    <span class="modal-content__span-param">не более 700&#176C</span> -->
+                  </div>
+                  <input class="modal-content__input " data-type="temperature" min="0" max="1500" step="1"
+                    name="modalInputVTopke" type="number" placeholder="Введите значение &#176C"
+                    id="temperVTopkeInputModal" value="950">
+                  <span class="modal-content__error">Введите значение</span>
                 </div>
-                <div class="modal-content__input-box">
-                  <input class="modal-content__input" min="0" max="1500" step="1" name="modalInputVihodGazov"
-                    type="number" placeholder="Введите значение &#176C" id="vihodGazovInputModal">
-                  <label class="modal-content__label" for="vihodGazovInputModal">Выход дымовых газов</label>
-                </div>
-                <div class="modal-content__input-box">
-                  <input class="modal-content__input" min="0" max="1500" step="1" name="modalInputVannaScrubber"
-                    type="number" placeholder="Введите значение &#176C" id="vannaScrubberInputModal">
-                  <label class="modal-content__label" for="vannaScrubberInputModal">Ванна скруббера</label>
-                </div>
-                <div class="modal-content__input-box">
-                  <input class="modal-content__input" min="0" max="1500" step="1" name="modalInputHolod" type="number"
-                    placeholder="Введите значение &#176C" id="holodInputModal">
-                  <label class="modal-content__label" for="holodInputModal">Холодильник</label>
-                </div> -->
-            </div>
 
-            <div class="modal-content__form-btn-box">
-              <button type="submit" class="modal-content__form-btn--ok modal-btn-js">
-                Принять
-              </button>
-            </div>
+                <div class="modal-content__input-box">
+                  <div class="modal-content__title">
+                    <label class="modal-content__label" for="temperKamerVygruzInputModal">Темп-ра камеры выгрузки</label>
+                    <!-- <span class="modal-content__span">В установившимся режиме:</span>
+                    <span class="modal-content__span-param">не более 700&#176C</span> -->
+                  </div>
+                  <input class="modal-content__input " data-type="temperature" min="0" max="1500" step="1"
+                    name="modalInputKamerVygruz" type="number" placeholder="Введите значение &#176C"
+                    id="temperKamerVygruzInputModal" value="650">
+                  <span class="modal-content__error">Введите значение</span>
+                </div>
 
-          </form>
+                <div class="modal-content__input-box">
+                  <div class="modal-content__title">
+                    <label class="modal-content__label" for="temperVerhKamerZagruzInputModal">Темп-ра верх камеры
+                      загрузки</label>
+                  </div>
+                  <input class="modal-content__input " data-type="temperature" min="0" max="1500" step="1"
+                    name="modalInputVerhKamerZagruz" type="number" placeholder="Введите значение &#176C"
+                    id="temperVerhKamerZagruzInputModal" value="50">
+                  <span class="modal-content__error">Введите значение</span>
+                </div>
+
+                <div class="modal-content__input-box">
+                  <div class="modal-content__title">
+                    <label class="modal-content__label" for="temperVnizKamerZagruzInputModal">Темп-ра низ камеры
+                      загрузки</label>
+                  </div>
+                  <input class="modal-content__input " data-type="temperature" min="0" max="1500" step="1"
+                    name="modalInputVnizKamerZagruz" type="number" placeholder="Введите значение &#176C"
+                    id="temperVnizKamerZagruzInputModal" value="50">
+                  <span class="modal-content__error">Введите значение</span>
+                </div>
+
+                <div class="modal-content__input-box">
+                  <div class="modal-content__title">
+                    <label class="modal-content__label" for="temperVhodPechDozhigInputModal">Темп-ра вход печи
+                      дожигания</label>
+                  </div>
+                  <input class="modal-content__input " data-type="temperature" min="0" max="1500" step="1"
+                    name="modalInputVhodPechDozhig" type="number" placeholder="Введите значение &#176C"
+                    id="temperVhodPechDozhigInputModal" value="50">
+                  <span class="modal-content__error">Введите значение</span>
+                </div>
+
+                <div class="modal-content__input-box">
+                  <div class="modal-content__title">
+                    <label class="modal-content__label" for="temperVyhodPechDozhigInputModal">Темп-ра выход печи
+                      дожигания</label>
+                  </div>
+                  <input class="modal-content__input " data-type="temperature" min="0" max="1500" step="1"
+                    name="modalInputVyhodPechDozhig" type="number" placeholder="Введите значение &#176C"
+                    id="temperVyhodPechDozhigInputModal" value="100">
+                  <span class="modal-content__error">Введите значение</span>
+                </div>
+
+                <div class="modal-content__input-box">
+                  <div class="modal-content__title">
+                    <label class="modal-content__label" for="temperGranulHolodInputModal">Темп-ра гранул после
+                      холод-ка</label>
+                  </div>
+                  <input class="modal-content__input " data-type="temperature" min="0" max="1500" step="1"
+                    name="modalInputGranulHolod" type="number" placeholder="Введите значение &#176C"
+                    id="temperGranulHolodInputModal" value="50">
+                  <span class="modal-content__error">Введите значение</span>
+                </div>
+                <div class="modal-content__input-box">
+                  <div class="modal-content__title">
+                    <label class="modal-content__label" for="temperGazovDoSkrubberInputModal">Темп-ра газов до
+                      скруббера</label>
+                  </div>
+                  <input class="modal-content__input" min="0" max="1500" step="1" name="modalInputTemperGazovDoSkrubber"
+                    type="number" placeholder="Введите значение &#176C" id="temperGazovDoSkrubberInputModal" value="300">
+                  <span class="modal-content__error">Введите значение</span>
+                </div>
+                <div class="modal-content__input-box">
+                  <div class="modal-content__title">
+                    <label class="modal-content__label" for="temperGazovPosleSkrubberInputModal">Темп-ра газов после
+                      скруббера</label>
+                  </div>
+                  <input class="modal-content__input" min="0" max="1500" step="1"
+                    name="modalInputTemperGazovPosleSkrubber" type="number" placeholder="Введите значение &#176C"
+                    id="temperGazovPosleSkrubberInputModal" value="75">
+                  <span class="modal-content__error">Введите значение</span>
+                </div>
+                <div class="modal-content__input-box">
+                  <div class="modal-content__title">
+                    <label class="modal-content__label" for="temperVodyVVanneSkrubberInputModal">Темп-ра воды в ванне
+                      скруббера</label>
+                  </div>
+                  <input class="modal-content__input" min="0" max="1500" step="1"
+                    name="modalInputTemperVodyVVanneSkrubber" type="number" placeholder="Введите значение &#176C"
+                    id="temperVodyVVanneSkrubberInputModal" value="70">
+                  <span class="modal-content__error">Введите значение</span>
+                </div>
+                <div class="modal-content__input-box">
+                  <div class="modal-content__title">
+                    <label class="modal-content__label" for="temperGazovKotelUtilizValInputModal">Темп-ра газов котла
+                      утилизатора</label>
+                  </div>
+                  <input class="modal-content__input" min="0" max="1500" step="1"
+                    name="modalInputTemperGazovKotelUtilizVal" type="number" placeholder="Введите значение &#176C"
+                    id="temperGazovKotelUtilizValInputModal" value="1050">
+                  <span class="modal-content__error">Введите значение</span>
+                </div>
+                <div class="modal-content__input-box">
+                  <label class="modal-content__label" for="pVbarabaneInputModal">Давление в барабане котла</label>
+                  <input class="modal-content__input" data-type="pressure" min="0" max="20" step="0.1"
+                    name="modalPvBarabane" type="number" placeholder="Введите значение кгс/см2" id="pVbarabaneInputModal"
+                    value="0">
+                  <span class="modal-content__error">Введите значение</span>
+                </div>
+                <div class="modal-content__input-box">
+                  <label class="modal-content__label" for="razrezhVtopkeInputModal">Разрежение в топке печи</label>
+                  <input class="modal-content__input" data-type="razrezh" min="-10" max="0" step="0.1"
+                    name="modalPvBarabane" type="number" placeholder="Введите значение кгс/м2"
+                    id="razrezhVtopkeInputModal" value="-2.1">
+                  <span class="modal-content__error">Введите значение</span>
+                </div>
+                <div class="modal-content__input-box">
+                  <label class="modal-content__label" for="urovenVkotleInputModal">Уровень в котле</label>
+                  <input class="modal-content__input" data-type="level" min="-150" max="150" step="1"
+                    name="modalInputUrovenVkotle" type="number" placeholder="Введите значение мм"
+                    id="urovenVkotleInputModal" value="50">
+                  <span class="modal-content__error">Введите значение</span>
+                </div>
+                <!-- <div class="modal-content__input-box">
+                    <input class="modal-content__input" min="0" max="1500" step="1" name="modalInputNizKameri"
+                      type="number" placeholder="Введите значение &#176C" id="nizKameriInputModal">
+                    <label class="modal-content__label" for="nizKameriInputModal">Внизу камеры загрузки</label>
+                  </div>
+                  <div class="modal-content__input-box">
+                    <input class="modal-content__input" min="0" max="1500" step="1" name="modalInputVhodDozhig"
+                      type="number" placeholder="Введите значение &#176C" id="vhodDozhigInputModal">
+                    <label class="modal-content__label" for="vhodDozhigInputModal">Вход печи дожигания</label>
+                  </div>
+                  <div class="modal-content__input-box">
+                    <input class="modal-content__input" min="0" max="1500" step="1" name="modalInputVihodDozhig"
+                      type="number" placeholder="Введите значение &#176C" id="vihodDozhigInputModal">
+                    <label class="modal-content__label" for="vihodDozhigInputModal">Выход печи дожигания</label>
+                  </div>
+                  <div class="modal-content__input-box">
+                    <input class="modal-content__input" min="0" max="1500" step="1" name="modalInputVkotle" type="number"
+                      placeholder="Введите значение &#176C" id="vKotleInput">
+                    <label class="modal-content__label" for="vKotleInput">В котле утилизаторе</label>
+                  </div>
+
+                  <div class="modal-content__input-box">
+                    <input class="modal-content__input" min="0" max="1500" step="1" name="modalInputKameraVigruzki"
+                      type="number" placeholder="Введите значение &#176C" id="kameraVigruzkiInputModal">
+                    <label class="modal-content__label" for="kameraVigruzkiInputModal">Камера выгрузки</label>
+                  </div>
+                  <div class="modal-content__input-box">
+                    <input class="modal-content__input" min="0" max="1500" step="1" name="modalInputVihodGazov"
+                      type="number" placeholder="Введите значение &#176C" id="vihodGazovInputModal">
+                    <label class="modal-content__label" for="vihodGazovInputModal">Выход дымовых газов</label>
+                  </div>
+                  <div class="modal-content__input-box">
+                    <input class="modal-content__input" min="0" max="1500" step="1" name="modalInputVannaScrubber"
+                      type="number" placeholder="Введите значение &#176C" id="vannaScrubberInputModal">
+                    <label class="modal-content__label" for="vannaScrubberInputModal">Ванна скруббера</label>
+                  </div>
+                  <div class="modal-content__input-box">
+                    <input class="modal-content__input" min="0" max="1500" step="1" name="modalInputHolod" type="number"
+                      placeholder="Введите значение &#176C" id="holodInputModal">
+                    <label class="modal-content__label" for="holodInputModal">Холодильник</label>
+                  </div> -->
+              </div>
+
+              <div class="modal-content__form-btn-box">
+                <button type="submit" class="modal-content__form-btn--ok modal-btn-js">
+                  Принять
+                </button>
+              </div>
+
+            </form>
+          </div>
+          <table class="modal__table">
+            <thead class="table__thead">
+              <tr class="table__tr">
+                <th class="table__th">Наименование параметра</th>
+                <th class="table__th table__center">Режим</th>
+                <th class="table__th ">Рекоменуемое значение</th>
+              </tr>
+            </thead>
+            <tbody class="modal__table-tbody">
+              <tr class="modal__table-tr">
+                <td class="modal__table-td table__left">Первая скользящая</td>
+                <td class="modal__table-td table__center">Установившийся</td>
+                <td class="modal__table-td">550-800&#176C</td>
+              </tr>
+              <tr class="modal__table-tr">
+                <td class="modal__table-td table__left">Вторая скользящая</td>
+                <td class="modal__table-td table__center">Установившийся</td>
+                <td class="modal__table-td">не более 700&#176C</td>
+              </tr>
+              <tr class="modal__table-tr">
+                <td class="modal__table-td table__left" rowspan="2">Третья скользящая</td>
+                <td class="modal__table-td table__center">Выход на режим</td>
+                <td class="modal__table-td">не более 750&#176C</td>
+              </tr>
+              <tr class="modal__table-tr">
+                <td class="modal__table-td table__center">Установившийся</td>
+                <td class="modal__table-td">не более 400&#176C</td>
+              </tr>
+              <tr class="modal__table-tr">
+                <td class="modal__table-td table__left">Температура в топке печи</td>
+                <td class="modal__table-td table__center">Установившийся</td>
+                <td class="modal__table-td">не более 1000&#176C</td>
+              </tr>
+              <tr class="modal__table-tr">
+                <td class="modal__table-td table__left">Температура камеры выгрузки</td>
+                <td class="modal__table-td table__center">Установившийся</td>
+                <td class="modal__table-td">не более 750&#176C</td>
+              </tr>
+              <tr class="modal__table-tr">
+                <td class="modal__table-td table__left">Температура вверху камеры загрузки</td>
+                <td class="modal__table-td table__center">Установившийся</td>
+                <td class="modal__table-td">не более 1000&#176C</td>
+              </tr>
+              <tr class="modal__table-tr">
+                <td class="modal__table-td table__left">Температура внизу камеры загрузки</td>
+                <td class="modal__table-td table__center">Установившийся</td>
+                <td class="modal__table-td">не более 1100&#176C</td>
+              </tr>
+              <tr class="modal__table-tr">
+                <td class="modal__table-td table__left">Температура на входе печи дожигания</td>
+                <td class="modal__table-td table__center">Установившийся</td>
+                <td class="modal__table-td">не более 1150&#176C</td>
+              </tr>
+              <tr class="modal__table-tr">
+                <td class="modal__table-td table__left">Температура на выходе печи дожигания</td>
+                <td class="modal__table-td table__center">Установившийся</td>
+                <td class="modal__table-td">не более 1200&#176C</td>
+              </tr>
+              <tr class="modal__table-tr">
+                <td class="modal__table-td table__left">Температура гранул после холодильника</td>
+                <td class="modal__table-td table__center">Установившийся</td>
+                <td class="modal__table-td">не более 70&#176C</td>
+              </tr>
+              <tr class="modal__table-tr">
+                <td class="modal__table-td table__left">Температура газов до скруббера</td>
+                <td class="modal__table-td table__center">Установившийся</td>
+                <td class="modal__table-td">не более 400&#176C</td>
+              </tr>
+              <tr class="modal__table-tr">
+                <td class="modal__table-td table__left">Температура газов после скруббера</td>
+                <td class="modal__table-td table__center">Установившийся</td>
+                <td class="modal__table-td">не более 100&#176C</td>
+              </tr>
+              <tr class="modal__table-tr">
+                <td class="modal__table-td table__left">Температура воды в ванне скруббера</td>
+                <td class="modal__table-td table__center">Установившийся</td>
+                <td class="modal__table-td">не более 100&#176C</td>
+              </tr>
+              <tr class="modal__table-tr">
+                <td class="modal__table-td table__left">Температура газов котла утилизатора</td>
+                <td class="modal__table-td table__center">Установившийся</td>
+                <td class="modal__table-td">не более 100&#176C</td>
+              </tr>
+              <tr class="modal__table-tr">
+                <td class="modal__table-td table__left">Давление в барабане котла</td>
+                <td class="modal__table-td table__center">Все режимы</td>
+                <td class="modal__table-td">от 0 до 10 кгс/см2</td>
+              </tr>
+              <tr class="modal__table-tr">
+                <td class="modal__table-td table__left">Разрежение в топке печи</td>
+                <td class="modal__table-td table__center">Установившийся</td>
+                <td class="modal__table-td">от -1.0 до -4.0 кгс/м2</td>
+              </tr>
+              <tr class="modal__table-tr">
+                <td class="modal__table-td table__left">Уровень в барабане котла</td>
+                <td class="modal__table-td table__center">Все режимы</td>
+                <td class="modal__table-td">от -80 до 80</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-        <table class="modal__table">
-          <thead class="table__thead">
-            <tr class="table__tr">
-              <th class="table__th">Наименование параметра</th>
-              <th class="table__th table__center">Режим</th>
-              <th class="table__th ">Рекоменуемое значение</th>
-            </tr>
-          </thead>
-          <tbody class="modal__table-tbody">
-            <tr class="modal__table-tr">
-              <td class="modal__table-td table__left">Первая скользящая</td>
-              <td class="modal__table-td table__center">Установившийся</td>
-              <td class="modal__table-td">550-800&#176C</td>
-            </tr>
-            <tr class="modal__table-tr">
-              <td class="modal__table-td table__left">Вторая скользящая</td>
-              <td class="modal__table-td table__center">Установившийся</td>
-              <td class="modal__table-td">не более 700&#176C</td>
-            </tr>
-            <tr class="modal__table-tr">
-              <td class="modal__table-td table__left" rowspan="2">Третья скользящая</td>
-              <td class="modal__table-td table__center">Выход на режим</td>
-              <td class="modal__table-td">не более 750&#176C</td>
-            </tr>
-            <tr class="modal__table-tr">
-              <td class="modal__table-td table__center">Установившийся</td>
-              <td class="modal__table-td">не более 400&#176C</td>
-            </tr>
-            <tr class="modal__table-tr">
-              <td class="modal__table-td table__left">Температура в топке печи</td>
-              <td class="modal__table-td table__center">Установившийся</td>
-              <td class="modal__table-td">не более 1000&#176C</td>
-            </tr>
-            <tr class="modal__table-tr">
-              <td class="modal__table-td table__left">Температура камеры выгрузки</td>
-              <td class="modal__table-td table__center">Установившийся</td>
-              <td class="modal__table-td">не более 750&#176C</td>
-            </tr>
-            <tr class="modal__table-tr">
-              <td class="modal__table-td table__left">Температура вверху камеры загрузки</td>
-              <td class="modal__table-td table__center">Установившийся</td>
-              <td class="modal__table-td">не более 1000&#176C</td>
-            </tr>
-            <tr class="modal__table-tr">
-              <td class="modal__table-td table__left">Температура внизу камеры загрузки</td>
-              <td class="modal__table-td table__center">Установившийся</td>
-              <td class="modal__table-td">не более 1100&#176C</td>
-            </tr>
-            <tr class="modal__table-tr">
-              <td class="modal__table-td table__left">Температура на входе печи дожигания</td>
-              <td class="modal__table-td table__center">Установившийся</td>
-              <td class="modal__table-td">не более 1150&#176C</td>
-            </tr>
-            <tr class="modal__table-tr">
-              <td class="modal__table-td table__left">Температура на выходе печи дожигания</td>
-              <td class="modal__table-td table__center">Установившийся</td>
-              <td class="modal__table-td">не более 1200&#176C</td>
-            </tr>
-            <tr class="modal__table-tr">
-              <td class="modal__table-td table__left">Температура гранул после холодильника</td>
-              <td class="modal__table-td table__center">Установившийся</td>
-              <td class="modal__table-td">не более 70&#176C</td>
-            </tr>
-            <tr class="modal__table-tr">
-              <td class="modal__table-td table__left">Температура газов до скруббера</td>
-              <td class="modal__table-td table__center">Установившийся</td>
-              <td class="modal__table-td">не более 400&#176C</td>
-            </tr>
-            <tr class="modal__table-tr">
-              <td class="modal__table-td table__left">Температура газов после скруббера</td>
-              <td class="modal__table-td table__center">Установившийся</td>
-              <td class="modal__table-td">не более 100&#176C</td>
-            </tr>
-            <tr class="modal__table-tr">
-              <td class="modal__table-td table__left">Температура воды в ванне скруббера</td>
-              <td class="modal__table-td table__center">Установившийся</td>
-              <td class="modal__table-td">не более 100&#176C</td>
-            </tr>
-            <tr class="modal__table-tr">
-              <td class="modal__table-td table__left">Температура газов котла утилизатора</td>
-              <td class="modal__table-td table__center">Установившийся</td>
-              <td class="modal__table-td">не более 100&#176C</td>
-            </tr>
-            <tr class="modal__table-tr">
-              <td class="modal__table-td table__left">Давление в барабане котла</td>
-              <td class="modal__table-td table__center">Все режимы</td>
-              <td class="modal__table-td">от 0 до 10 кгс/см2</td>
-            </tr>
-            <tr class="modal__table-tr">
-              <td class="modal__table-td table__left">Разрежение в топке печи</td>
-              <td class="modal__table-td table__center">Установившийся</td>
-              <td class="modal__table-td">от -1.0 до -4.0 кгс/м2</td>
-            </tr>
-            <tr class="modal__table-tr">
-              <td class="modal__table-td table__left">Уровень в барабане котла</td>
-              <td class="modal__table-td table__center">Все режимы</td>
-              <td class="modal__table-td">от -80 до 80</td>
-            </tr>
-          </tbody>
-        </table>
+
       </div>
 
     </div>
@@ -869,7 +872,7 @@
             </div>
           </button>
         </div>
-        <div>
+        <div class="mnemo__modal-descr-container">
           <p class="mnemo__modal-descr mnemo__modal-descr--reference descr-reset">
             Представляем вашему внимание обучающее приложение по работе на печах карбонизации. Приложение состоит из
             двух страниц: <strong>Симулятор</strong> и <strong>Тестирование</strong> .
@@ -1144,6 +1147,9 @@
               <span class="line-2"></span>
             </div>
           </button>
+        </div>
+        <div>
+          
         </div>
         <div class="troubleshooting">
           <h3 class="troubleshooting__title title-reset">
