@@ -24,6 +24,7 @@ const getDataModalAttribute = (description) => {
     'Температура воды в ванне скруббера': 'modal-param-js--temper-vody-v-vanne-skrubber',
     'Температура газов котла утилизатора': 'modal-param-js--temper-gazov-kotel-utiliz-val',
     // 'Давление в барабане котла': 'modal-param-js--davl-v-barabane',
+    'Разрежение внизу загрузочной камеры': 'modal-param-js--razr-niz-zagr-kam',
     'Разрежение в топке печи': 'modal-param-js--razrezh-v-topke',
     'Уровень в котле': 'modal-param-js--uroven-v-kotle',
     'Уровень в ванне скруббера': 'modal-param-js--uroven-vanne-skrubber',

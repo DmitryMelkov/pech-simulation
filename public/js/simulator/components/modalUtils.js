@@ -110,8 +110,10 @@ export const setupModalEvents = (btnModal, modalBackground, modalActive, btnAcce
       document.querySelector('#temperVodyVVanneSkrubberInputModal'),
       document.querySelector('#temperGazovKotelUtilizValInputModal'),
 
-      document.querySelector('#pVbarabaneInputModal'),
+      // document.querySelector('#pVbarabaneInputModal'),
+
       document.querySelector('#DavlGazPosleSkrubberInputModal'),
+      document.querySelector('#razrezhNizZagrKameryInputModal'),
       document.querySelector('#razrezhVtopkeInputModal'),
       
       document.querySelector('#urovenVkotleInputModal'),

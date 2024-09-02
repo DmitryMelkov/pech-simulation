@@ -169,6 +169,16 @@ const davlGazPosleSkrubberClose = document.querySelector('.davl-gaz-posle-skrubb
 const davlGazPosleSkrubberInput = document.querySelector('#davlGazPosleSkrubberInput');
 const davlGazPosleSkrubberForm = document.querySelector('.mnemo__param-clue-form--davl-gaz-posle-skrubber-clue');
 
+const razrezhNizZagrKam = document.querySelector('.razr-niz-zagr-kam');
+razrezhNizZagrKam.dataset.description = 'Разрежение внизу загрузочной камеры'
+razrezhNizZagrKam.dataset.conditionMin = -5;
+razrezhNizZagrKam.dataset.conditionMax = -1;
+const razrezhNizZagrKamClick = document.querySelector('.razr-niz-zagr-kam-js');
+const razrezhNizZagrKamClue = document.querySelector('.razr-niz-zagr-kam-clue');
+const razrezhNizZagrKamClose = document.querySelector('.razr-niz-zagr-kam-clue-close')
+const razrezhNizZagrKamInput = document.querySelector('#razrNizZagrKamInput');
+const razrezhNizZagrKamForm = document.querySelector('.mnemo__param-clue-form--razr-niz-zagr-kam-clue');
+
 const razrezhVtopke = document.querySelector('.razrezh-topka');
 razrezhVtopke.dataset.description = 'Разрежение в топке печи'
 razrezhVtopke.dataset.conditionMin = -4;
@@ -429,6 +439,20 @@ tooltipVisible(
   -10,
   0
 );
+
+tooltipVisible(
+  razrezhNizZagrKamClick,
+  razrezhNizZagrKamClue,
+  razrezhNizZagrKamClose,
+  razrezhNizZagrKamInput,
+  razrezhNizZagrKam,
+  razrezhNizZagrKamForm,
+  false,
+  null,
+  -10,
+  0
+);
+
 tooltipVisible(
   urovenVkotleClick,
   urovenVkotleClue,
@@ -494,6 +518,7 @@ const modalInputTemperGazovKotelUtilizVal = document.querySelector('#temperGazov
 
 // const modalInputDavlVBarabane = document.querySelector('#pVbarabaneInputModal');
 const modalInputDavlGazPosleSkrubber = document.querySelector('#DavlGazPosleSkrubberInputModal');
+const modalInputRazrezhNizZagrKam = document.querySelector('#razrezhNizZagrKameryInputModal');
 const modalInputRazrezhVtopke = document.querySelector('#razrezhVtopkeInputModal');
 
 const modalInputUrovenVkotle = document.querySelector('#urovenVkotleInputModal');
@@ -706,6 +731,19 @@ tooltipVisible(
   null,
   0,
   40
+);
+
+tooltipVisible(
+  razrezhNizZagrKamClick,
+  razrezhNizZagrKamClue,
+  razrezhNizZagrKamClose,
+  modalInputRazrezhNizZagrKam,
+  razrezhNizZagrKam,
+  modalForm,
+  false,
+  null,
+  -10,
+  0
 );
 
 tooltipVisible(

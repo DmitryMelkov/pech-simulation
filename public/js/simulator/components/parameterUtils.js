@@ -148,6 +148,15 @@ export const parameters = [
     type: 'pressure',
   },
   {
+    spanSelector: '.razr-niz-zagr-kam',
+    modalInputSelector: '#razrezhNizZagrKameryInputModal',
+    clueInputSelector: '#razrNizZagrKamInput',
+    conditionMin: -5,
+    conditionMax: -1,
+    description: 'Разрежение внизу загрузочной камеры',
+    type: 'razrezh',
+  },
+  {
     spanSelector: '.razrezh-topka',
     modalInputSelector: '#razrezhVtopkeInputModal',
     clueInputSelector: '#razrezhVtopkeInput',
@@ -212,7 +221,7 @@ export const syncInputsAndSpan = () => {
             : type === 'pressure'
             ? '0 and 40'
             : type === 'razrezh'
-            ? '-4 and -1'
+            ? '-10 and 0'
             : type === 'level'
             ? '-200 and 200'
             : type === 'levelSkrubber'
@@ -432,7 +441,9 @@ export const updateMode = () => {
   // updateParameter('.davl-v-barabane', 0, 10, firstSkolzValue);
   updateParameter('.davl-gaz-posle-skrubber', 0, 20, firstSkolzValue);
 
+  updateParameter('.razr-niz-zagr-kam', -5, -1, firstSkolzValue);
   updateParameter('.razrezh-topka', -4, -1, firstSkolzValue);
+  
   updateParameter('.uroven-v-kotle', -80, 80, firstSkolzValue);
   updateParameter('.uroven-vanne-skrubber-value', 250, 1000, firstSkolzValue);
   updateParameter('.uroven-vody-hvo-value', 1500, 6000, firstSkolzValue);
@@ -463,8 +474,9 @@ export const updateMode = () => {
 
   // addRowIfRunning(document.querySelector('.davl-v-barabane'), 'Давление в барабане котла');
   addRowIfRunning(document.querySelector('.davl-gaz-posle-skrubber'), 'Давление газов после скруббера');
-
+  addRowIfRunning(document.querySelector('.razr-niz-zagr-kam'), 'Разрежение внизу загрузочной камеры');
   addRowIfRunning(document.querySelector('.razrezh-topka'), 'Разрежение в топке печи');
+
   addRowIfRunning(document.querySelector('.uroven-v-kotle'), 'Уровень в котле');
   addRowIfRunning(document.querySelector('.uroven-vanne-skrubber-value'), 'Уровень в ванне скруббера');
   addRowIfRunning(document.querySelector('.uroven-vody-hvo-value'), 'Уровень воды в емкости ХВО');

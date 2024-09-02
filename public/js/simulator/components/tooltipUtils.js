@@ -1,6 +1,5 @@
 import { updateValueAndAnimate } from './animationUtils.js';
 import { determineMode } from './modeUtils.js';
-import { levelObj } from './level.js';
 
 // Функция отображения подсказок и обновления значений
 export const tooltipVisible = (
