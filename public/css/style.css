@@ -1909,6 +1909,14 @@ body::-webkit-scrollbar-thumb {
   margin-bottom: 30px;
 }
 
+.troubleshooting__subtitle {
+  font-size: 20px;
+  line-height: 27px;
+  font-weight: 600;
+  color: green;
+  margin-bottom: 10px;
+}
+
 .troubleshooting__descr {
   margin-bottom: 10px;
   font-size: 18px;
