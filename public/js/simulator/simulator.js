@@ -149,16 +149,25 @@ const tempergazovKotelUtilizClose = document.querySelector('.temper-gazov-kotel-
 const tempergazovKotelUtilizInput = document.querySelector('#temperGazovKotelUtilizValInput');
 const tempergazovKotelUtilizForm = document.querySelector('.mnemo__param-clue-form--temper-gazov-kotel-utiliz-val-clue');
 
+// const davlVbarabane = document.querySelector('.davl-v-barabane');
+// davlVbarabane.dataset.description = 'Давление в барабане котла';
+// davlVbarabane.dataset.conditionMin = 0;
+// davlVbarabane.dataset.conditionMax = 10;
+// const davlVbarabaneClick = document.querySelector('.davl-v-barabane-js');
+// const davlVbarabaneClue = document.querySelector('.p-v-barabane-clue');
+// const davlVbarabaneClose = document.querySelector('.p-v-barabane-clue-close')
+// const davlVbarabaneInput = document.querySelector('#pVbarabaneInput');
+// const davlVbarabaneForm = document.querySelector('.mnemo__param-clue-form--p-v-barabane-clue');
 
-const davlVbarabane = document.querySelector('.davl-v-barabane');
-davlVbarabane.dataset.description = 'Давление в барабане котла';
-davlVbarabane.dataset.conditionMin = 0;
-davlVbarabane.dataset.conditionMax = 10;
-const davlVbarabaneClick = document.querySelector('.davl-v-barabane-js');
-const davlVbarabaneClue = document.querySelector('.p-v-barabane-clue');
-const davlVbarabaneClose = document.querySelector('.p-v-barabane-clue-close')
-const davlVbarabaneInput = document.querySelector('#pVbarabaneInput');
-const davlVbarabaneForm = document.querySelector('.mnemo__param-clue-form--p-v-barabane-clue');
+const davlGazPosleSkrubber = document.querySelector('.davl-gaz-posle-skrubber');
+davlGazPosleSkrubber.dataset.description = 'Давление газов после скруббера';
+davlGazPosleSkrubber.dataset.conditionMin = 0;
+davlGazPosleSkrubber.dataset.conditionMax = 20;
+const davlGazPosleSkrubberClick = document.querySelector('.davl-gaz-posle-skrubber-js');
+const davlGazPosleSkrubberClue = document.querySelector('.davl-gaz-posle-skrubber-clue');
+const davlGazPosleSkrubberClose = document.querySelector('.davl-gaz-posle-skrubber-clue-close')
+const davlGazPosleSkrubberInput = document.querySelector('#davlGazPosleSkrubberInput');
+const davlGazPosleSkrubberForm = document.querySelector('.mnemo__param-clue-form--davl-gaz-posle-skrubber-clue');
 
 const razrezhVtopke = document.querySelector('.razrezh-topka');
 razrezhVtopke.dataset.description = 'Разрежение в топке печи'
@@ -382,18 +391,32 @@ tooltipVisible(
   1500
 )
 
+// tooltipVisible(
+//   davlVbarabaneClick,
+//   davlVbarabaneClue,
+//   davlVbarabaneClose,
+//   davlVbarabaneInput,
+//   davlVbarabane,
+//   davlVbarabaneForm,
+//   false,
+//   null,
+//   0,
+//   40
+// );
+
 tooltipVisible(
-  davlVbarabaneClick,
-  davlVbarabaneClue,
-  davlVbarabaneClose,
-  davlVbarabaneInput,
-  davlVbarabane,
-  davlVbarabaneForm,
+  davlGazPosleSkrubberClick,
+  davlGazPosleSkrubberClue,
+  davlGazPosleSkrubberClose,
+  davlGazPosleSkrubberInput,
+  davlGazPosleSkrubber,
+  davlGazPosleSkrubberForm,
   false,
   null,
   0,
-  20
+  40
 );
+
 tooltipVisible(
   razrezhVtopkeClick,
   razrezhVtopkeClue,
@@ -469,7 +492,8 @@ const modalInputTemperGazovPosleSkrubber = document.querySelector('#temperGazovP
 const modalInputTemperVodyVVanneSkrubber = document.querySelector('#temperVodyVVanneSkrubberInputModal');
 const modalInputTemperGazovKotelUtilizVal = document.querySelector('#temperGazovKotelUtilizValInputModal');
 
-const modalInputDavlVBarabane = document.querySelector('#pVbarabaneInputModal');
+// const modalInputDavlVBarabane = document.querySelector('#pVbarabaneInputModal');
+const modalInputDavlGazPosleSkrubber = document.querySelector('#DavlGazPosleSkrubberInputModal');
 const modalInputRazrezhVtopke = document.querySelector('#razrezhVtopkeInputModal');
 
 const modalInputUrovenVkotle = document.querySelector('#urovenVkotleInputModal');
@@ -658,18 +682,32 @@ tooltipVisible(
   1500
 )
 
+// tooltipVisible(
+//   davlVbarabaneClick,
+//   davlVbarabaneClue,
+//   davlVbarabaneClose,
+//   modalInputDavlVBarabane,
+//   davlVbarabane,
+//   modalForm,
+//   false,
+//   null,
+//   0,
+//   40
+// );
+
 tooltipVisible(
-  davlVbarabaneClick,
-  davlVbarabaneClue,
-  davlVbarabaneClose,
-  modalInputDavlVBarabane,
-  davlVbarabane,
+  davlGazPosleSkrubberClick,
+  davlGazPosleSkrubberClue,
+  davlGazPosleSkrubberClose,
+  modalInputDavlGazPosleSkrubber,
+  davlGazPosleSkrubber,
   modalForm,
   false,
   null,
   0,
-  20
+  40
 );
+
 tooltipVisible(
   razrezhVtopkeClick,
   razrezhVtopkeClue,
@@ -682,6 +720,7 @@ tooltipVisible(
   -10,
   0
 );
+
 tooltipVisible(
   urovenVkotleClick,
   urovenVkotleClue,

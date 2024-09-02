@@ -616,6 +616,43 @@
     </div>
   </div>
   <div class="mnemo__modal-background modal-param-bg-js">
+    <div class="mnemo__modal-start modal-param-js modal-param-js--davl-gazov-posle-skrubbera">
+      <div class="mnemo__modal-title">
+        <h2 class="mnemo__modal-title-text title-reset">Давление газов после скруббера</h2>
+        <button class="mnemo__modal-close modal-param-close-js btn-reset">
+          <div class="krest">
+            <span class="line-1"></span>
+            <span class="line-2"></span>
+          </div>
+        </button>
+      </div>
+      <div class="troubleshooting">
+        <h3 class="troubleshooting__title title-reset">
+          Возможные причины и действия по устранению неполадок
+        </h3>
+        <p class="troubleshooting__descr descr-reset">
+          Нажмите на причину чтобы прочитать пошаговые действия
+        </p>
+        <div class="troubleshooting__section">
+          <div class="troubleshooting__item troubleshooting__item--cause">
+            <span class="troubleshooting__label">Причина:</span> Есть
+          </div>
+          <div class="troubleshooting__item troubleshooting__item--action">
+            <span class="troubleshooting__label">Действие:</span> Нету
+          </div>
+        </div>
+        <div class="troubleshooting__section">
+          <div class="troubleshooting__item troubleshooting__item--cause">
+            <span class="troubleshooting__label">Причина:</span> Есть
+          </div>
+          <div class="troubleshooting__item troubleshooting__item--action">
+            <span class="troubleshooting__label">Действие:</span> Нету
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mnemo__modal-background modal-param-bg-js">
     <div class="mnemo__modal-start modal-param-js modal-param-js--razrezh-v-topke">
       <div class="mnemo__modal-title">
         <h2 class="mnemo__modal-title-text title-reset">Разрежение в топке печи</h2>
@@ -954,8 +991,16 @@
 
                 <div class="modal-content__input-box">
                   <label class="modal-content__label" for="pVbarabaneInputModal">Давление в барабане котла</label>
-                  <input class="modal-content__input" data-type="pressure" min="0" max="20" step="0.1"
-                    name="modalPvBarabane" type="number" placeholder="Введите значение кгс/см2" id="pVbarabaneInputModal"
+                  <input class="modal-content__input" data-type="pressure" min="0" max="40" step="0.1"
+                    name="modalPvBarabane" type="number" placeholder="Введите значение кгс/м2" id="pVbarabaneInputModal"
+                    value="0">
+                  <span class="modal-content__error">Введите значение</span>
+                </div>
+
+                <div class="modal-content__input-box">
+                  <label class="modal-content__label" for="DavlGazPosleSkrubberInputModal">Давление газов после скруббера</label>
+                  <input class="modal-content__input" data-type="pressure" min="0" max="40" step="0.1"
+                    name="modalDavlGazPosleSkrubber" type="number" placeholder="Введите значение кгс/м2" id="DavlGazPosleSkrubberInputModal"
                     value="0">
                   <span class="modal-content__error">Введите значение</span>
                 </div>
@@ -1087,7 +1132,12 @@
               <tr class="modal__table-tr">
                 <td class="modal__table-td table__left">Давление в барабане котла</td>
                 <td class="modal__table-td table__center">Все режимы</td>
-                <td class="modal__table-td">от 0 до 10 кгс/см2</td>
+                <td class="modal__table-td">от 0 до 10 кгс/м2</td>
+              </tr>
+              <tr class="modal__table-tr">
+                <td class="modal__table-td table__left">Давление газов после скруббера</td>
+                <td class="modal__table-td table__center">Все режимы</td>
+                <td class="modal__table-td">не более 20 кгс/м2</td>
               </tr>
               <tr class="modal__table-tr">
                 <td class="modal__table-td table__left">Разрежение в топке печи</td>
@@ -1768,6 +1818,7 @@
           </div>
         </div>
       </div>
+
       <div class="mnemo__param mnemo__tooltip granul-posle-holodil">
         <div class="granul-holod-js">
           <span class="mnemo__param-text temper-granul-holod">
@@ -1880,12 +1931,42 @@
           </div>
 
 
-          <!-- <div class="mnemo__param  p-gazov-posle-skrubber">
-            <span class="mnemo__param-text davl-gaz-posle-skruber">
-              15,4
-            </span>
-            <span class="mnemo__param-naimenov davl-gaz-posle-skruber-span">кгс/м2</span>
-          </div> -->
+          <div class="mnemo__param mnemo__tooltip p-gazov-posle-skrubber">
+            <div class="davl-gaz-posle-skrubber-js">
+              <span class="mnemo__param-text davl-gaz-posle-skrubber">
+                10
+              </span>
+              <span class="mnemo__param-naimenov davl-gaz-posle-skrubber-span">кгс/м2</span>
+            </div>
+            <div class="mnemo__param-clue davl-gaz-posle-skrubber-clue">
+              <div class="mnemo__param-clue-content">
+                <div class="mnemo__param-clue-title">
+                  <h2 class="mnemo__param-clue-title-text title-reset">Давление газов после скруббера</h2>
+                  <button class="mnemo__tooltip-close davl-gaz-posle-skrubber-clue-close btn-reset">
+                    <div class="krest">
+                      <span class="line-1"></span>
+                      <span class="line-2"></span>
+                    </div>
+                  </button>
+                </div>
+                <div class="mnemo__param-clue-div">Рекомендуемый диапазон:
+                  <span class="mnemo__param-clue-span">
+                    не более 20 кгс/м2
+                  </span>
+                </div>
+                <form class="mnemo__param-clue-form mnemo__param-clue-form--davl-gaz-posle-skrubber-clue">
+                  <div class="mnemo__param-clue-form-div">
+                    <input class="mnemo__param-clue-input" type="number" placeholder="Введите значение"
+                      id="davlGazPosleSkrubberInput" min="0" max="1500" step="1">
+                    <label class="mnemo__param-clue-label" for="davlGazPosleSkrubberInput"></label>
+                    <button class="mnemo__param-clue-form-btn--ok btn-reset" type="submit">
+                      Принять
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
 
       <div class="mnemo__param mnemo__tooltip temper-v-topke">
         <div class="temper-v-topke-js">
@@ -2208,7 +2289,7 @@
           </div> -->
 
 
-      <div class="mnemo__param mnemo__tooltip p-v-barabane-kotla">
+      <!-- <div class="mnemo__param mnemo__tooltip p-v-barabane-kotla">
         <div class="davl-v-barabane-js">
           <span class="mnemo__param-text davl-v-barabane">
             0
@@ -2243,7 +2324,7 @@
             </form>
           </div>
         </div>
-      </div>
+      </div> -->
 
       <!-- <div class="mnemo__param uroven-v-barabane-kotla">
             <span class="mnemo__param-text uroven-v-barabane-kotla-value">

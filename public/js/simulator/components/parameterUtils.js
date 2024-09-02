@@ -129,13 +129,22 @@ export const parameters = [
     description: 'Температура газов котла утилизатора',
     type: 'temperature',
   },
+  // {
+  //   spanSelector: '.davl-v-barabane',
+  //   modalInputSelector: '#pVbarabaneInputModal',
+  //   clueInputSelector: '#pVbarabaneInput',
+  //   conditionMin: 0,
+  //   conditionMax: 10,
+  //   description: 'Давление в барабане котла',
+  //   type: 'pressure',
+  // },
   {
-    spanSelector: '.davl-v-barabane',
-    modalInputSelector: '#pVbarabaneInputModal',
-    clueInputSelector: '#pVbarabaneInput',
+    spanSelector: '.davl-gaz-posle-skrubber',
+    modalInputSelector: '#DavlGazPosleSkrubberInputModal',
+    clueInputSelector: '#davlGazPosleSkrubberInput',
     conditionMin: 0,
-    conditionMax: 10,
-    description: 'Давление в барабане котла',
+    conditionMax: 20,
+    description: 'Давление газов после скруббера',
     type: 'pressure',
   },
   {
@@ -184,7 +193,7 @@ export const syncInputsAndSpan = () => {
     if (type === 'temperature') {
       isValid = !isNaN(value) && value >= 0 && value <= 1500;
     } else if (type === 'pressure') {
-      isValid = !isNaN(value) && value >= 0 && value <= 20;
+      isValid = !isNaN(value) && value >= 0 && value <= 40;
     } else if (type === 'razrezh') {
       isValid = !isNaN(value) && value >= -10 && value <= 0;
     } else if (type === 'level') {
@@ -201,7 +210,7 @@ export const syncInputsAndSpan = () => {
           type === 'temperature'
             ? '0 and 1500'
             : type === 'pressure'
-            ? '0 and 20'
+            ? '0 and 40'
             : type === 'razrezh'
             ? '-4 and -1'
             : type === 'level'
@@ -420,7 +429,9 @@ export const updateMode = () => {
   updateParameter('.temper-vody-v-vanne-skrubber-span', 0, 90, firstSkolzValue);
   updateParameter('.temper-gazov-kotel-utiliz-val-span', 0, 1000, firstSkolzValue);
 
-  updateParameter('.davl-v-barabane', 0, 10, firstSkolzValue);
+  // updateParameter('.davl-v-barabane', 0, 10, firstSkolzValue);
+  updateParameter('.davl-gaz-posle-skrubber', 0, 20, firstSkolzValue);
+
   updateParameter('.razrezh-topka', -4, -1, firstSkolzValue);
   updateParameter('.uroven-v-kotle', -80, 80, firstSkolzValue);
   updateParameter('.uroven-vanne-skrubber-value', 250, 1000, firstSkolzValue);
@@ -450,7 +461,9 @@ export const updateMode = () => {
   addRowIfRunning(document.querySelector('.temper-vody-v-vanne-skrubber-span'), 'Температура воды в ванне скруббера');
   addRowIfRunning(document.querySelector('.temper-gazov-kotel-utiliz-val-span'), 'Температура газов котла утилизатора');
 
-  addRowIfRunning(document.querySelector('.davl-v-barabane'), 'Давление в барабане котла');
+  // addRowIfRunning(document.querySelector('.davl-v-barabane'), 'Давление в барабане котла');
+  addRowIfRunning(document.querySelector('.davl-gaz-posle-skrubber'), 'Давление газов после скруббера');
+
   addRowIfRunning(document.querySelector('.razrezh-topka'), 'Разрежение в топке печи');
   addRowIfRunning(document.querySelector('.uroven-v-kotle'), 'Уровень в котле');
   addRowIfRunning(document.querySelector('.uroven-vanne-skrubber-value'), 'Уровень в ванне скруббера');

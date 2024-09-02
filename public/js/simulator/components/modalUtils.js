@@ -21,7 +21,7 @@ export const validateInputs = (inputs) => {
         const numericValue = parseFloat(value);
         if (inputType === 'temperature' && (numericValue < 0 || numericValue > 1500)) {
           isValid = false;
-        } else if (inputType === 'pressure' && (numericValue < 0 || numericValue > 20)) {
+        } else if (inputType === 'pressure' && (numericValue < 0 || numericValue > 40)) {
           isValid = false;
         } else if (inputType === 'razrezh' && (numericValue < -10 || numericValue > 0)) {
           isValid = false;
@@ -40,7 +40,7 @@ export const validateInputs = (inputs) => {
           errorElement.textContent = inputType === 'temperature'
           ? 'Диапазон от 0 до 1500'
           : inputType === 'pressure'
-          ? 'Диапазон от 0 до 20'
+          ? 'Диапазон от 0 до 40'
           : inputType === 'razrezh'
           ? 'Диапазон от 0 до -10'
           : inputType === 'level'
@@ -111,6 +111,7 @@ export const setupModalEvents = (btnModal, modalBackground, modalActive, btnAcce
       document.querySelector('#temperGazovKotelUtilizValInputModal'),
 
       document.querySelector('#pVbarabaneInputModal'),
+      document.querySelector('#DavlGazPosleSkrubberInputModal'),
       document.querySelector('#razrezhVtopkeInputModal'),
       
       document.querySelector('#urovenVkotleInputModal'),
