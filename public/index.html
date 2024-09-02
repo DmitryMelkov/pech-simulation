@@ -17,7 +17,7 @@
   <div class="mnemo__modal-background modal-param-bg-js">
     <div class="mnemo__modal-start modal-param-js modal-param-js--temper-1-skolz">
       <div class="mnemo__modal-title">
-        <h2 class="mnemo__modal-title-text title-reset">1-СК</h2>
+        <h2 class="mnemo__modal-title-text title-reset">Температура 1-СК</h2>
         <button class="mnemo__modal-close modal-param-close-js btn-reset">
           <div class="krest">
             <span class="line-1"></span>
@@ -64,7 +64,7 @@
   <div class="mnemo__modal-background modal-param-bg-js">
     <div class="mnemo__modal-start modal-param-js modal-param-js--temper-2-skolz">
       <div class="mnemo__modal-title">
-        <h2 class="mnemo__modal-title-text title-reset">2-СК"</h2>
+        <h2 class="mnemo__modal-title-text title-reset">Температура 2-СК"</h2>
         <button class="mnemo__modal-close modal-param-close-js btn-reset">
           <div class="krest">
             <span class="line-1"></span>
@@ -111,7 +111,7 @@
   <div class="mnemo__modal-background modal-param-bg-js">
     <div class="mnemo__modal-start modal-param-js modal-param-js--temper-3-skolz">
       <div class="mnemo__modal-title">
-        <h2 class="mnemo__modal-title-text title-reset">3-СК</h2>
+        <h2 class="mnemo__modal-title-text title-reset">Температура 3-СК</h2>
         <button class="mnemo__modal-close modal-param-close-js btn-reset">
           <div class="krest">
             <span class="line-1"></span>
@@ -644,10 +644,46 @@
           </div>
         </button>
       </div>
-      <div>
-        <p class="mnemo__modal-descr descr-reset">
-          Тут будет описание с выполнением каких то действий по нормализации параметра
+      <div class="troubleshooting">
+        <h3 class="troubleshooting__title title-reset">
+          Возможные причины и действия по устранению неполадок
+        </h3>
+        <p class="troubleshooting__descr descr-reset">
+          Нажмите на причину чтобы прочитать пошаговые действия
         </p>
+        <div class="troubleshooting__section">
+          <div class="troubleshooting__item troubleshooting__item--cause">
+            <span class="troubleshooting__label">Причина:</span> Резкое уменьшение расхода пара
+          </div>
+          <div class="troubleshooting__item troubleshooting__item--action">
+            <span class="troubleshooting__label">Действие:</span> При превышении уровня воды до установки срабатывания защиты необходимо:
+            - отключить автоматику питания котла и дистанционно уменьшить расход воды до восстановления среднего уровня.             
+          </div>
+        </div>
+        <div class="troubleshooting__section">
+          <div class="troubleshooting__item troubleshooting__item--cause">
+            <span class="troubleshooting__label">Причина:</span> Неисправность водоуказательных стекол.
+          </div>
+          <div class="troubleshooting__item troubleshooting__item--action">
+            <span class="troubleshooting__label">Действие:</span> Убедиться в правильности показаний водоуказательных стекол путем их продувки.
+          </div>
+        </div>
+        <div class="troubleshooting__section">
+          <div class="troubleshooting__item troubleshooting__item--cause">
+            <span class="troubleshooting__label">Причина:</span>Отключение или неисправность автоматики питания (исполнительного механизма и контроллера).
+          </div>
+          <div class="troubleshooting__item troubleshooting__item--action">
+            <span class="troubleshooting__label">Действие:</span> Если, несмотря на принятые меры, уровень продолжает  расти, то необходимо:
+            <ul class="list-reset">
+              <li>- уменьшить питание котла, закрыв запорную арматуру на питательной линии;</li>
+              <li>- осторожно открыть сливной вентиль с нижнего барабана и плавно слить часть лишней воды в канализацию;</li>
+              <li>- затем закрыть вентиль;</li>
+              <li>- проверить состояние автоматики питания котла-утилизатора;</li>
+              <li>- производить контроль уровня воды по водоуказа-тельным стеклам и панели оператора.</li>
+            </ul>
+            Если уровень воды не снижается - произвести аварийную остановку котла и отключить котел от паропровода
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -2135,7 +2171,7 @@
         <div class="mnemo__param-clue temper-gazov-kotel-utiliz-val-clue">
           <div class="mnemo__param-clue-content">
             <div class="mnemo__param-clue-title">
-              <h2 class="mnemo__param-clue-title-text title-reset">Темп-ра газов котла утил-ра</h2>
+              <h2 class="mnemo__param-clue-title-text title-reset">Температура газов котла-утилизатора</h2>
               <button class="mnemo__tooltip-close temper-gazov-kotel-utiliz-val-close btn-reset">
                 <div class="krest">
                   <span class="line-1"></span>
