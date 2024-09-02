@@ -156,6 +156,15 @@ export const parameters = [
     description: 'Уровень в котле',
     type: 'level',
   },
+  {
+    spanSelector: '.uroven-vanne-skrubber-value',
+    modalInputSelector: '#urovenVskrubberInputModal',
+    clueInputSelector: '#urovenSkrubberInput',
+    conditionMin: 250,
+    conditionMax: 1000,
+    description: 'Уровень в ванне скруббера',
+    type: 'levelSkrubber',
+  }
 ];
 
 // Синхронизация инпутов и спанов
@@ -171,6 +180,8 @@ export const syncInputsAndSpan = () => {
       isValid = !isNaN(value) && value >= -10 && value <= 0;
     } else if (type === 'level') {
       isValid = !isNaN(value) && value >= -200 && value <= 200;
+    } else if (type === 'levelSkrubber') {
+      isValid = !isNaN(value) && value >= 0 && value <= 1000;
     }
 
     if (!isValid) {
@@ -184,6 +195,8 @@ export const syncInputsAndSpan = () => {
             ? '-4 and -1'
             : type === 'level'
             ? '-200 and 200'
+            : type === 'levelSkrubber'
+            ? '0 and 1000'
             : 'unknown range'
         }`
       );
@@ -200,9 +213,40 @@ export const syncInputsAndSpan = () => {
       const levelKotel = document.querySelector('.column-kotel__percent');
       const firstSkolzValue = parseFloat(document.querySelector('.temper-1-skolz').textContent.trim());
       const levelKotelPercent = document.querySelector('.column-kotel__span-1');
-
+    
       if (levelKotel && levelKotelPercent && !isNaN(firstSkolzValue)) {
-        updateLevelAnimation(value, -80, 80, levelKotel, levelKotelPercent, firstSkolzValue);
+        updateLevelAnimation(
+          value,
+          -80,
+          80,
+          levelKotel,
+          levelKotelPercent,
+          firstSkolzValue,
+          -200,
+          200,
+          85,
+          64
+        );
+      }
+    }
+    if (type === 'levelSkrubber') {
+      const levelSkrubber = document.querySelector('.column-skrubber__percent');
+      const firstSkolzValue = parseFloat(document.querySelector('.temper-1-skolz').textContent.trim());
+      const levelSkrubberPercent = document.querySelector('.column-skrubber__span-1');
+    
+      if (levelSkrubber && levelSkrubberPercent && !isNaN(firstSkolzValue)) {
+        updateLevelAnimation(
+          value,
+          250,
+          1000, 
+          levelSkrubber,
+          levelSkrubberPercent,
+          firstSkolzValue,
+          0, 
+          1000,  
+          139,   
+          105 
+        );
       }
     }
   };
@@ -249,9 +293,47 @@ export const updateParameter = (paramSelector, conditionMin, conditionMax, first
     const levelKotel = document.querySelector('.column-kotel__percent');
     const levelKotelPercent = document.querySelector('.column-kotel__span-1');
     if (levelKotel && levelKotelPercent) {
-      updateLevelAnimation(paramValue, conditionMin, conditionMax, levelKotel, levelKotelPercent, firstSkolzValue);
+      const minScale = -200;  
+      const maxScale = 200;  
+      const maxSizeWide = 85;  
+      const maxSizeSquare = 64;  
+      updateLevelAnimation(
+        paramValue,          
+        conditionMin,        
+        conditionMax,       
+        levelKotel,          
+        levelKotelPercent,   
+        firstSkolzValue,     
+        minScale,           
+        maxScale,            
+        maxSizeWide,         
+        maxSizeSquare
+      );
     }
   }
+  if (paramSelector === '.uroven-vanne-skrubber-value') {
+    const levelSkrubber = document.querySelector('.column-skrubber__percent');
+    const levelSkrubberPercent = document.querySelector('.column-skrubber__span-1');
+    if (levelSkrubber && levelSkrubberPercent) {
+      const minScale = 0;  
+      const maxScale = 1000;  
+      const maxSizeWide = 139;  
+      const maxSizeSquare = 105;  
+      updateLevelAnimation(
+        paramValue,          
+        conditionMin,        
+        conditionMax,       
+        levelSkrubber,          
+        levelSkrubberPercent,   
+        firstSkolzValue,     
+        minScale,           
+        maxScale,            
+        maxSizeWide,         
+        maxSizeSquare
+      );
+    }
+  }
+  
 };
 
 // Функция обновления режима
@@ -286,6 +368,7 @@ export const updateMode = () => {
   updateParameter('.davl-v-barabane', 0, 10, firstSkolzValue);
   updateParameter('.razrezh-topka', -4, -1, firstSkolzValue);
   updateParameter('.uroven-v-kotle', -80, 80, firstSkolzValue);
+  updateParameter('.uroven-vanne-skrubber-value', 250, 1000, firstSkolzValue);
 
   // Изменение диапазонов для 3 скользящей в зависимости от первого значения
   if (mode === 'Установившийся режим') {
@@ -314,6 +397,7 @@ export const updateMode = () => {
   addRowIfRunning(document.querySelector('.davl-v-barabane'), 'Давление в барабане котла');
   addRowIfRunning(document.querySelector('.razrezh-topka'), 'Разрежение в топке печи');
   addRowIfRunning(document.querySelector('.uroven-v-kotle'), 'Уровень в котле');
+  addRowIfRunning(document.querySelector('.uroven-vanne-skrubber-value'), 'Уровень в ванне скруббера');
 
   checkAndInsertTemplate();
 };

@@ -33,23 +33,31 @@ export const applyAnimation = (value, param, paramSpan, conditionMin, conditionM
 }; 
 
 // Функция для применения анимации к уровню
-export const updateLevelAnimation = (value, conditionMin, conditionMax, levelElement, levelPercentElement, firstSkolzValue) => {
+export const updateLevelAnimation = (
+  value,
+  conditionMin,
+  conditionMax,
+  levelElement,
+  levelPercentElement,
+  firstSkolzValue,
+  minScale,
+  maxScale,
+  maxSizeWide,
+  maxSizeSquare
+) => {
   const levelValue = parseFloat(value);
   let screenWidth = window.innerWidth;
-  if (screenWidth < 1568) {
-    levelObj(-200, 200, levelValue, 64, levelElement, levelPercentElement);
-  } else {
-    levelObj(-200, 200, levelValue, 85, levelElement, levelPercentElement);
-  }
-  
+  const maxSize = screenWidth < 1568 ? maxSizeSquare : maxSizeWide;
+
+  levelObj(minScale, maxScale, levelValue, maxSize, levelElement, levelPercentElement);
 
   if (firstSkolzValue < 50 || (levelValue >= conditionMin && levelValue <= conditionMax)) {
     levelElement.style.backgroundColor = '#00bfff';
     levelElement.classList.remove('blink');
-    return true
+    return true;
   } else {
     levelElement.style.backgroundColor = '';
     levelElement.classList.add('blink');
-    return false
+    return false;
   }
 };

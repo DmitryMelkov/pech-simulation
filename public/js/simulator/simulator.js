@@ -180,6 +180,16 @@ const urovenVkotleClose = document.querySelector('.uroven-v-kotle-clue-close')
 const urovenVkotleInput = document.querySelector('#urovenVkotleInput');
 const urovenVkotleForm = document.querySelector('.mnemo__param-clue-form--uroven-v-kotle-clue');
 
+const urovenVskrubber = document.querySelector('.uroven-vanne-skrubber-value');
+urovenVskrubber.dataset.description = 'Уровень в ванне скруббера'
+urovenVskrubber.dataset.conditionMin = 250;
+urovenVskrubber.dataset.conditionMax = 1000;
+const urovenVskrubberClick = document.querySelector('.uroven-vanne-skrubber-js');
+const urovenVskrubberClue = document.querySelector('.uroven-vanne-skrubber-clue');
+const urovenVskrubberClose = document.querySelector('.uroven-vanne-skrubber-clue-close')
+const urovenVskrubberInput = document.querySelector('#urovenSkrubberInput');
+const urovenVskrubberForm = document.querySelector('.mnemo__param-clue-form--uroven-vanne-skrubber-clue');
+
 // Функции для инпутов в мнемосхеме
 tooltipVisible(
   firstSkolzClick,
@@ -399,6 +409,19 @@ tooltipVisible(
   200
 );
 
+tooltipVisible(
+  urovenVskrubberClick,
+  urovenVskrubberClue,
+  urovenVskrubberClose,
+  urovenVskrubberInput,
+  urovenVskrubber,
+  urovenVskrubberForm,
+  false,
+  null,
+  0,
+  1000
+);
+
 
 
 // Функции для инпутов в модалке
@@ -424,11 +447,11 @@ const modalInputTemperGazovPosleSkrubber = document.querySelector('#temperGazovP
 const modalInputTemperVodyVVanneSkrubber = document.querySelector('#temperVodyVVanneSkrubberInputModal');
 const modalInputTemperGazovKotelUtilizVal = document.querySelector('#temperGazovKotelUtilizValInputModal');
 
-
-
 const modalInputDavlVBarabane = document.querySelector('#pVbarabaneInputModal');
 const modalInputRazrezhVtopke = document.querySelector('#razrezhVtopkeInputModal');
+
 const modalInputUrovenVkotle = document.querySelector('#urovenVkotleInputModal');
+const modalInputUrovenVskrubber = document.querySelector('#urovenVskrubberInputModal');
 
 
 
@@ -649,6 +672,19 @@ tooltipVisible(
   -200,
   200
 );
+tooltipVisible(
+  urovenVskrubberClick,
+  urovenVskrubberClue,
+  urovenVskrubberClose,
+  modalInputUrovenVskrubber,
+  urovenVskrubber,
+  modalForm,
+  false,
+  null,
+  0,
+  1000
+);
+
 
 
 // Инициализация синхронизации инпутов и span

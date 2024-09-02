@@ -16,8 +16,6 @@ export const levelObj = (minScale, maxScale, current, maxSize, level, levelPerce
   level.style.height = `${px}px`;
 };
 
-
-
 const levelKotel = document.querySelector('.column-kotel__percent');
 const valueKotelCurrent = document.querySelector('.uroven-v-kotle').innerHTML;
 const levelKotelPercent = document.querySelector('.column-kotel__span-1');
@@ -31,25 +29,25 @@ if ((levelKotel, valueKotelCurrent, levelKotelPercent)) {
   }
 }
 
+const levelSkrubber = document.querySelector('.column-skrubber__percent');
+const valueSkrubberCurrent = document.querySelector('.uroven-vanne-skrubber-value').innerHTML;
+const levelSkrubberPercent = document.querySelector('.column-skrubber__span-1');
+
+
+if ((levelSkrubber, valueSkrubberCurrent, levelSkrubberPercent)) {
+  levelObj(0, 1000, valueSkrubberCurrent, 139, levelSkrubber, levelSkrubberPercent, 25, 90);
+  if (screenWidth < 1568) {
+    levelObj(0, 1000, valueSkrubberCurrent, 105, levelSkrubber, levelSkrubberPercent, 25, 90);
+  }
+}
 
 // const levelHvo = document.querySelector('.column-hvo__percent');
 // const valueHvoCurrent = document.querySelector('.uroven-vody-hvo-value').innerHTML;
 // const levelHvoPercent = document.querySelector('.column-hvo__span-1');
 
-// const levelSkrubber = document.querySelector('.column-skrubber__percent');
-// const valueSkrubberCurrent = document.querySelector('.uroven-vanne-skrubber-value').innerHTML;
-// const levelSkrubberPercent = document.querySelector('.column-skrubber__span-1');
-
 // if ((levelHvo, valueHvoCurrent, levelHvoPercent)) {
 //   levelObj(0, 6000, valueHvoCurrent, 41, levelHvo, levelHvoPercent, 25, 90);
 //   if (screenWidth < 1568) {
 //     levelObj(0, 6000, valueHvoCurrent, 32, levelHvo, levelHvoPercent, 25, 90);
-//   }
-// }
-
-// if ((levelSkrubber, valueSkrubberCurrent, levelSkrubberPercent)) {
-//   levelObj(0, 1000, valueSkrubberCurrent, 139, levelSkrubber, levelSkrubberPercent, 25, 90);
-//   if (screenWidth < 1568) {
-//     levelObj(0, 1000, valueSkrubberCurrent, 105, levelSkrubber, levelSkrubberPercent, 25, 90);
 //   }
 // }
