@@ -41,13 +41,13 @@ if ((levelSkrubber, valueSkrubberCurrent, levelSkrubberPercent)) {
   }
 }
 
-// const levelHvo = document.querySelector('.column-hvo__percent');
-// const valueHvoCurrent = document.querySelector('.uroven-vody-hvo-value').innerHTML;
-// const levelHvoPercent = document.querySelector('.column-hvo__span-1');
+const levelHvo = document.querySelector('.column-hvo__percent');
+const valueHvoCurrent = document.querySelector('.uroven-vody-hvo-value').innerHTML;
+const levelHvoPercent = document.querySelector('.column-hvo__span-1');
 
-// if ((levelHvo, valueHvoCurrent, levelHvoPercent)) {
-//   levelObj(0, 6000, valueHvoCurrent, 41, levelHvo, levelHvoPercent, 25, 90);
-//   if (screenWidth < 1568) {
-//     levelObj(0, 6000, valueHvoCurrent, 32, levelHvo, levelHvoPercent, 25, 90);
-//   }
-// }
+if ((levelHvo, valueHvoCurrent, levelHvoPercent)) {
+  levelObj(0, 6000, valueHvoCurrent, 41, levelHvo, levelHvoPercent, 25, 90);
+  if (screenWidth < 1568) {
+    levelObj(0, 6000, valueHvoCurrent, 32, levelHvo, levelHvoPercent, 25, 90);
+  }
+}

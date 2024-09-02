@@ -29,6 +29,8 @@ export const validateInputs = (inputs) => {
           isValid = false;
         } else if (inputType === 'levelSkrubber' && (numericValue < 0 || numericValue > 1000)) {
           isValid = false;
+        } else if (inputType === 'levelHvo' && (numericValue < 0 || numericValue > 6000)) {
+          isValid = false;
       }}
 
       if (!isValid) {
@@ -45,6 +47,8 @@ export const validateInputs = (inputs) => {
           ? 'Диапазон от -200 до 200'
           : inputType === 'levelSkrubber'
           ? 'Диапазон от 0 до 1000'
+          : inputType === 'levelHvo'
+          ? 'Диапазон от 0 до 6000'
           : 'Неизвестный тип ввода';
 
         }
@@ -110,7 +114,8 @@ export const setupModalEvents = (btnModal, modalBackground, modalActive, btnAcce
       document.querySelector('#razrezhVtopkeInputModal'),
       
       document.querySelector('#urovenVkotleInputModal'),
-      document.querySelector('#urovenVskrubberInputModal')
+      document.querySelector('#urovenVskrubberInputModal'),
+      document.querySelector('#urovenHvoInputModal')
     ];
 
     if (validateInputs(inputs)) {

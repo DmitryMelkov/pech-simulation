@@ -190,6 +190,16 @@ const urovenVskrubberClose = document.querySelector('.uroven-vanne-skrubber-clue
 const urovenVskrubberInput = document.querySelector('#urovenSkrubberInput');
 const urovenVskrubberForm = document.querySelector('.mnemo__param-clue-form--uroven-vanne-skrubber-clue');
 
+const urovenHvo = document.querySelector('.uroven-vody-hvo-value');
+urovenHvo.dataset.description = 'Уровень воды в емкости ХВО'
+urovenHvo.dataset.conditionMin = 1500;
+urovenHvo.dataset.conditionMax = 6000;
+const urovenHvoClick = document.querySelector('.uroven-vody-hvo-js');
+const urovenHvoClue = document.querySelector('.uroven-vody-hvo-clue');
+const urovenHvoClose = document.querySelector('.uroven-vody-hvo-clue-close')
+const urovenHvoInput = document.querySelector('#urovenHvoInput');
+const urovenHvoForm = document.querySelector('.mnemo__param-clue-form--uroven-vody-hvo-clue');
+
 // Функции для инпутов в мнемосхеме
 tooltipVisible(
   firstSkolzClick,
@@ -422,6 +432,18 @@ tooltipVisible(
   1000
 );
 
+tooltipVisible(
+  urovenHvoClick,
+  urovenHvoClue,
+  urovenHvoClose,
+  urovenHvoInput,
+  urovenHvo,
+  urovenHvoForm,
+  false,
+  null,
+  0,
+  6000
+);
 
 
 // Функции для инпутов в модалке
@@ -452,7 +474,7 @@ const modalInputRazrezhVtopke = document.querySelector('#razrezhVtopkeInputModal
 
 const modalInputUrovenVkotle = document.querySelector('#urovenVkotleInputModal');
 const modalInputUrovenVskrubber = document.querySelector('#urovenVskrubberInputModal');
-
+const modalInputUrovenHvo = document.querySelector('#urovenHvoInputModal');
 
 
 tooltipVisible(
@@ -684,6 +706,19 @@ tooltipVisible(
   0,
   1000
 );
+tooltipVisible(
+  urovenHvoClick,
+  urovenHvoClue,
+  urovenHvoClose,
+  modalInputUrovenHvo,
+  urovenHvo,
+  modalForm,
+  false,
+  null,
+  0,
+  6000
+);
+
 
 
 

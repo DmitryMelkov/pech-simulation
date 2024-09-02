@@ -164,6 +164,15 @@ export const parameters = [
     conditionMax: 1000,
     description: 'Уровень в ванне скруббера',
     type: 'levelSkrubber',
+  },
+  {
+    spanSelector: '.uroven-vody-hvo-value',
+    modalInputSelector: '#urovenHvoInputModal',
+    clueInputSelector: '#urovenHvoInput',
+    conditionMin: 1500,
+    conditionMax: 6000,
+    description: 'Уровень воды в емкости ХВО',
+    type: 'levelHvo',
   }
 ];
 
@@ -182,6 +191,8 @@ export const syncInputsAndSpan = () => {
       isValid = !isNaN(value) && value >= -200 && value <= 200;
     } else if (type === 'levelSkrubber') {
       isValid = !isNaN(value) && value >= 0 && value <= 1000;
+    } else if (type === 'levelHvo') {
+      isValid = !isNaN(value) && value >= 0 && value <= 6000;
     }
 
     if (!isValid) {
@@ -197,6 +208,8 @@ export const syncInputsAndSpan = () => {
             ? '-200 and 200'
             : type === 'levelSkrubber'
             ? '0 and 1000'
+            : type === 'levelHvo'
+            ? '0 and 6000'
             : 'unknown range'
         }`
       );
@@ -246,6 +259,26 @@ export const syncInputsAndSpan = () => {
           1000,  
           139,   
           105 
+        );
+      }
+    }
+    if (type === 'levelHvo') {
+      const levelHvo = document.querySelector('.column-hvo__percent');
+      const firstSkolzValue = parseFloat(document.querySelector('.temper-1-skolz').textContent.trim());
+      const levelHvoPercent = document.querySelector('.column-hvo__span-1');
+    
+      if (levelHvo && levelHvoPercent && !isNaN(firstSkolzValue)) {
+        updateLevelAnimation(
+          value,
+          1500,
+          6000, 
+          levelHvo,
+          levelHvoPercent,
+          firstSkolzValue,
+          0, 
+          6000,  
+          41,   
+          32 
         );
       }
     }
@@ -333,6 +366,28 @@ export const updateParameter = (paramSelector, conditionMin, conditionMax, first
       );
     }
   }
+  if (paramSelector === '.uroven-vody-hvo-value') {
+    const levelHvo = document.querySelector('.column-hvo__percent');
+    const levelHvoPercent = document.querySelector('.column-hvo__span-1');
+    if (levelHvo && levelHvoPercent) {
+      const minScale = 0;  
+      const maxScale = 6000;  
+      const maxSizeWide = 41;  
+      const maxSizeSquare = 32;  
+      updateLevelAnimation(
+        paramValue,          
+        conditionMin,        
+        conditionMax,       
+        levelHvo,          
+        levelHvoPercent,   
+        firstSkolzValue,     
+        minScale,           
+        maxScale,            
+        maxSizeWide,         
+        maxSizeSquare
+      );
+    }
+  }
   
 };
 
@@ -369,6 +424,7 @@ export const updateMode = () => {
   updateParameter('.razrezh-topka', -4, -1, firstSkolzValue);
   updateParameter('.uroven-v-kotle', -80, 80, firstSkolzValue);
   updateParameter('.uroven-vanne-skrubber-value', 250, 1000, firstSkolzValue);
+  updateParameter('.uroven-vody-hvo-value', 1500, 6000, firstSkolzValue);
 
   // Изменение диапазонов для 3 скользящей в зависимости от первого значения
   if (mode === 'Установившийся режим') {
@@ -398,6 +454,7 @@ export const updateMode = () => {
   addRowIfRunning(document.querySelector('.razrezh-topka'), 'Разрежение в топке печи');
   addRowIfRunning(document.querySelector('.uroven-v-kotle'), 'Уровень в котле');
   addRowIfRunning(document.querySelector('.uroven-vanne-skrubber-value'), 'Уровень в ванне скруббера');
+  addRowIfRunning(document.querySelector('.uroven-vody-hvo-value'), 'Уровень воды в емкости ХВО');
 
   checkAndInsertTemplate();
 };
