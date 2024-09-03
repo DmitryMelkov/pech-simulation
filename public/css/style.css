@@ -1916,11 +1916,42 @@ body::-webkit-scrollbar-thumb {
 }
 
 .troubleshooting__subtitle {
-  font-size: 20px;
-  line-height: 27px;
-  font-weight: 600;
-  color: green;
+  padding: 5px 10px;
+  position: relative;
+  display: inline-block;
+  align-self: flex-start;
   margin-bottom: 10px;
+  text-align: left;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 400;
+  color: green;
+  border: 1px solid green;
+  background-color: transparent;
+  transition: background-color .3s ease-in-out, color .3s ease-in-out;
+  cursor: pointer;
+}
+
+.troubleshooting__subtitle:hover, .troubleshooting__subtitle.active {
+  color: white;
+  background-color: green;
+}
+
+.troubleshooting__subtitle:active {
+  color: white;
+  background-color: green;
+}
+
+.troubleshooting__subtitle:focus {
+  color: white;
+  background-color: green;
+  outline: none;
+}
+
+.troubleshooting__container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .troubleshooting__descr {
@@ -1928,6 +1959,13 @@ body::-webkit-scrollbar-thumb {
   font-size: 18px;
   line-height: 24px;
   font-weight: 400;
+  color: black;
+}
+
+.troubleshooting__descr--possible-error {
+  font-size: 20px;
+  line-height: 27px;
+  font-weight: 600;
   color: black;
 }
 
@@ -1958,7 +1996,6 @@ body::-webkit-scrollbar-thumb {
   background-color: #f8d7da;
   transform: none;
   cursor: unset;
-
 }
 
 .troubleshooting__item--cause {
@@ -1992,6 +2029,24 @@ body::-webkit-scrollbar-thumb {
   line-height: 22px;
   font-weight: 600;
   color: black;
+}
+
+.troubleshooting__item--action-possble-error {
+  display: block;
+}
+
+.troubleshooting__item--cause-possible-error:hover {
+  background-color: #f8d7da;
+  transform: none;
+  cursor: unset;
+}
+
+.troubleshooting__sections {
+  display: none;
+}
+
+.troubleshooting__sections.active {
+  display: block;
 }
 
 .bad-result-btn {
