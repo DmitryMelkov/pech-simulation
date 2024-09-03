@@ -1942,7 +1942,7 @@ body::-webkit-scrollbar-thumb {
   background-color: green;
 }
 
-.troubleshooting__subtitle:focus {
+.troubleshooting__subtitle:focus-visible {
   color: white;
   background-color: green;
   outline: none;
