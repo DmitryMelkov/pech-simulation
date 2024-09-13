@@ -6,6 +6,8 @@ export const checkAllQuestionsAnswered = (formData) => {
 
 export const getUnansweredQuestions = (formData) => {
   const answeredQuestions = [...formData.keys()].map((key) => key.split('question')[1]);
-  const allQuestions = ['1', '2', '3', '4', '5', '6', '7', '8']; 
-  return allQuestions.filter((question) => !answeredQuestions.includes(question));
+  const allQuestions = ['1', '2', '3', '4', '5', '6', '7', '8'];
+  return allQuestions
+    .filter((question) => !answeredQuestions.includes(question))
+    .map((unanswered) => `question${unanswered}`);
 };
