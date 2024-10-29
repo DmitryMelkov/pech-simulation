@@ -1,11 +1,20 @@
 export const checkAllQuestionsAnswered = (formData) => {
-  const answeredQuestions = [...formData.keys()].map((key) => key.split('question')[1]);
-  const allQuestions = ['1', '2', '3', '4', '5', '6', '7', '8'];
+  // Получаем список всех вопросов на основе ключей formData
+  const allQuestions = [...new Set([...formData.keys()].map((key) => key.match(/question(\d+)/)?.[1]))].filter(Boolean);
+
+  const answeredQuestions = [...formData.keys()]
+    .filter((key) => key.startsWith('question'))
+    .map((key) => key.split('question')[1]);
+
   return allQuestions.every((question) => answeredQuestions.includes(question));
 };
 
 export const getUnansweredQuestions = (formData) => {
-  const answeredQuestions = [...formData.keys()].map((key) => key.split('question')[1]);
-  const allQuestions = ['1', '2', '3', '4', '5', '6', '7', '8'];
+  const allQuestions = [...new Set([...formData.keys()].map((key) => key.match(/question(\d+)/)?.[1]))].filter(Boolean);
+
+  const answeredQuestions = [...formData.keys()]
+    .filter((key) => key.startsWith('question'))
+    .map((key) => key.split('question')[1]);
+
   return allQuestions.filter((question) => !answeredQuestions.includes(question));
 };
