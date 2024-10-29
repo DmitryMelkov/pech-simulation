@@ -19,11 +19,17 @@ export const loadQuestions = async () => {
               .map(
                 (option, i) => `
                   <div class="options__item">
-                    <input class="options__input" type="${Array.isArray(question.answer) ? 'checkbox' : 'radio'}"
-                           id="q${question.uniqueId}${i}" name="${question.uniqueId}" value="${option}">
-                    <label class="options__label test__question-label" for="q${question.uniqueId}${i}">
-                      <span class="test__question-span">${option}</span>
-                    </label>
+                    <div class="checkbox">
+                      <input
+                        class="checkbox__input"
+                        type="checkbox"
+                        id="q${question.uniqueId}${i}"
+                        name="${question.uniqueId}"
+                        value="${option}" />
+                      <label class="checkbox__label test__question-label" for="q${question.uniqueId}${i}">
+                        <span class="test__question-span">${option}</span>
+                      </label>
+                    </div>
                   </div>
                 `
               )
