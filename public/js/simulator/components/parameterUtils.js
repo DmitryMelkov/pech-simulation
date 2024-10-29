@@ -61,7 +61,7 @@ export const parameters = [
     spanSelector: '.temper-vniz-kamer-zagruz',
     modalInputSelector: '#temperVnizKamerZagruzInputModal',
     clueInputSelector: '#vnizKameryZagruzInput',
-    conditionMin: 0,
+    conditionMin: 1000,
     conditionMax: 1100,
     description: 'Температура внизу камеры загрузки',
     type: 'temperature',
@@ -244,7 +244,7 @@ export const syncInputsAndSpan = () => {
       const levelKotel = document.querySelector('.column-kotel__percent');
       const firstSkolzValue = parseFloat(document.querySelector('.temper-1-skolz').textContent.trim());
       const levelKotelPercent = document.querySelector('.column-kotel__span-1');
-    
+
       if (levelKotel && levelKotelPercent && !isNaN(firstSkolzValue)) {
         updateLevelAnimation(
           value,
@@ -264,19 +264,19 @@ export const syncInputsAndSpan = () => {
       const levelSkrubber = document.querySelector('.column-skrubber__percent');
       const firstSkolzValue = parseFloat(document.querySelector('.temper-1-skolz').textContent.trim());
       const levelSkrubberPercent = document.querySelector('.column-skrubber__span-1');
-    
+
       if (levelSkrubber && levelSkrubberPercent && !isNaN(firstSkolzValue)) {
         updateLevelAnimation(
           value,
           250,
-          1000, 
+          1000,
           levelSkrubber,
           levelSkrubberPercent,
           firstSkolzValue,
-          0, 
-          1000,  
-          139,   
-          105 
+          0,
+          1000,
+          139,
+          105
         );
       }
     }
@@ -284,19 +284,19 @@ export const syncInputsAndSpan = () => {
       const levelHvo = document.querySelector('.column-hvo__percent');
       const firstSkolzValue = parseFloat(document.querySelector('.temper-1-skolz').textContent.trim());
       const levelHvoPercent = document.querySelector('.column-hvo__span-1');
-    
+
       if (levelHvo && levelHvoPercent && !isNaN(firstSkolzValue)) {
         updateLevelAnimation(
           value,
           1500,
-          6000, 
+          6000,
           levelHvo,
           levelHvoPercent,
           firstSkolzValue,
-          0, 
-          6000,  
-          41,   
-          32 
+          0,
+          6000,
+          41,
+          32
         );
       }
     }
@@ -344,20 +344,20 @@ export const updateParameter = (paramSelector, conditionMin, conditionMax, first
     const levelKotel = document.querySelector('.column-kotel__percent');
     const levelKotelPercent = document.querySelector('.column-kotel__span-1');
     if (levelKotel && levelKotelPercent) {
-      const minScale = -200;  
-      const maxScale = 200;  
-      const maxSizeWide = 85;  
-      const maxSizeSquare = 64;  
+      const minScale = -200;
+      const maxScale = 200;
+      const maxSizeWide = 85;
+      const maxSizeSquare = 64;
       updateLevelAnimation(
-        paramValue,          
-        conditionMin,        
-        conditionMax,       
-        levelKotel,          
-        levelKotelPercent,   
-        firstSkolzValue,     
-        minScale,           
-        maxScale,            
-        maxSizeWide,         
+        paramValue,
+        conditionMin,
+        conditionMax,
+        levelKotel,
+        levelKotelPercent,
+        firstSkolzValue,
+        minScale,
+        maxScale,
+        maxSizeWide,
         maxSizeSquare
       );
     }
@@ -366,20 +366,20 @@ export const updateParameter = (paramSelector, conditionMin, conditionMax, first
     const levelSkrubber = document.querySelector('.column-skrubber__percent');
     const levelSkrubberPercent = document.querySelector('.column-skrubber__span-1');
     if (levelSkrubber && levelSkrubberPercent) {
-      const minScale = 0;  
-      const maxScale = 1000;  
-      const maxSizeWide = 139;  
-      const maxSizeSquare = 105;  
+      const minScale = 0;
+      const maxScale = 1000;
+      const maxSizeWide = 139;
+      const maxSizeSquare = 105;
       updateLevelAnimation(
-        paramValue,          
-        conditionMin,        
-        conditionMax,       
-        levelSkrubber,          
-        levelSkrubberPercent,   
-        firstSkolzValue,     
-        minScale,           
-        maxScale,            
-        maxSizeWide,         
+        paramValue,
+        conditionMin,
+        conditionMax,
+        levelSkrubber,
+        levelSkrubberPercent,
+        firstSkolzValue,
+        minScale,
+        maxScale,
+        maxSizeWide,
         maxSizeSquare
       );
     }
@@ -388,25 +388,25 @@ export const updateParameter = (paramSelector, conditionMin, conditionMax, first
     const levelHvo = document.querySelector('.column-hvo__percent');
     const levelHvoPercent = document.querySelector('.column-hvo__span-1');
     if (levelHvo && levelHvoPercent) {
-      const minScale = 0;  
-      const maxScale = 6000;  
-      const maxSizeWide = 41;  
-      const maxSizeSquare = 32;  
+      const minScale = 0;
+      const maxScale = 6000;
+      const maxSizeWide = 41;
+      const maxSizeSquare = 32;
       updateLevelAnimation(
-        paramValue,          
-        conditionMin,        
-        conditionMax,       
-        levelHvo,          
-        levelHvoPercent,   
-        firstSkolzValue,     
-        minScale,           
-        maxScale,            
-        maxSizeWide,         
+        paramValue,
+        conditionMin,
+        conditionMax,
+        levelHvo,
+        levelHvoPercent,
+        firstSkolzValue,
+        minScale,
+        maxScale,
+        maxSizeWide,
         maxSizeSquare
       );
     }
   }
-  
+
 };
 
 // Функция обновления режима
@@ -429,7 +429,7 @@ export const updateMode = () => {
   updateParameter('.temper-topka', 0, 1000, firstSkolzValue);
   updateParameter('.temper-kamer-vygruz', 0, 750, firstSkolzValue);
   updateParameter('.temper-verh-kamer-zagruz', 0, 1000, firstSkolzValue);
-  updateParameter('.temper-vniz-kamer-zagruz', 0, 1100, firstSkolzValue);
+  updateParameter('.temper-vniz-kamer-zagruz', 1000, 1100, firstSkolzValue);
   updateParameter('.temper-vhod-pech-dozhig', 0, 1150, firstSkolzValue);
   updateParameter('.temper-vyhod-pech-dozhig', 0, 1200, firstSkolzValue);
   updateParameter('.temper-granul-holod', 0, 70, firstSkolzValue);
@@ -443,7 +443,7 @@ export const updateMode = () => {
 
   updateParameter('.razr-niz-zagr-kam', -5, -1, firstSkolzValue);
   updateParameter('.razrezh-topka', -4, -1, firstSkolzValue);
-  
+
   updateParameter('.uroven-v-kotle', -80, 80, firstSkolzValue);
   updateParameter('.uroven-vanne-skrubber-value', 250, 1000, firstSkolzValue);
   updateParameter('.uroven-vody-hvo-value', 1500, 6000, firstSkolzValue);

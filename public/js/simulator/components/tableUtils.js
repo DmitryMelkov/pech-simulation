@@ -7,7 +7,7 @@ const template = `
   </tr>
 `;
 
-const getDataModalAttribute = (description) => {
+const getDataModalAttribute = (description, value) => {
   const modalMap = {
     'Температура на 1 скользящей': 'modal-param-js--temper-1-skolz',
     'Температура на 2 скользящей': 'modal-param-js--temper-2-skolz',
@@ -15,7 +15,12 @@ const getDataModalAttribute = (description) => {
     'Температура камеры выгрузки': 'modal-param-js--temper-kamer-vygruz',
     'Температура в топке': 'modal-param-js--temper-v-topke',
     'Температура вверху камеры загрузки': 'modal-param-js--temper-verh-kamer-zagruz',
-    'Температура внизу камеры загрузки': 'modal-param-js--temper-vniz-kamer-zagruz',
+    'Температура внизу камеры загрузки':
+      value > 1100
+        ? 'modal-param-js--temper-vniz-kamer-zagruz-high'
+        : value < 1000
+        ? 'modal-param-js--temper-vniz-kamer-zagruz-low'
+        : '',
     'Температура на входе печи дожигания': 'modal-param-js--temper-vhod-pech-dozhig',
     'Температура на выходе печи дожигания': 'modal-param-js--temper-vyhod-pech-dozhig',
     'Температура гранул после холодильника': 'modal-param-js--granul-holod-zagruz',
@@ -29,15 +34,14 @@ const getDataModalAttribute = (description) => {
     'Уровень в котле': 'modal-param-js--uroven-v-kotle',
     'Уровень в ванне скруббера': 'modal-param-js--uroven-vanne-skrubber',
     'Уровень воды в емкости ХВО': 'modal-param-js--uroven-vody-hvo',
-    'Давление газов после скруббера': 'modal-param-js--davl-gazov-posle-skrubbera'
-
+    'Давление газов после скруббера': 'modal-param-js--davl-gazov-posle-skrubbera',
   };
   return modalMap[description] || '';
 };
 
 export const addOrUpdateRow = (param, description) => {
   const existingRows = Array.from(document.querySelectorAll('.table__tr'));
-  const paramValue = param.textContent.trim();
+  const paramValue = parseFloat(param.textContent.trim());
   let rowUpdated = false;
 
   existingRows.forEach((row) => {
@@ -48,7 +52,7 @@ export const addOrUpdateRow = (param, description) => {
   });
 
   if (!rowUpdated && param.style.animation.includes('colorRed')) {
-    const dataModal = getDataModalAttribute(description);
+    const dataModal = getDataModalAttribute(description, paramValue);
     if (dataModal) {
       const row = `
         <tr class="table__tr table__tr--incorrect-param table__tr--incorrect-param-js" data-modal="${dataModal}">
@@ -59,16 +63,29 @@ export const addOrUpdateRow = (param, description) => {
       tableTbody.innerHTML += row;
     }
   }
+
+  if (rowUpdated && paramValue < 1000 && description === 'Температура внизу камеры загрузки') {
+    const dataModal = getDataModalAttribute(description, paramValue);
+    const row = `
+      <tr class="table__tr table__tr--incorrect-param table__tr--incorrect-param-js" data-modal="${dataModal}">
+        <td class="table__td table__left">${description}</td>
+        <td class="table__td table__right">${paramValue}</td>
+      </tr>
+    `;
+    tableTbody.innerHTML = tableTbody.innerHTML.replace(rowUpdated, row);
+  }
+
   checkAndInsertTemplate();
 };
 
 // Функция добавления строки, если параметр активен
 export const addRowIfRunning = (param, description) => {
   const existingRows = Array.from(document.querySelectorAll('.table__tr'));
+  const paramValue = parseFloat(param.textContent.trim());
   const paramExists = existingRows.some((row) => row.children[0].textContent === description);
 
   if (param.style.animation.includes('colorRed') && !paramExists) {
-    const dataModal = getDataModalAttribute(description);
+    const dataModal = getDataModalAttribute(description, paramValue);
     if (dataModal) {
       console.log(`Adding new row with description: ${description}, data-modal: ${dataModal}`);
       const row = `
@@ -80,6 +97,19 @@ export const addRowIfRunning = (param, description) => {
       tableTbody.innerHTML += row;
     }
   }
+
+  // Добавьте эту проверку
+  if (paramExists && paramValue < 1000 && description === 'Температура внизу камеры загрузки') {
+    const dataModal = getDataModalAttribute(description, paramValue);
+    const row = `
+      <tr class="table__tr table__tr--incorrect-param table__tr--incorrect-param-js" data-modal="${dataModal}">
+        <td class="table__td table__left">${description}</td>
+        <td class="table__td table__right">${param.innerHTML}</td>
+      </tr>
+    `;
+    tableTbody.innerHTML = tableTbody.innerHTML.replace(existingRows[existingRows.length - 1], row);
+  }
+
   checkAndInsertTemplate();
 };
 
