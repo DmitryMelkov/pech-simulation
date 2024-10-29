@@ -1,5 +1,3 @@
-// public/js/modules/modal.js
-
 export const openModal = (background, content) => {
   background.classList.add('enabled');
   content.classList.add('enabled');

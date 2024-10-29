@@ -1,5 +1,3 @@
-// public/js/modules/loadingIndicator.js
-
 export const showLoadingIndicator = (indicator) => {
   indicator.classList.add('active');
 };

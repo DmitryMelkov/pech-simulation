@@ -1,20 +1,22 @@
-export const checkAllQuestionsAnswered = (formData) => {
-  // Получаем список всех вопросов на основе ключей formData
-  const allQuestions = [...new Set([...formData.keys()].map((key) => key.match(/question(\d+)/)?.[1]))].filter(Boolean);
-
-  const answeredQuestions = [...formData.keys()]
-    .filter((key) => key.startsWith('question'))
-    .map((key) => key.split('question')[1]);
-
-  return allQuestions.every((question) => answeredQuestions.includes(question));
+// Обновленная функция проверки всех ответов
+export const checkAllQuestionsAnswered = (form) => {
+  const questions = form.querySelectorAll('.test__question');
+  return Array.from(questions).every((question) => {
+    const inputs = question.querySelectorAll('input[type="radio"], input[type="checkbox"]');
+    return Array.from(inputs).some((input) => input.checked);
+  });
 };
 
-export const getUnansweredQuestions = (formData) => {
-  const allQuestions = [...new Set([...formData.keys()].map((key) => key.match(/question(\d+)/)?.[1]))].filter(Boolean);
+// Обновленная функция получения неотвеченных вопросов
+export const getUnansweredQuestions = (form) => {
+  const questions = form.querySelectorAll('.test__question');
+  const unansweredQuestions = [];
 
-  const answeredQuestions = [...formData.keys()]
-    .filter((key) => key.startsWith('question'))
-    .map((key) => key.split('question')[1]);
+  questions.forEach((question, index) => {
+    const inputs = question.querySelectorAll('input[type="radio"], input[type="checkbox"]');
+    const isAnswered = Array.from(inputs).some((input) => input.checked);
+    if (!isAnswered) unansweredQuestions.push(index + 1); // Индексация вопросов
+  });
 
-  return allQuestions.filter((question) => !answeredQuestions.includes(question));
+  return unansweredQuestions;
 };
