@@ -19,8 +19,9 @@ router.get('/get-questions', (req, res) => {
     .map((q, index) => ({
       ...q,
       uniqueId: `question${q.id}`, // добавляем уникальный ID на основе номера вопроса
+      options: q.options.sort(() => Math.random() - 0.5) // перемешиваем варианты ответов
     }))
-    .sort(() => Math.random() - 0.5);
+    .sort(() => Math.random() - 0.5); // перемешиваем вопросы
 
   res.json(shuffledQuestions);
 });
