@@ -1,6 +1,6 @@
 import { closeModal, setupModalCloseEvents } from './components/modals.js';
 import { loadQuestions } from './components/questionRenderer.js';
-import { handleSubmitTest } from './components/testHandler.js';
+import { handleSubmitTest } from './components/testhandler.js';
 import { checkAllQuestionsAnswered, getUnansweredQuestions } from './components/formValidation.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
