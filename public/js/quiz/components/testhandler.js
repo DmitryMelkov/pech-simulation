@@ -1,4 +1,3 @@
-
 import { updateResultUI } from './resultUI.js';
 import { hideLoadingIndicator, showLoadingIndicator } from './loadingIndicator.js';
 
@@ -11,11 +10,7 @@ export const handleSubmitTest = async (event) => {
   const formObject = {};
 
   formData.forEach((value, key) => {
-    if (formData.getAll(key).length > 1) {
-      formObject[key] = formData.getAll(key);
-    } else {
-      formObject[key] = value;
-    }
+    formObject[key] = formData.getAll(key).length > 1 ? formData.getAll(key) : value;
   });
 
   try {
@@ -30,15 +25,38 @@ export const handleSubmitTest = async (event) => {
     });
 
     const { score, totalQuestions, resultMessage, incorrectAnswerNumbers } = await response.json();
-    const incorrectQuestionNumbers = incorrectAnswerNumbers.map((id) => {
-      return window.questionOrderMap[id] || `ID ${id} не найден`;
-    });
+    const incorrectQuestionNumbers = incorrectAnswerNumbers.map((id) => window.questionOrderMap[id] || `ID ${id} не найден`);
 
+    // Отображаем или скрываем кнопку "Посмотреть неправильные вопросы" в зависимости от наличия неправильных ответов
+    const viewIncorrectBtn = document.querySelector('.view-incorrect-questions-btn');
+    if (incorrectAnswerNumbers.length > 0) {
+      viewIncorrectBtn.style.display = 'block';
+      viewIncorrectBtn.dataset.incorrectAnswers = JSON.stringify(incorrectAnswerNumbers);
+    } else {
+      viewIncorrectBtn.style.display = 'none';
+    }
+
+    // Логика отображения кнопок в зависимости от результата
+    const goodResultBtn = document.querySelector('.good-result-btn');
+    const badResultBtn = document.querySelector('.bad-result-btn');
+    
+    const passingScore = 0.8 * totalQuestions; // пример порога, настраиваем по вашему условию
+
+    if (score >= passingScore) {
+      goodResultBtn.style.display = 'block';
+      badResultBtn.style.display = 'none';
+    } else {
+      goodResultBtn.style.display = 'none';
+      badResultBtn.style.display = 'block';
+    }
+
+    // Обновляем текст модального окна
     document.querySelector('.mnemo__modal-quiz-incorrect-span').textContent = incorrectQuestionNumbers.join(', ');
     if (incorrectQuestionNumbers.length === 0) {
       document.querySelector('.mnemo__modal-quiz-incorrect').style.display = 'none';
     }
 
+    // Обновление UI результатов
     updateResultUI(resultMessage, score, totalQuestions);
 
     setTimeout(() => {

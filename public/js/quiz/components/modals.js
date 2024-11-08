@@ -13,9 +13,5 @@ export const closeModal = (background, content, shouldReload = true) => {
 
 export const setupModalCloseEvents = (closeButton, background, closeModalFunction) => {
   closeButton.addEventListener('click', closeModalFunction);
-  background.addEventListener('click', (event) => {
-    if (event.target === background) {
-      closeModalFunction();
-    }
-  });
+  // Удалён обработчик для фона, чтобы модалка не закрывалась при нажатии на фон
 };
